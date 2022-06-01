@@ -1,25 +1,27 @@
-import Link from 'next/link'
+import Link from "next/link";
+import Layout from "../components/layout";
 
 function PreactStars({ stars }) {
   return (
-    <div>
+    <Layout>
       <p>Preact has {stars} ⭐</p>
       <Link href="/">
         <a>I bet Next.js has more stars (?)</a>
       </Link>
-    </div>
-  )
+    </Layout>
+  );
 }
 
-export async function getStaticProps() {
-  const res = await fetch('https://api.github.com/repos/preactjs/preact')
-  const json = await res.json()
+export async function getServerSideProps() {
+  const res = await fetch("https://api.github.com/repos/preactjs/preact");
+  const json = await res.json();
+  console.log("Json:", json);
 
   return {
     props: {
-      stars: json.stargazers_count,
+      stars: json.forks_count,
     },
-  }
+  };
 }
 
-export default PreactStars
+export default PreactStars;

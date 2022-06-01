@@ -1,25 +1,52 @@
-import Link from 'next/link'
+import Link from "next/link";
+import useSWR from "swr";
+import Hero from "../components/hero/hero";
+import Layout from "../components/layout";
+import { useRouter } from "next/router";
+import blogPosts from "../assets/posts.json";
+import Grid from "../components/gridSection/grid";
+import About from "../components/aboutTheBoat/about";
+import BoatData from "../components/BoatData/boatData";
+import AllWeeks from "../components/booking/AllWeeks";
+import FeesSection from "../components/FeesSection/Fees";
+import FAQsection from "../components/FAQSection/FAQ";
+import PhotoGallery from "../components/PhotoGallery/PhotoGallery";
+import SimpleReactLightbox from "simple-react-lightbox";
+function Profile() {
+  if (error) return <div>failed to load</div>;
+  if (!data) return <div>loading...</div>;
+  return <div>hello {data.name}!</div>;
+}
 
-function Index({ stars }) {
+function Index() {
+  const { locale, locales, asPath } = useRouter();
+
+  console.log(blogPosts);
   return (
-    <div>
-      <p>Next.js has {stars} ⭐️</p>
-      <Link href="/preact-stars">
-        <a>How about preact?</a>
-      </Link>
-    </div>
-  )
+    <Layout>
+      <SimpleReactLightbox>
+        <Hero />
+        <Grid />
+        <About />
+        <BoatData />
+        <AllWeeks />
+        <FeesSection />
+        <FAQsection />
+        <PhotoGallery />
+      </SimpleReactLightbox>
+    </Layout>
+  );
 }
 
-export async function getStaticProps() {
-  const res = await fetch('https://api.github.com/repos/vercel/next.js')
-  const json = await res.json()
+// export async function getServerSideProps() {
+//   const res = await fetch("https://api.github.com/repos/vercel/next.js");
+//   const json = await res.json();
 
-  return {
-    props: {
-      stars: json.stargazers_count,
-    },
-  }
-}
+//   return {
+//     props: {
+//       stars: json.stargazers_count,
+//     },
+//   };
+// }
 
-export default Index
+export default Index;

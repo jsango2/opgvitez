@@ -1,0 +1,116 @@
+import styled from "styled-components";
+
+// import { HeroWrap } from "./style.js"
+
+export const WrapSection = styled.div`
+  position: fixed;
+  top: 150px;
+  z-index: 6;
+  width: 580px;
+  height: 715px;
+
+  background: #ffffff;
+  /* Gray04 */
+
+  border: 1px solid #eaeaea;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  input,
+  textarea,
+  button {
+    width: 450px;
+    height: 55px;
+    margin-bottom: 25px;
+    background: #ffffff;
+    /* Gray04 */
+
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+
+    /* Gray 2 */
+
+    color: #4f4f4f;
+    padding-left: 10px;
+  }
+  textarea {
+    height: 100px;
+    padding-top: 10px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  button {
+    width: 420px;
+    height: 80px;
+    margin-top: 20px;
+    background: radial-gradient(
+      61.32% 215.39% at 93.04% 39.63%,
+      #3ca0c9 0%,
+      #1e7ca4 100%
+    );
+    /* Blue */
+
+    border: 1px solid #0d3151;
+    /* Blue shadow */
+
+    box-shadow: 0px 4px 10px rgba(0, 133, 255, 0.2);
+    border-radius: 16px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+    /* identical to box height, or 167% */
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #ffffff;
+  }
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+
+export const CloseX = styled.div`
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const Fixed = styled.div`
+  position: relative;
+  width: auto;
+  height: auto;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0d3151;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
