@@ -1,8 +1,8 @@
-// import p1 from "../../images/gallery/p1.png";
-// import p2 from "../../images/gallery/p2.png";
-// import p3 from "../../images/gallery/p3.png";
-// import p4 from "../../images/gallery/p4.png";
-// import p5 from "../../images/gallery/p5.png";
+import p1 from "../../images/gallery/large/p1.png";
+import p2 from "../../images/gallery/large/p2.png";
+import p3 from "../../images/gallery/large/p3.png";
+import p4 from "../../images/gallery/large/p4.png";
+import p5 from "../../images/gallery/large/p5.png";
 import p6 from "../../images/gallery/large/p6.png";
 import p7 from "../../images/gallery/large/p7.png";
 import p8 from "../../images/gallery/large/p8.png";
@@ -28,11 +28,11 @@ import p27 from "../../images/gallery/large/p27.png";
 import p28 from "../../images/gallery/large/p28.png";
 
 const Images = [
-  // { photo: p1, in: 0 },
-  // { photo: p2, in: 1 },
-  // { photo: p3, in: 27 },
-  // { photo: p4, in: 2 },
-  // { photo: p5, in: 3 },
+  { photo: p1, in: 0 },
+  { photo: p2, in: 1 },
+  { photo: p3, in: 27 },
+  { photo: p4, in: 2 },
+  { photo: p5, in: 3 },
   { photo: p6, in: 4 },
   { photo: p7, in: 5 },
   { photo: p8, in: 6 },
