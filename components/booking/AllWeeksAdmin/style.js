@@ -106,7 +106,7 @@ export const PopupForm = styled.div`
   top: 150px;
   z-index: 6;
   width: 580px;
-  height: 715px;
+  height: auto;
 
   background: #ffffff;
   /* Gray04 */
@@ -114,7 +114,8 @@ export const PopupForm = styled.div`
   border: 1px solid #eaeaea;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
-  padding-top: 100px;
+  padding-top: 80px;
+  padding-bottom: 60px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

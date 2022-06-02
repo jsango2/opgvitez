@@ -4,7 +4,8 @@ import Image from "next/image";
 
 import { collection, addDoc, getDocs, doc, getDoc } from "firebase/firestore";
 
-import { WrapSection, CloseX, Fixed } from "./style.js";
+import { WrapSection, CloseX, Fixed, Week, WrapDates } from "./style.js";
+import { Date, Price } from "../../oneWeek/style.js";
 
 function ReservationModal({ handleClick, price, datum }) {
   const [data, setData] = useState([]);
@@ -22,16 +23,26 @@ function ReservationModal({ handleClick, price, datum }) {
     e.preventDefault();
     console.log("submited");
   };
+  console.log(datum);
   return (
     <WrapSection>
       <CloseX onClick={handleClick}>X</CloseX>
       <Fixed>
+        Dates selected: <br />{" "}
+      </Fixed>
+      <WrapDates>
+        {datum.map((el) => (
+          <Week>
+            <Date>{el.datum}</Date>
+            <Price>{el.cijena} EUR</Price>
+          </Week>
+        ))}
+      </WrapDates>
+      <Fixed>
         Total price:
         <br /> {price} EUR
       </Fixed>
-      <Fixed>
-        Dates selected: <br /> {datum}
-      </Fixed>
+
       <form onSubmit={handleSubmit}>
         <Fixed>Email:</Fixed>
         <input
@@ -50,7 +61,7 @@ function ReservationModal({ handleClick, price, datum }) {
           onChange={(event) => setMessage(event.target.value)}
           placeholder="Your message..."
         ></textarea>
-        <button type="submit"> send reservation enquire</button>
+        <button type="submit"> Send reservation</button>
       </form>
     </WrapSection>
   );

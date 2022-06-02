@@ -15,12 +15,16 @@ import {
   WrapLeft,
   WrapRight,
   BoatTitleWrap,
+  WrapDots,
+  WrapWave,
 } from "./style.js";
 // import HeroVideo from "../../video/kraciVideo.mp4";
 import Image from "next/image";
 import Boat from "../../images/boatData/BoatInside.png";
 
 import Val from "../../images/boatData/val.svg";
+import ValBijeli from "../../images/boatData/valoviBijeli.svg";
+import Dots from "../../images/boatData/dotsBlue.svg";
 
 const BoatData = () => {
   const getDates = (startDate, endDate) => {
@@ -106,6 +110,17 @@ const BoatData = () => {
             placeholder="blur" // Optional blur-up while loading
           />
         </BoatWrap>
+        <WrapDots>
+          <Image
+            src={Dots}
+            alt="Dots"
+            layout="fill"
+            // width={500} automatically provided
+            // height={500} automatically provided
+            // blurDataURL="data:..." automatically provided
+            // Optional blur-up while loading
+          />
+        </WrapDots>
       </Up>
       <Down>
         {" "}
@@ -157,6 +172,17 @@ const BoatData = () => {
             </Text>
           </WrapRight>
         </TextWrapDown>
+        <WrapWave>
+          <Image
+            src={ValBijeli}
+            alt="Dots"
+            layout="fill"
+            // width={500} automatically provided
+            // height={500} automatically provided
+            // blurDataURL="data:..." automatically provided
+            // Optional blur-up while loading
+          />
+        </WrapWave>
       </Down>
     </HeroWrap>
   );

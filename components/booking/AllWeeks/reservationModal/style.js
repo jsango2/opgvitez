@@ -7,7 +7,7 @@ export const WrapSection = styled.div`
   top: 150px;
   z-index: 6;
   width: 580px;
-  height: 715px;
+  height: auto;
 
   background: #ffffff;
   /* Gray04 */
@@ -15,7 +15,8 @@ export const WrapSection = styled.div`
   border: 1px solid #eaeaea;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
-  padding-top: 100px;
+  padding-top: 80px;
+  padding-bottom: 60px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -102,13 +103,60 @@ export const CloseX = styled.div`
 `;
 export const Fixed = styled.div`
   position: relative;
-  width: auto;
+  width: 100%;
   height: auto;
   margin-bottom: 20px;
   text-align: center;
   font-size: 20px;
   font-weight: 700;
   color: #0d3151;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const WrapDates = styled.div`
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0d3151;
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+
+export const Week = styled.div`
+  position: relative;
+  height: 44px;
+  width: 163px;
+  background-color: #68bfe2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  margin: 11px;
+  /* cursor: pointer; */
+  /* pointer-events: ${(props) => (props.isFree ? "auto " : "none")}; */
+  transition: all 0.2s ease-in-out;
+  /* &:hover {
+    -webkit-box-shadow: 5px 5px 9px 1px #48849c;
+    box-shadow: 5px 5px 9px 1px #48849c;
+  } */
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {

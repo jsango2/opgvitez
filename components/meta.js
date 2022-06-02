@@ -33,7 +33,7 @@ export default function Meta() {
       <meta name="theme-color" content="#000" />
       <meta
         name="google-site-verification"
-        content="8Y3OQ7otEJmsAkFaUIeTW4XK5ZwILmTBW4m24WN0N80"
+        content="j119S0m23M6KWTuqqd5FM0ajg3Ac1xbivHZhtmhc0sc"
       />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
 

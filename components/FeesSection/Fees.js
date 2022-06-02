@@ -86,6 +86,7 @@ const FeesSection = () => {
           // height={500} automatically provided
           // blurDataURL="data:..." automatically provided
           placeholder="blur" // Optional blur-up while loading
+          objectFit="cover"
         />
       </WrapImage>
     </HeroWrap>

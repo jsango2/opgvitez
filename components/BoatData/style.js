@@ -237,3 +237,25 @@ export const ValWrap = styled.div`
   @media only screen and (max-width: 420px) {
   }
 `;
+export const WrapDots = styled.div`
+  position: absolute;
+  height: 450px;
+  width: 500px;
+  right: -410px;
+  bottom: -210px;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const WrapWave = styled.div`
+  position: absolute;
+  height: 145px;
+  width: 373px;
+  right: 0px;
+  bottom: 20px;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;

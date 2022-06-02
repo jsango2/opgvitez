@@ -23,21 +23,22 @@ import {
 function PriceComponent({ price, data }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [dates, setDates] = useState([]);
-  console.log("isOpen?", isModalOpen);
+  // console.log("isOpen?", isModalOpen);
 
   const handleClick = () => {
     setIsModalOpen((old) => !old);
   };
-  console.log(data);
+  // console.log(data);
   useEffect(() => {
     var newArray = data.filter(function (el) {
       return el.selected === true;
     });
     let dateArray = [];
     newArray.map((el) => {
-      dateArray.push(el.datum + ", ");
+      dateArray.push(el.datum);
     });
-    setDates(dateArray);
+    // setDates(dateArray);
+    setDates(newArray);
   }, [data]);
   return (
     <>

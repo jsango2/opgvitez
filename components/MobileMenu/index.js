@@ -17,13 +17,13 @@ const MobileMenu = ({ isOpen, handleClick }) => {
         <LineX1 />
         <LineX2 />
       </CloseIcon>
-      {/* {Links.map((e, index) => (
+      {Links.map((e, index) => (
         <SingleLink key={index}>
           <Link href={e.link} onClick={handleClick}>
             {e.veza}
           </Link>{" "}
         </SingleLink>
-      ))} */}
+      ))}
     </WrapMobileMenu>
   );
 };

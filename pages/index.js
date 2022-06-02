@@ -24,7 +24,7 @@ function Profile() {
 function Index() {
   const { locale, locales, asPath } = useRouter();
 
-  console.log(blogPosts);
+  // console.log(blogPosts);
   return (
     <Layout>
       <SimpleReactLightbox>
