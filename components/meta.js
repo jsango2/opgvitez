@@ -31,10 +31,10 @@ export default function Meta() {
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
-      <meta
+      {/* <meta
         name="google-site-verification"
         content="j119S0m23M6KWTuqqd5FM0ajg3Ac1xbivHZhtmhc0sc"
-      />
+      /> */}
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
 
       <meta name="robots" content="index, follow" />
