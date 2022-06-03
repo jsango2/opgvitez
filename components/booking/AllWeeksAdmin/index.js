@@ -21,11 +21,12 @@ import {
   Title,
   Overlay,
   Fixed,
+  LogOut,
 } from "./style.js";
 import PriceComponent from "./priceComponent";
 import { CloseX } from "../AllWeeks/reservationModal/style";
 
-function AllWeeks() {
+function AllWeeks({ handleLogOut, userEmail }) {
   const [data, setData] = useState([]);
   const [selectedWeeks, setSelectedWeeks] = useState([]);
   const [suma, setSuma] = useState(0);
@@ -146,6 +147,12 @@ function AllWeeks() {
   const handleClose = (id) => {
     setIsOpen(false);
   };
+  function insert(str, value) {
+    let position = str.length - 3;
+    if (str.length <= 3) {
+      return str;
+    } else return str.substr(0, position) + value + str.substr(position);
+  }
   return (
     <WrapSection>
       <Overlay />
@@ -158,14 +165,15 @@ function AllWeeks() {
         // blurDataURL="data:..." automatically provided
         // placeholder="blur" // Optional blur-up while loading
       />
-      <Title>FREE BOOKING DATES</Title>
+      <Title>ADMIN BOOKING SYSTEM</Title>
+      <LogOut onClick={handleLogOut}>LOG OUT {userEmail}</LogOut>
       <Wrap>
         {data.map((week) => (
           <Week
             key={week.id}
             id={week.id}
             datum={week.datum}
-            cijena={week.cijena}
+            cijena={insert(week.cijena.toString(), ".")}
             selected={selected}
             free={week.free}
             marked={week.selected}

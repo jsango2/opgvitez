@@ -46,7 +46,7 @@ const Sights = () => {
           >
             {Images.map((image) => (
               <WrapImage
-                key={image.in}
+                key={image.id}
                 // onClick={(e) => handleClickImage(e, image.in)}
               >
                 <Image

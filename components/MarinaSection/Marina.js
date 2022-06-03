@@ -67,7 +67,7 @@ const Marina = () => {
           parking. Parking fees are 10 € per day, or 70 € per week.
         </Text>
       </WrapText>
-      <Button>MARINA ON GOOGLE MAPS</Button>
+      <Button>THE MARINA ON GOOGLE MAPS</Button>
     </HeroWrap>
   );
 };

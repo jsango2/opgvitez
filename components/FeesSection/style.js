@@ -63,7 +63,7 @@ export const Title = styled.h2`
   @media only screen and (max-width: 420px) {
   }
 `;
-export const Text = styled.p`
+export const Text = styled.div`
   font-family: "Avenir Next";
   font-style: normal;
   font-weight: 500;

@@ -103,7 +103,7 @@ export const Title = styled.h1`
 `;
 export const PopupForm = styled.div`
   position: fixed;
-  top: 150px;
+  top: 250px;
   z-index: 6;
   width: 580px;
   height: auto;
@@ -298,7 +298,34 @@ export const Box = styled.div`
   @media only screen and (max-width: 420px) {
   }
 `;
+export const LogOut = styled.div`
+  position: relative;
+  z-index: 6;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  background: radial-gradient(
+    61.32% 215.39% at 93.04% 39.63%,
+    #3ea0c9 0%,
+    #1e7ca4 100%
+  );
+  border: 1px solid darkblue;
 
+  &:hover {
+    -webkit-box-shadow: 5px 5px 9px 1px #48849c;
+    box-shadow: 5px 5px 9px 1px #103f52;
+    border: 1px solid #17172b;
+  }
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
 export const PriceFrom = styled.h4`
   position: absolute;
   font-family: "Montserrat";

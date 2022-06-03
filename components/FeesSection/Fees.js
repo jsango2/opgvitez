@@ -38,8 +38,9 @@ const FeesSection = () => {
         <Text>
           <strong>Obligatory extras: to be paid at the yacht pick-up</strong>{" "}
           Tourist tax/per person (total sum calculated upon check-in): 1.50 EUR
-          per day, Comfort Pack 44/45/46 (final cleaning, bed linen and towels,
-          unlimited Wi-Fi, dinghy with outboard): 400.00 EUR per booking <br />
+          per person/per day, Comfort Pack 44/45/46 (final cleaning, bed linen
+          and towels, unlimited Wi-Fi, dinghy with outboard): 400.00 EUR per
+          booking <br />
           <br />
           <strong>Optional extras:</strong> <br />
           <ul>

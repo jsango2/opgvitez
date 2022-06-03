@@ -26,7 +26,7 @@ import Val from "../../images/boatData/valBijeli.svg";
 
 const FAQsection = () => {
   return (
-    <HeroWrap>
+    <HeroWrap id="faq">
       <WrapImage>
         <Image
           src={Boat}
@@ -105,7 +105,7 @@ const FAQsection = () => {
           </strong>{" "}
           <br />
           <br />• The Lagoon 450 F | Summer Breeze can be rented as a bareboat,
-          or you can rent a professional skipper.
+          or you can rent it with a professional skipper.
         </Text>
       </TextWrap>
     </HeroWrap>

@@ -20,6 +20,14 @@ const Week = ({
   //   const handleSelect = (id) => {
   //     setSelected(!selected);
   //   };
+
+  useEffect(() => {
+    let num = cijena.toString();
+    function insert(str, index, value) {
+      return str.substr(0, index) + value + str.substr(index);
+    }
+  }, [cijena]);
+
   return (
     <WeekWrap
       isFree={free}

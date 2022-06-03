@@ -7,13 +7,13 @@ import p6 from "../../images/sights/p6.png";
 import p7 from "../../images/sights/p7.png";
 
 const Images = [
-  { photo: p1, id: "KORNATI - 3h" },
+  { photo: p1, id: "KORNATI - 1h" },
   { photo: p2, id: "VELI RAT - 3h" },
-  { photo: p3, id: "TELAŠČICA - 3h" },
+  { photo: p3, id: "TELAŠČICA - 1.5h" },
   { photo: p4, id: "SAKARUN - 3h" },
-  { photo: p5, id: "DUBROVNIK - 8h" },
+  { photo: p5, id: "NATIONAL PRAK KRKA - 3h" },
   { photo: p6, id: "VIS - 6h" },
-  { photo: p7, id: "ROVINJ - 8h" },
+  { photo: p7, id: "DUBROVNIK - 8h" },
 ];
 
 export default Images;

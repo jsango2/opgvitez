@@ -23,7 +23,10 @@ function ReservationModal({ handleClick, price, datum }) {
     e.preventDefault();
     console.log("submited");
   };
-  console.log(datum);
+  function insert(str, value) {
+    let position = str.length - 3;
+    return str.substr(0, position) + value + str.substr(position);
+  }
   return (
     <WrapSection>
       <CloseX onClick={handleClick}>X</CloseX>
@@ -34,7 +37,7 @@ function ReservationModal({ handleClick, price, datum }) {
         {datum.map((el) => (
           <Week>
             <Date>{el.datum}</Date>
-            <Price>{el.cijena} EUR</Price>
+            <Price>{insert(el.cijena.toString(), ".")} EUR</Price>
           </Week>
         ))}
       </WrapDates>

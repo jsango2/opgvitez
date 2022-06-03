@@ -9,6 +9,7 @@ import {
   LineX1,
   LineX2,
 } from "./styles.js";
+import { Anchor } from "nextjs-anchor";
 
 const MobileMenu = ({ isOpen, handleClick }) => {
   return (
@@ -18,10 +19,8 @@ const MobileMenu = ({ isOpen, handleClick }) => {
         <LineX2 />
       </CloseIcon>
       {Links.map((e, index) => (
-        <SingleLink key={index}>
-          <Link href={e.link} onClick={handleClick}>
-            {e.veza}
-          </Link>{" "}
+        <SingleLink key={index} onClick={handleClick}>
+          <Anchor href={e.anchor}>{e.veza}</Anchor>{" "}
         </SingleLink>
       ))}
     </WrapMobileMenu>

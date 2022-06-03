@@ -8,7 +8,10 @@ import Dots from "../../images/hero/dots.svg";
 const Hero = () => {
   return (
     <HeroWrap>
-      <Image
+      <video autoPlay muted loop="loop" className="videoHero" playsInline>
+        <source src="/heroVideo.mp4" type="video/mp4" />
+      </video>
+      {/* <Image
         src={HeroPhoto}
         alt="Picture of the author"
         layout="fill"
@@ -16,7 +19,7 @@ const Hero = () => {
         // height={500} automatically provided
         // blurDataURL="data:..." automatically provided
         placeholder="blur" // Optional blur-up while loading
-      />
+      /> */}
       <WrapValTitle>
         <ValWrap>
           <Image src={Val} alt="Gallery" layout="fill" />

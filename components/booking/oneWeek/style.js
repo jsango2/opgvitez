@@ -15,6 +15,7 @@ export const WeekWrap = styled.div`
   cursor: pointer;
   pointer-events: ${(props) => (props.isFree ? "auto " : "none")};
   transition: all 0.2s ease-in-out;
+  border-radius: 5px;
   &:hover {
     -webkit-box-shadow: 5px 5px 9px 1px #48849c;
     box-shadow: 5px 5px 9px 1px #48849c;

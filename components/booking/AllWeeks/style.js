@@ -204,7 +204,8 @@ export const YourPrice = styled.h4`
 
 export const Line = styled.div`
   position: relative;
-  width: 145px;
+  margin-left: 5px;
+  width: 140px;
   height: 1px;
   background-color: white;
 
@@ -238,6 +239,32 @@ export const WrapBox = styled.div`
   @media only screen and (max-width: 420px) {
   }
 `;
+export const Loading = styled.div`
+  position: relative;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 120%;
+  margin: 0 15px;
+  height: 245px;
+  /* identical to box height, or 17px */
+
+  /* Gray 6 */
+
+  color: #f2f2f2;
+  /* background-image: url(${bg});
+  background-position: center;
+  background-size: cover; */
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
 export const Box = styled.div`
   position: relative;
   display: flex;
@@ -245,6 +272,7 @@ export const Box = styled.div`
   height: 18px;
   background-color: ${(props) => props.color};
   margin-right: 10px;
+  border-radius: 3px;
   /* background-image: url(${bg});
   background-position: center;
   background-size: cover; */
@@ -274,7 +302,7 @@ export const PriceFrom = styled.h4`
   @media only screen and (max-width: 420px) {
   }
 `;
-export const Price = styled.h3`
+export const Price = styled.div`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
@@ -292,7 +320,7 @@ export const Price = styled.h3`
   }
 `;
 export const Button = styled.div`
-  width: 318px;
+  width: 290px;
   height: 49px;
 
   border: 2px solid #ffffff;

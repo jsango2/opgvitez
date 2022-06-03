@@ -6,9 +6,11 @@ import Image from "next/image";
 import Left from "../../images/marina/left.png";
 import Logo from "../../images/logo.png";
 import { Links } from "../Navigation/links.js";
+import { Anchor } from "nextjs-anchor";
+
 const Footer = () => {
   return (
-    <HeroWrap>
+    <HeroWrap id="contact">
       <WrapImage>
         <Image
           src={Logo}
@@ -23,7 +25,7 @@ const Footer = () => {
       <LinkWrap>
         {Links.map((e, index) => (
           <SingleLink key={index}>
-            <Link href={e.link}>{e.veza}</Link>
+            <Anchor href={e.anchor}>{e.veza}</Anchor>
           </SingleLink>
         ))}
       </LinkWrap>

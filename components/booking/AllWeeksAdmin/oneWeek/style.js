@@ -12,6 +12,7 @@ export const WeekWrap = styled.div`
   justify-content: center;
   z-index: 0;
   margin: 11px;
+  border-radius: 5px;
   cursor: pointer;
   /* pointer-events: ${(props) => (props.isFree ? "auto " : "none")}; */
   transition: all 0.2s ease-in-out;

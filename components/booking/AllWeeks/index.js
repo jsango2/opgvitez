@@ -7,7 +7,14 @@ import { collection, addDoc, getDocs, doc, getDoc } from "firebase/firestore";
 import { auth, database } from "../../firebase/firebase";
 import bg from "../../../images/booking/bg.png";
 
-import { Wrap, PopupForm, WrapSection, Title, Overlay } from "./style.js";
+import {
+  Wrap,
+  PopupForm,
+  WrapSection,
+  Title,
+  Overlay,
+  Loading,
+} from "./style.js";
 import PriceComponent from "./priceComponent";
 
 function AllWeeks() {
@@ -15,6 +22,7 @@ function AllWeeks() {
   const [selectedWeeks, setSelectedWeeks] = useState([]);
   const [suma, setSuma] = useState(0);
   const [datum, setDatum] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   const [cijena, setCijena] = useState(0);
   const [free, setFree] = useState("Free");
   const [selected, setSelected] = useState(false);
@@ -39,6 +47,7 @@ function AllWeeks() {
     let podaci = [];
     const getNotes = () => {
       getDocs(dbInstance).then((data) => {
+        setIsLoading(false);
         podaci = data.docs.map((item) => {
           return { ...item.data(), id: item.id };
         });
@@ -82,8 +91,15 @@ function AllWeeks() {
     setData(newState);
   };
 
+  function insert(str, value) {
+    let position = str.length - 3;
+    if (str.length <= 3) {
+      return str;
+    } else return str.substr(0, position) + value + str.substr(position);
+  }
+
   return (
-    <WrapSection>
+    <WrapSection id="booking">
       <Overlay />
       <Image
         src={bg}
@@ -95,22 +111,27 @@ function AllWeeks() {
         // placeholder="blur" // Optional blur-up while loading
       />
       <Title>FREE BOOKING DATES</Title>
-      <Wrap>
-        {data.map((week) => (
-          <Week
-            key={week.id}
-            id={week.id}
-            datum={week.datum}
-            cijena={week.cijena}
-            selected={selected}
-            free={week.free}
-            marked={week.selected}
-            handleClick={() => handleClick(week.id)}
-            handleMarker={() => handleMarker(week.id)}
-          />
-        ))}
-      </Wrap>
-      <PriceComponent price={suma} data={data} />
+      {isLoading ? (
+        <Loading>LOADING...</Loading>
+      ) : (
+        <Wrap>
+          {data.map((week) => (
+            <Week
+              key={week.id}
+              id={week.id}
+              datum={week.datum}
+              cijena={insert(week.cijena.toString(), ".")}
+              selected={selected}
+              free={week.free}
+              marked={week.selected}
+              handleClick={() => handleClick(week.id)}
+              handleMarker={() => handleMarker(week.id)}
+            />
+          ))}
+        </Wrap>
+      )}
+
+      <PriceComponent price={insert(suma.toString(), ".")} data={data} />
 
       {/* {isOpen && (
         <PopupForm>

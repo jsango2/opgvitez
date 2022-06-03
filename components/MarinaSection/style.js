@@ -39,7 +39,7 @@ export const WrapImage = styled.div`
   }
 `;
 export const Button = styled.div`
-  width: 383px;
+  width: 395px;
   height: 53px;
   margin: 70px auto 0 auto;
   /* TAMNO PLAVA */
@@ -112,7 +112,7 @@ export const Title = styled.h2`
   @media only screen and (max-width: 420px) {
   }
 `;
-export const WrapText = styled.p`
+export const WrapText = styled.div`
   margin: 80px auto 0 auto;
   display: flex;
   align-items: center;

@@ -7,7 +7,7 @@ import Val from "../../images/boatData/valBijeli.svg";
 
 const About = () => {
   return (
-    <HeroWrap>
+    <HeroWrap id="about">
       <Image
         src={Cover}
         alt="Cover photo"

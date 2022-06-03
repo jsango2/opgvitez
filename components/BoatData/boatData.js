@@ -49,7 +49,7 @@ const BoatData = () => {
     }
     return dates;
   };
-  console.log(getDates(new Date("2020-04-01"), new Date("2020-11-03")));
+  // console.log(getDates(new Date("2020-04-01"), new Date("2020-11-03")));
 
   return (
     <HeroWrap>
