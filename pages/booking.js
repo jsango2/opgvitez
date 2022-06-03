@@ -15,18 +15,21 @@ function Index() {
   const [userEmail, setUserEmail] = useState("User");
   const dbInstance = collection(database, "Charter");
   const dbInstance2 = collection(database, "Charter");
-  auth.onAuthStateChanged((user) => {
-    if (user) {
-      // props.setCurrentUser(user);
-      setlogedIn(true);
 
-      console.log("OnAuthStateChanged: Logged in");
-    } else {
-      console.log("OnAuthStateChanged: Logged out");
-      setlogedIn(false);
-      router.push("/");
-    }
-  });
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        // props.setCurrentUser(user);
+        setlogedIn(true);
+
+        console.log("OnAuthStateChanged: Logged in");
+      } else {
+        console.log("OnAuthStateChanged: Logged out");
+        setlogedIn(false);
+        router.push("/");
+      }
+    });
+  }, [logedIn]);
 
   const docRef = doc(dbInstance2, "8YzH6hSmMNqszVnzR8Nc");
   // getDoc(docRef).then((doc) => console.log(doc));
