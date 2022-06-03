@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <HeroWrap>
       <video autoPlay muted loop="loop" className="videoHero" playsInline>
-        <source src="/heroVideo.mp4" type="video/mp4" />
+        <source src="/heroVideo2.mp4" type="video/mp4" />
       </video>
       {/* <Image
         src={HeroPhoto}
