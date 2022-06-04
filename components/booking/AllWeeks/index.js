@@ -116,16 +116,6 @@ function AllWeeks() {
 
   return (
     <WrapSection id="booking">
-      <form
-        name="contact-form"
-        netlify
-        netlify-honeypot="bot-field"
-        // style={{ display: "none" }}
-      >
-        <input type="hidden" name="contact-form" value="contact-form" />
-        <input type="text" name="message" />
-        <input type="email" name="email" />
-      </form>
       <Overlay />
       <Image
         src={bg}
