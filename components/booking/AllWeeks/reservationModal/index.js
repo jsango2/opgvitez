@@ -15,6 +15,7 @@ const encode = (data) => {
 
 function ReservationModal({ handleClick, price, datum }) {
   const [data, setData] = useState([]);
+  const [formData, setFormData] = useState([]);
   const [selectedWeeks, setSelectedWeeks] = useState([]);
   const [suma, setSuma] = useState(0);
   const [cijena, setCijena] = useState(0);
@@ -27,10 +28,15 @@ function ReservationModal({ handleClick, price, datum }) {
 
   const handleSubmit = (e) => {
     // dataLayer.push({ event: "PRO form bottom submitted" })
+    setFormData({
+      emaiL: email,
+      message: message,
+      booking: datum,
+    });
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "reservation", email, message, datum }),
+      body: encode({ "form-name": "reservation", formData }),
     }).then((res) => {
       // this.setState({ showModal: true });
       // window.dataLayer.push({
@@ -64,6 +70,17 @@ function ReservationModal({ handleClick, price, datum }) {
   }
   return (
     <WrapSection>
+      <form
+        name="reservation"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        hidden
+      >
+        <input type="hidden" name="form-name" value="reservation" />
+        <input type="text" name="ime" />
+        <input type="email" name="email" />
+      </form>
+
       <CloseX onClick={handleClick}>X</CloseX>
       <Fixed>
         Dates selected: <br />{" "}
@@ -81,10 +98,11 @@ function ReservationModal({ handleClick, price, datum }) {
       <form
         onSubmit={handleSubmit}
         name="reservation"
-        method="POST"
+        method="post"
         data-netlify="true"
-        netlify
+        data-netlify-honeypot="bot-field"
       >
+        <input type="hidden" name="form-name" value="reservation" />
         {/* <Fixed>Email:</Fixed> */}
         <input
           placeholder="Email"
