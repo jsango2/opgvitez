@@ -18,10 +18,9 @@ class ReservationModal extends React.Component {
     super(props);
     this.state = {
       email: "",
-      cijena: 0,
+      cijena: this.props.cijena,
       message: "",
-      free: "Free",
-      selected: false,
+      datum: this.props.datum,
     };
   }
   // const [data, setData] = useState([]);

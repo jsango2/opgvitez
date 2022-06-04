@@ -32,6 +32,8 @@ function Index() {
           <input type="hidden" name="form-name" value="contact" />
           <input type="text" name="message" />
           <input type="email" name="email" />
+          <input type="text" name="cijena" />
+          <input type="text" name="datum" />
         </form>
         <Hero />
         {/* <Grid /> */}
