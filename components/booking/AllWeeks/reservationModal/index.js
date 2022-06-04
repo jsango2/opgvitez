@@ -18,10 +18,17 @@ class ReservationModal extends React.Component {
     super(props);
     this.state = {
       email: "",
-      cijena: this.props.cijena,
+      cijena: this.props.price,
       message: "",
-      datum: this.props.datum,
+      datum: [],
     };
+  }
+  componentDidMount() {
+    let datumi = [];
+    this.props.datum.map((el) => {
+      datumi.push(el.datum);
+    });
+    this.setState({ ...this.state, datum: datumi.toString() });
   }
   // const [data, setData] = useState([]);
   // const [formData, setFormData] = useState([]);
@@ -36,13 +43,12 @@ class ReservationModal extends React.Component {
   // const [logedIn, setlogedIn] = useState(null);
   handleSubmit = (e) => {
     // dataLayer.push({ event: "PRO form bottom submitted" })
-    console.log(this.state);
-
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state }),
     }).then((res) => {
+      this.props.handleModalOpen();
       // this.setState({ showModal: true });
       // window.dataLayer.push({
       //   event: "PRO form top submitted",
@@ -75,7 +81,7 @@ class ReservationModal extends React.Component {
   };
   handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
   render() {
-    const { message, email, cijena, free, selected } = this.state;
+    const { message, email, cijena, free, selected, handleClick } = this.state;
     return (
       <WrapSection>
         <CloseX onClick={this.props.handleClick}>X</CloseX>

@@ -18,15 +18,24 @@ import {
   Free,
   Occupied,
   Selected,
+  Alert,
 } from "./style.js";
 
 function PriceComponent({ price, data }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMessageSentAlert, setIsMessageSentAlert] = useState(false);
   const [dates, setDates] = useState([]);
   // console.log("isOpen?", isModalOpen);
 
   const handleClick = () => {
     setIsModalOpen((old) => !old);
+  };
+  const handleModalOpen = () => {
+    setIsModalOpen((old) => !old);
+    setIsMessageSentAlert(true);
+    setTimeout(() => {
+      setIsMessageSentAlert(false);
+    }, 3000);
   };
   // console.log(data);
   useEffect(() => {
@@ -47,7 +56,14 @@ function PriceComponent({ price, data }) {
           handleClick={handleClick}
           price={price}
           datum={dates}
+          handleModalOpen={handleModalOpen}
         />
+      )}
+      {isMessageSentAlert && (
+        <Alert>
+          RESERVATION ENQUIRE SENT. <br />
+          We will get back to you as soon as possible
+        </Alert>
       )}
       <WrapPrice>
         <WrapUp>
