@@ -42,7 +42,7 @@ class ReservationModal extends React.Component {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact-form", ...this.state }),
+      body: encode({ "form-name": "contact", ...this.state }),
     }).then((res) => {
       // this.setState({ showModal: true });
       // window.dataLayer.push({
