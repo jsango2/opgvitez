@@ -92,22 +92,8 @@ class ReservationModal extends React.Component {
           ))}
         </WrapDates>
         <Fixed>Total price: {this.props.price} EUR</Fixed>
-        <form
-          name="contact-form"
-          netlify
-          netlify-honeypot="bot-field"
-          style={{ display: "none" }}
-        >
-          <input type="hidden" name="contact-form" value="contact-form" />
-          <input type="text" name="message" />
-          <input type="email" name="email" />
-        </form>
-        <form
-          onSubmit={this.handleSubmit}
-          name="contact-form"
-          netlify
-          netlify-honeypot="bot-field"
-        >
+
+        <form onSubmit={this.handleSubmit}>
           {/* <Fixed>Email:</Fixed> */}
           <input
             placeholder="Email"
