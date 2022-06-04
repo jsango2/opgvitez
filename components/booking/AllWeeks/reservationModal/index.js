@@ -83,6 +83,7 @@ function ReservationModal({ handleClick, price, datum }) {
         name="reservation"
         method="POST"
         data-netlify="true"
+        netlify
       >
         {/* <Fixed>Email:</Fixed> */}
         <input
