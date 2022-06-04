@@ -98,11 +98,16 @@ class ReservationModal extends React.Component {
           netlify-honeypot="bot-field"
           style={{ display: "none" }}
         >
-          <input type="hidden" name="form-name" value="contact-form" />
+          <input type="hidden" name="contact-form" value="contact-form" />
           <input type="text" name="message" />
           <input type="email" name="email" />
         </form>
-        <form onSubmit={this.handleSubmit}>
+        <form
+          onSubmit={this.handleSubmit}
+          name="contact-form"
+          netlify
+          netlify-honeypot="bot-field"
+        >
           {/* <Fixed>Email:</Fixed> */}
           <input
             placeholder="Email"
