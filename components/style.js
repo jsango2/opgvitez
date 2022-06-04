@@ -33,7 +33,7 @@ export const WrapForm = styled.div`
   @media only screen and (max-width: 420px) {
   }
 `;
-export const Button = styled.div`
+export const Button = styled.button`
   margin: 10px auto;
   cursor: pointer;
   width: 250px;
@@ -42,6 +42,9 @@ export const Button = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
+  color: white;
+  font-size: 18px;
   background: radial-gradient(
       61.32% 215.39% at 93.04% 39.63%,
       #3ca0c9 0%,

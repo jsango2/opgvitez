@@ -51,6 +51,49 @@ export const ValWrap = styled.div`
   @media only screen and (max-width: 420px) {
   }
 `;
+export const Overlay = styled.div`
+  z-index: 6;
+  position: absolute;
+  width: 100%;
+  height: 72px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    360deg,
+    rgba(19, 32, 35, 0.42) 0%,
+    rgba(26, 32, 33, 0) 67.05%
+  );
+  background-blend-mode: multiply;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 140px;
+  padding-right: 140px;
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 120%;
+    /* identical to box height, or 23px */
+
+    text-align: center;
+    text-transform: uppercase;
+    /* transition: all 0.3s ease-in-out; */
+    width: 300px;
+    :hover {
+      /* text-decoration: underline; */
+      font-weight: 700;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
 export const WrapDots = styled.div`
   position: absolute;
   height: 418px;

@@ -66,14 +66,16 @@ export const Title = styled.h2`
 export const Text = styled.div`
   font-family: "Avenir Next";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 18px;
   line-height: 120%;
   /* or 22px */
   width: 484px;
   color: #ffffff;
   margin-bottom: 9px;
-
+  li {
+    font-weight: 500;
+  }
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {

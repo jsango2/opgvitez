@@ -1,9 +1,17 @@
-import { HeroWrap, ValWrap, WrapValTitle, Button, WrapDots } from "./style.js";
+import {
+  HeroWrap,
+  ValWrap,
+  WrapValTitle,
+  Button,
+  WrapDots,
+  Overlay,
+} from "./style.js";
 // import HeroVideo from "../../video/kraciVideo.mp4";
 import Image from "next/image";
 import HeroPhoto from "../../images/heroPhoto.png";
 import Val from "../../images/boatData/valBijeli.svg";
 import Dots from "../../images/hero/dots.svg";
+import { Anchor } from "nextjs-anchor";
 
 const Hero = () => {
   return (
@@ -37,12 +45,19 @@ const Hero = () => {
           src={Dots}
           alt="Dots"
           layout="fill"
+          priority
           // width={500} automatically provided
           // height={500} automatically provided
           // blurDataURL="data:..." automatically provided
           // Optional blur-up while loading
         />
       </WrapDots>
+      <Overlay>
+        <Anchor href="/#fees">RENTAL CONDITIONS</Anchor>
+        <Anchor href="/#boatData">BOAT EQUIPMENT</Anchor>
+        <Anchor href="/#marina">BOAT LOCATION</Anchor>
+        <Anchor href="/#faq">FAQ</Anchor>
+      </Overlay>
     </HeroWrap>
   );
 };

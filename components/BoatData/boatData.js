@@ -52,7 +52,7 @@ const BoatData = () => {
   // console.log(getDates(new Date("2020-04-01"), new Date("2020-11-03")));
 
   return (
-    <HeroWrap>
+    <HeroWrap id="boatData">
       <Up>
         {" "}
         <TextWrap>

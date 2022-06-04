@@ -17,7 +17,7 @@ import Left from "../../images/marina/left.png";
 import Right from "../../images/marina/right.png";
 const Marina = () => {
   return (
-    <HeroWrap>
+    <HeroWrap id="marina">
       <Title>MARINA INFORMATION</Title>
       <WrapImages>
         <WrapImage>

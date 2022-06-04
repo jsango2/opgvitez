@@ -4,19 +4,20 @@ import styled from "styled-components";
 
 export const WrapSection = styled.div`
   position: fixed;
-  top: 150px;
+  top: 50%;
+  transform: translate(0, -50%);
   z-index: 6;
   width: 580px;
   height: auto;
-
+  max-height: 80vh;
   background: #ffffff;
   /* Gray04 */
 
   border: 1px solid #eaeaea;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
-  padding-top: 80px;
-  padding-bottom: 60px;
+  padding-top: 50px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -26,7 +27,7 @@ export const WrapSection = styled.div`
   button {
     width: 450px;
     height: 55px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     background: #ffffff;
     /* Gray04 */
 
@@ -55,7 +56,7 @@ export const WrapSection = styled.div`
   }
   button {
     width: 420px;
-    height: 80px;
+    height: 50px;
     margin-top: 20px;
     background: radial-gradient(
       61.32% 215.39% at 93.04% 39.63%,
@@ -105,14 +106,16 @@ export const Fixed = styled.div`
   position: relative;
   width: 100%;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
   font-size: 20px;
   font-weight: 700;
   color: #0d3151;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: column;
+  flex-wrap: wrap; */
 
   @media only screen and (max-width: 600px) {
   }
@@ -149,7 +152,8 @@ export const Week = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 0;
-  margin: 11px;
+  margin: 7px 11px;
+  border-radius: 5px;
   /* cursor: pointer; */
   /* pointer-events: ${(props) => (props.isFree ? "auto " : "none")}; */
   transition: all 0.2s ease-in-out;

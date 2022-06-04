@@ -58,7 +58,7 @@ function PriceComponent({ price, data }) {
             {price} EUR
           </Price>
 
-          <Button onClick={handleClick}>MAKE A RESERVATION</Button>
+          <Button onClick={handleClick}>SEND RESERVATION ENQUIRE</Button>
         </WrapUp>
         <WrapDown>
           <WrapBox>

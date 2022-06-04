@@ -38,8 +38,9 @@ function AllWeeks({ handleLogOut, userEmail }) {
   const [dataSent, setDataSent] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [logedIn, setlogedIn] = useState(null);
-  const dbInstance = collection(database, "Charter");
-  const dbInstance2 = collection(database, "Charter");
+  const dbInstance = collection(database, "Charter2");
+  const dbInstance2 = collection(database, "Charter2");
+  const dbInstance4 = collection(database, "Charter3");
 
   auth.onAuthStateChanged((user) => {
     if (user) {
@@ -56,7 +57,7 @@ function AllWeeks({ handleLogOut, userEmail }) {
   useEffect(() => {
     let podaci = [];
     const getNotes = () => {
-      getDocs(dbInstance).then((data) => {
+      getDocs(dbInstance4).then((data) => {
         podaci = data.docs.map((item) => {
           return { ...item.data(), id: item.id };
         });
@@ -67,7 +68,7 @@ function AllWeeks({ handleLogOut, userEmail }) {
   }, []);
   const handleClick = (id) => {
     setIsOpen(true);
-    const docRef = doc(dbInstance2, id);
+    const docRef = doc(dbInstance4, id);
     getDoc(docRef).then((doc) => {
       setCijena(doc.data().cijena);
       setDatum(doc.data().datum);
@@ -79,7 +80,7 @@ function AllWeeks({ handleLogOut, userEmail }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log("sent", weekId);
-    const dataToUpdate = doc(dbInstance2, weekId);
+    const dataToUpdate = doc(dbInstance4, weekId);
 
     // Set the "capital" field of the city 'DC'
     updateDoc(dataToUpdate, {
@@ -93,10 +94,11 @@ function AllWeeks({ handleLogOut, userEmail }) {
       setIsOpen(false)
     );
   };
+
   useEffect(() => {
     let podaci = [];
     const getNotes = () => {
-      getDocs(dbInstance).then((data) => {
+      getDocs(dbInstance4).then((data) => {
         podaci = data.docs.map((item) => {
           return { ...item.data(), id: item.id };
         });

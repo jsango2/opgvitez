@@ -48,7 +48,8 @@ export const WrapSection = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 163px;
+  /* padding-top: 163px; */
+  overflow: hidden;
   /* background-image: url(${bg});
   background-position: center;
   background-size: cover; */
@@ -60,16 +61,10 @@ export const WrapSection = styled.div`
 export const Overlay = styled.div`
   position: absolute;
   height: 100%;
-  width: 988px;
-  background: linear-gradient(
-    0.93deg,
-    rgba(21, 31, 43, 0.245) 0.67%,
-    rgba(197, 223, 255, 0.325) 99.08%
-  );
+  width: 100%;
+  background: rgba(49, 59, 66, 0.3);
   backdrop-filter: blur(2px);
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
+
   z-index: 3;
 
   /* Note: backdrop-filter has minimal browser support */
@@ -89,6 +84,7 @@ export const Title = styled.h1`
   font-weight: 700;
   font-size: 55px;
   line-height: 120%;
+  margin-top: 163px;
   /* identical to box height, or 66px */
 
   text-align: center;
@@ -331,7 +327,7 @@ export const Button = styled.div`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 120%;
   /* identical to box height, or 24px */
 

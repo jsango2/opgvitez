@@ -16,6 +16,8 @@ import {
   Loading,
 } from "./style.js";
 import PriceComponent from "./priceComponent";
+import PulseLoader from "react-spinners/ClipLoader";
+import { Data } from "../data";
 
 function AllWeeks() {
   const [data, setData] = useState([]);
@@ -28,8 +30,10 @@ function AllWeeks() {
   const [selected, setSelected] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [logedIn, setlogedIn] = useState(null);
-  const dbInstance = collection(database, "Charter");
-  const dbInstance2 = collection(database, "Charter");
+  const dbInstance = collection(database, "Charter2");
+  const dbInstance2 = collection(database, "Charter2");
+  const dbInstance3 = collection(database, "Charter2");
+  const dbInstance4 = collection(database, "Charter3");
 
   auth.onAuthStateChanged((user) => {
     if (user) {
@@ -42,11 +46,23 @@ function AllWeeks() {
       setlogedIn(false);
     }
   });
+  // funkcija za batch zapis arraya u firestore sa zasebnim id-jem
+  // useEffect(() => {
+  //   Data.map((el) => {
+  //     addDoc(dbInstance4, {
+  //       datum: el.datum,
+  //       cijena: el.cijena,
+  //       free: el.free,
+  //       selected: false,
+  //       occupied: false,
+  //     });
+  //   });
+  // }, []);
 
   useEffect(() => {
     let podaci = [];
     const getNotes = () => {
-      getDocs(dbInstance).then((data) => {
+      getDocs(dbInstance4).then((data) => {
         setIsLoading(false);
         podaci = data.docs.map((item) => {
           return { ...item.data(), id: item.id };
@@ -59,7 +75,7 @@ function AllWeeks() {
 
   const handleClick = (id) => {
     setIsOpen(true);
-    const docRef = doc(dbInstance2, id);
+    const docRef = doc(dbInstance4, id);
     getDoc(docRef).then((doc) => {
       setCijena(doc.data().cijena);
       setDatum(doc.data().datum);
@@ -112,7 +128,12 @@ function AllWeeks() {
       />
       <Title>FREE BOOKING DATES</Title>
       {isLoading ? (
-        <Loading>LOADING...</Loading>
+        <PulseLoader
+          color="#68BFE2"
+          loading={isLoading}
+          // css={override}
+          size={35}
+        />
       ) : (
         <Wrap>
           {data.map((week) => (

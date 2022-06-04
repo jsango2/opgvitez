@@ -29,7 +29,7 @@ function Index() {
     <Layout>
       <SimpleReactLightbox>
         <Hero />
-        <Grid />
+        {/* <Grid /> */}
         <About />
         <BoatData />
         <AllWeeks />

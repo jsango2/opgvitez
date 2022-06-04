@@ -7,8 +7,20 @@ import Left from "../../images/marina/left.png";
 import Logo from "../../images/logo.png";
 import { Links } from "../Navigation/links.js";
 import { Anchor } from "nextjs-anchor";
+import Lottie from "lottie-react";
+import madeBySutra from "./madeBySutra";
 
 const Footer = () => {
+  const interactivity = {
+    mode: "scroll",
+    actions: [
+      {
+        visibility: [0, 1],
+        type: "play",
+        frames: [0, 92],
+      },
+    ],
+  };
   return (
     <HeroWrap id="contact">
       <WrapImage>
@@ -34,6 +46,14 @@ const Footer = () => {
         <br /> OIB: 51626896453 VAT ID: HR51626896453 <br />
         Petrčane ulica II 105, Hrvatska - 23 231 Petrčane
         <br /> MBS: 110113252 Tt-22/335-2
+        <div style={{ width: "300px", margin: "15px auto" }}>
+          <Lottie
+            animationData={madeBySutra}
+            interactivity={interactivity}
+            autoPlay={false}
+            loop={true}
+          />
+        </div>
       </Data>
     </HeroWrap>
   );

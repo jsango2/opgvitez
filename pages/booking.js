@@ -14,6 +14,7 @@ function Index() {
   const [logedIn, setlogedIn] = useState(null);
   const [userEmail, setUserEmail] = useState("User");
   const dbInstance = collection(database, "Charter");
+  const dbInstance4 = collection(database, "Charter3");
   const dbInstance2 = collection(database, "Charter");
 
   useEffect(() => {
@@ -31,7 +32,7 @@ function Index() {
     });
   }, [logedIn]);
 
-  const docRef = doc(dbInstance2, "8YzH6hSmMNqszVnzR8Nc");
+  // const docRef = doc(dbInstance2, "8YzH6hSmMNqszVnzR8Nc");
   // getDoc(docRef).then((doc) => console.log(doc));
 
   useEffect(() => {
@@ -59,7 +60,7 @@ function Index() {
   useEffect(() => {
     let podaci = [];
     const getNotes = () => {
-      getDocs(dbInstance).then((data) => {
+      getDocs(dbInstance4).then((data) => {
         podaci = data.docs.map((item) => {
           return { ...item.data(), id: item.id };
         });

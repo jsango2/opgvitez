@@ -78,7 +78,9 @@ export const Text = styled.p`
 
   /* Gray 2 */
 
-  color: #4f4f4f;
+  /* TAMNO PLAVA */
+
+  color: #0d3255;
   margin-bottom: 9px;
 
   @media only screen and (max-width: 600px) {
