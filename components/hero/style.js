@@ -71,7 +71,8 @@ export const Box = styled.div`
   @media only screen and (min-width: 1050px) {
     display: none;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    font-size: 14px;
   }
 `;
 export const OverlayMobile = styled.div`
@@ -219,9 +220,11 @@ export const Button = styled.div`
     box-shadow: 5px 5px 9px 1px #48849c;
   }
   @media only screen and (max-width: 1050px) {
+    font-size: 16px;
     width: 339px;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    font-size: 14px;
   }
 `;
 export const WrapValTitle = styled.div`

@@ -75,6 +75,7 @@ export const Button = styled.div`
     margin: 0 auto;
     background-color: white;
     color: #32bde3;
+    font-size: 16px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -93,7 +94,7 @@ export const WrapValTitle = styled.div`
     font-family: "Buenard";
     font-style: normal;
     font-weight: 700;
-    font-size: 55px;
+    font-size: 40px;
     line-height: 120%;
     /* identical to box height, or 66px */
 
@@ -126,7 +127,10 @@ export const WrapValTitle = styled.div`
       margin: 30px auto;
     }
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    p {
+      font-size: 14px;
+    }
   }
 `;
 export const ImageOverlay = styled.div`

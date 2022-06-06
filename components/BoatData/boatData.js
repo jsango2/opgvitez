@@ -32,7 +32,7 @@ import { useInView } from "react-intersection-observer";
 const BoatData = () => {
   const { ref, inView } = useInView({
     /* Optional options */
-    threshold: 0.3,
+    threshold: 0.1,
     // trigger inView function only once
     triggerOnce: true,
   });
@@ -73,7 +73,7 @@ const BoatData = () => {
             // width={500} automatically provided
             // height={500} automatically provided
             // blurDataURL="data:..." automatically provided
-            placeholder="blur" // Optional blur-up while loading
+            // Optional blur-up while loading
           />
         </BoatWrap>
         <TextWrap>
@@ -141,7 +141,7 @@ const BoatData = () => {
           <ValWrap>
             <Image src={Val} alt="Gallery" layout="fill" />
           </ValWrap>
-          BOAT EQUIPMENT
+          <h1>BOAT EQUIPMENT</h1>
         </BoatTitleWrap>
         <TextWrapDown>
           <WrapLeft>

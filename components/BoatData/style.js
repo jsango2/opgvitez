@@ -95,10 +95,20 @@ export const BoatTitleWrap = styled.div`
   color: #0d3255;
   margin-top: 65px;
   margin-left: 215px;
+
+  font-size: 55px;
+  h1 {
+    font-size: 55px;
+  }
+
   @media only screen and (max-width: 1050px) {
     width: 90%;
     text-align: center;
     margin: 120px 0 30px 0;
+    h1 {
+      text-align: center;
+      font-size: 40px;
+    }
   }
   @media only screen and (max-width: 420px) {
   }
@@ -139,9 +149,10 @@ export const TextWrap = styled.div`
   @media only screen and (max-width: 1050px) {
     height: auto;
     margin-left: 0%;
-    width: 90%;
+    width: 100%;
     h1 {
       text-align: center;
+      font-size: 40px;
     }
   }
 `;
@@ -165,7 +176,7 @@ export const DataWrap = styled.div`
   width: 85%;
   margin-bottom: 7px;
   @media only screen and (max-width: 1050px) {
-    width: 90%;
+    width: 100%;
     padding-left: 20px;
     margin: 0 auto;
   }
