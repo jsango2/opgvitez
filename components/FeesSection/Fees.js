@@ -17,6 +17,7 @@ import {
   BoatTitleWrap,
   WrapValTitle,
   WrapImage,
+  TextCompany,
 } from "./style.js";
 // import HeroVideo from "../../video/kraciVideo.mp4";
 import Image from "next/image";
@@ -85,11 +86,11 @@ const FeesSection = () => {
           </ValWrap>
           <h1>BOOKING COMPANY</h1>
         </WrapValTitle>
-        <Text>
+        <TextCompany>
           Master Yachting <br /> Mail address: office@masteryachting.hr
           <br /> Phone : Tel: +385 23 393 230 <br />
           Customers rate Master Yachting 8.3/10
-        </Text>
+        </TextCompany>
       </TextWrap>
       <WrapImage>
         <Image

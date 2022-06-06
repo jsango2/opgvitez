@@ -17,6 +17,7 @@ import {
   BoatTitleWrap,
   WrapDots,
   WrapWave,
+  WrapAllData,
 } from "./style.js";
 // import HeroVideo from "../../video/kraciVideo.mp4";
 import Image from "next/image";
@@ -25,8 +26,17 @@ import Boat from "../../images/boatData/BoatInside.png";
 import Val from "../../images/boatData/val.svg";
 import ValBijeli from "../../images/boatData/valoviBijeli.svg";
 import Dots from "../../images/boatData/dotsBlue.svg";
+import { useScrollPercentage } from "react-scroll-percentage";
+import { useInView } from "react-intersection-observer";
 
 const BoatData = () => {
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0.3,
+    // trigger inView function only once
+    triggerOnce: true,
+  });
+
   const getDates = (startDate, endDate) => {
     //first the function and variable definitions
     let dates = [];
@@ -52,54 +62,10 @@ const BoatData = () => {
   // console.log(getDates(new Date("2020-04-01"), new Date("2020-11-03")));
 
   return (
-    <HeroWrap id="boatData">
+    <HeroWrap id="boatData" ref={ref}>
       <Up>
         {" "}
-        <TextWrap>
-          <ValWrap>
-            <Image src={Val} alt="Gallery" layout="fill" />
-          </ValWrap>
-          <h1>SUMMER BREEZE</h1>
-          <DataWrap>
-            <Property>Length</Property>
-            <Data>46 ft / 14 m</Data>
-          </DataWrap>
-          <DataWrap>
-            <Property>Draught</Property>
-            <Data>4 ft / 1,2 m</Data>
-          </DataWrap>
-          <DataWrap>
-            <Property>Displacement</Property>
-            <Data>15.500 kg</Data>
-          </DataWrap>{" "}
-          <DataWrap>
-            <Property>Berths</Property>
-            <Data>12 (8+2+1+1)</Data>
-          </DataWrap>{" "}
-          <DataWrap>
-            <Property>Cabins</Property>
-            <Data>6 (4 Double + Saloon + 1 Skipper)</Data>
-          </DataWrap>{" "}
-          <DataWrap>
-            <Property>WC / Shower</Property>
-            <Data>4</Data>
-          </DataWrap>{" "}
-          <div style={{ height: "30px" }}></div>
-          <DataWrap>
-            <Property>Engine</Property>
-            <Data>2x57 HP Yanmar</Data>
-          </DataWrap>{" "}
-          <DataWrap>
-            <Property>Fuel capacity</Property>
-            <Data>1000,00 l</Data>
-          </DataWrap>
-          <DataWrap>
-            <Property>Water capacity</Property>
-            <Data>700,00 l</Data>
-          </DataWrap>
-          <Download>Download the boat brochure</Download>
-        </TextWrap>
-        <BoatWrap>
+        <BoatWrap inView={inView}>
           <Image
             src={Boat}
             alt="Gallery"
@@ -110,6 +76,53 @@ const BoatData = () => {
             placeholder="blur" // Optional blur-up while loading
           />
         </BoatWrap>
+        <TextWrap>
+          <ValWrap>
+            <Image src={Val} alt="Gallery" layout="fill" />
+          </ValWrap>
+          <h1>SUMMER BREEZE</h1>
+          <WrapAllData>
+            <DataWrap>
+              <Property>Length</Property>
+              <Data>46 ft / 14 m</Data>
+            </DataWrap>
+            <DataWrap>
+              <Property>Draught</Property>
+              <Data>4 ft / 1,2 m</Data>
+            </DataWrap>
+            <DataWrap>
+              <Property>Displacement</Property>
+              <Data>15.500 kg</Data>
+            </DataWrap>{" "}
+            <DataWrap>
+              <Property>Berths</Property>
+              <Data>12 (8+2+1+1)</Data>
+            </DataWrap>{" "}
+            <DataWrap>
+              <Property>Cabins</Property>
+              <Data>6 (4 Double + Saloon + 1 Skipper)</Data>
+            </DataWrap>{" "}
+            <DataWrap>
+              <Property>WC / Shower</Property>
+              <Data>4</Data>
+            </DataWrap>{" "}
+            <div style={{ height: "30px" }}></div>
+            <DataWrap>
+              <Property>Engine</Property>
+              <Data>2x57 HP Yanmar</Data>
+            </DataWrap>{" "}
+            <DataWrap>
+              <Property>Fuel capacity</Property>
+              <Data>1000,00 l</Data>
+            </DataWrap>
+            <DataWrap>
+              <Property>Water capacity</Property>
+              <Data>700,00 l</Data>
+            </DataWrap>
+          </WrapAllData>
+
+          <Download>Download the boat brochure</Download>
+        </TextWrap>
         <WrapDots>
           <Image
             src={Dots}

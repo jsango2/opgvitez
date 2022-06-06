@@ -15,16 +15,15 @@ import SimpleReactLightbox from "simple-react-lightbox";
 import Marina from "../components/MarinaSection/Marina";
 import Sights from "../components/Sights/Sights";
 import Footer from "../components/Footer/Footer";
-function Profile() {
-  if (error) return <div>failed to load</div>;
-  if (!data) return <div>loading...</div>;
-  return <div>hello {data.name}!</div>;
-}
+// function Profile() {
+//   if (error) return <div>failed to load</div>;
+//   if (!data) return <div>loading...</div>;
+//   return <div>hello {data.name}!</div>;
+// }
 
 function Index() {
   const { locale, locales, asPath } = useRouter();
 
-  // console.log(blogPosts);
   return (
     <Layout>
       <SimpleReactLightbox>

@@ -12,7 +12,8 @@ export const Wrap = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   z-index: 4;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 850px) {
+    width: 100%;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -34,15 +35,16 @@ export const WrapPrice = styled.div`
 
   color: #f2f2f2;
   width: 759px;
-  height: 150px;
-  @media only screen and (max-width: 600px) {
+  height: auto;
+  @media only screen and (max-width: 750px) {
+    margin-top: 0px;
   }
   @media only screen and (max-width: 420px) {
   }
 `;
 export const WrapSection = styled.div`
   position: relative;
-  height: 1082px;
+  height: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -53,6 +55,7 @@ export const WrapSection = styled.div`
   /* background-image: url(${bg});
   background-position: center;
   background-size: cover; */
+  padding-bottom: 80px;
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
@@ -93,6 +96,7 @@ export const Title = styled.h1`
   z-index: 4;
   color: #0d3255;
   @media only screen and (max-width: 600px) {
+    font-size: 40px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -157,7 +161,8 @@ export const WrapUp = styled.div`
   /* background-image: url(${bg});
   background-position: center;
   background-size: cover; */
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 750px) {
+    flex-direction: column;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -208,7 +213,8 @@ export const Line = styled.div`
   /* background-image: url(${bg});
   background-position: center;
   background-size: cover; */
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 750px) {
+    display: none;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -230,7 +236,8 @@ export const WrapBox = styled.div`
   /* background-image: url(${bg});
   background-position: center;
   background-size: cover; */
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 450px) {
+    margin: 0 5px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -272,7 +279,8 @@ export const Box = styled.div`
   /* background-image: url(${bg});
   background-position: center;
   background-size: cover; */
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 450px) {
+    width: 39px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -293,7 +301,8 @@ export const PriceFrom = styled.h4`
   /* background-image: url(${bg});
   background-position: center;
   background-size: cover; */
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 750px) {
+    display: none;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -310,7 +319,22 @@ export const Price = styled.div`
   margin-left: 5px;
   margin-right: 35px;
   color: #f2f2f2;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 750px) {
+    margin: 0 0 30px 0;
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const OverlayBlur = styled.div`
+  position: absolute;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  /* padding: 10px; */
+  background: rgb(94 93 93 / 50%);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
+  @media only screen and (max-width: 750px) {
   }
   @media only screen and (max-width: 420px) {
   }
@@ -318,15 +342,25 @@ export const Price = styled.div`
 export const Alert = styled.div`
   position: absolute;
   z-index: 6;
-  color: red;
-  font-size: 40px;
+  color: #0d3255;
+  width: 600px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: white;
+  /* border: 1px solid darkblue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
   font-weight: 700;
   text-align: center;
-  top: 448px;
+  top: 50%;
   left: 50%;
-  -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  transform: translate(-50%, 0);
+  padding: 20px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.65);
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {

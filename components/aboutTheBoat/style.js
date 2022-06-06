@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 export const HeroWrap = styled.div`
   position: relative;
-  height: 682px;
+  height: 715px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,8 @@ export const HeroWrap = styled.div`
   padding-left: 210px;
   overflow: hidden;
   z-index: 0;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1050px) {
+    padding-left: 0;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -34,9 +35,10 @@ export const WrapDots = styled.div`
   position: absolute;
   height: 145px;
   width: 372px;
-  right: -50px;
-  bottom: 30px;
-  @media only screen and (max-width: 600px) {
+  left: -50px;
+  top: 130px;
+  @media only screen and (max-width: 1050px) {
+    display: none;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -69,16 +71,24 @@ export const Button = styled.div`
     -webkit-box-shadow: 5px 5px 9px 1px #48849c;
     box-shadow: 5px 5px 9px 1px #48849c;
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1050px) {
+    margin: 0 auto;
+    background-color: white;
+    color: #32bde3;
   }
   @media only screen and (max-width: 420px) {
   }
 `;
 export const WrapValTitle = styled.div`
   position: relative;
-  height: auto;
-  width: 600px;
-  margin-top: 50px;
+  z-index: 7;
+  height: 570px;
+  width: 700px;
+  margin: 0px 0 0 auto;
+  background: rgba(0, 62, 82, 0.66);
+  background-blend-mode: multiply;
+  padding-top: 47px;
+  padding-left: 92px;
   h1 {
     font-family: "Buenard";
     font-style: normal;
@@ -93,10 +103,46 @@ export const WrapValTitle = styled.div`
     margin: 0;
   }
   p {
-    width: 338px;
+    width: 368px;
     margin: 30px 0;
+    font-family: "Avenir Next";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+
+    /* bilo */
+
+    color: #ffffff;
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1050px) {
+    background: none;
+    padding-left: 0;
+    text-align: center;
+    margin: 0 auto;
+    width: auto;
+    p {
+      margin: 30px auto;
+    }
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const ImageOverlay = styled.div`
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(3, 88, 101, 0.61) 0%,
+    rgba(3, 88, 101, 0) 96.08%
+  );
+  background-blend-mode: multiply;
+
+  @media only screen and (min-width: 1050px) {
+    display: none;
   }
   @media only screen and (max-width: 420px) {
   }

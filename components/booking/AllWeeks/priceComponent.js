@@ -19,6 +19,7 @@ import {
   Occupied,
   Selected,
   Alert,
+  OverlayBlur,
 } from "./style.js";
 
 function PriceComponent({ price, data }) {
@@ -28,7 +29,11 @@ function PriceComponent({ price, data }) {
   // console.log("isOpen?", isModalOpen);
 
   const handleClick = () => {
-    setIsModalOpen((old) => !old);
+    if (dates.length >= 5) {
+      console.log("too many weeks");
+    } else {
+      setIsModalOpen((old) => !old);
+    }
   };
   const handleModalOpen = () => {
     setIsModalOpen((old) => !old);
@@ -51,17 +56,21 @@ function PriceComponent({ price, data }) {
   }, [data]);
   return (
     <>
-      {isModalOpen && (
+      {isModalOpen && <OverlayBlur />}
+      {isModalOpen && dates.length < 5 ? (
         <ReservationModal
           handleClick={handleClick}
           price={price}
           datum={dates}
           handleModalOpen={handleModalOpen}
         />
+      ) : (
+        ""
       )}
       {isMessageSentAlert && (
         <Alert>
           RESERVATION ENQUIRE SENT. <br />
+          <br />
           We will get back to you as soon as possible
         </Alert>
       )}

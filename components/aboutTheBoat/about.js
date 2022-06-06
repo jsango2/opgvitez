@@ -1,26 +1,50 @@
-import { HeroWrap, ValWrap, WrapValTitle, Button, WrapDots } from "./style.js";
+import {
+  HeroWrap,
+  ValWrap,
+  WrapValTitle,
+  Button,
+  WrapDots,
+  ImageOverlay,
+} from "./style.js";
 // import HeroVideo from "../../video/kraciVideo.mp4";
 import Image from "next/image";
 import Cover from "../../images/about the boat/cover.png";
+import Mobile from "../../images/about the boat/mobile3.jpeg";
 import Valovi from "../../images/about the boat/val.svg";
 import Val from "../../images/boatData/valBijeli.svg";
+import { useScrollPercentage } from "react-scroll-percentage";
+import useWindowSize from "../useWindowSize.js";
 
 const About = () => {
+  const size = useWindowSize();
+  const [ref, percentage] = useScrollPercentage({
+    /* Optional options */
+    threshold: 0,
+  });
+  // console.log(`Percentage scrolled: ${percentage * 100}%.`);
   return (
-    <HeroWrap id="about">
+    <HeroWrap id="about" ref={ref}>
+      <ImageOverlay />
       <Image
-        src={Cover}
+        src={size.width > 1050 ? Cover : Mobile}
         alt="Cover photo"
         layout="fill"
+        priority
+        objectFit="cover"
+        objectPosition={
+          size.width > 1050
+            ? `0% ${percentage * 50}% `
+            : `0% ${percentage * 20 + 20}% `
+        }
         // width={500} automatically provided
         // height={500} automatically provided
         // blurDataURL="data:..." automatically provided
         // placeholder="blur" // Optional blur-up while loading
       />
       <WrapValTitle>
-        <ValWrap>
+        {/* <ValWrap>
           <Image src={Val} alt="Gallery" layout="fill" />
-        </ValWrap>
+        </ValWrap> */}
         <h1>ABOUT THE BOAT</h1>
         <p>
           The fully equipped Lagoon 450F saw the light in 2018. Ever since it

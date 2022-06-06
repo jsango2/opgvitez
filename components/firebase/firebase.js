@@ -4,7 +4,7 @@ import { getFirestore } from "firebase/firestore";
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAzeWc9QzCaXrdlzsNoeB_j0My-bEop8ok",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "charterbooking-10868.firebaseapp.com",
   databaseURL:
     "https://charterbooking-10868-default-rtdb.europe-west1.firebasedatabase.app",

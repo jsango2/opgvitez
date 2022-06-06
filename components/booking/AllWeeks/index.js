@@ -23,6 +23,7 @@ function AllWeeks() {
   const [data, setData] = useState([]);
   const [selectedWeeks, setSelectedWeeks] = useState([]);
   const [suma, setSuma] = useState(0);
+  const [length, setLength] = useState(0);
   const [datum, setDatum] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [cijena, setCijena] = useState(0);
@@ -81,7 +82,7 @@ function AllWeeks() {
       setDatum(doc.data().datum);
     });
   };
-
+  //zbroji eure svih tjedana
   useEffect(() => {
     let sum = 0;
     data.map((object) => {
@@ -91,7 +92,7 @@ function AllWeeks() {
     });
     setSuma(sum);
   }, [data]);
-
+  //idi kroz array nakon svakog klika tjedna i promjeni state selected u true
   const handleMarker = (id) => {
     const newState = data.map((obj) => {
       // 👇️ if id equals 2, update country property
@@ -104,9 +105,17 @@ function AllWeeks() {
       // 👇️ otherwise return object as is
       return obj;
     });
+    //provjeri broj odabranih tjedana i dozvoli max 6 selected
     setData(newState);
+    let leng = [];
+    newState.map((e) => {
+      if (e.selected === true) {
+        leng.push(e);
+      }
+    });
+    setLength(leng.length);
+    console.log(length);
   };
-
   function insert(str, value) {
     let position = str.length - 3;
     if (str.length <= 3) {
@@ -147,44 +156,13 @@ function AllWeeks() {
               marked={week.selected}
               handleClick={() => handleClick(week.id)}
               handleMarker={() => handleMarker(week.id)}
+              length={length}
             />
           ))}
         </Wrap>
       )}
 
       <PriceComponent price={insert(suma.toString(), ".")} data={data} />
-
-      {/* {isOpen && (
-        <PopupForm>
-          <form>
-            <input
-              name="datum"
-              type="text"
-              value={datum}
-              onChange={(event) => setDatum(event.target.value)}
-            />
-            <br />
-
-            <input
-              name="cijena"
-              type="number"
-              value={cijena}
-              onChange={(event) => setCijena(event.target.value)}
-            />
-            <br />
-
-            <select
-              name="Free"
-              type="select"
-              value={free}
-              onChange={(event) => setFree(event.target.value)}
-            >
-              <option value="Free">Free</option>
-              <option value="Booked">Booked</option>
-            </select>
-          </form>
-        </PopupForm>
-      )} */}
     </WrapSection>
   );
 }

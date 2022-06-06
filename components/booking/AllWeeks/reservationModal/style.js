@@ -82,7 +82,19 @@ export const WrapSection = styled.div`
 
     color: #ffffff;
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 750px) {
+    width: 90%;
+    min-width: 340px;
+    max-width: 580px;
+    input,
+    textarea,
+    button,
+    form {
+      width: 90%;
+    }
+    button {
+      font-size: 14px;
+    }
   }
   @media only screen and (max-width: 420px) {
   }

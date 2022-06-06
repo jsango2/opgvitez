@@ -14,6 +14,7 @@ export const WeekWrap = styled.div`
   margin: 11px;
   cursor: pointer;
   pointer-events: ${(props) => (props.isFree ? "auto " : "none")};
+  /* pointer-events: ${(props) => (props.length < 5 ? "auto " : "none")}; */
   transition: all 0.2s ease-in-out;
   border-radius: 5px;
   &:hover {
@@ -21,6 +22,8 @@ export const WeekWrap = styled.div`
     box-shadow: 5px 5px 9px 1px #48849c;
   }
   @media only screen and (max-width: 600px) {
+    margin: 5px;
+    width: 115px;
   }
   @media only screen and (max-width: 420px) {
   }

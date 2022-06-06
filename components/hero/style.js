@@ -16,7 +16,9 @@ export const HeroWrap = styled.div`
   padding-left: 215px;
   overflow: hidden;
   z-index: 0;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1050px) {
+    height: 100vh;
+    padding-left: 0;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -46,7 +48,80 @@ export const ValWrap = styled.div`
   height: 70px;
   width: 200px;
   left: -250px;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1050px) {
+    display: none;
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const Box = styled.div`
+  position: relative;
+  height: 33vh;
+  width: 100%;
+  background: #035865;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  @media only screen and (min-width: 1050px) {
+    display: none;
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const OverlayMobile = styled.div`
+  position: relative;
+  z-index: 7;
+  height: 16vh;
+  min-height: 115px;
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(3, 88, 101, 0.61) 0%,
+    rgba(3, 88, 101, 0) 96.08%
+  );
+  background-blend-mode: multiply;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  @media only screen and (min-width: 1050px) {
+    display: none;
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const MobileCTA = styled.div`
+  position: relative;
+  height: auto;
+  width: 100%;
+  margin-top: auto;
+  h1 {
+    font-family: "Buenard";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 120%;
+    /* identical to box height, or 66px */
+
+    /* TAMNO PLAVA */
+
+    color: #ffffff;
+    margin: 25px;
+    text-align: center;
+  }
+  @media only screen and (min-width: 1050px) {
+    display: none;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -89,7 +164,8 @@ export const Overlay = styled.div`
       font-weight: 700;
     }
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1050px) {
+    display: none;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -100,7 +176,13 @@ export const WrapDots = styled.div`
   width: 450px;
   right: -150px;
   top: 200px;
-  @media only screen and (max-width: 600px) {
+  transition: all 2.5s ease-out;
+
+  transform: ${(props) =>
+    props.inView ? `translate(0px, 0px) ` : `translate(80px,0px)`};
+  opacity: ${(props) => (props.inView ? `1` : `0`)};
+  @media only screen and (max-width: 1050px) {
+    display: none;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -136,7 +218,8 @@ export const Button = styled.div`
     -webkit-box-shadow: 5px 5px 9px 1px #48849c;
     box-shadow: 5px 5px 9px 1px #48849c;
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1050px) {
+    width: 339px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -163,7 +246,8 @@ export const WrapValTitle = styled.div`
     width: 338px;
     margin: 30px 0;
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1050px) {
+    display: none;
   }
   @media only screen and (max-width: 420px) {
   }

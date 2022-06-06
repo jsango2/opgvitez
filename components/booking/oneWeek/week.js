@@ -14,6 +14,7 @@ const Week = ({
   //   handleSelect,
   handleMarker,
   marked,
+  length,
 }) => {
   //   const [selected, setSelected] = useState(false);
 
@@ -38,6 +39,7 @@ const Week = ({
         handleMarker();
       }}
       selected={selected}
+      length={length}
     >
       <Date>{datum}</Date>
       <Price>{cijena} EUR</Price>

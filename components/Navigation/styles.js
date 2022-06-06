@@ -11,6 +11,7 @@ export const NavbarWrap = styled.div`
   @media screen and (max-width: 1050px) {
     width: 100vw;
     padding-right: 40px;
+    height: 0;
   }
 `;
 export const LogoWrap = styled.div`
@@ -53,7 +54,8 @@ export const Hamburger = styled.div`
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  @media screen and (min-width: 1001px) {
+  top: 27px;
+  @media screen and (min-width: 1050px) {
     display: none;
   }
   @media screen and (max-width: 400px) {
@@ -97,7 +99,7 @@ export const LineX2 = styled.div`
 export const Line = styled.div`
   height: 3px;
   width: 23px;
-  background-color: #32bde3;
+  background-color: white;
   @media screen and (max-width: 1000px) {
     /* display: none; */
   }

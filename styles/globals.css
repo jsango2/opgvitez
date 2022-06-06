@@ -10,6 +10,7 @@ body {
   background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0 !important;
 }
 html {
   font-family: "Montserrat", sans-serif;
@@ -532,4 +533,58 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    transform: scale(0);
+
+    opacity: 0;
+  }
+  85% {
+    transform: scale(1.05);
+
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  85% {
+    transform: scale(1.05);
+
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+
+    opacity: 1;
+  }
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.formBottomAnimationNone {
+  display: none;
+}
+.formBottomAnimation {
+  animation: FadeIn 1.5s ease-out;
+  animation-fill-mode: both;
 }

@@ -30,47 +30,15 @@ class ReservationModal extends React.Component {
     });
     this.setState({ ...this.state, datum: datumi.toString() });
   }
-  // const [data, setData] = useState([]);
-  // const [formData, setFormData] = useState([]);
-  // const [selectedWeeks, setSelectedWeeks] = useState([]);
-  // const [suma, setSuma] = useState(0);
-  // const [cijena, setCijena] = useState(0);
-  // const [email, setEmail] = useState("");
-  // const [message, setMessage] = useState();
-  // const [free, setFree] = useState("Free");
-  // const [selected, setSelected] = useState(false);
-  // const [isOpen, setIsOpen] = useState(false);
-  // const [logedIn, setlogedIn] = useState(null);
   handleSubmit = (e) => {
-    // dataLayer.push({ event: "PRO form bottom submitted" })
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state }),
     }).then((res) => {
       this.props.handleModalOpen();
-      // this.setState({ showModal: true });
-      // window.dataLayer.push({
-      //   event: "PRO form top submitted",
-      //   // custom event params
-      // });
+
       console.log("submitted");
-      // setTimeout(() => {
-      //   this.setState({ thanks: true });
-      // }, 500);
-      // setTimeout(() => {
-      //   this.setState({
-      //     ime: "",
-      //     email: "",
-      //     brojTelefona: "",
-      //     imeObjekta: "",
-      //     showModal: false,
-      //     thanks: false,
-      //     brojJedinica: "",
-      //     mjesto: "",
-      //     sustav: "",
-      //   });
-      // }, 10000);
     });
 
     e.preventDefault();
