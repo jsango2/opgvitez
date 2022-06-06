@@ -70,6 +70,7 @@ const BoatData = () => {
             src={Boat}
             alt="Gallery"
             layout="fill"
+            objectFit="cover"
             // width={500} automatically provided
             // height={500} automatically provided
             // blurDataURL="data:..." automatically provided

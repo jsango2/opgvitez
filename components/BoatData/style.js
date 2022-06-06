@@ -76,7 +76,9 @@ export const BoatWrap = styled.div`
     transform: rotate(0);
     right: 0%;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    width: 80vw;
+    height: 140vw;
   }
 `;
 export const BoatTitleWrap = styled.div`
@@ -198,7 +200,8 @@ export const Property = styled.h3`
   @media only screen and (max-width: 1050px) {
     margin-right: 40px;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    font-size: 14px;
   }
 `;
 export const Text = styled.h3`
@@ -215,7 +218,8 @@ export const Text = styled.h3`
   margin-bottom: 20px;
   @media only screen and (max-width: 600px) {
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    font-size: 14px;
   }
 `;
 export const Download = styled.h3`
@@ -256,7 +260,8 @@ export const Data = styled.h2`
   color: #4f4f4f;
   @media only screen and (max-width: 600px) {
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    font-size: 14px;
   }
 `;
 export const Title = styled.h2`
@@ -274,7 +279,8 @@ export const Title = styled.h2`
 
   @media only screen and (max-width: 600px) {
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    font-size: 15px;
   }
 `;
 export const Down = styled.div`

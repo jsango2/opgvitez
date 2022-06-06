@@ -225,6 +225,7 @@ export const Button = styled.div`
   }
   @media only screen and (max-width: 450px) {
     font-size: 14px;
+    width: 259px;
   }
 `;
 export const WrapValTitle = styled.div`

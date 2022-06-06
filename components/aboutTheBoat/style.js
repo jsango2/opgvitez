@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 export const HeroWrap = styled.div`
   position: relative;
-  height: 715px;
+  height: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -15,10 +15,12 @@ export const HeroWrap = styled.div`
   padding-left: 210px;
   overflow: hidden;
   z-index: 0;
+  padding: 100px 0;
   @media only screen and (max-width: 1050px) {
     padding-left: 0;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    padding: 65px 0;
   }
 `;
 export const ValWrap = styled.div`
@@ -83,13 +85,14 @@ export const Button = styled.div`
 export const WrapValTitle = styled.div`
   position: relative;
   z-index: 7;
-  height: 570px;
+  height: auto;
   width: 700px;
   margin: 0px 0 0 auto;
   background: rgba(0, 62, 82, 0.66);
   background-blend-mode: multiply;
   padding-top: 47px;
   padding-left: 92px;
+  padding-bottom: 50px;
   h1 {
     font-family: "Buenard";
     font-style: normal;
@@ -104,7 +107,7 @@ export const WrapValTitle = styled.div`
     margin: 0;
   }
   p {
-    width: 368px;
+    width: 80%;
     margin: 30px 0;
     font-family: "Avenir Next";
     font-style: normal;

@@ -130,6 +130,7 @@ function AllWeeks() {
         src={bg}
         alt="booking"
         layout="fill"
+        objectFit="cover"
         // width={500} automatically provided
         // height={500} automatically provided
         // blurDataURL="data:..." automatically provided
