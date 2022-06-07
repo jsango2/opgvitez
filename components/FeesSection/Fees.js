@@ -80,6 +80,7 @@ const FeesSection = () => {
             </li>
           </ul>
         </Text>
+        <div style={{ height: "50px" }}></div>
         <WrapValTitle>
           <ValWrap>
             <Image src={Val} alt="Gallery" layout="fill" />

@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 export const HeroWrap = styled.div`
   position: relative;
-  height: 1954px;
+  height: auto;
   width: 100%;
   top: -1px;
   overflow: hidden;
@@ -16,9 +16,14 @@ export const HeroWrap = styled.div`
     #1e7ca4 100%
   );
   padding-top: 123px;
-  padding-left: 88px;
+  padding-bottom: 70px;
+  /* padding-left: 88px; */
 
   /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
@@ -61,6 +66,7 @@ export const Title = styled.h2`
   margin-bottom: 109px;
 
   @media only screen and (max-width: 600px) {
+    font-size: 40px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -107,9 +113,13 @@ export const WrapImage = styled.div`
   width: 235px;
   margin: 7px;
   cursor: pointer;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
+    height: 116px;
+    width: 116px;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 365px) {
+    height: 100px;
+    width: 100px;
   }
 `;
 
@@ -117,7 +127,7 @@ export const WrapGallery = styled.div`
   position: relative;
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: center;
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {

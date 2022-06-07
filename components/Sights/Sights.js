@@ -34,7 +34,7 @@ const Sights = () => {
   };
   return (
     <HeroWrap>
-      <Title>JUST 2 HOURS AWAY OF SAILING ALONG FROM THE MARINA.</Title>
+      <Title>JUST TWO HOURS FROM MARINA</Title>
       <WrapImages>
         <SRLWrapper options={options}>
           <div
@@ -53,6 +53,7 @@ const Sights = () => {
                   src={image.photo}
                   alt={image.id}
                   layout="fill"
+                  objectFit="cover"
                   // width={500} automatically provided
                   // height={500} automatically provided
                   // blurDataURL="data:..." automatically provided

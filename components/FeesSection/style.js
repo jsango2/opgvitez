@@ -17,12 +17,16 @@ export const HeroWrap = styled.div`
       #1e7ca4 100%
     )
     /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-  padding: 90px 0;
+  padding: 30px 0 90px 0;
+
   @media only screen and (max-width: 1050px) {
+    padding: 90px 0 90px 0;
+
     justify-content: center;
     align-items: center;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    padding: 90px 0 30px 0;
   }
 `;
 export const TextWrap = styled.div`
@@ -42,6 +46,9 @@ export const TextWrap = styled.div`
     /* TAMNO PLAVA */
 
     color: #ffffff;
+  }
+  @media only screen and (max-width: 1350px) {
+    margin-left: 15%;
   }
   @media only screen and (max-width: 1050px) {
     margin: 0;
@@ -86,6 +93,8 @@ export const Text = styled.div`
   }
   @media only screen and (max-width: 600px) {
     width: 100%;
+    font-size: 14px;
+    margin-bottom: 46px;
   }
 `;
 export const TextCompany = styled(Text)`
@@ -113,23 +122,30 @@ export const WrapValTitle = styled.div`
   position: relative;
   height: auto;
   width: 400px;
-  h1 {
-    text-align: center;
-  }
+
   @media only screen and (max-width: 600px) {
+    width: 100%;
+
+    h1 {
+      font-size: 40px;
+      text-align: center;
+    }
   }
   @media only screen and (max-width: 420px) {
   }
 `;
 export const WrapImage = styled.div`
   position: absolute;
-  height: 845px;
-  width: 607px;
+  height: 900px;
+  width: 45%;
+  max-width: 600px;
   right: 0;
   top: 190px;
 
   object-fit: cover;
-
+  @media only screen and (max-width: 1350px) {
+    width: 40%;
+  }
   @media only screen and (max-width: 1050px) {
     display: none;
   }

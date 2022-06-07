@@ -64,7 +64,8 @@ function AllWeeks() {
     let podaci = [];
     const getNotes = () => {
       getDocs(dbInstance4).then((data) => {
-        setIsLoading(false);
+        // console.log(data.docs.length);
+        data.docs.length !== 0 ? setIsLoading(false) : setIsLoading(true);
         podaci = data.docs.map((item) => {
           return { ...item.data(), id: item.id };
         });
@@ -114,7 +115,6 @@ function AllWeeks() {
       }
     });
     setLength(leng.length);
-    console.log(length);
   };
   function insert(str, value) {
     let position = str.length - 3;
@@ -138,12 +138,10 @@ function AllWeeks() {
       />
       <Title>FREE BOOKING DATES</Title>
       {isLoading ? (
-        <PulseLoader
-          color="#68BFE2"
-          loading={isLoading}
-          // css={override}
-          size={35}
-        />
+        <>
+          <Loading>LOADING...</Loading>
+          <div className="animatedLine"></div>
+        </>
       ) : (
         <Wrap>
           {data.map((week) => (

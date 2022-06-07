@@ -9,18 +9,21 @@ import {
   BoatTitleWrap,
   WrapValTitle,
   WrapImages,
-  WrapImage,
+  WrapImageL,
+  WrapImageR,
 } from "./style.js";
 // import HeroVideo from "../../video/kraciVideo.mp4";
 import Image from "next/image";
 import Left from "../../images/marina/left.png";
 import Right from "../../images/marina/right.png";
+import useWindowSize from "../useWindowSize.js";
 const Marina = () => {
+  const size = useWindowSize();
   return (
     <HeroWrap id="marina">
       <Title>MARINA INFORMATION</Title>
       <WrapImages>
-        <WrapImage>
+        <WrapImageL>
           <Image
             src={Left}
             alt="Marina one"
@@ -29,9 +32,10 @@ const Marina = () => {
             // height={500} automatically provided
             // blurDataURL="data:..." automatically provided
             placeholder="blur" // Optional blur-up while loading
+            objectFit="cover"
           />
-        </WrapImage>
-        <WrapImage>
+        </WrapImageL>
+        <WrapImageR>
           <Image
             src={Right}
             alt="Marina two"
@@ -41,7 +45,7 @@ const Marina = () => {
             // blurDataURL="data:..." automatically provided
             placeholder="blur" // Optional blur-up while loading
           />
-        </WrapImage>
+        </WrapImageR>
       </WrapImages>
       <WrapText>
         <Text>
@@ -67,7 +71,11 @@ const Marina = () => {
           parking. Parking fees are 10 € per day, or 70 € per week.
         </Text>
       </WrapText>
-      <Button>THE MARINA ON GOOGLE MAPS</Button>
+      {size.width > 600 ? (
+        <Button>THE MARINA ON GOOGLE MAPS</Button>
+      ) : (
+        <Button>GOOGLE MAPS</Button>
+      )}
     </HeroWrap>
   );
 };

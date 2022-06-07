@@ -78,7 +78,13 @@ const PhotoGallery = () => {
           </WrapImage>
         ))} */}
         <SRLWrapper options={options}>
-          <div style={{ display: "flex", flexWrap: "wrap" }}>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
             {Images.map((image) => (
               <WrapImage
                 key={image.in}

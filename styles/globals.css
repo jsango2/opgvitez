@@ -588,3 +588,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   animation: FadeIn 1.5s ease-out;
   animation-fill-mode: both;
 }
+.animatedLine {
+  position: relative;
+  z-index: 7;
+  animation: AnimateLine 3.5s ease-out;
+  animation-iteration-count: infinite;
+  background-color: white;
+  height: 2px;
+}
+@keyframes AnimateLine {
+  0% {
+    width: 0px;
+  }
+
+  50% {
+    width: 300px;
+  }
+  100% {
+    width: 0px;
+  }
+}

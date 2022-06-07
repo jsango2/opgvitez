@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 export const HeroWrap = styled.div`
   position: relative;
-  height: 1176px;
+  height: auto;
   width: 100%;
   padding-top: 86px;
   background: linear-gradient(
@@ -15,7 +15,7 @@ export const HeroWrap = styled.div`
     rgba(137, 219, 238, 0) 67.05%
   );
   overflow: hidden;
-
+  padding-bottom: 70px;
   @media only screen and (max-width: 420px) {
   }
 `;
@@ -23,17 +23,31 @@ export const WrapImages = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1050px) {
   }
   @media only screen and (max-width: 420px) {
   }
 `;
-export const WrapImage = styled.div`
+export const WrapImageL = styled.div`
   position: relative;
   width: 671px;
   height: 480px;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+    height: 74vw;
+    max-height: 500px;
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const WrapImageR = styled.div`
+  position: relative;
+  width: 671px;
+  height: 480px;
+
+  @media only screen and (max-width: 1050px) {
+    display: none;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -66,7 +80,8 @@ export const Button = styled.div`
   color: #0d3255;
   @media only screen and (max-width: 600px) {
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    width: 80%;
   }
 `;
 export const TextWrap = styled.div`
@@ -108,6 +123,7 @@ export const Title = styled.h2`
   margin-bottom: 80px;
   text-align: center;
   @media only screen and (max-width: 600px) {
+    font-size: 40px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -118,7 +134,8 @@ export const WrapText = styled.div`
   align-items: center;
   justify-content: space-around;
   width: 80%;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1050px) {
+    flex-direction: column;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -138,40 +155,10 @@ export const Text = styled.p`
 
   color: #0d3255;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    font-size: 14px;
   }
 `;
-// export const ValWrap = styled.div`
-//   position: absolute;
-//   height: 70px;
-//   width: 200px;
-//   left: -250px;
-//   @media only screen and (max-width: 600px) {
-//   }
-//   @media only screen and (max-width: 420px) {
-//   }
-// `;
-// export const WrapValTitle = styled.div`
-//   position: relative;
-//   height: auto;
-//   width: 400px;
-
-//   @media only screen and (max-width: 600px) {
-//   }
-//   @media only screen and (max-width: 420px) {
-//   }
-// `;
-// export const WrapImage = styled.div`
-//   position: absolute;
-//   height: 845px;
-//   width: 607px;
-//   right: 0;
-//   top: 190px;
-
-//   @media only screen and (max-width: 600px) {
-//   }
-//   @media only screen and (max-width: 420px) {
-//   }
-// `;

@@ -9,7 +9,7 @@ export const WrapSection = styled.div`
   z-index: 6;
   width: 580px;
   height: auto;
-  max-height: 80vh;
+  min-height: 600px;
   background: #ffffff;
   /* Gray04 */
 
@@ -83,6 +83,9 @@ export const WrapSection = styled.div`
     color: #ffffff;
   }
   @media only screen and (max-width: 750px) {
+    top: 10%;
+    transform: translate(0, 0%);
+
     width: 90%;
     min-width: 340px;
     max-width: 580px;
@@ -174,6 +177,7 @@ export const Week = styled.div`
     box-shadow: 5px 5px 9px 1px #48849c;
   } */
   @media only screen and (max-width: 600px) {
+    width: 112px;
   }
   @media only screen and (max-width: 420px) {
   }

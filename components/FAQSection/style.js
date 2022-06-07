@@ -6,33 +6,36 @@ import styled from "styled-components";
 
 export const HeroWrap = styled.div`
   position: relative;
-  height: 1312px;
+  height: auto;
   width: 100%;
   display: flex;
 
   overflow: hidden;
-
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 1050px) {
+    flex-direction: column;
   }
 `;
 export const WrapImage = styled.div`
   position: relative;
-  height: 100%;
+  height: auto;
   width: 45%;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1050px) {
+    height: 74vw;
+    width: 100%;
   }
   @media only screen and (max-width: 420px) {
   }
 `;
 export const TextWrap = styled.div`
   position: relative;
-  height: 416px;
+  height: auto;
   width: 55%;
   margin-top: 98px;
   margin-left: 60px;
   width: 60%;
   padding-right: 100px;
+  padding-bottom: 70px;
   h1 {
     font-family: "Buenard";
     font-style: normal;
@@ -45,7 +48,14 @@ export const TextWrap = styled.div`
 
     color: #ffffff;
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 750px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 58px auto 0 auto;
+    width: 90%;
+    padding-right: 0;
   }
   @media only screen and (max-width: 420px) {
   } ;
@@ -64,6 +74,7 @@ export const Title = styled.h2`
   margin-bottom: 50px;
 
   @media only screen and (max-width: 600px) {
+    font-size: 40px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -84,6 +95,7 @@ export const Text = styled.p`
   margin-bottom: 9px;
 
   @media only screen and (max-width: 600px) {
+    font-size: 14px;
   }
   @media only screen and (max-width: 420px) {
   }

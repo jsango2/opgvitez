@@ -77,8 +77,8 @@ export const BoatWrap = styled.div`
     right: 0%;
   }
   @media only screen and (max-width: 450px) {
-    width: 80vw;
-    height: 140vw;
+    width: 70vw;
+    height: 120vw;
   }
 `;
 export const BoatTitleWrap = styled.div`
@@ -112,7 +112,8 @@ export const BoatTitleWrap = styled.div`
       font-size: 40px;
     }
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    width: 100%;
   }
 `;
 export const WrapAllData = styled.div`
@@ -291,6 +292,7 @@ export const Down = styled.div`
     rgba(138, 218, 237, 0.19) 1.51%,
     rgba(137, 219, 238, 0) 70.64%
   );
+  padding-bottom: 70px;
   @media only screen and (max-width: 1050px) {
     padding: 20px 20px 50px 20px;
   }

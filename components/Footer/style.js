@@ -154,7 +154,10 @@ export const LinkWrap = styled.div`
   justify-content: space-between;
 
   @media screen and (max-width: 1000px) {
-    display: none;
+    width: 90%;
+    min-width: unset;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 `;
 export const Data = styled.div`
@@ -165,7 +168,11 @@ export const Data = styled.div`
   text-align: center;
 
   @media screen and (max-width: 1000px) {
-    display: none;
+    width: 90%;
+    max-width: 396px;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
   }
 `;
 export const SingleLink = styled.div`
@@ -176,6 +183,7 @@ export const SingleLink = styled.div`
   color: #ffffff;
   margin: 0 0;
   cursor: pointer;
+  word-wrap: wrap none;
   a {
     text-transform: uppercase;
     text-decoration: none;
@@ -188,40 +196,7 @@ export const SingleLink = styled.div`
     color: #dcdcdc;
   }
 
-  @media screen and (max-width: 768px) {
-    /* order: 1;
-    margin-bottom: 1rem; */
+  @media screen and (max-width: 1000px) {
+    margin: 4px 10px;
   }
 `;
-// export const ValWrap = styled.div`
-//   position: absolute;
-//   height: 70px;
-//   width: 200px;
-//   left: -250px;
-//   @media only screen and (max-width: 600px) {
-//   }
-//   @media only screen and (max-width: 420px) {
-//   }
-// `;
-// export const WrapValTitle = styled.div`
-//   position: relative;
-//   height: auto;
-//   width: 400px;
-
-//   @media only screen and (max-width: 600px) {
-//   }
-//   @media only screen and (max-width: 420px) {
-//   }
-// `;
-// export const WrapImage = styled.div`
-//   position: absolute;
-//   height: 845px;
-//   width: 607px;
-//   right: 0;
-//   top: 190px;
-
-//   @media only screen and (max-width: 600px) {
-//   }
-//   @media only screen and (max-width: 420px) {
-//   }
-// `;

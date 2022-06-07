@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 export const HeroWrap = styled.div`
   position: relative;
-  height: 709px;
+  height: auto;
   width: 100%;
   padding-top: 86px;
   background: linear-gradient(
@@ -15,14 +15,15 @@ export const HeroWrap = styled.div`
     rgba(137, 219, 238, 0) 67.05%
   );
   overflow: hidden;
-
+  padding-bottom: 70px;
   @media only screen and (max-width: 420px) {
   }
 `;
 export const WrapImages = styled.div`
   position: relative;
-  display: flex;
-  justify-content: space-between;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  width: 100%;
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
@@ -30,13 +31,15 @@ export const WrapImages = styled.div`
 `;
 export const WrapImage = styled.div`
   position: relative;
-  width: 195px;
+  width: calc(100% / 6 - 6px);
   height: 337px;
   cursor: pointer;
   margin: 3px;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 850px) {
+    width: calc(100% / 3 - 6px);
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    height: 200px;
   }
 `;
 export const Caption = styled.div`
@@ -54,7 +57,10 @@ export const Caption = styled.div`
 
   color: #f2f2f2;
   bottom: 5px;
+  left: 50%;
+  transform: translate(-50%, 0);
   @media only screen and (max-width: 600px) {
+    font-size: 10px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -130,7 +136,8 @@ export const Title = styled.h2`
   text-align: center;
   width: 75%;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 450px) {
+    font-size: 40px;
   }
   @media only screen and (max-width: 420px) {
   }

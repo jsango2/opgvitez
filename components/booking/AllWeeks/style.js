@@ -254,7 +254,7 @@ export const Loading = styled.div`
   font-size: 34px;
   line-height: 120%;
   margin: 0 15px;
-  height: 245px;
+  height: 45px;
   /* identical to box height, or 17px */
 
   /* Gray 6 */
