@@ -9,7 +9,7 @@ export const WrapSection = styled.div`
   z-index: 6;
   width: 580px;
   height: auto;
-  min-height: 600px;
+  min-height: 500px;
   background: #ffffff;
   /* Gray04 */
 
@@ -17,7 +17,7 @@ export const WrapSection = styled.div`
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
   padding-top: 50px;
-  padding-bottom: 40px;
+  padding-bottom: 25px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
