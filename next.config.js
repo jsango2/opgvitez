@@ -31,7 +31,6 @@ module.exports = {
       use: ["@svgr/webpack"],
     });
 
-    //   return config;
-    // },
+    return config;
   },
 };
