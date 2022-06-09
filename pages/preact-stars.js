@@ -15,7 +15,6 @@ function PreactStars({ stars }) {
 export async function getServerSideProps() {
   const res = await fetch("https://api.github.com/repos/preactjs/preact");
   const json = await res.json();
-  console.log("Json:", json);
 
   return {
     props: {

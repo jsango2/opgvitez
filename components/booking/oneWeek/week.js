@@ -43,11 +43,9 @@ const Week = ({
     let newEndMonth = newEndDate.getMonth() + 1;
     let newStartDay = newStartDate.getDate();
     let newEndDay = newEndDate.getDate();
-    console.log(newStartDay, newEndDay);
     setStartD(newStartDay + "/" + newStartMonth);
     setEndD(newEndDay + "/" + newEndMonth);
   }, []);
-  console.log(startD);
   return (
     <WeekWrap
       isFree={free}

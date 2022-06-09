@@ -34,7 +34,6 @@ const Week = ({
     let newEndMonth = newEndDate.getMonth() + 1;
     let newStartDay = newStartDate.getDate();
     let newEndDay = newEndDate.getDate();
-    console.log(newStartDay, newEndDay);
     setStartD(newStartDay + "/" + newStartMonth);
     setEndD(newEndDay + "/" + newEndMonth);
   }, []);

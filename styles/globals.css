@@ -637,3 +637,39 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   color: #ffffff;
 }
+
+@media only screen and (max-width: 460px) {
+  .wrapButtonsForm button {
+    width: 130px;
+    height: 40px;
+    margin: 10px;
+
+    background: radial-gradient(
+      61.32% 215.39% at 93.04% 39.63%,
+      #3ca0c9 0%,
+      #1e7ca4 100%
+    );
+    /* Blue */
+
+    border: 1px solid #0d3151;
+    /* Blue shadow */
+
+    box-shadow: 0px 4px 10px rgba(0, 133, 255, 0.2);
+    border-radius: 16px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+    /* identical to box height, or 167% */
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #ffffff;
+  }
+  .react-datepicker-wrapper {
+    /* margin-left: 10px; */
+    width: 100%;
+  }
+}

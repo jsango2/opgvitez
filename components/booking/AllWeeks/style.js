@@ -172,6 +172,9 @@ export const PopupForm = styled.div`
     font-size: 18px;
   }
   @media only screen and (max-width: 600px) {
+    form {
+      width: 100%;
+    }
   }
   @media only screen and (max-width: 420px) {
   }
@@ -386,7 +389,7 @@ export const Alert = styled.div`
   transform: translate(-50%, -50%);
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.65);
   @media only screen and (max-width: 600px) {
-    width: 90%;
+    /* width: 90%; */
   }
   @media only screen and (max-width: 420px) {
   }

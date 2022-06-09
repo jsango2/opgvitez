@@ -89,18 +89,6 @@ function AllWeeks({ handleLogOut, userEmail }) {
     setEndDate(end);
   };
 
-  useEffect(() => {
-    let podaci = [];
-    const getNotes = () => {
-      getDocs(dbInstance4).then((data) => {
-        podaci = data.docs.map((item) => {
-          return { ...item.data(), id: item.id };
-        });
-        setData(podaci);
-      });
-    };
-    getNotes();
-  }, []);
   const handleClick = (id) => {
     setIsOpen(true);
     const docRef = doc(dbInstance4, id);
@@ -111,8 +99,7 @@ function AllWeeks({ handleLogOut, userEmail }) {
       setFree(doc.data().free);
       setDiscount(doc.data().discount);
       setDiscountAmount(doc.data().discountAmount);
-      // setStartDate(moment(doc.data().startDate).toDate());
-      // setEndDate(doc.data().endDate);
+
       setStartDate(doc.data().startDate.toDate());
       setEndDate(doc.data().endDate.toDate());
     });
@@ -152,7 +139,7 @@ function AllWeeks({ handleLogOut, userEmail }) {
     deleteDoc(dataToDelete).then(setIsOpen(false));
   };
   const handleSubmitNewWeek = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     // console.log("sent", weekId);
     // const dataToUpdate = doc(dbInstance4, weekId);
 
@@ -181,7 +168,7 @@ function AllWeeks({ handleLogOut, userEmail }) {
       });
     };
     getNotes();
-  }, [dataSent]);
+  }, [dataSent, isOpen, isNewWeekOpen]);
 
   //   const handleSelect = (id) => {
   //     let sel = [];
@@ -288,6 +275,9 @@ function AllWeeks({ handleLogOut, userEmail }) {
               // inline
             />
             <br />
+            <label htmlFor="cijena" style={{ color: "darkblue" }}>
+              Price
+            </label>
             <input
               name="cijena"
               type="number"
@@ -295,6 +285,9 @@ function AllWeeks({ handleLogOut, userEmail }) {
               onChange={(event) => setNewCijena(parseInt(event.target.value))}
             />{" "}
             <br />
+            <label htmlFor="Free" style={{ color: "darkblue" }}>
+              Status
+            </label>
             <select
               name="Free"
               type="select"
@@ -306,15 +299,16 @@ function AllWeeks({ handleLogOut, userEmail }) {
               <option value={true}>Free</option>
               <option value={false}>Booked</option>
             </select>
+            <label htmlFor="discount" style={{ color: "darkblue" }}>
+              Discount
+            </label>
             <div
               style={{
                 color: "darkblue",
                 marginRight: "auto",
                 marginBottom: "20px",
               }}
-            >
-              Discount:
-            </div>
+            ></div>
             <div style={{ display: "flex", width: "90%" }}>
               <input
                 style={{ width: "20px", marginRight: "20px" }}
@@ -333,7 +327,9 @@ function AllWeeks({ handleLogOut, userEmail }) {
                 onChange={(event) => setDiscountAmount(event.target.value)}
               />{" "}
             </div>
-            <button type="submit">Save</button>
+            <div className="wrapButtonsForm">
+              <button type="submit">Save</button>
+            </div>
           </form>
         </PopupForm>
       )}
@@ -352,6 +348,9 @@ function AllWeeks({ handleLogOut, userEmail }) {
               // inline
             />
             <br />
+            <label htmlFor="cijena" style={{ color: "darkblue" }}>
+              Price
+            </label>
             <input
               name="cijena"
               type="number"
@@ -359,6 +358,9 @@ function AllWeeks({ handleLogOut, userEmail }) {
               onChange={(event) => setCijena(parseInt(event.target.value))}
             />{" "}
             <br />
+            <label htmlFor="Free" style={{ color: "darkblue" }}>
+              Status
+            </label>
             <select
               name="Free"
               type="select"
@@ -370,7 +372,12 @@ function AllWeeks({ handleLogOut, userEmail }) {
               <option value={true}>Free</option>
               <option value={false}>Booked</option>
             </select>
-            <div style={{ display: "flex", width: "90%" }}>
+            <label htmlFor="discount" style={{ color: "darkblue" }}>
+              Discount
+            </label>
+            <div
+              style={{ display: "flex", width: "90%", alignItems: "center" }}
+            >
               <input
                 style={{ width: "20px", marginRight: "20px" }}
                 type="checkbox"
@@ -386,6 +393,7 @@ function AllWeeks({ handleLogOut, userEmail }) {
                 value={discountAmount}
                 onChange={(event) => setDiscountAmount(event.target.value)}
               />{" "}
+              <div style={{ color: "darkblue" }}>%</div>
             </div>
             <div style={{ display: "flex" }} className="wrapButtonsForm">
               <button type="submit">Save</button>

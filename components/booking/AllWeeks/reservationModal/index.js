@@ -60,7 +60,7 @@ class ReservationModal extends React.Component {
         </Fixed>
         <WrapDates>
           {this.props.datum.map((el) => (
-            <Week>
+            <Week key={el.startDate.seconds}>
               <Dates>
                 {moment.unix(el.startDate.seconds).format("MM/DD")}-
                 {moment.unix(el.endDate.seconds).format("MM/DD")}

@@ -174,6 +174,34 @@ export const PopupForm = styled.div`
   }
 
   @media only screen and (max-width: 600px) {
+    width: 90%;
+    form {
+      width: 80%;
+    }
+    input,
+    select {
+      height: 60px;
+      width: 100%;
+      max-width: 300px;
+      height: 35px;
+      margin-bottom: 15px;
+      background: #ffffff;
+      /* Gray04 */
+
+      border: 1px solid #eaeaea;
+      border-radius: 8px;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+      /* or 19px */
+
+      /* Gray 2 */
+
+      color: #4f4f4f;
+      padding-left: 10px;
+    }
   }
   @media only screen and (max-width: 420px) {
   }
@@ -317,6 +345,9 @@ export const LogOut = styled.div`
     border: 1px solid #17172b;
   }
   @media only screen and (max-width: 600px) {
+    width: 90%;
+    text-align: center;
+    font-size: 12px;
   }
   @media only screen and (max-width: 420px) {
   }

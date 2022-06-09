@@ -69,7 +69,7 @@ export const Dates = styled.p`
 
 export const DiskontWrap = styled.div`
   position: absolute;
-  bottom: -10px;
+  top: -13px;
   right: -10px;
   width: 30px;
   height: 30px;
@@ -82,6 +82,13 @@ export const DiskontWrap = styled.div`
   padding-top: 7px;
   padding-left: 2px;
   @media only screen and (max-width: 600px) {
+    padding-top: 5px;
+
+    top: -12px;
+    right: -9px;
+    width: 26px;
+    height: 26px;
+    font-size: 10px;
   }
   @media only screen and (max-width: 420px) {
   }
