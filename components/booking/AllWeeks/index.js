@@ -72,12 +72,19 @@ function AllWeeks() {
         podaci = data.docs.map((item) => {
           return { ...item.data(), id: item.id };
         });
-        setData(podaci);
+        setData(
+          podaci.sort((a, b) => {
+            let da = new Date(a.startDate.seconds);
+            let db = new Date(b.startDate.seconds);
+            return da - db;
+          })
+        );
       });
     };
     getNotes();
   }, []);
 
+  console.log(data);
   const handleClick = (id) => {
     setIsOpen(true);
     const docRef = doc(dbInstance4, id);

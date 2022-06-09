@@ -164,7 +164,13 @@ function AllWeeks({ handleLogOut, userEmail }) {
         podaci = data.docs.map((item) => {
           return { ...item.data(), id: item.id };
         });
-        setData(podaci);
+        setData(
+          podaci.sort((a, b) => {
+            let da = new Date(a.startDate.seconds);
+            let db = new Date(b.startDate.seconds);
+            return da - db;
+          })
+        );
       });
     };
     getNotes();
