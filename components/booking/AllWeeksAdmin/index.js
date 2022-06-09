@@ -272,7 +272,7 @@ function AllWeeks({ handleLogOut, userEmail }) {
               onChange={(event) => setNewDatum(event.target.value)}
             /> */}
             <DatePicker
-              // dateFormat="dd/MM/yyyy"
+              dateFormat="dd/MM/yyyy"
               selected={startDate}
               onChange={onChange}
               startDate={startDate}
@@ -346,6 +346,7 @@ function AllWeeks({ handleLogOut, userEmail }) {
           <Fixed>Edit week:</Fixed>
           <form onSubmit={handleSubmit}>
             <DatePicker
+              dateFormat="dd/MM/yyyy"
               selected={startDate}
               onChange={onChange}
               startDate={startDate}

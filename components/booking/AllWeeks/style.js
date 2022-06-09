@@ -66,7 +66,7 @@ export const Overlay = styled.div`
   height: 100%;
   width: 100%;
   background: rgba(49, 59, 66, 0.3);
-  backdrop-filter: blur(2px);
+  /* backdrop-filter: blur(2px); */
 
   z-index: 3;
 
@@ -95,7 +95,7 @@ export const Title = styled.h1`
 
   /* TAMNO PLAVA */
   z-index: 4;
-  color: #0d3255;
+  color: white;
   @media only screen and (max-width: 600px) {
     font-size: 40px;
     margin-top: 103px;
@@ -117,7 +117,7 @@ export const SubTitle = styled.h1`
 
   /* TAMNO PLAVA */
   z-index: 4;
-  color: #0d3255;
+  color: white;
   @media only screen and (max-width: 600px) {
     font-size: 20px;
     /* margin-top: 103px; */
@@ -367,7 +367,7 @@ export const OverlayBlur = styled.div`
   }
 `;
 export const Alert = styled.div`
-  position: absolute;
+  position: fixed;
   z-index: 6;
   color: #0d3255;
   width: 600px;
@@ -381,7 +381,7 @@ export const Alert = styled.div`
   font-size: 22px;
   font-weight: 700;
   text-align: center;
-  top: 50%;
+  top: 30%;
   left: 50%;
   padding: 20px;
   -webkit-transform: translate(-50%, -50%);
@@ -389,7 +389,7 @@ export const Alert = styled.div`
   transform: translate(-50%, -50%);
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.65);
   @media only screen and (max-width: 600px) {
-    /* width: 90%; */
+    width: 90%;
   }
   @media only screen and (max-width: 420px) {
   }
