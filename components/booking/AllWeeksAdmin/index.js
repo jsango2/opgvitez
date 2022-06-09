@@ -10,10 +10,11 @@ import {
   doc,
   getDoc,
   updateDoc,
+  deleteDoc,
 } from "firebase/firestore";
 import { auth, database } from "../../firebase/firebase";
 import bg from "../../../images/booking/bg.png";
-
+import moment from "moment";
 import {
   Wrap,
   PopupForm,
@@ -22,25 +23,54 @@ import {
   Overlay,
   Fixed,
   LogOut,
+  NewWeek,
 } from "./style.js";
 import PriceComponent from "./priceComponent";
 import { CloseX } from "../AllWeeks/reservationModal/style";
+import DatePicker from "react-datepicker";
+import { parse } from "date-fns";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 function AllWeeks({ handleLogOut, userEmail }) {
   const [data, setData] = useState([]);
   const [selectedWeeks, setSelectedWeeks] = useState([]);
   const [suma, setSuma] = useState(0);
   const [datum, setDatum] = useState(null);
+  const [discount, setDiscount] = useState(false);
+  const [discountAmount, setDiscountAmount] = useState(0);
   const [weekId, setWeekId] = useState(null);
   const [cijena, setCijena] = useState(0);
   const [free, setFree] = useState(true);
+  const [newDatum, setNewDatum] = useState(null);
+  const [newCijena, setNewCijena] = useState(0);
+  const [newFree, setNewFree] = useState(true);
+  //---datepicker---//
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+  //------------------
+
   const [selected, setSelected] = useState(false);
   const [dataSent, setDataSent] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isNewWeekOpen, setIsNewWeekOpen] = useState(false);
   const [logedIn, setlogedIn] = useState(null);
   const dbInstance = collection(database, "Charter2");
   const dbInstance2 = collection(database, "Charter2");
   const dbInstance4 = collection(database, "Charter3");
+
+  // funkcija za batch zapis arraya u firestore sa zasebnim id-jem
+  // useEffect(() => {
+  //   Data.map((el) => {
+  //     addDoc(dbInstance4, {
+  //       datum: el.datum,
+  //       cijena: el.cijena,
+  //       free: el.free,
+  //       selected: false,
+  //       occupied: false,
+  //     });
+  //   });
+  // }, []);
 
   auth.onAuthStateChanged((user) => {
     if (user) {
@@ -53,6 +83,11 @@ function AllWeeks({ handleLogOut, userEmail }) {
       setlogedIn(false);
     }
   });
+  const onChange = (dates) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+  };
 
   useEffect(() => {
     let podaci = [];
@@ -74,7 +109,19 @@ function AllWeeks({ handleLogOut, userEmail }) {
       setDatum(doc.data().datum);
       setWeekId(id);
       setFree(doc.data().free);
+      setDiscount(doc.data().discount);
+      setDiscountAmount(doc.data().discountAmount);
+      // setStartDate(moment(doc.data().startDate).toDate());
+      // setEndDate(doc.data().endDate);
+      setStartDate(doc.data().startDate.toDate());
+      setEndDate(doc.data().endDate.toDate());
     });
+  };
+  const handleNewWeek = () => {
+    setIsNewWeekOpen(true);
+  };
+  const handleNewWeekClose = () => {
+    setIsNewWeekOpen(false);
   };
 
   const handleSubmit = (e) => {
@@ -89,10 +136,38 @@ function AllWeeks({ handleLogOut, userEmail }) {
       free: free,
       occupied: false,
       selected: false,
+      discount: discount,
+      discountAmount: discountAmount,
+      startDate: startDate,
+      endDate: endDate,
     }).then(
       setDataSent((oldData) => !oldData),
       setIsOpen(false)
     );
+  };
+  const handleDelete = (e) => {
+    e.preventDefault();
+    // console.log("sent", weekId);
+    const dataToDelete = doc(dbInstance4, weekId);
+    deleteDoc(dataToDelete).then(setIsOpen(false));
+  };
+  const handleSubmitNewWeek = (e) => {
+    e.preventDefault();
+    // console.log("sent", weekId);
+    // const dataToUpdate = doc(dbInstance4, weekId);
+
+    // Set the "capital" field of the city 'DC'
+    addDoc(dbInstance4, {
+      datum: newDatum,
+      cijena: newCijena,
+      free: newFree,
+      selected: false,
+      occupied: false,
+      discount: discount,
+      discountAmount: discountAmount,
+      startDate: startDate,
+      endDate: endDate,
+    }).then(setIsNewWeekOpen(false));
   };
 
   useEffect(() => {
@@ -155,6 +230,7 @@ function AllWeeks({ handleLogOut, userEmail }) {
       return str;
     } else return str.substr(0, position) + value + str.substr(position);
   }
+
   return (
     <WrapSection>
       <Overlay />
@@ -182,21 +258,98 @@ function AllWeeks({ handleLogOut, userEmail }) {
             handleClick={() => handleClick(week.id)}
             // handleSelect={() => handleSelect(week.id)}
             handleMarker={() => handleMarker(week.id)}
+            discount={week.discount}
+            discountAmount={week.discountAmount}
+            startDate={week.startDate}
+            endDate={week.endDate}
           />
         ))}
       </Wrap>
       <PriceComponent price={suma} />
+      <NewWeek onClick={handleNewWeek}>ADD NEW WEEK</NewWeek>
+      {isNewWeekOpen && (
+        <PopupForm>
+          <CloseX onClick={handleNewWeekClose}>X</CloseX>
+          <Fixed>Add new week:</Fixed>
+          <form onSubmit={handleSubmitNewWeek}>
+            {/* <input
+              name="datum"
+              type="text"
+              value={newDatum}
+              onChange={(event) => setNewDatum(event.target.value)}
+            /> */}
+            <DatePicker
+              // dateFormat="dd/MM/yyyy"
+              selected={startDate}
+              onChange={onChange}
+              startDate={startDate}
+              endDate={endDate}
+              selectsRange
+              // inline
+            />
+            <br />
+            <input
+              name="cijena"
+              type="number"
+              value={newCijena}
+              onChange={(event) => setNewCijena(parseInt(event.target.value))}
+            />{" "}
+            <br />
+            <select
+              name="Free"
+              type="select"
+              value={newFree}
+              onChange={(event) => {
+                setNewFree(event.target.value === "true" ? true : false);
+              }}
+            >
+              <option value={true}>Free</option>
+              <option value={false}>Booked</option>
+            </select>
+            <div
+              style={{
+                color: "darkblue",
+                marginRight: "auto",
+                marginBottom: "20px",
+              }}
+            >
+              Discount:
+            </div>
+            <div style={{ display: "flex", width: "90%" }}>
+              <input
+                style={{ width: "20px", marginRight: "20px" }}
+                type="checkbox"
+                name="discount"
+                // defaultChecked={discount}
+                checked={discount}
+                // defaultChecked={discount}
+                onChange={() => setDiscount(!discount)}
+              ></input>
+              <input
+                style={{ width: "120px" }}
+                name="discount AMount"
+                type="number"
+                value={discountAmount}
+                onChange={(event) => setDiscountAmount(event.target.value)}
+              />{" "}
+            </div>
+            <button type="submit">Save</button>
+          </form>
+        </PopupForm>
+      )}
 
       {isOpen && (
         <PopupForm>
           <CloseX onClick={handleClose}>X</CloseX>
           <Fixed>Edit week:</Fixed>
           <form onSubmit={handleSubmit}>
-            <input
-              name="datum"
-              type="text"
-              value={datum}
-              onChange={(event) => setDatum(event.target.value)}
+            <DatePicker
+              selected={startDate}
+              onChange={onChange}
+              startDate={startDate}
+              endDate={endDate}
+              selectsRange
+              // inline
             />
             <br />
             <input
@@ -217,7 +370,27 @@ function AllWeeks({ handleLogOut, userEmail }) {
               <option value={true}>Free</option>
               <option value={false}>Booked</option>
             </select>
-            <button type="submit">Save</button>
+            <div style={{ display: "flex", width: "90%" }}>
+              <input
+                style={{ width: "20px", marginRight: "20px" }}
+                type="checkbox"
+                name="discount"
+                checked={discount}
+                // defaultChecked={discount}
+                onChange={() => setDiscount(!discount)}
+              ></input>
+              <input
+                style={{ width: "120px" }}
+                name="discount AMount"
+                type="number"
+                value={discountAmount}
+                onChange={(event) => setDiscountAmount(event.target.value)}
+              />{" "}
+            </div>
+            <div style={{ display: "flex" }} className="wrapButtonsForm">
+              <button type="submit">Save</button>
+              <button onClick={handleDelete}>Delete</button>
+            </div>
           </form>
         </PopupForm>
       )}

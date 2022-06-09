@@ -13,6 +13,7 @@ export const Wrap = styled.div`
   justify-content: center;
   z-index: 4;
   @media only screen and (max-width: 600px) {
+    width: 100%;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -33,7 +34,7 @@ export const WrapPrice = styled.div`
   /* Gray 6 */
 
   color: #f2f2f2;
-  width: 759px;
+  width: 100%;
   height: 50px;
   @media only screen and (max-width: 600px) {
   }
@@ -60,7 +61,7 @@ export const WrapSection = styled.div`
 export const Overlay = styled.div`
   position: absolute;
   height: 100%;
-  width: 988px;
+  width: 100%;
   background: linear-gradient(
     0.93deg,
     rgba(21, 31, 43, 0.245) 0.67%,
@@ -101,9 +102,32 @@ export const Title = styled.h1`
   @media only screen and (max-width: 420px) {
   }
 `;
+export const NewWeek = styled.h1`
+  position: relative;
+  font-family: "Buenard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 120%;
+  /* identical to box height, or 66px */
+
+  text-align: center;
+
+  /* TAMNO PLAVA */
+  z-index: 4;
+  color: white;
+  cursor: pointer;
+  border: 1px solid #0d3255;
+  border-radius: 5px;
+  padding: 10px;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
 export const PopupForm = styled.div`
   position: fixed;
-  top: 250px;
+  top: 100px;
   z-index: 6;
   width: 580px;
   height: auto;
@@ -114,8 +138,8 @@ export const PopupForm = styled.div`
   border: 1px solid #eaeaea;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
-  padding-top: 80px;
-  padding-bottom: 60px;
+  padding-top: 50px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -147,35 +171,6 @@ export const PopupForm = styled.div`
 
     color: #4f4f4f;
     padding-left: 10px;
-  }
-
-  button {
-    width: 420px;
-    height: 80px;
-    margin-top: 20px;
-    background: radial-gradient(
-      61.32% 215.39% at 93.04% 39.63%,
-      #3ca0c9 0%,
-      #1e7ca4 100%
-    );
-    /* Blue */
-
-    border: 1px solid #0d3151;
-    /* Blue shadow */
-
-    box-shadow: 0px 4px 10px rgba(0, 133, 255, 0.2);
-    border-radius: 16px;
-    cursor: pointer;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 30px;
-    /* identical to box height, or 167% */
-
-    text-align: center;
-    text-transform: uppercase;
-
-    color: #ffffff;
   }
 
   @media only screen and (max-width: 600px) {

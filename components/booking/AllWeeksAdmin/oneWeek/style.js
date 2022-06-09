@@ -21,6 +21,8 @@ export const WeekWrap = styled.div`
     box-shadow: 5px 5px 9px 1px #48849c;
   }
   @media only screen and (max-width: 600px) {
+    width: 120px;
+    margin: 5px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -45,7 +47,7 @@ export const Price = styled.h3`
   }
 `;
 
-export const Date = styled.p`
+export const Dates = styled.p`
   font-family: "Avenir Next";
   font-style: normal;
   font-weight: 500;

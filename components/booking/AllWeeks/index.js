@@ -14,6 +14,7 @@ import {
   Title,
   Overlay,
   Loading,
+  SubTitle,
 } from "./style.js";
 import PriceComponent from "./priceComponent";
 import PulseLoader from "react-spinners/ClipLoader";
@@ -35,6 +36,8 @@ function AllWeeks() {
   const dbInstance2 = collection(database, "Charter2");
   const dbInstance3 = collection(database, "Charter2");
   const dbInstance4 = collection(database, "Charter3");
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(null);
 
   auth.onAuthStateChanged((user) => {
     if (user) {
@@ -81,6 +84,9 @@ function AllWeeks() {
     getDoc(docRef).then((doc) => {
       setCijena(doc.data().cijena);
       setDatum(doc.data().datum);
+      setStartDate(doc.data().startDate);
+      setEndDate(doc.data().endDate);
+      setDatum(doc.data().datum);
     });
   };
   //zbroji eure svih tjedana
@@ -94,6 +100,7 @@ function AllWeeks() {
     setSuma(sum);
   }, [data]);
   //idi kroz array nakon svakog klika tjedna i promjeni state selected u true
+
   const handleMarker = (id) => {
     const newState = data.map((obj) => {
       // 👇️ if id equals 2, update country property
@@ -122,7 +129,6 @@ function AllWeeks() {
       return str;
     } else return str.substr(0, position) + value + str.substr(position);
   }
-
   return (
     <WrapSection id="booking">
       <Overlay />
@@ -137,6 +143,7 @@ function AllWeeks() {
         // placeholder="blur" // Optional blur-up while loading
       />
       <Title>FREE BOOKING DATES</Title>
+      <SubTitle>Choose your dates and make reservation</SubTitle>
       {isLoading ? (
         <>
           <Loading>LOADING...</Loading>
@@ -156,6 +163,10 @@ function AllWeeks() {
               handleClick={() => handleClick(week.id)}
               handleMarker={() => handleMarker(week.id)}
               length={length}
+              discount={week.discount}
+              discountAmount={week.discountAmount}
+              startDate={week.startDate}
+              endDate={week.endDate}
             />
           ))}
         </Wrap>

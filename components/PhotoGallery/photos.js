@@ -23,7 +23,7 @@ import p22 from "../../images/gallery/large/p22.png";
 import p23 from "../../images/gallery/large/p23.png";
 import p24 from "../../images/gallery/large/p24.png";
 import p25 from "../../images/gallery/large/p25.png";
-import p26 from "../../images/gallery/large/p26.png";
+// import p26 from "../../images/gallery/large/p26.png";
 import p27 from "../../images/gallery/large/p27.png";
 import p28 from "../../images/gallery/large/p28.png";
 
@@ -53,7 +53,7 @@ const Images = [
   { photo: p23, in: 21 },
   { photo: p24, in: 22 },
   { photo: p25, in: 23 },
-  { photo: p26, in: 24 },
+  // { photo: p26, in: 24 },
   { photo: p27, in: 25 },
   { photo: p28, in: 26 },
 ];

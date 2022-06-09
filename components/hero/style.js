@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Anchor } from "nextjs-anchor";
 
 // import heroPhoto from "../../images/hero.png"
 
@@ -17,7 +18,7 @@ export const HeroWrap = styled.div`
   overflow: hidden;
   z-index: 0;
   @media only screen and (max-width: 1050px) {
-    height: 100vh;
+    height: 97vh;
     padding-left: 0;
   }
   @media only screen and (max-width: 420px) {
@@ -56,7 +57,7 @@ export const ValWrap = styled.div`
 `;
 export const Box = styled.div`
   position: relative;
-  height: 33vh;
+  height: 27vh;
   width: 100%;
   background: #035865;
   display: flex;
@@ -218,6 +219,10 @@ export const Button = styled.div`
   &:hover {
     -webkit-box-shadow: 5px 5px 9px 1px #48849c;
     box-shadow: 5px 5px 9px 1px #48849c;
+  }
+  a {
+    text-decoration: none;
+    color: #32bde3;
   }
   @media only screen and (max-width: 1050px) {
     font-size: 16px;

@@ -31,15 +31,17 @@ export const WrapImages = styled.div`
 `;
 export const WrapImage = styled.div`
   position: relative;
-  width: calc(100% / 6 - 6px);
+  width: calc(100% / 4 - 6px);
   height: 337px;
   cursor: pointer;
   margin: 3px;
   @media only screen and (max-width: 850px) {
-    width: calc(100% / 3 - 6px);
+    width: calc(100% / 4 - 6px);
   }
   @media only screen and (max-width: 450px) {
-    height: 200px;
+    width: calc(100% / 2 - 6px);
+
+    height: 260px;
   }
 `;
 export const Caption = styled.div`
@@ -61,6 +63,7 @@ export const Caption = styled.div`
   transform: translate(-50%, 0);
   @media only screen and (max-width: 600px) {
     font-size: 10px;
+    width: 90%;
   }
   @media only screen and (max-width: 420px) {
   }

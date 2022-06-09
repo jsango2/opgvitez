@@ -34,7 +34,7 @@ const Sights = () => {
   };
   return (
     <HeroWrap>
-      <Title>JUST TWO HOURS FROM MARINA</Title>
+      <Title>JUST FEW HOURS FROM MARINA</Title>
       <WrapImages>
         <SRLWrapper options={options}>
           <div

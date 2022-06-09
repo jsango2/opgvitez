@@ -47,7 +47,9 @@ const Hero = () => {
           fully equipped Lagoon 450 F will take you to the most beautiful
           anchorages on the Croatian coastline.{" "}
         </p>
-        <Button>SEND INQUIRE</Button>
+        <Button>
+          <Anchor href="/#booking">SEND INQUIRE</Anchor>{" "}
+        </Button>
       </WrapValTitle>
       <WrapDots inView={inView}>
         <Image
@@ -78,7 +80,9 @@ const Hero = () => {
             anchorages on the Croatian coastline.{" "}
           </p>
 
-          <Button>CALENDAR AND PRICING</Button>
+          <Button>
+            <Anchor href="/#booking">SEND INQUIRE</Anchor>{" "}
+          </Button>
         </Box>
       </MobileCTA>
     </HeroWrap>

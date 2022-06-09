@@ -5,7 +5,8 @@ import Image from "next/image";
 import { collection, addDoc, getDocs, doc, getDoc } from "firebase/firestore";
 
 import { WrapSection, CloseX, Fixed, Week, WrapDates } from "./style.js";
-import { Date, Price } from "../../oneWeek/style.js";
+import { Dates, Price } from "../../oneWeek/style.js";
+import moment from "moment";
 
 const encode = (data) => {
   return Object.keys(data)
@@ -23,13 +24,13 @@ class ReservationModal extends React.Component {
       datum: [],
     };
   }
-  componentDidMount() {
-    let datumi = [];
-    this.props.datum.map((el) => {
-      datumi.push(el.datum);
-    });
-    this.setState({ ...this.state, datum: datumi.toString() });
-  }
+  // componentDidMount() {
+  //   let datumi = [];
+  //   this.props.datum.map((el) => {
+  //     datumi.push(el.datum);
+  //   });
+  //   this.setState({ ...this.state, datum: datumi.toString() });
+  // }
   handleSubmit = (e) => {
     fetch("/", {
       method: "POST",
@@ -48,6 +49,7 @@ class ReservationModal extends React.Component {
     return str.substr(0, position) + value + str.substr(position);
   };
   handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
+
   render() {
     const { message, email, cijena, free, selected, handleClick } = this.state;
     return (
@@ -59,7 +61,10 @@ class ReservationModal extends React.Component {
         <WrapDates>
           {this.props.datum.map((el) => (
             <Week>
-              <Date>{el.datum}</Date>
+              <Dates>
+                {moment.unix(el.startDate.seconds).format("MM/DD")}-
+                {moment.unix(el.endDate.seconds).format("MM/DD")}
+              </Dates>
               <Price>{this.insert(el.cijena.toString(), ".")} EUR</Price>
             </Week>
           ))}

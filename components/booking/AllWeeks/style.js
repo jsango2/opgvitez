@@ -88,6 +88,7 @@ export const Title = styled.h1`
   font-size: 55px;
   line-height: 120%;
   margin-top: 163px;
+  margin-bottom: 0;
   /* identical to box height, or 66px */
 
   text-align: center;
@@ -97,6 +98,29 @@ export const Title = styled.h1`
   color: #0d3255;
   @media only screen and (max-width: 600px) {
     font-size: 40px;
+    margin-top: 103px;
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const SubTitle = styled.h1`
+  position: relative;
+  font-family: "Buenard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 120%;
+  /* margin-top: 163px; */
+  /* identical to box height, or 66px */
+
+  text-align: center;
+
+  /* TAMNO PLAVA */
+  z-index: 4;
+  color: #0d3255;
+  @media only screen and (max-width: 600px) {
+    font-size: 20px;
+    /* margin-top: 103px; */
   }
   @media only screen and (max-width: 420px) {
   }
@@ -362,6 +386,7 @@ export const Alert = styled.div`
   transform: translate(-50%, -50%);
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.65);
   @media only screen and (max-width: 600px) {
+    width: 90%;
   }
   @media only screen and (max-width: 420px) {
   }

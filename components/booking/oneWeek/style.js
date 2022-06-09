@@ -48,7 +48,7 @@ export const Price = styled.h3`
   }
 `;
 
-export const Date = styled.p`
+export const Dates = styled.p`
   font-family: "Avenir Next";
   font-style: normal;
   font-weight: 500;
@@ -61,6 +61,35 @@ export const Date = styled.p`
   /* Gray 6 */
 
   color: #f2f2f2;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+
+export const DiskontWrap = styled.div`
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  font-size: 11px;
+  font-weight: 700;
+  /* transform: rotate(-10deg); */
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: #f4c914;
+  padding-top: 7px;
+  padding-left: 2px;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const Amount = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {

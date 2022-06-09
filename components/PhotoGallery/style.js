@@ -117,7 +117,9 @@ export const WrapImage = styled.div`
     height: 116px;
     width: 116px;
   }
-  @media only screen and (max-width: 365px) {
+  @media only screen and (max-width: 400px) {
+    margin: 5px;
+
     height: 100px;
     width: 100px;
   }

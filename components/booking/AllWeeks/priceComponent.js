@@ -43,13 +43,24 @@ function PriceComponent({ price, data }) {
     }, 3000);
   };
   // console.log(data);
+  // useEffect(() => {
+  //   var newArray = data.filter(function (el) {
+  //     return el.selected === true;
+  //   });
+  //   let dateArray = [];
+  //   newArray.map((el) => {
+  //     dateArray.push(el.datum);
+  //   });
+  //   // setDates(dateArray);
+  //   setDates(newArray);
+  // }, [data]);
   useEffect(() => {
     var newArray = data.filter(function (el) {
       return el.selected === true;
     });
     let dateArray = [];
     newArray.map((el) => {
-      dateArray.push(el.datum);
+      dateArray.push(el.startDate, el.endDate);
     });
     // setDates(dateArray);
     setDates(newArray);

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-import { WeekWrap, Price, Date } from "./style.js";
+import { WeekWrap, Price, Dates } from "./style.js";
+import Diskont from "./diskont";
 // import HeroVideo from "../../video/kraciVideo.mp4";
 import Image from "next/image";
+import moment from "moment";
 
 const Week = ({
   datum,
@@ -15,13 +17,18 @@ const Week = ({
   handleMarker,
   marked,
   length,
+  discount,
+  discountAmount,
+  startDate,
+  endDate,
 }) => {
   //   const [selected, setSelected] = useState(false);
 
   //   const handleSelect = (id) => {
   //     setSelected(!selected);
   //   };
-
+  const [startD, setStartD] = useState("");
+  const [endD, setEndD] = useState("");
   useEffect(() => {
     let num = cijena.toString();
     function insert(str, index, value) {
@@ -29,6 +36,18 @@ const Week = ({
     }
   }, [cijena]);
 
+  useEffect(() => {
+    let newStartDate = new Date(startDate.seconds * 1000);
+    let newEndDate = new Date(endDate.seconds * 1000);
+    let newStartMonth = newStartDate.getMonth() + 1;
+    let newEndMonth = newEndDate.getMonth() + 1;
+    let newStartDay = newStartDate.getDate();
+    let newEndDay = newEndDate.getDate();
+    console.log(newStartDay, newEndDay);
+    setStartD(newStartDay + "/" + newStartMonth);
+    setEndD(newEndDay + "/" + newEndMonth);
+  }, []);
+  console.log(startD);
   return (
     <WeekWrap
       isFree={free}
@@ -41,8 +60,11 @@ const Week = ({
       selected={selected}
       length={length}
     >
-      <Date>{datum}</Date>
+      <Dates>
+        {startD} - {endD}
+      </Dates>
       <Price>{cijena} EUR</Price>
+      {discount && <Diskont discountAmount={discountAmount} />}
     </WeekWrap>
   );
 };
