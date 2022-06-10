@@ -93,6 +93,7 @@ export const WrapValTitle = styled.div`
   padding-top: 47px;
   padding-left: 92px;
   padding-bottom: 50px;
+
   h1 {
     font-family: "Buenard";
     font-style: normal;
@@ -131,8 +132,11 @@ export const WrapValTitle = styled.div`
     }
   }
   @media only screen and (max-width: 450px) {
+    h1 {
+      width: 90%;
+    }
     p {
-      font-size: 14px;
+      font-size: 15px;
     }
   }
 `;

@@ -75,7 +75,7 @@ export const Box = styled.div`
     display: none;
   }
   @media only screen and (max-width: 450px) {
-    font-size: 14px;
+    font-size: 15px;
   }
 `;
 export const OverlayMobile = styled.div`

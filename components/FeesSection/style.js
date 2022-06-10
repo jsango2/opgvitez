@@ -93,7 +93,7 @@ export const Text = styled.div`
   }
   @media only screen and (max-width: 600px) {
     width: 100%;
-    font-size: 14px;
+    font-size: 15px;
     margin-bottom: 46px;
   }
 `;

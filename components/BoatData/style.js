@@ -33,7 +33,8 @@ export const Up = styled.div`
     justify-content: center;
     align-items: center;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    padding-bottom: 70px;
   }
 `;
 export const WrapLeft = styled.div`
@@ -202,7 +203,7 @@ export const Property = styled.h3`
     margin-right: 40px;
   }
   @media only screen and (max-width: 450px) {
-    font-size: 14px;
+    font-size: 15px;
   }
 `;
 export const Text = styled.h3`
@@ -220,7 +221,7 @@ export const Text = styled.h3`
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 450px) {
-    font-size: 14px;
+    font-size: 15px;
   }
 `;
 export const Download = styled.h3`
@@ -262,7 +263,7 @@ export const Data = styled.h2`
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 450px) {
-    font-size: 14px;
+    font-size: 15px;
   }
 `;
 export const Title = styled.h2`

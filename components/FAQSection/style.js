@@ -95,7 +95,7 @@ export const Text = styled.p`
   margin-bottom: 9px;
 
   @media only screen and (max-width: 600px) {
-    font-size: 14px;
+    font-size: 15px;
   }
   @media only screen and (max-width: 420px) {
   }

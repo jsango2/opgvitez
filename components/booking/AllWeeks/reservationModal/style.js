@@ -96,7 +96,7 @@ export const WrapSection = styled.div`
       width: 90%;
     }
     button {
-      font-size: 14px;
+      font-size: 15px;
     }
   }
   @media only screen and (max-width: 420px) {

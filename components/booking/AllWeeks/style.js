@@ -100,7 +100,8 @@ export const Title = styled.h1`
     font-size: 40px;
     margin-top: 103px;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    margin-top: 70px;
   }
 `;
 export const SubTitle = styled.h1`
@@ -253,7 +254,7 @@ export const WrapBox = styled.div`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 120%;
   margin: 0 15px;
   /* identical to box height, or 17px */
@@ -319,7 +320,7 @@ export const PriceFrom = styled.h4`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 120%;
   /* identical to box height, or 17px */
 

@@ -53,7 +53,7 @@ export const Dates = styled.p`
   font-family: "Avenir Next";
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 120%;
   /* or 17px */
 

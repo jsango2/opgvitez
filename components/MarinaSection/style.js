@@ -159,6 +159,6 @@ export const Text = styled.p`
     width: 100%;
   }
   @media only screen and (max-width: 450px) {
-    font-size: 14px;
+    font-size: 15px;
   }
 `;
