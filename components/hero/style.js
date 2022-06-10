@@ -158,14 +158,15 @@ export const Overlay = styled.div`
     font-size: 19px;
     line-height: 120%;
     /* identical to box height, or 23px */
-
     text-align: center;
     text-transform: uppercase;
-    /* transition: all 0.3s ease-in-out; */
+    transition: all 0.3s ease-in-out;
     width: 300px;
+    transform: scale(1);
+
     :hover {
       /* text-decoration: underline; */
-      font-weight: 700;
+      transform: scale(1.05);
     }
   }
   @media only screen and (max-width: 1050px) {

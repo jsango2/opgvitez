@@ -134,6 +134,7 @@ export const WrapValTitle = styled.div`
   @media only screen and (max-width: 450px) {
     h1 {
       width: 90%;
+      margin: 0 auto;
     }
     p {
       font-size: 15px;
