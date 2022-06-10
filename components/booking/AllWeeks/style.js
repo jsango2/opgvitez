@@ -354,14 +354,15 @@ export const Price = styled.div`
   }
 `;
 export const OverlayBlur = styled.div`
-  position: absolute;
+  position: fixed;
   z-index: 6;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
   /* padding: 10px; */
-  background: rgb(94 93 93 / 50%);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(2px);
+  /* background: rgb(94 93 93 / 50%); */
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   @media only screen and (max-width: 750px) {
   }
   @media only screen and (max-width: 420px) {
