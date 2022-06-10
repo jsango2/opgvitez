@@ -24,7 +24,19 @@ class ReservationModal extends React.Component {
       datum: [],
     };
   }
-  componentDidMount() {
+  // componentDidMount() {
+  //   let datumi = [];
+  //   this.props.datum.map((el) => {
+  //     datumi.push({
+  //       start: moment.unix(el.startDate.seconds).format("MM/DD"),
+  //       end: moment.unix(el.endDate.seconds).format("MM/DD"),
+  //     });
+  //   });
+  //   this.setState({ ...this.state, datum: JSON.stringify(datumi) });
+  //   // console.log(this.state.datum);
+  // }
+
+  handleSubmit = (e) => {
     let datumi = [];
     this.props.datum.map((el) => {
       datumi.push({
@@ -32,10 +44,7 @@ class ReservationModal extends React.Component {
         end: moment.unix(el.endDate.seconds).format("MM/DD"),
       });
     });
-    this.setState({ ...this.state, datum: datumi.toString() });
-  }
-
-  handleSubmit = (e) => {
+    this.setState({ ...this.state, datum: JSON.stringify(datumi) });
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
