@@ -19,7 +19,7 @@ class ReservationModal extends React.Component {
     super(props);
     this.state = {
       email: "",
-      cijena: this.props.price,
+      cijena: this.props.price + "Eur",
       message: "",
       datum: [],
     };
@@ -75,8 +75,8 @@ class ReservationModal extends React.Component {
           {this.props.datum.map((el) => (
             <Week key={el.startDate.seconds}>
               <Dates>
-                {moment.unix(el.startDate.seconds).format("MM/DD")}-
-                {moment.unix(el.endDate.seconds).format("MM/DD")}
+                {moment.unix(el.startDate.seconds).format("DD/MM")}-
+                {moment.unix(el.endDate.seconds).format("DD/MM")}
               </Dates>
               <Price>{this.insert(el.cijena.toString(), ".")} EUR</Price>
             </Week>
