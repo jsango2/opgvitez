@@ -74,7 +74,7 @@ export const DiskontWrap = styled.div`
   right: -10px;
   width: 30px;
   height: 30px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   /* transform: rotate(-10deg); */
   border-radius: 50%;
@@ -83,13 +83,11 @@ export const DiskontWrap = styled.div`
   padding-top: 7px;
   padding-left: 2px;
   @media only screen and (max-width: 600px) {
-    padding-top: 5px;
-
     top: -8px;
     right: -8px;
-    width: 26px;
-    height: 26px;
-    font-size: 10px;
+    width: 28px;
+    height: 28px;
+    font-size: 9px;
   }
   @media only screen and (max-width: 420px) {
   }

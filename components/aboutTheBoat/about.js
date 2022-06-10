@@ -14,6 +14,7 @@ import Valovi from "../../images/about the boat/val.svg";
 import Val from "../../images/boatData/valBijeli.svg";
 import { useScrollPercentage } from "react-scroll-percentage";
 import useWindowSize from "../useWindowSize.js";
+import { Anchor } from "nextjs-anchor";
 
 const About = () => {
   const size = useWindowSize();
@@ -58,7 +59,9 @@ const About = () => {
           <br />
           Docked in D-Marin Marina Dalmacija, in Sukosan, Croatia
         </p>
-        <Button>PHOTO GALLERY</Button>
+        <Button>
+          <Anchor href="/#gallery">PHOTO GALLERY</Anchor>
+        </Button>
       </WrapValTitle>
       <WrapDots>
         <Image

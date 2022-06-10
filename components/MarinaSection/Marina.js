@@ -15,7 +15,7 @@ import {
 // import HeroVideo from "../../video/kraciVideo.mp4";
 import Image from "next/image";
 import Left from "../../images/marina/left.png";
-import Right from "../../images/marina/right.png";
+import Right from "../../images/marina/right.jpeg";
 import useWindowSize from "../useWindowSize.js";
 const Marina = () => {
   const size = useWindowSize();
@@ -72,9 +72,13 @@ const Marina = () => {
         </Text>
       </WrapText>
       {size.width > 600 ? (
-        <Button>THE MARINA ON GOOGLE MAPS</Button>
+        <Button href="https://goo.gl/maps/X12pgMPVjRkHmPv7A" target="_blank">
+          THE MARINA ON GOOGLE MAPS
+        </Button>
       ) : (
-        <Button>GOOGLE MAPS</Button>
+        <Button href="https://goo.gl/maps/X12pgMPVjRkHmPv7A" target="_blank">
+          GOOGLE MAPS
+        </Button>
       )}
     </HeroWrap>
   );

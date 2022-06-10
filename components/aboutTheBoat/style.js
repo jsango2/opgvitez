@@ -69,6 +69,10 @@ export const Button = styled.div`
   text-align: center;
 
   color: #ffffff;
+  a {
+    text-decoration: none;
+    color: white;
+  }
   &:hover {
     -webkit-box-shadow: 5px 5px 9px 1px #48849c;
     box-shadow: 5px 5px 9px 1px #48849c;

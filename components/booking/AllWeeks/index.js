@@ -34,9 +34,9 @@ function AllWeeks() {
   const [selected, setSelected] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [logedIn, setlogedIn] = useState(null);
-  const dbInstance = collection(database, "Charter2");
-  const dbInstance2 = collection(database, "Charter2");
-  const dbInstance3 = collection(database, "Charter2");
+  // const dbInstance = collection(database, "Charter2");
+  // const dbInstance2 = collection(database, "Charter2");
+  // const dbInstance3 = collection(database, "Charter2");
   const dbInstance4 = collection(database, "Charter3");
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);

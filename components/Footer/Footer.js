@@ -47,12 +47,14 @@ const Footer = () => {
         Petrčane ulica II 105, Hrvatska - 23 231 Petrčane
         <br /> MBS: 110113252 Tt-22/335-2
         <div style={{ width: "300px", margin: "15px auto" }}>
-          <Lottie
-            animationData={madeBySutra}
-            interactivity={interactivity}
-            autoPlay={false}
-            loop={true}
-          />
+          <a href="https://www.sutra.hr" target="_blank">
+            <Lottie
+              animationData={madeBySutra}
+              interactivity={interactivity}
+              autoPlay={false}
+              loop={true}
+            />
+          </a>
         </div>
       </Data>
     </HeroWrap>

@@ -13,7 +13,7 @@ const Diskont = ({ discountAmount }) => {
 
   return (
     <DiskontWrap>
-      <Amount>{discountAmount}%</Amount>
+      <Amount>-{discountAmount}%</Amount>
     </DiskontWrap>
   );
 };

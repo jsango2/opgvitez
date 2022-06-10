@@ -15,7 +15,12 @@ export const Wrapper = styled.div`
   background: white;
   border: 1px solid black;
   border-radius: 10px;
-  @media only screen and (max-width: 420px) {
+
+  @media only screen and (max-width: 450px) {
+    form {
+      width: 90%;
+    }
+    width: 90%;
   }
 `;
 
@@ -30,7 +35,15 @@ export const WrapForm = styled.div`
     margin: 5px;
     padding: 5px;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    input {
+      width: 100%;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid grey;
+      margin: 5px 0;
+      padding: 5px;
+    }
   }
 `;
 export const Button = styled.button`
@@ -51,7 +64,8 @@ export const Button = styled.button`
       #1e7ca4 100%
     )
     /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    width: 100%;
   }
 `;
 

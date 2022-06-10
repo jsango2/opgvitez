@@ -58,7 +58,7 @@ const PhotoGallery = () => {
     },
   };
   return (
-    <HeroWrap>
+    <HeroWrap id="gallery">
       <Title>BOAT PHOTO GALLERY</Title>
       <WrapGallery>
         {/* {Images.map((image) => (

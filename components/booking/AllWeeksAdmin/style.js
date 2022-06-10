@@ -43,17 +43,19 @@ export const WrapPrice = styled.div`
 `;
 export const WrapSection = styled.div`
   position: relative;
-  height: 1082px;
+  height: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding-top: 163px;
+  padding-bottom: 80px;
   /* background-image: url(${bg});
   background-position: center;
   background-size: cover; */
   @media only screen and (max-width: 600px) {
+    padding-top: 83px;
   }
   @media only screen and (max-width: 420px) {
   }

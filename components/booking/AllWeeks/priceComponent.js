@@ -83,7 +83,7 @@ function PriceComponent({ price, data }) {
       )}
       {isMessageSentAlert && (
         <Alert>
-          RESERVATION ENQUIRE SENT. <br />
+          RESERVATION INQUIRE SENT. <br />
           <br />
           We will get back to you as soon as possible
         </Alert>
@@ -97,7 +97,7 @@ function PriceComponent({ price, data }) {
             {price} EUR
           </Price>
 
-          <Button onClick={handleClick}>SEND RESERVATION ENQUIRE</Button>
+          <Button onClick={handleClick}>SEND RESERVATION INQUIRE</Button>
         </WrapUp>
         {size.width > 600 ? <Legend /> : ""}
       </WrapPrice>

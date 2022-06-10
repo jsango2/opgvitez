@@ -52,7 +52,7 @@ export const WrapImageR = styled.div`
   @media only screen and (max-width: 420px) {
   }
 `;
-export const Button = styled.div`
+export const Button = styled.a`
   width: 395px;
   height: 53px;
   margin: 70px auto 0 auto;
@@ -72,9 +72,9 @@ export const Button = styled.div`
   font-size: 21px;
   line-height: 120%;
   /* or 25px */
-
+  background-color: transparent;
   text-align: center;
-
+  text-decoration: none;
   /* TAMNO PLAVA */
   cursor: pointer;
   color: #0d3255;
@@ -131,7 +131,7 @@ export const Title = styled.h2`
 export const WrapText = styled.div`
   margin: 80px auto 0 auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
   width: 80%;
   @media only screen and (max-width: 1050px) {
