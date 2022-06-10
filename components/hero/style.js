@@ -57,13 +57,15 @@ export const ValWrap = styled.div`
 `;
 export const Box = styled.div`
   position: relative;
-  height: 27vh;
+  /* height: 27vh; */
+  height: auto;
   width: 100%;
   background: #035865;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 40px 0;
   p {
     width: 80%;
     text-align: center;
@@ -229,7 +231,7 @@ export const Button = styled.div`
     width: 339px;
   }
   @media only screen and (max-width: 450px) {
-    font-size: 14px;
+    font-size: 16px;
     width: 259px;
   }
 `;
