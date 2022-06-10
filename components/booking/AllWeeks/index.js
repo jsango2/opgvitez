@@ -17,10 +17,12 @@ import {
   SubTitle,
 } from "./style.js";
 import PriceComponent from "./priceComponent";
-import PulseLoader from "react-spinners/ClipLoader";
-import { Data } from "../data";
+
+import Legend from "./legend";
+import useWindowSize from "../../useWindowSize";
 
 function AllWeeks() {
+  const size = useWindowSize();
   const [data, setData] = useState([]);
   const [selectedWeeks, setSelectedWeeks] = useState([]);
   const [suma, setSuma] = useState(0);
@@ -151,6 +153,8 @@ function AllWeeks() {
       />
       <Title>FREE BOOKING DATES</Title>
       <SubTitle>Choose your dates and make reservation</SubTitle>
+      {size.width < 600 ? <Legend /> : ""}
+
       {isLoading ? (
         <>
           <Loading>LOADING...</Loading>

@@ -24,13 +24,17 @@ class ReservationModal extends React.Component {
       datum: [],
     };
   }
-  // componentDidMount() {
-  //   let datumi = [];
-  //   this.props.datum.map((el) => {
-  //     datumi.push(el.datum);
-  //   });
-  //   this.setState({ ...this.state, datum: datumi.toString() });
-  // }
+  componentDidMount() {
+    let datumi = [];
+    this.props.datum.map((el) => {
+      datumi.push({
+        start: moment.unix(el.startDate.seconds).format("MM/DD"),
+        end: moment.unix(el.endDate.seconds).format("MM/DD"),
+      });
+    });
+    this.setState({ ...this.state, datum: datumi.toString() });
+  }
+
   handleSubmit = (e) => {
     fetch("/", {
       method: "POST",

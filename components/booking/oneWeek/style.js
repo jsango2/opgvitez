@@ -5,6 +5,7 @@ export const WeekWrap = styled.div`
   width: 163px;
   background-color: ${(props) => (props.isFree ? "#68BFE2 " : "#BDBDBD")};
   background: ${(props) => (props.marked ? "#2C5F7B " : "")};
+  opacity: ${(props) => (props.isFree ? 1 : 0.6)};
 
   display: flex;
   flex-direction: column;
@@ -84,8 +85,8 @@ export const DiskontWrap = styled.div`
   @media only screen and (max-width: 600px) {
     padding-top: 5px;
 
-    top: -12px;
-    right: -9px;
+    top: -8px;
+    right: -8px;
     width: 26px;
     height: 26px;
     font-size: 10px;

@@ -21,11 +21,14 @@ import {
   Alert,
   OverlayBlur,
 } from "./style.js";
+import useWindowSize from "../../useWindowSize";
+import Legend from "./legend.js";
 
 function PriceComponent({ price, data }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMessageSentAlert, setIsMessageSentAlert] = useState(false);
   const [dates, setDates] = useState([]);
+  const size = useWindowSize();
   // console.log("isOpen?", isModalOpen);
 
   const handleClick = () => {
@@ -96,20 +99,7 @@ function PriceComponent({ price, data }) {
 
           <Button onClick={handleClick}>SEND RESERVATION ENQUIRE</Button>
         </WrapUp>
-        <WrapDown>
-          <WrapBox>
-            <Box color="#BDBDBD" />
-            Occupied
-          </WrapBox>
-          <WrapBox>
-            <Box color="#2C5F7B" />
-            Selected
-          </WrapBox>
-          <WrapBox>
-            <Box color="#68BFE2" />
-            Free
-          </WrapBox>
-        </WrapDown>
+        {size.width > 600 ? <Legend /> : ""}
       </WrapPrice>
     </>
   );

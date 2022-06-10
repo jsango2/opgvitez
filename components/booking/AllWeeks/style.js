@@ -205,6 +205,7 @@ export const WrapDown = styled.div`
   background-position: center;
   background-size: cover; */
   @media only screen and (max-width: 600px) {
+    margin-top: 10px;
   }
   @media only screen and (max-width: 420px) {
   }
