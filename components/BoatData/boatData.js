@@ -124,7 +124,7 @@ const BoatData = () => {
 
           <Download>Download the boat brochure</Download>
         </TextWrap>
-        <WrapDots>
+        <WrapDots inView={inView}>
           <Image
             src={Dots}
             alt="Dots"

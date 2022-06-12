@@ -318,8 +318,13 @@ export const WrapDots = styled.div`
   position: absolute;
   height: 450px;
   width: 500px;
-  right: -410px;
+  right: -367px;
   bottom: -210px;
+  transition: all 2.5s ease-out;
+
+  transform: ${(props) =>
+    props.inView ? `translate(0px, 0px) ` : `translate(80px,0px)`};
+  opacity: ${(props) => (props.inView ? `1` : `0`)};
   @media only screen and (max-width: 650px) {
     display: none;
   }

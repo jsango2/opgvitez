@@ -63,11 +63,12 @@ function PriceComponent({ price, data }) {
     });
     let dateArray = [];
     newArray.map((el) => {
-      dateArray.push(el.startDate, el.endDate);
+      dateArray.push(el.startDate, el.endDate, el.discount);
     });
     // setDates(dateArray);
     setDates(newArray);
   }, [data]);
+  console.log("dates", dates);
   return (
     <>
       {isModalOpen && <OverlayBlur />}

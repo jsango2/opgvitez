@@ -325,13 +325,13 @@ function AllWeeks({ handleLogOut, userEmail }) {
                 // defaultChecked={discount}
                 onChange={() => setDiscount(!discount)}
               ></input>
-              <input
+              {/* <input
                 style={{ width: "120px" }}
                 name="discount AMount"
                 type="number"
                 value={discountAmount}
                 onChange={(event) => setDiscountAmount(event.target.value)}
-              />{" "}
+              />{" "} */}
             </div>
             <div className="wrapButtonsForm">
               <button type="submit">Save</button>
@@ -379,12 +379,19 @@ function AllWeeks({ handleLogOut, userEmail }) {
               <option value={true}>Free</option>
               <option value={false}>Booked</option>
             </select>
-            <label htmlFor="discount" style={{ color: "darkblue" }}>
-              Discount
-            </label>
             <div
               style={{ display: "flex", width: "90%", alignItems: "center" }}
             >
+              <label
+                htmlFor="discount"
+                style={{
+                  color: "darkblue",
+                  marginBottom: "20px",
+                  marginRight: "10px",
+                }}
+              >
+                Sale
+              </label>
               <input
                 style={{ width: "20px", marginRight: "20px" }}
                 type="checkbox"
@@ -393,14 +400,14 @@ function AllWeeks({ handleLogOut, userEmail }) {
                 // defaultChecked={discount}
                 onChange={() => setDiscount(!discount)}
               ></input>
-              <input
+              {/* <input
                 style={{ width: "120px" }}
                 name="discount AMount"
                 type="number"
                 value={discountAmount}
                 onChange={(event) => setDiscountAmount(event.target.value)}
-              />{" "}
-              <div style={{ color: "darkblue" }}>%</div>
+              />{" "} */}
+              {/* <div style={{ color: "darkblue" }}>%</div> */}
             </div>
             <div style={{ display: "flex" }} className="wrapButtonsForm">
               <button type="submit">Save</button>

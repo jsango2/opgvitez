@@ -78,6 +78,10 @@ export const Button = styled.div`
     box-shadow: 5px 5px 9px 1px #48849c;
   }
   @media only screen and (max-width: 1050px) {
+    a {
+      text-decoration: none;
+      color: #32bde3;
+    }
     margin: 0 auto;
     background-color: white;
     color: #32bde3;

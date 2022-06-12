@@ -23,7 +23,7 @@ export const WeekWrap = styled.div`
     box-shadow: 5px 5px 9px 1px #48849c;
   }
   @media only screen and (max-width: 600px) {
-    margin: 5px;
+    margin: 6px;
     width: 115px;
   }
   @media only screen and (max-width: 420px) {
@@ -70,24 +70,20 @@ export const Dates = styled.p`
 
 export const DiskontWrap = styled.div`
   position: absolute;
-  top: -13px;
-  right: -10px;
-  width: 30px;
+  top: -19px;
+  right: -12px;
+  width: 50px;
   height: 30px;
-  font-size: 10px;
-  font-weight: 700;
-  /* transform: rotate(-10deg); */
+  /* 
   border-radius: 50%;
   border: 2px solid white;
   background-color: #f4c914;
   padding-top: 7px;
-  padding-left: 2px;
+  padding-left: 2px; */
   @media only screen and (max-width: 600px) {
-    top: -8px;
+    top: -17px;
     right: -8px;
-    width: 28px;
-    height: 28px;
-    font-size: 9px;
+    width: 35px;
   }
   @media only screen and (max-width: 420px) {
   }

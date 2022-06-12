@@ -20,6 +20,7 @@ import PriceComponent from "./priceComponent";
 
 import Legend from "./legend";
 import useWindowSize from "../../useWindowSize";
+import { useScrollPercentage } from "react-scroll-percentage";
 
 function AllWeeks() {
   const size = useWindowSize();
@@ -40,6 +41,11 @@ function AllWeeks() {
   const dbInstance4 = collection(database, "Charter3");
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);
+
+  const [ref, percentage] = useScrollPercentage({
+    /* Optional options */
+    threshold: 0,
+  });
 
   auth.onAuthStateChanged((user) => {
     if (user) {
@@ -86,7 +92,7 @@ function AllWeeks() {
     getNotes();
   }, []);
 
-  console.log(data);
+  // console.log(data);
   const handleClick = (id) => {
     setIsOpen(true);
     const docRef = doc(dbInstance4, id);
@@ -139,13 +145,18 @@ function AllWeeks() {
     } else return str.substr(0, position) + value + str.substr(position);
   }
   return (
-    <WrapSection id="booking">
+    <WrapSection id="booking" ref={ref}>
       <Overlay />
       <Image
         src={bg}
         alt="booking"
         layout="fill"
         objectFit="cover"
+        objectPosition={
+          size.width > 1050
+            ? `0% ${percentage * 50}% `
+            : `90% ${percentage * 50 + 20}% `
+        }
         // width={500} automatically provided
         // height={500} automatically provided
         // blurDataURL="data:..." automatically provided

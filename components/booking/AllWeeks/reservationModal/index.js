@@ -7,6 +7,7 @@ import { collection, addDoc, getDocs, doc, getDoc } from "firebase/firestore";
 import { WrapSection, CloseX, Fixed, Week, WrapDates } from "./style.js";
 import { Dates, Price } from "../../oneWeek/style.js";
 import moment from "moment";
+import Diskont from "../../oneWeek/diskont.js";
 
 const encode = (data) => {
   return Object.keys(data)
@@ -74,6 +75,7 @@ class ReservationModal extends React.Component {
         <WrapDates>
           {this.props.datum.map((el) => (
             <Week key={el.startDate.seconds}>
+              {el.discount && <Diskont />}
               <Dates>
                 {moment.unix(el.startDate.seconds).format("DD/MM")}-
                 {moment.unix(el.endDate.seconds).format("DD/MM")}
@@ -97,13 +99,14 @@ class ReservationModal extends React.Component {
           {/* <Fixed>Message:</Fixed> */}
 
           <textarea
+            style={{ resize: "none" }}
             placeholder="Your message"
             name="message"
             rows="4"
             value={message}
             onChange={this.handleChange}
           ></textarea>
-          <button type="submit"> Send reservation enquire</button>
+          <button type="submit"> Send reservation inquire</button>
         </form>
       </WrapSection>
     );

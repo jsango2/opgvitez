@@ -48,6 +48,9 @@ const Login = (props) => {
       // Handle Errors here.
       if (error) {
         setEmailError(error.code);
+        setTimeout(() => {
+          setEmailError("");
+        }, 3000);
       }
       // setProcess(true);
       // setlogedIn(true);
@@ -62,6 +65,7 @@ const Login = (props) => {
     // }
   };
 
+  console.log("Error:", emailError);
   const handleLogOut = (e) => {
     e.preventDefault();
 
@@ -124,6 +128,9 @@ const Login = (props) => {
               Log out
             </Button> */}
           </form>
+          <div style={{ color: "red", position: "absolute", bottom: "50px" }}>
+            {emailError}
+          </div>
         </Wrapper>
       </div>
     </div>
