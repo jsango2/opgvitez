@@ -32,13 +32,13 @@ function Index() {
         <meta property="og:title" content="Meet Summer Breeze" key="title" />
         <link
           rel="canonical"
-          href="https://www.44parallelnorth.com"
+          href="https://www.44adriatic.com"
           key="canonical"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
 
-        <meta property="og:url" content="https://www.44parallelnorth.com" />
+        <meta property="og:url" content="https://www.44adriatic.com" />
 
         <meta property="og:image" content="/ogimage.png" />
         <meta
