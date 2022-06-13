@@ -65,8 +65,8 @@ export const Overlay = styled.div`
   position: absolute;
   height: 100%;
   width: 100%;
-  background: rgba(49, 59, 66, 0.3);
-  /* backdrop-filter: blur(2px); */
+  background: #00000042;
+  backdrop-filter: blur(3px);
 
   z-index: 3;
 

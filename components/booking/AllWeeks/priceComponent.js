@@ -28,12 +28,16 @@ function PriceComponent({ price, data }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMessageSentAlert, setIsMessageSentAlert] = useState(false);
   const [dates, setDates] = useState([]);
+  const [isTooMany, setIsTooMany] = useState(false);
   const size = useWindowSize();
   // console.log("isOpen?", isModalOpen);
 
   const handleClick = () => {
     if (dates.length >= 5) {
-      console.log("too many weeks");
+      setIsTooMany(true);
+      setTimeout(() => {
+        setIsTooMany(false);
+      }, 2000);
     } else {
       setIsModalOpen((old) => !old);
     }
@@ -70,6 +74,7 @@ function PriceComponent({ price, data }) {
   }, [data]);
   return (
     <>
+      {isTooMany && <Alert>Too many weeks. Choose up to 4 weeks!</Alert>}
       {isModalOpen && <OverlayBlur />}
       {isModalOpen && dates.length < 5 ? (
         <ReservationModal
