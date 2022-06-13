@@ -28,35 +28,38 @@ function Index() {
   return (
     <Layout>
       <Head>
-        {/* <title>Škola trčanja Zadar</title>
-          <meta property="og:title" content="Škola trčanja Zadar" key="title" />
-          <link
-            rel="canonical"
-            href="https://www.runzadar.com"
-            key="canonical"
-          />
+        <title>Meet Summer Breeze</title>
+        <meta property="og:title" content="Meet Summer Breeze" key="title" />
+        <link
+          rel="canonical"
+          href="https://www.44parallelnorth.com"
+          key="canonical"
+        />
 
-          <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image" />
 
-          <meta property="og:url" content="https://www.runzadar.com" />
+        <meta property="og:url" content="https://www.44parallelnorth.com" />
 
-          <meta
-            property="og:image"
-            content="https://www.sportzone.hr/wp-content/uploads/2020/01/12806018_1686900528256019_7006629476788399817_n.jpg"
-          />
-          <meta
-            name="description"
-            content="Prvi rekreativni trkački klub u Zadru. Od početnika do naprednih trkača. "
-            key="desc"
-          />
-          <meta
-            property="og:description"
-            content="Prvi rekreativni trkački klub u Zadru. Od početnika do naprednih trkača. "
-          />
-          <meta
-            property="twitter:description"
-            content="Prvi rekreativni trkački klub u Zadru. Od početnika do naprednih trkača. "
-          /> */}
+        <meta property="og:image" content="/ogimage.png" />
+        <meta
+          name="description"
+          content=" An incredible Catamaran dedicated for charters. Built in 2018, the
+          fully equipped Lagoon 450 F will take you to the most beautiful
+          anchorages on the Croatian coastline."
+          key="desc"
+        />
+        <meta
+          property="og:description"
+          content=" An incredible Catamaran dedicated for charters. Built in 2018, the
+          fully equipped Lagoon 450 F will take you to the most beautiful
+          anchorages on the Croatian coastline. "
+        />
+        <meta
+          property="twitter:description"
+          content=" An incredible Catamaran dedicated for charters. Built in 2018, the
+          fully equipped Lagoon 450 F will take you to the most beautiful
+          anchorages on the Croatian coastline. "
+        />
       </Head>
       <SimpleReactLightbox>
         <form name="contact" method="POST" data-netlify="true" hidden>
