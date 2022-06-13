@@ -23,7 +23,7 @@ import {
 import Image from "next/image";
 import Boat from "../../images/boatData/fee.png";
 
-import Val from "../../images/boatData/valBijeli.svg";
+import Val from "../../images/about the boat/val.svg";
 
 const FeesSection = () => {
   return (

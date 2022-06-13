@@ -68,7 +68,6 @@ function PriceComponent({ price, data }) {
     // setDates(dateArray);
     setDates(newArray);
   }, [data]);
-  console.log("dates", dates);
   return (
     <>
       {isModalOpen && <OverlayBlur />}

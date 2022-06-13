@@ -16,6 +16,7 @@ import Val from "../../images/boatData/valBijeli.svg";
 import Dots from "../../images/hero/dots.svg";
 import { Anchor } from "nextjs-anchor";
 import { useInView } from "react-intersection-observer";
+
 const Hero = () => {
   const { ref, inView } = useInView({
     /* Optional options */

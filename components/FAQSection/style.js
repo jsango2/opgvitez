@@ -76,7 +76,8 @@ export const Title = styled.h2`
   @media only screen and (max-width: 600px) {
     font-size: 40px;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    text-align: center;
   }
 `;
 export const Text = styled.p`
@@ -100,35 +101,3 @@ export const Text = styled.p`
   @media only screen and (max-width: 420px) {
   }
 `;
-// export const ValWrap = styled.div`
-//   position: absolute;
-//   height: 70px;
-//   width: 200px;
-//   left: -250px;
-//   @media only screen and (max-width: 600px) {
-//   }
-//   @media only screen and (max-width: 420px) {
-//   }
-// `;
-// export const WrapValTitle = styled.div`
-//   position: relative;
-//   height: auto;
-//   width: 400px;
-
-//   @media only screen and (max-width: 600px) {
-//   }
-//   @media only screen and (max-width: 420px) {
-//   }
-// `;
-// export const WrapImage = styled.div`
-//   position: absolute;
-//   height: 845px;
-//   width: 607px;
-//   right: 0;
-//   top: 190px;
-
-//   @media only screen and (max-width: 600px) {
-//   }
-//   @media only screen and (max-width: 420px) {
-//   }
-// `;

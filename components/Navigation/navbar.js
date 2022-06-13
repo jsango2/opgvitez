@@ -14,8 +14,13 @@ import { Links } from "./links";
 import MobileMenu from "../MobileMenu";
 import { useInView } from "react-intersection-observer";
 import { Anchor } from "nextjs-anchor";
-
+import { useRouter } from "next/router";
+import { en, hr } from "../../translations/translations.js";
 const Navbar = () => {
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "en" ? en : locale === "hr" ? hr : "";
+  console.log(t.home);
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -30,18 +35,7 @@ const Navbar = () => {
   return (
     <NavbarWrap ref={ref}>
       <MobileMenu isOpen={isOpen} handleClick={handleClick} />
-      {/* {isOpen ? (
-        <CloseIcon onClick={handleClick}>
-          <LineX1 />
-          <LineX2 />
-        </CloseIcon>
-      ) : (
-        <Hamburger onClick={() => setIsOpen(!isOpen)}>
-          <Line />
-          <Line />
-          <Line />
-        </Hamburger>
-      )} */}
+
       <Hamburger onClick={() => setIsOpen(!isOpen)}>
         <Line />
         <Line />
@@ -58,6 +52,13 @@ const Navbar = () => {
             <Anchor href={e.anchor}>{e.veza}</Anchor>
           </SingleLink>
         ))}
+
+        {/* <SingleLink>
+          <a href="">{t.home}</a>
+        </SingleLink>
+        <SingleLink>
+          <a href="">{t.contact}</a>
+        </SingleLink> */}
       </LinkWrap>
     </NavbarWrap>
   );

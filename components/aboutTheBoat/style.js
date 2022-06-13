@@ -20,7 +20,7 @@ export const HeroWrap = styled.div`
     padding-left: 0;
   }
   @media only screen and (max-width: 450px) {
-    padding: 65px 0;
+    padding: 65px 0 20px 0;
   }
 `;
 export const ValWrap = styled.div`
@@ -40,7 +40,11 @@ export const WrapDots = styled.div`
   left: -50px;
   top: 130px;
   @media only screen and (max-width: 1050px) {
-    display: none;
+    height: 145px;
+    width: 172px;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0);
   }
   @media only screen and (max-width: 420px) {
   }

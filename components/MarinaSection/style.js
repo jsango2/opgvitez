@@ -16,7 +16,8 @@ export const HeroWrap = styled.div`
   );
   overflow: hidden;
   padding-bottom: 70px;
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    padding-top: 73px;
   }
 `;
 export const WrapImages = styled.div`
@@ -125,7 +126,8 @@ export const Title = styled.h2`
   @media only screen and (max-width: 600px) {
     font-size: 40px;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    margin-bottom: 73px;
   }
 `;
 export const WrapText = styled.div`

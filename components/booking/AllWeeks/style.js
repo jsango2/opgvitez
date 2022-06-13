@@ -282,7 +282,7 @@ export const Loading = styled.div`
   font-weight: 700;
   font-size: 34px;
   line-height: 120%;
-  margin: 0 15px;
+  margin: 30px 15px;
   height: 45px;
   /* identical to box height, or 17px */
 

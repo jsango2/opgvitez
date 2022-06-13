@@ -15,6 +15,7 @@ import SimpleReactLightbox from "simple-react-lightbox";
 import Marina from "../components/MarinaSection/Marina";
 import Sights from "../components/Sights/Sights";
 import Footer from "../components/Footer/Footer";
+import Head from "next/head";
 // function Profile() {
 //   if (error) return <div>failed to load</div>;
 //   if (!data) return <div>loading...</div>;
@@ -23,9 +24,40 @@ import Footer from "../components/Footer/Footer";
 
 function Index() {
   const { locale, locales, asPath } = useRouter();
-
+  // console.log(asPath);
   return (
     <Layout>
+      <Head>
+        {/* <title>Škola trčanja Zadar</title>
+          <meta property="og:title" content="Škola trčanja Zadar" key="title" />
+          <link
+            rel="canonical"
+            href="https://www.runzadar.com"
+            key="canonical"
+          />
+
+          <meta name="twitter:card" content="summary_large_image" />
+
+          <meta property="og:url" content="https://www.runzadar.com" />
+
+          <meta
+            property="og:image"
+            content="https://www.sportzone.hr/wp-content/uploads/2020/01/12806018_1686900528256019_7006629476788399817_n.jpg"
+          />
+          <meta
+            name="description"
+            content="Prvi rekreativni trkački klub u Zadru. Od početnika do naprednih trkača. "
+            key="desc"
+          />
+          <meta
+            property="og:description"
+            content="Prvi rekreativni trkački klub u Zadru. Od početnika do naprednih trkača. "
+          />
+          <meta
+            property="twitter:description"
+            content="Prvi rekreativni trkački klub u Zadru. Od početnika do naprednih trkača. "
+          /> */}
+      </Head>
       <SimpleReactLightbox>
         <form name="contact" method="POST" data-netlify="true" hidden>
           <input type="hidden" name="form-name" value="contact" />

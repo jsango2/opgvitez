@@ -25,8 +25,9 @@ export const HeroWrap = styled.div`
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 600px) {
+    padding-top: 73px;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
   }
 `;
 export const TextWrap = styled.div`
@@ -68,7 +69,8 @@ export const Title = styled.h2`
   @media only screen and (max-width: 600px) {
     font-size: 40px;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    margin-bottom: 73px;
   }
 `;
 export const Text = styled.p`
