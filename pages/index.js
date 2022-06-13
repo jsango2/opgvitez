@@ -45,20 +45,20 @@ function Index() {
           name="description"
           content=" An incredible Catamaran dedicated for charters. Built in 2018, the
           fully equipped Lagoon 450 F will take you to the most beautiful
-          anchorages on the Croatian coastline."
+          anchorages on the Croatian coastline. Catamaran charter in Croatia. Book now!"
           key="desc"
         />
         <meta
           property="og:description"
           content=" An incredible Catamaran dedicated for charters. Built in 2018, the
           fully equipped Lagoon 450 F will take you to the most beautiful
-          anchorages on the Croatian coastline. "
+          anchorages on the Croatian coastline. Catamaran charter in Croatia. Book now!"
         />
         <meta
           property="twitter:description"
           content=" An incredible Catamaran dedicated for charters. Built in 2018, the
           fully equipped Lagoon 450 F will take you to the most beautiful
-          anchorages on the Croatian coastline. "
+          anchorages on the Croatian coastline. Catamaran charter in Croatia. Book now!"
         />
       </Head>
       <SimpleReactLightbox>
