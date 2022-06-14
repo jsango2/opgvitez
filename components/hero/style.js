@@ -8,7 +8,7 @@ export const HeroWrap = styled.div`
   position: relative;
   height: 679px;
   width: 100%;
-  /* background-color: red; */
+  background-color: #035865;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
