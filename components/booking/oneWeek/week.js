@@ -61,7 +61,8 @@ const Week = ({
       <Dates>
         {startD} - {endD}
       </Dates>
-      <Price>{cijena} EUR</Price>
+      {free ? <Price>{cijena} EUR</Price> : <Price>Booked</Price>}
+
       {discount && <Diskont discountAmount={discountAmount} />}
     </WeekWrap>
   );
