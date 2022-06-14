@@ -84,7 +84,7 @@ export const Button = styled.div`
   @media only screen and (max-width: 1050px) {
     a {
       text-decoration: none;
-      color: #32bde3;
+      color: #035865;
     }
     margin: 0 auto;
     background-color: white;

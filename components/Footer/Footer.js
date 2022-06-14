@@ -7,6 +7,8 @@ import Left from "../../images/marina/left.png";
 import Logo from "../../images/logo.png";
 import { Links } from "../Navigation/links.js";
 import { Anchor } from "nextjs-anchor";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
 import Lottie from "lottie-react";
 import madeBySutra from "./madeBySutra";
 
@@ -37,7 +39,7 @@ const Footer = () => {
       <LinkWrap>
         {Links.map((e, index) => (
           <SingleLink key={index}>
-            <Anchor href={e.anchor}>{e.veza}</Anchor>
+            <AnchorLink href={e.anchor}>{e.veza}</AnchorLink>
           </SingleLink>
         ))}
       </LinkWrap>

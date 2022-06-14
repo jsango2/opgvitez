@@ -15,6 +15,8 @@ import HeroPhoto from "../../images/heroPhoto.png";
 import Val from "../../images/boatData/valBijeli.svg";
 import Dots from "../../images/hero/dots.svg";
 import { Anchor } from "nextjs-anchor";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
 import { useInView } from "react-intersection-observer";
 
 const Hero = () => {
@@ -49,7 +51,7 @@ const Hero = () => {
           anchorages on the Croatian coastline.{" "}
         </p>
         <Button>
-          <Anchor href="/#booking">SEND INQUIRE</Anchor>{" "}
+          <AnchorLink href="/#booking">SEND INQUIRE</AnchorLink>{" "}
         </Button>
       </WrapValTitle>
       <WrapDots inView={inView}>
@@ -65,10 +67,10 @@ const Hero = () => {
         />
       </WrapDots>
       <Overlay>
-        <Anchor href="/#fees">RENTAL CONDITIONS</Anchor>
-        <Anchor href="/#boatData">BOAT EQUIPMENT</Anchor>
-        <Anchor href="/#marina">BOAT LOCATION</Anchor>
-        <Anchor href="/#faq">FAQ</Anchor>
+        <AnchorLink href="#fees">RENTAL CONDITIONS</AnchorLink>
+        <AnchorLink href="#boatData">BOAT EQUIPMENT</AnchorLink>
+        <AnchorLink href="#marina">BOAT LOCATION</AnchorLink>
+        <AnchorLink href="#faq">FAQ</AnchorLink>
       </Overlay>
       <MobileCTA>
         <OverlayMobile>
@@ -82,7 +84,7 @@ const Hero = () => {
           </p>
 
           <Button>
-            <Anchor href="/#booking">SEND INQUIRE</Anchor>{" "}
+            <AnchorLink href="#booking">SEND INQUIRE</AnchorLink>{" "}
           </Button>
         </Box>
       </MobileCTA>

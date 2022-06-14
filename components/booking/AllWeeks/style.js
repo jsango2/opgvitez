@@ -428,7 +428,16 @@ export const Button = styled.div`
   background-position: center;
   background-size: cover; */
   @media only screen and (max-width: 600px) {
+    a {
+      text-decoration: none;
+      color: #035865;
+    }
+    margin: 0 auto;
+    background-color: white;
+    color: #035865;
+    font-size: 16px;
   }
+
   @media only screen and (max-width: 420px) {
   }
 `;

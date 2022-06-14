@@ -325,7 +325,7 @@ export const Box = styled.div`
 `;
 export const LogOut = styled.div`
   position: relative;
-  z-index: 6;
+  z-index: 4;
   cursor: pointer;
   display: flex;
   justify-content: center;

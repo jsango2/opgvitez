@@ -160,7 +160,7 @@ function AllWeeks() {
         // width={500} automatically provided
         // height={500} automatically provided
         // blurDataURL="data:..." automatically provided
-        // placeholder="blur" // Optional blur-up while loading
+        placeholder="blur" // Optional blur-up while loading
       />
       <Title>FREE BOOKING DATES</Title>
       <SubTitle>Choose your dates and make reservation</SubTitle>

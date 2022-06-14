@@ -27,6 +27,7 @@ import { SRLWrapper } from "simple-react-lightbox";
 import Images from "./photos.js";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css"; // This only needs to be imported once in your app
+import SimpleReactLightbox from "simple-react-lightbox";
 
 const PhotoGallery = () => {
   const [current, setCurrent] = useState(0);
@@ -58,85 +59,39 @@ const PhotoGallery = () => {
     },
   };
   return (
-    <HeroWrap id="gallery">
-      <Title>BOAT PHOTO GALLERY</Title>
-      <WrapGallery>
-        {/* {Images.map((image) => (
-          <WrapImage
-            key={image.in}
-            onClick={(e) => handleClickImage(e, image.in)}
-          >
-            <Image
-              src={image.photo}
-              alt={image.in}
-              layout="fill"
-              // width={500} automatically provided
-              // height={500} automatically provided
-              // blurDataURL="data:..." automatically provided
-              placeholder="blur" // Optional blur-up while loading
-            />
-          </WrapImage>
-        ))} */}
-        <SRLWrapper options={options}>
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-            }}
-          >
-            {Images.map((image) => (
-              <WrapImage
-                key={image.in}
-                // onClick={(e) => handleClickImage(e, image.in)}
-              >
-                <Image
-                  src={image.photo}
-                  alt={image.in}
-                  layout="fill"
-                  // width={500} automatically provided
-                  // height={500} automatically provided
-                  // blurDataURL="data:..." automatically provided
-                  placeholder="blur" // Optional blur-up while loading
-                />
-              </WrapImage>
-            ))}
-          </div>
-        </SRLWrapper>
-      </WrapGallery>
-
-      {/* {isOpen && (
-        <Lightbox
-          mainSrc={Images[current].photo}
-          onCloseRequest={handleCloseModal}
-          nextSrc={Images[(current + 1) % Images.length].photo}
-          prevSrc={Images[(current + Images.length - 1) % Images.length].photo}
-          onMovePrevRequest={() =>
-            setCurrent((current + Images.length - 1) % Images.length)
-          }
-          onMoveNextRequest={() => setCurrent((current + 1) % Images.length)}
-        />
-      )} */}
-
-      {/* <SRLWrapper>
-        {Images.map((image) => (
-          <WrapImage
-            key={image.in}
-            // onClick={(e) => handleClickImage(e, image.in)}
-          >
-            <Image
-              src={image.photo}
-              alt={image.in}
-              layout="fill"
-              // width={500} automatically provided
-              // height={500} automatically provided
-              // blurDataURL="data:..." automatically provided
-              placeholder="blur" // Optional blur-up while loading
-            />
-          </WrapImage>
-        ))}
-      </SRLWrapper> */}
-    </HeroWrap>
+    <SimpleReactLightbox>
+      <HeroWrap id="gallery">
+        <Title>BOAT PHOTO GALLERY</Title>
+        <WrapGallery>
+          <SRLWrapper options={options}>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+              }}
+            >
+              {Images.map((image) => (
+                <WrapImage
+                  key={image.in}
+                  // onClick={(e) => handleClickImage(e, image.in)}
+                >
+                  <Image
+                    src={image.photo}
+                    alt={image.in}
+                    layout="fill"
+                    // width={500} automatically provided
+                    // height={500} automatically provided
+                    // blurDataURL="data:..." automatically provided
+                    placeholder="blur" // Optional blur-up while loading
+                  />
+                </WrapImage>
+              ))}
+            </div>
+          </SRLWrapper>
+        </WrapGallery>
+      </HeroWrap>
+    </SimpleReactLightbox>
   );
 };
 

@@ -10,6 +10,7 @@ import {
   LineX2,
 } from "./styles.js";
 import { Anchor } from "nextjs-anchor";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const MobileMenu = ({ isOpen, handleClick }) => {
   return (
@@ -20,7 +21,7 @@ const MobileMenu = ({ isOpen, handleClick }) => {
       </CloseIcon>
       {Links.map((e, index) => (
         <SingleLink key={index} onClick={handleClick}>
-          <Anchor href={e.anchor}>{e.veza}</Anchor>{" "}
+          <AnchorLink href={e.anchor}>{e.veza}</AnchorLink>{" "}
         </SingleLink>
       ))}
     </WrapMobileMenu>

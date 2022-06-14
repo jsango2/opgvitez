@@ -61,39 +61,26 @@ function Index() {
           anchorages on the Croatian coastline. Catamaran charter in Croatia. Book now!"
         />
       </Head>
-      <SimpleReactLightbox>
-        <form name="contact" method="POST" data-netlify="true" hidden>
-          <input type="hidden" name="form-name" value="contact" />
-          <input type="text" name="message" />
-          <input type="email" name="email" />
-          <input type="text" name="cijena" />
-          <input type="text" name="datum" />
-        </form>
-        <Hero />
-        {/* <Grid /> */}
-        <About />
-        <BoatData />
-        <AllWeeks />
-        <FeesSection />
-        <FAQsection />
-        <PhotoGallery />
-        <Marina />
-        <Sights />
-        <Footer />
-      </SimpleReactLightbox>
+      <form name="contact" method="POST" data-netlify="true" hidden>
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="text" name="message" />
+        <input type="email" name="email" />
+        <input type="text" name="cijena" />
+        <input type="text" name="datum" />
+      </form>
+      <Hero />
+      {/* <Grid /> */}
+      <About />
+      <BoatData />
+      <AllWeeks />
+      <FeesSection />
+      <FAQsection />
+      <PhotoGallery />
+      <Marina />
+      <Sights />
+      <Footer />
     </Layout>
   );
 }
-
-// export async function getServerSideProps() {
-//   const res = await fetch("https://api.github.com/repos/vercel/next.js");
-//   const json = await res.json();
-
-//   return {
-//     props: {
-//       stars: json.stargazers_count,
-//     },
-//   };
-// }
 
 export default Index;

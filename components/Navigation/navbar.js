@@ -14,6 +14,7 @@ import { Links } from "./links";
 import MobileMenu from "../MobileMenu";
 import { useInView } from "react-intersection-observer";
 import { Anchor } from "nextjs-anchor";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useRouter } from "next/router";
 import { en, hr } from "../../translations/translations.js";
 const Navbar = () => {
@@ -49,7 +50,7 @@ const Navbar = () => {
       <LinkWrap>
         {Links.map((e, index) => (
           <SingleLink key={index}>
-            <Anchor href={e.anchor}>{e.veza}</Anchor>
+            <AnchorLink href={e.anchor}>{e.veza}</AnchorLink>
           </SingleLink>
         ))}
 

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Anchor } from "nextjs-anchor";
 
 // import heroPhoto from "../../images/hero.png"
 
@@ -218,14 +217,14 @@ export const Button = styled.div`
 
   /* SUNRISE/Coral */
 
-  color: #32bde3;
+  color: #035865;
   &:hover {
     -webkit-box-shadow: 5px 5px 9px 1px #48849c;
     box-shadow: 5px 5px 9px 1px #48849c;
   }
   a {
     text-decoration: none;
-    color: #32bde3;
+    color: #035865;
   }
   @media only screen and (max-width: 1050px) {
     font-size: 16px;
