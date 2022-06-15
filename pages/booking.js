@@ -72,14 +72,14 @@ function Index() {
   }, []);
 
   return (
-    <Layout>
+    <>
       {/* <div style={{ color: "black" }}>Booking page</div>
       <div style={{ color: "black" }}>
         Logged in: {logedIn ? "true" : "False"}
       </div> */}
       {/* <button onClick={handleLogOut}>Log out {userEmail}</button> */}
       <AllWeeks data={data} handleLogOut={handleLogOut} userEmail={userEmail} />
-    </Layout>
+    </>
   );
 }
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { DiskontWrap, Amount } from "./style.js";
+import { DiskontWrap, Amount, DiskontText } from "./style.js";
 // import HeroVideo from "../../video/kraciVideo.mp4";
 import Sale from "../../../images/booking/SALE.svg";
 
@@ -15,7 +15,7 @@ const Diskont = ({ discountAmount }) => {
 
   return (
     <DiskontWrap>
-      <div>
+      {/* <div>
         {" "}
         <Image
           src={Sale}
@@ -27,7 +27,8 @@ const Diskont = ({ discountAmount }) => {
           // blurDataURL="data:..." automatically provided
           // Optional blur-up while loading
         />
-      </div>
+      </div> */}
+      <DiskontText>Special Offer</DiskontText>
     </DiskontWrap>
   );
 };

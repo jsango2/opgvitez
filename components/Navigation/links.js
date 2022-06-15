@@ -1,5 +1,5 @@
 export const Links = [
-  { veza: "HOME", link: "/", color: "#32bde3", anchor: "" },
+  { veza: "HOME", link: "/", color: "#32bde3", anchor: "#home" },
   { veza: "CONTACT", link: "/Onama", color: "#32bde3", anchor: "#contact" },
   { veza: "BOOKING", link: "/#usluge", color: "#aea8b2", anchor: "#booking" },
   {

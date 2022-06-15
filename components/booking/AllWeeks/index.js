@@ -152,11 +152,11 @@ function AllWeeks() {
         alt="booking"
         layout="fill"
         objectFit="cover"
-        objectPosition={
-          size.width > 1050
-            ? `0% ${percentage * 50}% `
-            : `90% ${percentage * 50 + 20}% `
-        }
+        // objectPosition={
+        //   size.width > 1050
+        //     ? `0% ${percentage * 50}% `
+        //     : `90% ${percentage * 50 + 20}% `
+        // }
         // width={500} automatically provided
         // height={500} automatically provided
         // blurDataURL="data:..." automatically provided

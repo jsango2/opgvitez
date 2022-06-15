@@ -27,7 +27,7 @@ const Hero = () => {
     triggerOnce: true,
   });
   return (
-    <HeroWrap ref={ref}>
+    <HeroWrap ref={ref} id="home">
       <video autoPlay muted loop="loop" className="videoHero" playsInline>
         <source src="/heroVideo2.mp4" type="video/mp4" />
       </video>

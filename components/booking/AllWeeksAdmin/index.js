@@ -24,6 +24,7 @@ import {
   Fixed,
   LogOut,
   NewWeek,
+  HomeLink,
 } from "./style.js";
 import PriceComponent from "./priceComponent";
 import { CloseX } from "../AllWeeks/reservationModal/style";
@@ -226,6 +227,9 @@ function AllWeeks({ handleLogOut, userEmail }) {
 
   return (
     <WrapSection>
+      <HomeLink>
+        <Link href="/">Home</Link>
+      </HomeLink>
       <Overlay />
       <Image
         src={bg}
@@ -237,7 +241,10 @@ function AllWeeks({ handleLogOut, userEmail }) {
         // placeholder="blur" // Optional blur-up while loading
       />
       <Title>ADMIN BOOKING SYSTEM</Title>
-      <LogOut onClick={handleLogOut}>LOG OUT {userEmail}</LogOut>
+      <LogOut onClick={handleLogOut}>
+        LOG OUT <br />
+        {userEmail}
+      </LogOut>
       <Wrap>
         {data.map((week) => (
           <Week

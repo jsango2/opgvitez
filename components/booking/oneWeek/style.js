@@ -6,11 +6,11 @@ export const WeekWrap = styled.div`
   background-color: ${(props) => (props.isFree ? "#68BFE2 " : "#BDBDBD")};
   background: ${(props) => (props.marked ? "#2C5F7B " : "")};
   opacity: ${(props) => (props.isFree ? 1 : 0.6)};
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* padding-top: 3px; */
   z-index: 0;
   margin: 11px;
   cursor: pointer;
@@ -23,7 +23,7 @@ export const WeekWrap = styled.div`
     box-shadow: 5px 5px 9px 1px #48849c;
   }
   @media only screen and (max-width: 600px) {
-    margin: 6px;
+    margin: 8px;
     width: 115px;
   }
   @media only screen and (max-width: 420px) {
@@ -70,20 +70,30 @@ export const Dates = styled.p`
 
 export const DiskontWrap = styled.div`
   position: absolute;
-  top: -16px;
-  right: -12px;
-  width: 50px;
-  height: 30px;
-  /* 
-  border-radius: 50%;
-  border: 2px solid white;
+  top: -15px;
+  right: -10px;
+  width: 80px;
+  height: 18px;
+
+  border-radius: 4px;
+  /* border: 1px solid white; */
   background-color: #f4c914;
-  padding-top: 7px;
-  padding-left: 2px; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @media only screen and (max-width: 600px) {
-    top: -16px;
-    right: -8px;
-    width: 35px;
+    top: -13px;
+
+    height: 17px;
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const DiskontText = styled.div`
+  font-size: 10px;
+  font-weight: 600;
+  @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
   }

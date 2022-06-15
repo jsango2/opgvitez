@@ -98,7 +98,7 @@ export const Title = styled.h1`
 
   /* TAMNO PLAVA */
   z-index: 4;
-  color: #0d3255;
+  color: white;
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
@@ -106,25 +106,47 @@ export const Title = styled.h1`
 `;
 export const NewWeek = styled.h1`
   position: relative;
-  font-family: "Buenard";
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 239px;
+  height: 53px;
+  cursor: pointer;
+  /* SUNRISE / White */
+
+  background: #ffffff;
+  /* Medium Drop */
+
+  box-shadow: 0px 14px 23px rgba(28, 37, 44, 0.08);
+  border-radius: 7px;
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  font-size: 25px;
+  font-size: 21px;
   line-height: 120%;
-  /* identical to box height, or 66px */
+  /* or 25px */
 
   text-align: center;
 
-  /* TAMNO PLAVA */
-  z-index: 4;
-  color: white;
-  cursor: pointer;
-  border: 1px solid #0d3255;
-  border-radius: 5px;
-  padding: 10px;
-  @media only screen and (max-width: 600px) {
+  /* SUNRISE/Coral */
+
+  color: #035865;
+  &:hover {
+    -webkit-box-shadow: 5px 5px 9px 1px #48849c;
+    box-shadow: 5px 5px 9px 1px #48849c;
   }
-  @media only screen and (max-width: 420px) {
+  a {
+    text-decoration: none;
+    color: #035865;
+  }
+  @media only screen and (max-width: 1050px) {
+    font-size: 16px;
+    width: 339px;
+  }
+  @media only screen and (max-width: 450px) {
+    font-size: 16px;
+    width: 259px;
   }
 `;
 export const PopupForm = styled.div`
@@ -315,10 +337,12 @@ export const Box = styled.div`
   height: 18px;
   background-color: ${(props) => props.color};
   margin-right: 10px;
+  border-radius: 4px;
   /* background-image: url(${bg});
   background-position: center;
   background-size: cover; */
   @media only screen and (max-width: 600px) {
+    border-radius: 2px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -331,7 +355,7 @@ export const LogOut = styled.div`
   justify-content: center;
   align-items: center;
   width: 400px;
-  height: 40px;
+  height: auto;
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
   background: radial-gradient(
@@ -340,7 +364,9 @@ export const LogOut = styled.div`
     #1e7ca4 100%
   );
   border: 1px solid darkblue;
-
+  text-align: center;
+  padding: 5px;
+  font-weight: 700;
   &:hover {
     -webkit-box-shadow: 5px 5px 9px 1px #48849c;
     box-shadow: 5px 5px 9px 1px #103f52;
@@ -417,6 +443,24 @@ export const Button = styled.div`
   /* background-image: url(${bg});
   background-position: center;
   background-size: cover; */
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+
+export const HomeLink = styled.div`
+  position: absolute;
+  z-index: 5;
+  top: 40px;
+  right: 60px;
+  a {
+    text-decoration: none;
+    color: #1e7ca4;
+  }
+  &:hover a {
+    color: darkblue;
+  }
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
