@@ -4,7 +4,7 @@ module.exports = {
     defaultLocale: "en",
   },
   env: {
-    FIREBASE_API_KEY: "AIzaSyAzeWc9QzCaXrdlzsNoeB_j0My-bEop8ok",
+    FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
   },
   // images: {
   //   // limit of 25 deviceSizes values

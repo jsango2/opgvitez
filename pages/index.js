@@ -24,7 +24,7 @@ import Head from "next/head";
 
 function Index() {
   const { locale, locales, asPath } = useRouter();
-  // console.log(asPath);
+
   return (
     <Layout>
       <Head>
