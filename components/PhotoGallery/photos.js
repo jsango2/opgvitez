@@ -1,9 +1,9 @@
 import p1 from "../../images/gallery/large/p1.png";
-import p2 from "../../images/gallery/large/p2.png";
+// import p2 from "../../images/gallery/large/p2.png";
 import p3 from "../../images/gallery/large/p3.png";
 import p4 from "../../images/gallery/large/p4.png";
 import p5 from "../../images/gallery/large/p5.png";
-import p6 from "../../images/gallery/large/p6.png";
+// import p6 from "../../images/gallery/large/p6.png";
 import p7 from "../../images/gallery/large/p7.png";
 import p8 from "../../images/gallery/large/p8.png";
 import p9 from "../../images/gallery/large/p9.png";
@@ -18,7 +18,7 @@ import p17 from "../../images/gallery/large/p17.png";
 import p18 from "../../images/gallery/large/p18.png";
 import p19 from "../../images/gallery/large/p19.png";
 import p20 from "../../images/gallery/large/p20.png";
-import p21 from "../../images/gallery/large/p21.png";
+import p21 from "../../images/gallery/large/p21.jpg";
 import p22 from "../../images/gallery/large/p22.png";
 import p23 from "../../images/gallery/large/p23.png";
 import p24 from "../../images/gallery/large/p24.png";
@@ -29,16 +29,18 @@ import p28 from "../../images/gallery/large/p28.png";
 
 const Images = [
   { photo: p1, in: 0 },
-  { photo: p2, in: 1 },
+  // { photo: p2, in: 1 },
   { photo: p3, in: 27 },
-  { photo: p4, in: 2 },
+  // { photo: p6, in: 4 },
   { photo: p5, in: 3 },
-  { photo: p6, in: 4 },
+  { photo: p27, in: 25 },
+  { photo: p4, in: 2 },
   { photo: p21, in: 19 },
   { photo: p22, in: 20 },
   { photo: p23, in: 21 },
   { photo: p25, in: 23 },
   { photo: p24, in: 22 },
+  { photo: p28, in: 26 },
   { photo: p19, in: 17 },
   { photo: p20, in: 18 },
   { photo: p16, in: 14 },
@@ -56,8 +58,6 @@ const Images = [
   { photo: p14, in: 12 },
 
   // { photo: p26, in: 24 },
-  { photo: p27, in: 25 },
-  { photo: p28, in: 26 },
 ];
 
 export default Images;

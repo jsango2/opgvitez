@@ -43,22 +43,22 @@ function Index() {
         <meta property="og:image" content="/ogimage.png" />
         <meta
           name="description"
-          content=" An incredible Catamaran dedicated for charters. Built in 2018, the
+          content="An incredible Catamaran dedicated for charters. Built in 2018, the
           fully equipped Lagoon 450 F will take you to the most beautiful
-          anchorages on the Croatian coastline. Catamaran charter in Croatia. Book now!"
+          anchorages on the Croatian coastline. Online Catamaran boat charter booking in Croatia."
           key="desc"
         />
         <meta
           property="og:description"
-          content=" An incredible Catamaran dedicated for charters. Built in 2018, the
+          content="An incredible Catamaran dedicated for charters. Built in 2018, the
           fully equipped Lagoon 450 F will take you to the most beautiful
-          anchorages on the Croatian coastline. Catamaran charter in Croatia. Book now!"
+          anchorages on the Croatian coastline. Online Catamaran boat charter booking in Croatia."
         />
         <meta
           property="twitter:description"
-          content=" An incredible Catamaran dedicated for charters. Built in 2018, the
+          content="An incredible Catamaran dedicated for charters. Built in 2018, the
           fully equipped Lagoon 450 F will take you to the most beautiful
-          anchorages on the Croatian coastline. Catamaran charter in Croatia. Book now!"
+          anchorages on the Croatian coastline. Online Catamaran boat charter booking in Croatia."
         />
       </Head>
       <form name="contact" method="POST" data-netlify="true" hidden>
