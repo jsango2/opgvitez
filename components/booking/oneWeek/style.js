@@ -23,7 +23,7 @@ export const WeekWrap = styled.div`
     box-shadow: 5px 5px 9px 1px #48849c;
   }
   @media only screen and (max-width: 600px) {
-    margin: 8px;
+    margin: 8px 6px;
     width: 115px;
   }
   @media only screen and (max-width: 420px) {
@@ -84,7 +84,7 @@ export const DiskontWrap = styled.div`
   align-items: center;
   @media only screen and (max-width: 600px) {
     top: -13px;
-
+    right: -6px;
     height: 17px;
   }
   @media only screen and (max-width: 420px) {
