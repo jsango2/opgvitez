@@ -51,7 +51,7 @@ const Hero = () => {
           anchorages on the Croatian coastline.{" "}
         </p>
         <Button>
-          <AnchorLink href="/#booking">SEND INQUIRE</AnchorLink>{" "}
+          <AnchorLink href="#booking">SEND INQUIRE</AnchorLink>{" "}
         </Button>
       </WrapValTitle>
       <WrapDots inView={inView}>
