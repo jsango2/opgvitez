@@ -93,6 +93,7 @@ export const DiskontWrap = styled.div`
 export const DiskontText = styled.div`
   font-size: 10px;
   font-weight: 600;
+  color: #0d3151;
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {

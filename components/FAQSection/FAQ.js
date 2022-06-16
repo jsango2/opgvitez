@@ -76,6 +76,13 @@ const FAQsection = () => {
           Tax can be paid on the spot only in cash only local currency).
           <br />
           <br />
+          <strong>Check-in/Check-out?</strong> <br />
+          <br />• Check-in: Saturday from 17:00h, Check-out: Saturday until
+          8:00h
+          <br />
+          It is possible to request alternative check-in and check-out times.
+          <br />
+          <br />
           <strong>
             What documents will I receive after the reservation?
           </strong>{" "}

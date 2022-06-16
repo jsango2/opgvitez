@@ -3,7 +3,6 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 // TODO: Replace the following with your app's Firebase project configuration
-console.log(process.env.FIREBASE_API_KEY);
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,

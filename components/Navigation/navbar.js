@@ -21,7 +21,6 @@ const Navbar = () => {
   const router = useRouter();
   const { locale } = router;
   const t = locale === "en" ? en : locale === "hr" ? hr : "";
-  console.log(t.home);
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
