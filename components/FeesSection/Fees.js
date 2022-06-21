@@ -22,6 +22,7 @@ import {
 // import HeroVideo from "../../video/kraciVideo.mp4";
 import Image from "next/image";
 import Boat from "../../images/boatData/fee.png";
+import Pic from "../../images/boatData/Pic2.jpg";
 
 import Val from "../../images/about the boat/val.svg";
 
@@ -95,7 +96,7 @@ const FeesSection = () => {
       </TextWrap>
       <WrapImage>
         <Image
-          src={Boat}
+          src={Pic}
           alt="Boat"
           layout="fill"
           // width={500} automatically provided

@@ -28,8 +28,10 @@ import ValBijeli from "../../images/boatData/valoviBijeli.svg";
 import Dots from "../../images/boatData/dotsBlue.svg";
 import { useScrollPercentage } from "react-scroll-percentage";
 import { useInView } from "react-intersection-observer";
+import useWindowSize from "../useWindowSize.js";
 
 const BoatData = () => {
+  const size = useWindowSize();
   const { ref, inView } = useInView({
     /* Optional options */
     threshold: 0.1,
@@ -65,18 +67,22 @@ const BoatData = () => {
     <HeroWrap id="boatData" ref={ref}>
       <Up>
         {" "}
-        <BoatWrap inView={inView}>
-          <Image
-            src={Boat}
-            alt="Gallery"
-            layout="fill"
-            objectFit="cover"
-            // width={500} automatically provided
-            // height={500} automatically provided
-            // blurDataURL="data:..." automatically provided
-            // Optional blur-up while loading
-          />
-        </BoatWrap>
+        {size.width > 1050 ? (
+          <BoatWrap inView={inView}>
+            <Image
+              src={Boat}
+              alt="Gallery"
+              layout="fill"
+              objectFit="cover"
+              // width={500} automatically provided
+              // height={500} automatically provided
+              // blurDataURL="data:..." automatically provided
+              // Optional blur-up while loading
+            />
+          </BoatWrap>
+        ) : (
+          ""
+        )}
         <TextWrap>
           <ValWrap>
             <Image src={Val} alt="Gallery" layout="fill" />

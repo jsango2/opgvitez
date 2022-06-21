@@ -26,11 +26,13 @@ import p25 from "../../images/gallery/large/p25.png";
 // import p26 from "../../images/gallery/large/p26.png";
 import p27 from "../../images/gallery/large/p27.png";
 import p28 from "../../images/gallery/large/p28.png";
+import p30 from "../../images/gallery/large/p30.png";
+import p31 from "../../images/gallery/large/p31.jpg";
 
 const Images = [
-  { photo: p1, in: 0 },
+  { photo: p30, in: 0 },
   // { photo: p2, in: 1 },
-  { photo: p3, in: 27 },
+  { photo: p31, in: 27 },
   // { photo: p6, in: 4 },
   { photo: p5, in: 3 },
   { photo: p27, in: 25 },
@@ -39,14 +41,14 @@ const Images = [
   { photo: p22, in: 20 },
   { photo: p23, in: 21 },
   { photo: p25, in: 23 },
-  { photo: p24, in: 22 },
+  // { photo: p24, in: 22 },
   { photo: p28, in: 26 },
   { photo: p19, in: 17 },
   { photo: p20, in: 18 },
   { photo: p16, in: 14 },
   { photo: p17, in: 15 },
   { photo: p18, in: 16 },
-  { photo: p7, in: 5 },
+  // { photo: p7, in: 5 },
   { photo: p8, in: 6 },
   { photo: p9, in: 7 },
   { photo: p10, in: 8 },
