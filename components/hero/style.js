@@ -85,10 +85,10 @@ export const OverlayMobile = styled.div`
   width: 100%;
   background: linear-gradient(
     0deg,
-    rgba(3, 88, 101, 0.61) 0%,
+    rgba(3, 88, 101, 1) 0%,
     rgba(3, 88, 101, 0) 96.08%
   );
-  background-blend-mode: multiply;
+  /* background-blend-mode: multiply; */
   display: flex;
   justify-content: center;
   align-items: center;

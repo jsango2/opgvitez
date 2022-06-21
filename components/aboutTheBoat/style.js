@@ -155,15 +155,13 @@ export const WrapValTitle = styled.div`
 `;
 export const ImageOverlay = styled.div`
   position: absolute;
+  top: 0px;
   z-index: 3;
-  height: 100%;
+  height: 140px;
   width: 100%;
-  background: linear-gradient(
-    0deg,
-    rgba(3, 88, 101, 0.61) 0%,
-    rgba(3, 88, 101, 0) 96.08%
-  );
-  background-blend-mode: multiply;
+
+  background: linear-gradient(180deg, #035865 0%, rgba(3, 88, 101, 0) 100%);
+  /* background-blend-mode: multiply; */
 
   @media only screen and (min-width: 1050px) {
     display: none;
