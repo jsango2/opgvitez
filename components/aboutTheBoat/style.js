@@ -41,7 +41,7 @@ export const WrapDots = styled.div`
   top: 130px;
   @media only screen and (max-width: 1050px) {
     height: 145px;
-    width: 172px;
+    width: 120px;
     top: 0px;
     left: 50%;
     transform: translate(-50%, 0);

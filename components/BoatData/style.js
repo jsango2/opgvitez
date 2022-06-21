@@ -151,6 +151,7 @@ export const TextWrap = styled.div`
     margin-left: 15%;
   }
   @media only screen and (max-width: 1050px) {
+    margin-top: 120px;
     height: auto;
     margin-left: 0%;
     width: 100%;
@@ -310,6 +311,7 @@ export const ValWrap = styled.div`
     left: 50%;
     transform: translate(-50%, 0);
     top: -65px;
+    width: 120px;
   }
   @media only screen and (max-width: 420px) {
   }

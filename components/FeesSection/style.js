@@ -114,6 +114,7 @@ export const ValWrap = styled.div`
     left: 50%;
     transform: translate(-50%, 0);
     top: -65px;
+    width: 120px;
   }
   @media only screen and (max-width: 420px) {
   }
