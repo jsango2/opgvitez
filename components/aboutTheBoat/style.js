@@ -35,6 +35,7 @@ export const ValWrap = styled.div`
 `;
 export const WrapDots = styled.div`
   position: absolute;
+  z-index: 4;
   height: 145px;
   width: 372px;
   left: -50px;
