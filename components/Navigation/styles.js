@@ -16,9 +16,11 @@ export const NavbarWrap = styled.div`
 `;
 export const LogoWrap = styled.div`
   position: relative;
-  width: 374px;
-  min-width: 230px;
+  width: 257px;
+  height: 70%;
+  min-width: 180px;
   z-index: 5;
+  margin-left: 50px;
   cursor: pointer;
   transition: all 1s ease-in-out;
   transform: ${(props) =>
@@ -121,7 +123,7 @@ export const SingleLink = styled.div`
     font-family: Arial, Helvetica, sans-serif;
   }
   a:hover {
-    color: #6d6a70;
+    color: #3275a1;
   }
 
   @media screen and (max-width: 768px) {

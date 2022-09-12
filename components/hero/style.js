@@ -196,7 +196,7 @@ export const Button = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 239px;
+  width: 304px;
   height: 53px;
   cursor: pointer;
   /* SUNRISE / White */
@@ -209,7 +209,7 @@ export const Button = styled.div`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  font-size: 21px;
+  font-size: 20px;
   line-height: 120%;
   /* or 25px */
 
@@ -217,14 +217,14 @@ export const Button = styled.div`
 
   /* SUNRISE/Coral */
 
-  color: #035865;
+  color: #3275a1;
   &:hover {
     -webkit-box-shadow: 5px 5px 9px 1px #48849c;
     box-shadow: 5px 5px 9px 1px #48849c;
   }
   a {
     text-decoration: none;
-    color: #035865;
+    color: #3275a1;
   }
   @media only screen and (max-width: 1050px) {
     font-size: 16px;

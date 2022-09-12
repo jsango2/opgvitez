@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import Image from "next/image";
 import Left from "../../images/marina/left.png";
-import Logo from "../../images/logo.png";
+import Logo from "../../images/logoFooter.svg";
 import { Links } from "../Navigation/links.js";
 import { Anchor } from "nextjs-anchor";
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -33,7 +33,6 @@ const Footer = () => {
           // width={500} automatically provided
           // height={500} automatically provided
           // blurDataURL="data:..." automatically provided
-          placeholder="blur" // Optional blur-up while loading
         />
       </WrapImage>
       <LinkWrap>

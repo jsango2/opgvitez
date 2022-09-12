@@ -33,8 +33,8 @@ export const WrapImages = styled.div`
 `;
 export const WrapImage = styled.div`
   position: relative;
-  width: 237px;
-  height: 77px;
+  width: 269px;
+  height: 150px;
   margin-bottom: 54px;
   @media only screen and (max-width: 600px) {
   }

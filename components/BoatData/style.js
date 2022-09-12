@@ -95,7 +95,7 @@ export const BoatTitleWrap = styled.div`
 
   /* TAMNO PLAVA */
 
-  color: #0d3255;
+  color: #182548;
   margin-top: 65px;
   margin-left: 215px;
 
@@ -145,7 +145,7 @@ export const TextWrap = styled.div`
 
     /* TAMNO PLAVA */
 
-    color: #0d3255;
+    color: #182548;
   }
   @media only screen and (max-width: 1200px) {
     margin-left: 15%;

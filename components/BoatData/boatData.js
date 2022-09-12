@@ -25,7 +25,7 @@ import Boat from "../../images/boatData/BoatInside.png";
 
 import Val from "../../images/boatData/val.svg";
 import ValBijeli from "../../images/boatData/valoviBijeli.svg";
-import Dots from "../../images/boatData/dotsBlue.svg";
+import Dots from "../../images/boatData/dotsBlue2.svg";
 import { useScrollPercentage } from "react-scroll-percentage";
 import { useInView } from "react-intersection-observer";
 import useWindowSize from "../useWindowSize.js";

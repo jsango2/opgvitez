@@ -17,6 +17,9 @@ import { Anchor } from "nextjs-anchor";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useRouter } from "next/router";
 import { en, hr } from "../../translations/translations.js";
+import Logo from "../../images/hero/LOGO.svg";
+import Image from "next/image";
+
 const Navbar = () => {
   const router = useRouter();
   const { locale } = router;
@@ -42,9 +45,9 @@ const Navbar = () => {
         <Line />
       </Hamburger>
       <LogoWrap isOpen={isOpen} inView={inView}>
-        {/* <Link href="/">
-          <img src={Logo} width="100%" alt="" />
-        </Link> */}
+        <Link href="/">
+          <Image src={Logo} alt="Logo" layout="fill" />
+        </Link>
       </LogoWrap>
       <LinkWrap>
         {Links.map((e, index) => (
