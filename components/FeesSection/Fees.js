@@ -18,17 +18,22 @@ import {
   WrapValTitle,
   WrapImage,
   TextCompany,
+  BigLogoWrap,
 } from "./style.js";
 // import HeroVideo from "../../video/kraciVideo.mp4";
 import Image from "next/image";
 import Boat from "../../images/boatData/fee.png";
 import Pic from "../../images/boatData/Pic2.jpg";
+import BigLogo from "../../images/hero/BigLogo.svg";
 
 import Val from "../../images/about the boat/val.svg";
 
 const FeesSection = () => {
   return (
     <HeroWrap id="fees">
+      <BigLogoWrap>
+        <Image src={BigLogo} alt="Logo" layout="fill" />
+      </BigLogoWrap>
       <TextWrap>
         <WrapValTitle>
           <ValWrap>

@@ -14,11 +14,11 @@ function Legend() {
         Occupied
       </WrapBox>
       <WrapBox>
-        <Box color="#2C5F7B" />
+        <Box color="#182548" />
         Selected
       </WrapBox>
       <WrapBox>
-        <Box color="#68BFE2" />
+        <Box color="#3275A1" />
         Free
       </WrapBox>
     </WrapDown>

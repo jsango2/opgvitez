@@ -25,7 +25,7 @@ function PriceComponent({ price }) {
           Selected
         </WrapBox> */}
         <WrapBox>
-          <Box color="#68BFE2" />
+          <Box color="#3275A1" />
           Free
         </WrapBox>
       </WrapDown>

@@ -105,6 +105,23 @@ export const TextCompany = styled(Text)`
     text-align: center;
   }
 `;
+export const BigLogoWrap = styled(Text)`
+  position: absolute;
+  width: 966px;
+  height: 596px;
+  bottom: 30px;
+  left: 50px;
+  @media only screen and (max-width: 800px) {
+    left: 0;
+    width: 866px;
+    height: 396px;
+  }
+  @media only screen and (max-width: 500px) {
+    bottom: -80px;
+    width: 100vw;
+    height: 396px;
+  }
+`;
 export const ValWrap = styled.div`
   position: absolute;
   height: 70px;

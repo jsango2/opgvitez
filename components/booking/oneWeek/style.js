@@ -3,8 +3,8 @@ export const WeekWrap = styled.div`
   position: relative;
   height: 44px;
   width: 163px;
-  background-color: ${(props) => (props.isFree ? "#68BFE2 " : "#BDBDBD")};
-  background: ${(props) => (props.marked ? "#2C5F7B " : "")};
+  background-color: ${(props) => (props.isFree ? "#3275A1 " : "#BDBDBD")};
+  background: ${(props) => (props.marked ? "#182548 " : "")};
   opacity: ${(props) => (props.isFree ? 1 : 0.6)};
   display: flex;
   flex-direction: column;

@@ -160,7 +160,7 @@ export const Week = styled.div`
   position: relative;
   height: 44px;
   width: 163px;
-  background-color: #68bfe2;
+  background-color: #3275a1;
 
   display: flex;
   flex-direction: column;

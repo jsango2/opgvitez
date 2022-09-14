@@ -5,6 +5,7 @@ import Link from "next/link";
 import {
   NavbarWrap,
   LogoWrap,
+  LogoWrapMobile,
   LinkWrap,
   SingleLink,
   Hamburger,
@@ -18,6 +19,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useRouter } from "next/router";
 import { en, hr } from "../../translations/translations.js";
 import Logo from "../../images/hero/LOGO.svg";
+import LogoWhite from "../../images/hero/LOGOWhite.svg";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -36,7 +38,7 @@ const Navbar = () => {
   });
 
   return (
-    <NavbarWrap ref={ref}>
+    <NavbarWrap ref={ref} id="navbar">
       <MobileMenu isOpen={isOpen} handleClick={handleClick} />
 
       <Hamburger onClick={() => setIsOpen(!isOpen)}>
@@ -49,6 +51,11 @@ const Navbar = () => {
           <Image src={Logo} alt="Logo" layout="fill" />
         </Link>
       </LogoWrap>
+      <LogoWrapMobile isOpen={isOpen} inView={inView}>
+        <Link href="/">
+          <Image src={LogoWhite} alt="LogoWhite" layout="fill" />
+        </Link>
+      </LogoWrapMobile>
       <LinkWrap>
         {Links.map((e, index) => (
           <SingleLink key={index}>

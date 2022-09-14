@@ -34,11 +34,35 @@ export const LogoWrap = styled.div`
   }
 `;
 
+export const LogoWrapMobile = styled.div`
+  display: none;
+  position: absolute;
+  z-index: 20;
+  width: 150px;
+  height: 70%;
+  min-width: 180px;
+  z-index: 5;
+  margin-left: 20px;
+  cursor: pointer;
+  top: 10px;
+  transition: all 1s ease-in-out;
+  transform: ${(props) =>
+    props.inView ? `translate(0%)` : `translate(-100%)`};
+  box-shadow: ${(props) =>
+    props.isOpen
+      ? `2px 2px 10px 0px #C2C2C2`
+      : `2px 2px 10px 0px rgba(194,194,194,0)`};
+  @media screen and (max-width: 1050px) {
+    display: block;
+    height: 50px;
+    width: 150px;
+  }
+`;
 export const LinkWrap = styled.div`
   margin-left: auto;
   position: relative;
-  width: 800px;
-  min-width: 800px;
+  width: 60%;
+  min-width: 600px;
   /* height: 40px; */
   display: flex;
   justify-content: space-between;
