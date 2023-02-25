@@ -14,7 +14,7 @@ export const CheckoutWrap = styled.div`
   border-radius: 10px;
   border: 0.3px solid rgba(23, 56, 97, 0.3);
   background-color: white;
-  top: 75px;
+  top: 125px;
   form {
     display: flex;
     flex-direction: column;
@@ -46,6 +46,7 @@ export const CheckoutWrap = styled.div`
     text-align: center;
   }
   @media only screen and (max-width: 600px) {
+    top: 75px;
     width: 100vw;
   }
   @media only screen and (max-width: 420px) {
@@ -63,6 +64,26 @@ export const Amount = styled.h2`
   font-weight: 700;
   margin-top: 20px;
   color: #093b69;
+  @media only screen and (max-width: 850px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+
+export const FormaSubmitedNote = styled.div`
+  position: fixed;
+  z-index: 65;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  background-color: #093b69;
+  color: white;
+  top: 30%;
+  border-radius: 10px;
+
   @media only screen and (max-width: 850px) {
   }
   @media only screen and (max-width: 420px) {
