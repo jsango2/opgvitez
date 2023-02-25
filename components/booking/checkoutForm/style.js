@@ -14,7 +14,7 @@ export const CheckoutWrap = styled.div`
   border-radius: 10px;
   border: 0.3px solid rgba(23, 56, 97, 0.3);
   background-color: white;
-  top: 200px;
+  top: 75px;
   form {
     display: flex;
     flex-direction: column;
