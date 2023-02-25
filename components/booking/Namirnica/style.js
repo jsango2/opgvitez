@@ -5,19 +5,19 @@ export const WeekWrap = styled.div`
   height: ${(props) => props.height};
   width: ${(props) => props.width};
 
-  min-width: 350px;
+  min-width: 470px;
   background: ${(props) => props.backgroundColor};
   background-color: #3275a1;
 
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
 
   box-shadow: 0px 14px 23px rgba(28, 37, 44, 0.08);
 
   /* padding-top: 3px; */
   z-index: 0;
-  margin: 7px;
+  margin: 7px auto 7px auto;
   /* cursor: pointer; */
 
   /* pointer-events: ${(props) => (props.length < 5 ? "auto " : "none")}; */
@@ -35,24 +35,25 @@ export const WeekWrap = styled.div`
   } */
   @media only screen and (max-width: 600px) {
     /* margin: 8px 6px; */
-    width: ${(props) => props.widthMobile} !important;
+    /* width: ${(props) => props.widthMobile} !important; */
+    width: 100%;
     min-width: unset;
 
-    height: 310px;
+    height: 170px;
   }
   @media only screen and (max-width: 450px) {
-    width: 86vw !important;
+    width: 95vw !important;
     min-width: 338px;
 
-    height: 290px;
+    height: 170px;
   }
 `;
 export const Naziv = styled.h3`
   font-family: "Avenir Next";
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 120%;
+  font-size: 20px;
+  line-height: 100%;
   /* or 19px */
   margin-bottom: 5px;
   text-align: center;
@@ -195,8 +196,8 @@ export const Napomena = styled.div`
   justify-content: center;
   align-items: flex-end;
   width: 160px;
-  right: 17px;
-  top: 20px;
+  left: 17px;
+  top: 73px;
   svg {
     font-size: 28px;
     margin-left: 5px;
@@ -227,7 +228,9 @@ export const Napomena = styled.div`
     padding-left: 10px;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 450px) {
+    left: 17px;
+    top: 73px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -282,7 +285,7 @@ export const Amount = styled.div`
 
 export const WrapImage = styled.div`
   position: relative;
-  width: 100%;
+  width: 30%;
   height: 100%;
   color: white;
   svg {
@@ -295,13 +298,22 @@ export const WrapImage = styled.div`
 `;
 export const WrapData = styled.div`
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
   align-items: flex-start;
   width: 100%;
-
+  height: 100%;
   background-color: white;
   padding: 8px 0 8px 30px;
+  justify-content: space-around;
   div > * {
     color: ${(props) => (props.textColor === "dark" ? "#093b69" : "#093b69")};
   }
@@ -343,7 +355,8 @@ export const WrapInBasket = styled.div`
     width: 114px;
     height: 33px;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 410px) {
+    width: 77px;
   }
 `;
 export const Alert = styled.div`
@@ -425,18 +438,18 @@ export const Partner = styled.div`
 `;
 export const Kategorija = styled.div`
   position: absolute;
-
   z-index: 3;
-
-  margin-left: ${(props) => (props.isInBasket ? "3px" : "0px")};
-  left: ${(props) => (props.isInBasket ? "0px" : "20px")};
-  bottom: 8px;
-
+  margin-left: 0px;
+  right: 3px;
+  top: 7px;
   font-weight: 700;
   color: #00425a;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 5px;
   padding: 3px 8px;
+  font-size: 13px;
+
+  cursor: pointer;
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {

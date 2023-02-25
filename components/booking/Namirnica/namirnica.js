@@ -32,6 +32,7 @@ import { MdDoneOutline } from "react-icons/md";
 import { GiFarmer } from "react-icons/gi";
 import { FaHandsHelping } from "react-icons/fa";
 import { TbTruckDelivery } from "react-icons/tb";
+import useWindowSize from "../../useWindowSize";
 
 const Namirnica = ({
   cijena,
@@ -58,12 +59,15 @@ const Namirnica = ({
   iconSize,
   partner,
   foto,
+  setKategorija,
+  prikazNapomene,
 }) => {
   //   const [selected, setSelected] = useState(false);
 
   //   const handleSelect = (id) => {
   //     setSelected(!selected);
   //   };
+  const size = useWindowSize();
   const [startD, setStartD] = useState("");
   const [napomena, setNapomena] = useState("");
   const [endD, setEndD] = useState("");
@@ -138,7 +142,7 @@ const Namirnica = ({
       widthMobile={widthMobile}
     >
       <WrapImage>
-        <Overlay />
+        {/* <Overlay /> */}
         <Image
           priority
           src={foto != null ? foto : "/vege.png"}
@@ -155,23 +159,27 @@ const Namirnica = ({
             <GiFarmer />
           </NasProizvod>
         )}
-        <Kategorija>{kategorija}</Kategorija>
       </WrapImage>
       <WrapData textColor={textColor}>
-        <Napomena>
-          {" "}
-          <textarea
-            name="kolicina"
-            type="text"
-            min="0"
-            step="0.5"
-            placeholder="Napomena"
-            value={napomena}
-            onChange={(e) => {
-              setNapomena(e.target.value);
-            }}
-          />
-        </Napomena>
+        <Kategorija onClick={() => setKategorija(kategorija)}>
+          {kategorija}
+        </Kategorija>
+        {prikazNapomene && (
+          <Napomena>
+            {" "}
+            <textarea
+              name="kolicina"
+              type="text"
+              min="0"
+              step="0.5"
+              placeholder="Napomena"
+              value={napomena}
+              onChange={(e) => {
+                setNapomena(e.target.value);
+              }}
+            />
+          </Napomena>
+        )}
         <WrapNazivCijena>
           <Naziv>{naziv}</Naziv>
           <div style={{ display: "flex" }}>
@@ -220,7 +228,7 @@ const Namirnica = ({
         onClick={() => validateAndAddToBasket()}
         warning={alertWrongInput}
       >
-        {alertWrongInput ? "Krivi unos" : "U košaricu"}
+        {alertWrongInput ? "Krivi unos" : "Kupi"}
         {/* {!alertWrongInput && !uspjesnoUneseno ? "U košaricu" : "Krivi unos"} */}
         {/* {!uspjesnoUneseno ? "U košaricu" : "Dodano"} */}
         {uspjesnoUneseno ? (

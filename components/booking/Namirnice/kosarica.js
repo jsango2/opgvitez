@@ -254,7 +254,7 @@ function Kosarica({
                     <TfiTrash onClick={() => handleRemoveAllItems(item.id)} />
                   </Trash>
                   <ProizvodTotal>
-                    {item.naziv}:
+                    Ukupno:
                     <br />
                     <div
                       style={{

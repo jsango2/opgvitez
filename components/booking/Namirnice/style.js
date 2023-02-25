@@ -134,7 +134,7 @@ export const Title2 = styled(Title)`
     margin-top: 80px;
   }
   @media only screen and (max-width: 450px) {
-    margin-top: 120px;
+    margin-top: 40px;
   }
 `;
 export const SubTitle = styled.h1`

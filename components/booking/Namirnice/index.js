@@ -42,28 +42,35 @@ import { FiSearch } from "react-icons/fi";
 import { MdNavigateNext } from "react-icons/md";
 
 const settings = {
-  dots: false,
+  // dots: false,
+  // infinite: true,
+  // slidesToShow: 2,
+  // slidesToScroll: 1,
+  // autoplay: true,
+  // speed: 2000,
+  // autoplaySpeed: 2000,
+  dots: true,
   infinite: true,
-  slidesToShow: 5,
+  slidesToShow: 2,
   slidesToScroll: 1,
   autoplay: true,
-  speed: 2000,
-  autoplaySpeed: 2000,
-  cssEase: "linear",
+  autoplaySpeed: 3500,
+  cssEase: "cubic-bezier(.43,.39,.33,.94)",
   className: "testimonialSlider",
+  speed: 1500,
   responsive: [
     {
-      breakpoint: 900,
+      breakpoint: 1100,
       settings: {
-        dots: false,
+        dots: true,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
-        speed: 3000,
-        autoplaySpeed: 2000,
-        cssEase: "linear",
+        autoplay: false,
+        autoplaySpeed: 3500,
+        cssEase: "cubic-bezier(.43,.39,.33,.94)",
         className: "testimonialSlider",
+        speed: 1500,
       },
     },
   ],
@@ -477,9 +484,9 @@ function Namirnice() {
                           length={length}
                           discount={week.discount}
                           discountAmount={week.discountAmount}
-                          width="400px"
+                          width="470px"
                           cartStanje={week.cartStanje}
-                          height="290px"
+                          height="170px"
                           textColor="light"
                           iconSize="small"
                           partner={week.partner}
@@ -580,7 +587,7 @@ function Namirnice() {
                             discountAmount={week.discountAmount}
                             width="400px"
                             cartStanje={week.cartStanje}
-                            height="290px"
+                            height="170px"
                             textColor="light"
                             iconSize="small"
                             partner={week.partner}
@@ -689,16 +696,17 @@ function Namirnice() {
             length={length}
             discount={product.discount}
             discountAmount={product.discountAmount}
-            width="350px"
+            width="510px"
             widthMobile="305px"
             backgroundColor="white"
             textColor="light"
             cartStanje={product.cartStanje}
-            height="290px"
+            height="170px"
             iconSize="small"
             partner={product.partner}
             marginTop="0px"
             foto={product.foto ? product.foto : null}
+            prikazNapomene={false}
           />
         ))}
       </Slider>
@@ -728,6 +736,7 @@ function Namirnice() {
                   id={week.id}
                   cijena={week.cijena}
                   kategorija={week.kategorija}
+                  setKategorija={setKategorija}
                   selected={selected}
                   free={week.free}
                   naziv={week.naziv}
@@ -740,14 +749,15 @@ function Namirnice() {
                   length={length}
                   discount={week.discount}
                   discountAmount={week.discountAmount}
-                  width="30%"
+                  width="40%"
                   widthMobile="90%"
                   cartStanje={week.cartStanje}
-                  height="370px"
+                  height="170px"
                   iconSize="small"
                   partner={week.partner}
                   marginTop="0"
                   foto={week.foto ? week.foto : null}
+                  prikazNapomene={true}
                 />
               ))
             : filteredData.map((week) => (
@@ -756,6 +766,7 @@ function Namirnice() {
                   id={week.id}
                   cijena={week.cijena}
                   kategorija={week.kategorija}
+                  setKategorija={setKategorija}
                   selected={selected}
                   free={week.free}
                   naziv={week.naziv}
@@ -768,14 +779,15 @@ function Namirnice() {
                   length={length}
                   discount={week.discount}
                   discountAmount={week.discountAmount}
-                  width="30%"
+                  width="40%"
                   widthMobile="90%"
                   cartStanje={week.cartStanje}
-                  height="370px"
+                  height="170px"
                   iconSize="small"
                   partner={week.partner}
                   marginTop="0"
                   foto={week.foto ? week.foto : null}
+                  prikazNapomene={true}
                 />
               ))}
         </Wrap>

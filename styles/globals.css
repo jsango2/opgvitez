@@ -219,19 +219,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 } */
 .testimonialSlider {
   width: 90vw;
-  padding-top: 50px;
-  height: 390px;
+  padding-top: 8px;
+  height: 235px;
   margin: 0px auto 0 auto;
-  background-color: #9dc36e;
+  /* background-color: #9dc36e; */
   border-radius: 10px;
 }
 .slick-list {
-  height: 300px;
-
+  height: 220px;
   padding-top: 20px;
 }
 .slick-slide {
-  width: 370px !important;
+  width: 540px;
 }
 .bottomBarClosed {
   opacity: 1;
@@ -591,12 +590,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .testimonialSlider {
     width: 100vw;
     padding-top: 20px;
-    height: 350px;
+    height: 220px;
     margin: 0px auto 0 auto;
     border-radius: 0;
   }
   .slick-slide {
-    width: 90vw !important;
+    width: 100vw !important;
   }
 }
 @media only screen and (max-width: 420px) {
