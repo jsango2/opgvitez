@@ -10,7 +10,10 @@ export const Wrap = styled.div`
   height: 50px;
   border-radius: 10px;
   margin: 20px 0 0 0;
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 600px) {
+    height: auto;
+    align-items: center;
+    flex-direction: column;
   }
   @media only screen and (max-width: 420px) {
   }
