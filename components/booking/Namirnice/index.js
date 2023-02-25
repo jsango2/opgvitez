@@ -66,7 +66,7 @@ const settings = {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 3500,
         cssEase: "cubic-bezier(.43,.39,.33,.94)",
         className: "testimonialSlider",
