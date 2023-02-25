@@ -45,7 +45,8 @@ export const CheckoutWrap = styled.div`
     width: 250px;
     text-align: center;
   }
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 600px) {
+    width: 100vw;
   }
   @media only screen and (max-width: 420px) {
   }

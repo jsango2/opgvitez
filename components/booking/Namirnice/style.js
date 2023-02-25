@@ -817,7 +817,7 @@ export const WrapHeaderMobile = styled.div`
   padding-top: 20px;
   position: fixed;
   height: 60px;
-  z-index: 30;
+  z-index: 45;
   display: flex;
   flex-direction: row;
   align-items: center;
