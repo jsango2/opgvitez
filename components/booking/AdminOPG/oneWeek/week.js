@@ -52,11 +52,14 @@ const Week = ({
       selected={selected}
       kategorija={kategorija}
     >
-      <Namirnica>{naziv} </Namirnica>
-      <Price> {cijena} €</Price>
-      <Namirnica>/{mjernaJedinica} </Namirnica>
-
-      <Namirnica>{kategorija}</Namirnica>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <Namirnica>{naziv} </Namirnica>
+        <Price> {cijena} €</Price>
+        <Namirnica>/{mjernaJedinica} </Namirnica>
+      </div>
+      <div>
+        <Namirnica>{kategorija}</Namirnica>
+      </div>
       {discount && <Diskont discountAmount={discountAmount} />}
     </WeekWrap>
   );

@@ -99,7 +99,7 @@ const Login = (props) => {
 			)} */}
       <div className="formCenter">
         <Wrapper>
-          <Title>44th Parallel North</Title>
+          <Title>OPG Vitez</Title>
           <form>
             <WrapForm>
               <input

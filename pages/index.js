@@ -1,20 +1,10 @@
 import Link from "next/link";
 import useSWR from "swr";
-import Hero from "../components/hero/hero";
 import Layout from "../components/layout";
 import { useRouter } from "next/router";
-import blogPosts from "../assets/posts.json";
-import Grid from "../components/gridSection/grid";
-import About from "../components/aboutTheBoat/about";
-import BoatData from "../components/BoatData/boatData";
-import AllWeeks from "../components/booking/AllWeeks";
-import FeesSection from "../components/FeesSection/Fees";
-import FAQsection from "../components/FAQSection/FAQ";
-import PhotoGallery from "../components/PhotoGallery/PhotoGallery";
-import SimpleReactLightbox from "simple-react-lightbox";
-import Marina from "../components/MarinaSection/Marina";
-import Sights from "../components/Sights/Sights";
-import Footer from "../components/Footer/Footer";
+
+import AllWeeks from "../components/booking/Namirnice";
+
 import Head from "next/head";
 // function Profile() {
 //   if (error) return <div>failed to load</div>;
@@ -68,17 +58,11 @@ function Index() {
         <input type="text" name="cijena" />
         <input type="text" name="datum" />
       </form>
-      <Hero />
       {/* <Grid /> */}
-      <About />
-      <BoatData />
+
       <AllWeeks />
-      <FeesSection />
-      <FAQsection />
-      <PhotoGallery />
-      <Marina />
-      <Sights />
-      <Footer />
+
+      {/* <Footer /> */}
     </Layout>
   );
 }

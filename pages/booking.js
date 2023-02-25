@@ -1,7 +1,7 @@
 import { collection, addDoc, getDocs, doc, getDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
-import AllWeeks from "../components/booking/AllWeeksAdmin";
+import Proizvodi from "../components/booking/AdminOPG";
 import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 // import firebase from "../components/firebase/firebase";
 import { auth, database } from "../components/firebase/firebase";
@@ -78,7 +78,11 @@ function Index() {
         Logged in: {logedIn ? "true" : "False"}
       </div> */}
       {/* <button onClick={handleLogOut}>Log out {userEmail}</button> */}
-      <AllWeeks data={data} handleLogOut={handleLogOut} userEmail={userEmail} />
+      <Proizvodi
+        data={data}
+        handleLogOut={handleLogOut}
+        userEmail={userEmail}
+      />
     </>
   );
 }

@@ -4,7 +4,7 @@ import Navbar from "./Navigation/navbar";
 export default function Layout({ preview, children }) {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Meta />
       <main>{children}</main>
     </>
