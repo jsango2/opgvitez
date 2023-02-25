@@ -196,8 +196,8 @@ export const Napomena = styled.div`
   justify-content: center;
   align-items: flex-end;
   width: 160px;
-  left: 17px;
-  top: 73px;
+  left: 34px;
+  top: 78px;
   svg {
     font-size: 28px;
     margin-left: 5px;
@@ -207,7 +207,7 @@ export const Napomena = styled.div`
   input,
   select,
   textarea {
-    height: 25px;
+    height: 23px;
     /* width: 450px; */
     width: 220px;
     background: #ffffff;
@@ -224,12 +224,16 @@ export const Napomena = styled.div`
 
     /* Gray 2 */
 
-    color: #4f4f4f;
     padding-left: 10px;
+    outline: 0.2px solid grey;
+  }
+  textarea::placeholder {
+    color: #093b69;
+    opacity: 70%;
   }
   textarea:focus,
   input:focus {
-    border: none;
+    border: none !important;
   }
 
   @media only screen and (max-width: 450px) {
