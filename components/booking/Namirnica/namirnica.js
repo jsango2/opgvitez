@@ -56,6 +56,7 @@ const Namirnica = ({
   textColor,
   cartStanje,
   height,
+  heightMobile,
   iconSize,
   partner,
   foto,
@@ -140,6 +141,7 @@ const Namirnica = ({
       textColor={textColor}
       height={height}
       widthMobile={widthMobile}
+      heightMobile={heightMobile}
     >
       <WrapImage>
         {/* <Overlay /> */}

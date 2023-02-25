@@ -39,20 +39,18 @@ export const WeekWrap = styled.div`
     width: 100%;
     min-width: unset;
 
-    height: 170px;
+    height: ${(props) => (props.heightMobile ? props.heightMobile : "170px")};
   }
   @media only screen and (max-width: 450px) {
     width: 95vw !important;
     min-width: 338px;
-
-    height: 170px;
   }
 `;
 export const Naziv = styled.h3`
   font-family: "Avenir Next";
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 100%;
   /* or 19px */
   margin-bottom: 5px;
@@ -64,6 +62,7 @@ export const Naziv = styled.h3`
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
+    font-size: 16px;
   }
 `;
 export const WrapNazivCijena = styled.div`
@@ -83,7 +82,7 @@ export const Price = styled.h3`
   font-family: "Avenir Next";
   font-style: normal;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 120%;
   /* or 19px */
 
@@ -95,6 +94,7 @@ export const Price = styled.h3`
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
+    font-size: 14 px;
   }
 `;
 export const PriceKn = styled.h3`
@@ -207,7 +207,7 @@ export const Napomena = styled.div`
   input,
   select,
   textarea {
-    height: 40px;
+    height: 25px;
     /* width: 450px; */
     width: 220px;
     background: #ffffff;

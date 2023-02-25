@@ -702,6 +702,7 @@ function Namirnice() {
             textColor="light"
             cartStanje={product.cartStanje}
             height="170px"
+            heightMobile="150px"
             iconSize="small"
             partner={product.partner}
             marginTop="0px"
