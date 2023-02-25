@@ -213,7 +213,7 @@ export const Napomena = styled.div`
     background: #ffffff;
     /* Gray04 */
     resize: none;
-    border: 1px solid #eaeaea;
+    border: 0.3px solid #eaeaea;
     border-radius: 8px;
     font-family: "Montserrat";
     font-style: normal;
@@ -226,6 +226,10 @@ export const Napomena = styled.div`
 
     color: #4f4f4f;
     padding-left: 10px;
+  }
+  textarea:focus,
+  input:focus {
+    border: none;
   }
 
   @media only screen and (max-width: 450px) {

@@ -954,7 +954,7 @@ export const ProductInCart = styled.div`
     height: 200px;
   }
   @media only screen and (max-width: 600px) {
-    height: 230px;
+    height: 189px;
   }
 `;
 export const Trash = styled.div`
@@ -1049,7 +1049,7 @@ export const Napomena = styled.div`
   @media only screen and (max-width: 600px) {
     width: 60%;
 
-    top: 112px;
+    top: 100px;
     left: 24px;
   }
   @media only screen and (max-width: 420px) {
@@ -1090,7 +1090,7 @@ export const WrapNazivCijena = styled.div`
   align-items: flex-start;
   padding-left: 10px;
   @media only screen and (max-width: 600px) {
-    height: 44px;
+    height: 25px;
     margin-bottom: 15px;
   }
   @media only screen and (max-width: 420px) {

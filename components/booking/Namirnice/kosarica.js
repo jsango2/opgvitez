@@ -195,9 +195,7 @@ function Kosarica({
 
                 <WrapData textColor="dark">
                   <WrapNazivCijena>
-                    <Naziv style={{ marginTop: "0px", fontSize: "25px" }}>
-                      {item.naziv}
-                    </Naziv>
+                    <Naziv style={{ marginTop: "0px" }}>{item.naziv}</Naziv>
                   </WrapNazivCijena>
                   <div
                     style={{
