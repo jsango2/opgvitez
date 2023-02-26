@@ -257,6 +257,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   right: 0px !important;
   transition: all 0.8s cubic-bezier(0.42, 0, 0.21, 0.97);
 }
+.legendClosed {
+  opacity: 0;
+  /* visibility: hidden; */
+  right: -100% !important;
+  transition: all 0.8s cubic-bezier(0.42, 0, 0.21, 0.97);
+}
+.legendOpen {
+  opacity: 1;
+  /* visibility: visible; */
+  right: 0px !important;
+  transition: all 0.8s cubic-bezier(0.42, 0, 0.21, 0.97);
+}
 .counterOff {
   opacity: 0;
   visibility: hidden;
@@ -590,7 +602,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .testimonialSlider {
     width: 100vw;
     padding-top: 20px;
-    height: 220px;
+    height: 22 0px;
     margin: 0px auto 0 auto;
     border-radius: 0;
   }

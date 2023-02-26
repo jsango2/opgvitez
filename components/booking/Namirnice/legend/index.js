@@ -11,11 +11,17 @@ import { GiFarmer } from "react-icons/gi";
 import { FaHandsHelping } from "react-icons/fa";
 
 function legend({}) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsOpen(true);
+    }, 2000);
+  }, []);
 
   return (
     <>
-      <Wrap>
+      <Wrap className={`  ${isOpen ? "legendOpen" : "legendClosed"}`}>
         <WrapEachLegend>
           <NasProizvod>
             <GiFarmer />

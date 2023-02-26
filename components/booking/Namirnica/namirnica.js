@@ -65,6 +65,7 @@ const Namirnica = ({
   foto,
   setKategorija,
   prikazNapomene,
+  isSlider,
 }) => {
   //   const [selected, setSelected] = useState(false);
 
@@ -152,21 +153,23 @@ const Namirnica = ({
           layout="fill"
           objectFit="cover"
         />
-
+      </WrapImage>
+      <WrapData textColor={textColor}>
+        {" "}
         {partner ? (
-          <Partner>
+          <Partner isSlider={isSlider}>
             <FaHandsHelping />
           </Partner>
         ) : (
-          <NasProizvod>
+          <NasProizvod isSlider={isSlider}>
             <GiFarmer />
           </NasProizvod>
         )}
-      </WrapImage>
-      <WrapData textColor={textColor}>
-        <Kategorija onClick={() => setKategorija(kategorija)}>
-          {kategorija}
-        </Kategorija>
+        {kategorija && (
+          <Kategorija onClick={() => setKategorija(kategorija)}>
+            {kategorija}
+          </Kategorija>
+        )}
         {/* {prikazNapomene && (
           <Napomena>
             {" "}
@@ -198,20 +201,23 @@ const Namirnica = ({
         </WrapNazivCijena>
         <WrapPlusMinus>
           {mjernaJedinica === "1kg" ? (
-            <input
-              name="kolicina"
-              type="number"
-              // pattern="[0-9]+([\..][0-9]+)?"
-              value={kolicina}
-              onChange={(e) => {
-                setKolicina(e.target.value);
-              }}
-              // onChange={(e) =>
-              //   setKolicina((v) =>
-              //     e.target.validity.valid ? e.target.value : v
-              //   )
-              // }
-            />
+            <>
+              <input
+                name="kolicina"
+                type="number"
+                // pattern="[0-9]+([\..][0-9]+)?"
+                value={kolicina}
+                onChange={(e) => {
+                  setKolicina(e.target.value);
+                }}
+                // onChange={(e) =>
+                //   setKolicina((v) =>
+                //     e.target.validity.valid ? e.target.value : v
+                //   )
+                // }
+              />
+              <div>kg</div>
+            </>
           ) : (
             <Amount>{Number(kolicina).toFixed(0)}</Amount>
           )}
@@ -236,16 +242,12 @@ const Namirnica = ({
           onClick={() => validateAndAddToBasket()}
           warning={alertWrongInput}
         >
-          {alertWrongInput ? "Krivo" : "Kupi"}
-          {/* {!alertWrongInput && !uspjesnoUneseno ? "U košaricu" : "Krivi unos"} */}
-          {/* {!uspjesnoUneseno ? "U košaricu" : "Dodano"} */}
           {uspjesnoUneseno ? (
             <MdDoneOutline />
+          ) : alertWrongInput ? (
+            "Krivo"
           ) : (
-            <TbTruckDelivery
-              // className={`truck ${uspjesnoUneseno ? "truckRight" : "truckLeft"}`}
-              className="truckLeft"
-            />
+            "Kupi"
           )}
         </WrapMiddle>
         <PlusWrap

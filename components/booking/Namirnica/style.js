@@ -149,21 +149,22 @@ export const WrapPlusMinus = styled.div`
   select {
     height: 40px;
     /* width: 450px; */
-    width: 70px;
     background: #ffffff;
     /* Gray04 */
+    width: 77px;
+    font-size: 39px;
+    font-weight: 700;
 
     border: 1px solid #eaeaea;
     border-radius: 8px;
     font-family: "Montserrat";
     font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 120%;
+    font-weight: 700;
+    line-height: 100%;
     /* or 19px */
 
     /* Gray 2 */
-
+    text-align: center;
     color: #093b69;
     padding-left: 10px;
     margin-bottom: 5px;
@@ -183,8 +184,8 @@ export const WrapPlusMinus = styled.div`
   }
   @media only screen and (max-width: 600px) {
     input {
-      width: 48px;
-      font-size: 15px;
+      width: 70px;
+      font-size: 32px;
       font-weight: 700;
     }
   }
@@ -423,7 +424,7 @@ export const WrapInBasket = styled.div`
   @media only screen and (max-width: 600px) {
     bottom: 10px;
     font-size: 11px;
-    width: 134px;
+    width: 117px;
     height: 33px;
   }
   @media only screen and (max-width: 410px) {
@@ -459,8 +460,8 @@ export const NasProizvod = styled.div`
   align-items: center;
   margin-left: ${(props) => (props.isInBasket ? "3px" : "0px")};
 
-  left: ${(props) => (props.isInBasket ? "0px" : "10px")};
-  top: ${(props) => (props.isInBasket ? "-1px" : "8px")};
+  right: 20px;
+  top: ${(props) => (props.isSlider ? "10px" : "40px")};
 
   font-weight: 700;
   cursor: pointer;
@@ -471,7 +472,7 @@ export const NasProizvod = styled.div`
   border-radius: 8px;
   background-color: #edce4a;
   svg {
-    color: ${(props) => (props.isInBasket ? "white !important" : "")};
+    color: white !important;
   }
   @media only screen and (max-width: 600px) {
   }
@@ -486,8 +487,8 @@ export const Partner = styled.div`
   justify-content: center;
   align-items: center;
   margin-left: ${(props) => (props.isInBasket ? "3px" : "0px")};
-  left: ${(props) => (props.isInBasket ? "0px" : "10px")};
-  top: ${(props) => (props.isInBasket ? "-1px" : "8px")};
+  right: 20px;
+  top: ${(props) => (props.isSlider ? "10px" : "40px")};
 
   font-weight: 700;
   cursor: pointer;
@@ -499,7 +500,7 @@ export const Partner = styled.div`
   border-radius: 8px;
   background-color: #bfdb38;
   svg {
-    color: ${(props) => (props.isInBasket ? "white !important" : "")};
+    color: white !important;
   }
   @media only screen and (max-width: 600px) {
   }
@@ -510,14 +511,14 @@ export const Kategorija = styled.div`
   position: absolute;
   z-index: 3;
   margin-left: 0px;
-  right: 3px;
-  top: 7px;
+  right: 20px;
+  top: 13px;
   font-weight: 700;
-  color: #00425a;
-  /* background-color: white; */
+  color: white;
+  background-color: #fe9920;
   border-radius: 5px;
   padding: 3px 8px;
-  font-size: 13px;
+  font-size: 10px;
 
   cursor: pointer;
   @media only screen and (max-width: 600px) {

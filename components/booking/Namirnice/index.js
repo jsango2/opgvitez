@@ -729,7 +729,7 @@ function Namirnice() {
             key={product.id}
             id={product.id}
             cijena={product.cijena}
-            kategorija={product.kategorija}
+            // kategorija={product.kategorija}
             selected={selected}
             free={product.free}
             naziv={product.naziv}
@@ -754,6 +754,7 @@ function Namirnice() {
             marginTop="0px"
             foto={product.foto ? product.foto : null}
             prikazNapomene={false}
+            isSlider={true}
           />
         ))}
       </Slider>
