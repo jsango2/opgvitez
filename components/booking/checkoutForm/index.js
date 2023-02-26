@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { CloseIcon } from "../Namirnice/style.js";
-import { CheckoutWrap, Amount, FormaSubmitedNote } from "./style.js";
+import {
+  CheckoutWrap,
+  Amount,
+  FormaSubmitedNote,
+  OrderTitle,
+  WrapEachOrderItem,
+  NoteTitle,
+  NoteAmount,
+  NoteNapomena,
+} from "./style.js";
 import { MdClose } from "react-icons/md";
 import Button from "../../button/index";
 
@@ -52,7 +61,17 @@ function checkoutForm({
   return (
     <>
       {formSubmited && (
-        <FormaSubmitedNote>Narudžba zaprimljena</FormaSubmitedNote>
+        <FormaSubmitedNote>
+          <OrderTitle>Narudžba zaprimljena</OrderTitle>
+          {/* {cartData.map((item) => (
+            <WrapEachOrderItem>
+              <NoteTitle>{item.naziv}</NoteTitle>
+              <NoteAmount>{item.kolicina}</NoteAmount>
+              <NoteAmount>x {item.cijena} Eur</NoteAmount>
+              {item.napomena && <NoteNapomena>{item.napomena}</NoteNapomena>}
+            </WrapEachOrderItem>
+          ))} */}
+        </FormaSubmitedNote>
       )}
 
       <CheckoutWrap>

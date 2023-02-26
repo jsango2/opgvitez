@@ -10,11 +10,12 @@ export const CheckoutWrap = styled.div`
   font-size: 14px;
   font-weight: 700;
   width: 654px;
-  height: 654px;
+  height: auto;
   border-radius: 10px;
   border: 0.3px solid rgba(23, 56, 97, 0.3);
   background-color: white;
   top: 125px;
+  padding: 30px 0;
   form {
     display: flex;
     flex-direction: column;
@@ -72,6 +73,74 @@ export const Amount = styled.h2`
   @media only screen and (max-width: 420px) {
   }
 `;
+export const OrderTitle = styled.h2`
+  position: relative;
+  z-index: 30;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: white;
+  margin-bottom: 0px;
+  @media only screen and (max-width: 850px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const NoteTitle = styled.h2`
+  position: relative;
+  z-index: 30;
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 10px;
+  color: white;
+  @media only screen and (max-width: 850px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const NoteAmount = styled.h2`
+  position: relative;
+  z-index: 30;
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 10px;
+  width: 90px;
+  color: white;
+  @media only screen and (max-width: 850px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const NoteNapomena = styled.h2`
+  position: relative;
+  z-index: 30;
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+
+  color: white;
+  @media only screen and (max-width: 850px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const WrapEachOrderItem = styled.h2`
+  position: relative;
+  z-index: 30;
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+  max-width: 90%;
+  color: white;
+  margin: 0 auto;
+  @media only screen and (max-width: 850px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
 
 export const FormaSubmitedNote = styled.div`
   position: fixed;
@@ -80,13 +149,13 @@ export const FormaSubmitedNote = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: auto;
   background-color: #093b69;
   color: white;
   top: 30%;
   border-radius: 10px;
-
+  padding: 60px 0;
   @media only screen and (max-width: 850px) {
   }
   @media only screen and (max-width: 420px) {

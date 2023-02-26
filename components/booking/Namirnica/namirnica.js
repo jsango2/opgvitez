@@ -97,10 +97,8 @@ const Namirnica = ({
   };
   const validateAndAddToBasket = () => {
     if (kolicina) {
-      console.log("Dobar");
       handleAddToBasket();
     } else {
-      console.log("nije dobar");
       setKolicina(1);
       setAlertWrongInput(true);
       setTimeout(() => {
@@ -169,7 +167,7 @@ const Namirnica = ({
         <Kategorija onClick={() => setKategorija(kategorija)}>
           {kategorija}
         </Kategorija>
-        {prikazNapomene && (
+        {/* {prikazNapomene && (
           <Napomena>
             {" "}
             <textarea
@@ -184,7 +182,7 @@ const Namirnica = ({
               }}
             />
           </Napomena>
-        )}
+        )} */}
         <WrapNazivCijena>
           <Naziv>{naziv}</Naziv>
           <div style={{ display: "flex" }}>

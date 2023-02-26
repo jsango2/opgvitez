@@ -63,6 +63,8 @@ function Kosarica({
   setCheckoutScreen,
   marginTop,
   marginTopMobile,
+
+  handleNapomenaCartUpdateCart,
 }) {
   const [selectedWeeks, setSelectedWeeks] = useState([]);
   const [length, setLength] = useState(0);
@@ -73,6 +75,7 @@ function Kosarica({
   const [checkoutWindow, setCheckoutWindow] = useState(false);
   const [OPG, setOPG] = useState(false);
   const [partnerHover, setPartnerHover] = useState(false);
+  const [napomenaCart, setNapomenaCart] = useState("");
   const size = useWindowSize();
 
   const refs = useRef();
@@ -98,6 +101,15 @@ function Kosarica({
   const handleCloseKosarica = () => {
     setKosaricaIsOpen(false);
   };
+  // const handleNapomena = (id, value) => {
+  //   handleNapomenaCartUpdateCart(id, value);
+  // };
+
+  // useEffect(() => {
+  //   handleNapomenaCartUpdateCart(id, value);
+
+  // }, [napomenaCart])
+
   const handleCartReset = () => {
     handleResetNotification();
     setCartData([]);
@@ -146,7 +158,7 @@ function Kosarica({
   //       setPartnerHover(false);
   //     }, 1000);
   // };
-
+  console.log("cartData u kosarici", cartData);
   return (
     <>
       {checkoutWindow && (
@@ -186,7 +198,7 @@ function Kosarica({
             heightMobile={`${cartData.length * 238}px`}
           >
             {cartData.map((item) => (
-              <ProductInCart>
+              <ProductInCart key={item.id}>
                 <WrapImage>
                   <Image
                     priority
@@ -197,6 +209,24 @@ function Kosarica({
                 </WrapImage>
 
                 <WrapData textColor="dark">
+                  <Napomena>
+                    {" "}
+                    <textarea
+                      name="kolicina"
+                      type="text"
+                      min="0"
+                      step="0.5"
+                      placeholder="Napomena"
+                      value={item.napomena}
+                      // onChange={(e) => {
+                      //   setNapomenaCart(e.target.value);
+                      // }}
+                      onChange={(e) => {
+                        // handleNapomena(item.id, napomenaCart);
+                        handleNapomenaCartUpdateCart(item.id, e.target.value);
+                      }}
+                    />
+                  </Napomena>
                   <WrapNazivCijena>
                     <Naziv style={{ marginTop: "0px" }}>{item.naziv}</Naziv>
                   </WrapNazivCijena>
@@ -251,7 +281,7 @@ function Kosarica({
                       />
                     </div>
                   </WrapPlusMinus>{" "} */}
-
+                  <Amount>{item.cartStanje} </Amount>
                   <WrapInBasket>
                     <PlusWrap
                       onClick={() =>
@@ -291,14 +321,14 @@ function Kosarica({
                       </PriceKn>
                     </div>
                   </ProizvodTotal>
-                  {item.napomena && (
+                  {/* {item.napomena && (
                     <Napomena>
                       <div style={{ marginRight: "10px" }}>
                         <BsPencilSquare />
                       </div>
                       {item.napomena}
                     </Napomena>
-                  )}
+                  )} */}
                 </WrapData>
               </ProductInCart>
             ))}

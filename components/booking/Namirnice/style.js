@@ -1052,6 +1052,13 @@ export const WrapInBasket = styled.div`
   align-items: center; */
   /* margin-left: 80px; */
   color: white;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   svg {
     font-size: 20px;
     margin-left: 0px;
@@ -1062,9 +1069,19 @@ export const WrapInBasket = styled.div`
     width: auto;
     height: 33px;
   }
-  @media only screen and (max-width: 410px) {
+  @media only screen and (max-width: 500px) {
     width: 77px;
-    right: 120px;
+    left: 80px;
+  }
+  @media only screen and (max-width: 400px) {
+    left: 60px;
+
+    /* right: 120px; */
+  }
+  @media only screen and (max-width: 370px) {
+    left: 45px;
+
+    /* right: 120px; */
   }
 `;
 
@@ -1107,28 +1124,81 @@ export const PlusWrap = styled.div`
   @media only screen and (max-width: 420px) {
   }
 `;
+// export const Napomena = styled.div`
+//   position: absolute;
+//   top: 43px;
+//   left: 240px;
+//   color: #093b69;
+//   width: 40%;
+
+//   svg {
+//     width: 20px;
+//     font-size: 24px;
+//     /* margin-right: 10px; */
+//   }
+//   display: flex;
+//   /* justify-content: flex-start; */
+//   align-items: flex-start;
+//   @media only screen and (max-width: 600px) {
+//     width: 60%;
+
+//     top: 100px;
+//     left: 24px;
+//   }
+//   @media only screen and (max-width: 420px) {
+//   }
+// `;
 export const Napomena = styled.div`
   position: absolute;
-  top: 43px;
-  left: 240px;
-  color: #093b69;
-  width: 40%;
-
-  svg {
-    width: 20px;
-    font-size: 24px;
-    /* margin-right: 10px; */
-  }
   display: flex;
-  /* justify-content: flex-start; */
-  align-items: flex-start;
-  @media only screen and (max-width: 600px) {
-    width: 60%;
+  justify-content: center;
+  align-items: flex-end;
+  width: 160px;
+  left: 22px;
+  top: 69px;
+  svg {
+    font-size: 28px;
+    margin-left: 5px;
+    cursor: pointer;
+    color: "#093b69";
+  }
+  input,
+  select,
+  textarea {
+    height: 23px;
+    /* width: 450px; */
+    width: 220px;
+    background: #ffffff;
+    /* Gray04 */
+    resize: none;
+    border: 0.3px solid #eaeaea;
+    border-radius: 8px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    /* or 19px */
 
-    top: 100px;
-    left: 24px;
+    /* Gray 2 */
+
+    padding-left: 10px;
+    outline: 0.2px solid grey;
+  }
+  textarea::placeholder {
+    color: #093b69;
+    opacity: 70%;
+  }
+  textarea:focus,
+  input:focus {
+    border: none !important;
+  }
+
+  @media only screen and (max-width: 600px) {
+    top: 96px;
   }
   @media only screen and (max-width: 420px) {
+    top: 88px;
   }
 `;
 export const WrapImage = styled.div`
@@ -1167,7 +1237,7 @@ export const WrapNazivCijena = styled.div`
   padding-left: 10px;
   @media only screen and (max-width: 600px) {
     height: 25px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -1355,17 +1425,19 @@ export const WrapPlusMinus = styled.div`
 `;
 
 export const Amount = styled.h2`
-  position: relative;
+  position: absolute;
   z-index: 30;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-size: 35px;
+  font-size: 40px;
   font-weight: 700;
-  margin-top: 20px;
   color: #093b69;
-  @media only screen and (max-width: 850px) {
+  bottom: 3px;
+  left: 40px;
+  @media only screen and (max-width: 400px) {
+    left: 20px;
   }
   @media only screen and (max-width: 420px) {
   }

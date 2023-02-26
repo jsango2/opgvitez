@@ -409,6 +409,13 @@ export const WrapInBasket = styled.div`
   align-items: center; */
   /* margin-left: 80px; */
   color: ${(props) => (props.textColor === "dark" ? "#093b69" : "white")};
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   svg {
     font-size: 20px;
     margin-left: 0px;

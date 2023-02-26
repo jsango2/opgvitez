@@ -91,6 +91,7 @@ function Namirnice() {
   const [isOpen, setIsOpen] = useState(false);
   const [logedIn, setlogedIn] = useState(null);
   const [kategorija, setKategorija] = useState("Sve");
+  const [napomenaCart, setNapomenaCart] = useState("");
   const [odabraneKolicine, setOdabraneKolicine] = useState(0);
   const [kosarica, setKosarica] = useState([]);
   const [kosaricaLS, setKosaricaLS] = useState([]);
@@ -178,7 +179,6 @@ function Namirnice() {
     // }
     getNotes();
   }, []);
-  console.log("first", data);
   // ________
 
   // (function () {
@@ -320,7 +320,6 @@ function Namirnice() {
   };
 
   const handleUpdateCart = (id, kolicina, cartStanje, napomena) => {
-    console.log(napomena);
     var now = new Date().getTime();
     // if (localStorage.getItem("Cart Data OPG Vitez") != undefined) {
     //   var localStorageState = JSON.parse(
@@ -352,6 +351,50 @@ function Namirnice() {
     //   JSON.stringify({ cart: cartDataFilter, time: now })
     // );
     setCartData(cartDataFilter);
+  };
+  useEffect(() => {
+    let sum = 0;
+    cartData.map((object) => {
+      if (object.cartStanje > 0) {
+        sum = sum + object.cartStanje * object.cijena;
+      }
+    });
+    setSuma(sum);
+
+    setKosaricaLength(cartData.length);
+  }, [cartData]);
+
+  const handleNapomenaCartUpdateCart = (id, napomena) => {
+    var now = new Date().getTime();
+    // if (localStorage.getItem("Cart Data OPG Vitez") != undefined) {
+    //   var localStorageState = JSON.parse(
+    //     localStorage.getItem("Cart Data OPG Vitez")
+    //   );
+    //   var localStorageDate = localStorageState.time;
+    //   var localStorageData = localStorageState.newState;
+    // }
+    const newState = data.map((obj) => {
+      // 👇️ if id equals 2, update country property
+      if (obj.id === id) {
+        return {
+          ...obj,
+          napomena: napomena,
+        };
+      }
+      // 👇️ otherwise return object as is
+      return obj;
+    });
+    // console.log("new state", newState);
+    let cartDataFilter = newState.filter((item) => item.cartStanje > 0);
+    // setCartData(cartDataFilter);
+    // console.log("updated on ad to basket", cartDataFilter);
+    setData(newState);
+    // localStorage.setItem(
+    //   "Cart Data OPG Vitez",
+    //   JSON.stringify({ cart: cartDataFilter, time: now })
+    // );
+    setCartData(cartDataFilter);
+    console.log("Data nakon dodane napomene", data);
   };
   useEffect(() => {
     let sum = 0;
@@ -675,6 +718,9 @@ function Namirnice() {
         setCheckoutScreen={checkoutScreen}
         marginTop="5px"
         marginTopMobile="40px"
+        setNapomenaCart={setNapomenaCart}
+        napomenaCart={napomenaCart}
+        handleNapomenaCartUpdateCart={handleNapomenaCartUpdateCart}
       ></Kosarica>
       <Title>Posebna ponuda</Title> 
       <Slider {...settings}>
