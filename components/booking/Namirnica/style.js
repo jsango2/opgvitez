@@ -62,7 +62,7 @@ export const Naziv = styled.h3`
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
-    font-size: 16px;
+    font-size: 17px;
   }
 `;
 export const WrapNazivCijena = styled.div`
@@ -240,7 +240,7 @@ export const Napomena = styled.div`
 
   @media only screen and (max-width: 450px) {
     left: 17px;
-    top: 73px;
+    top: 80px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -380,10 +380,10 @@ export const WrapData = styled.div`
     color: ${(props) => (props.textColor === "dark" ? "#093b69" : "#093b69")};
   }
   @media only screen and (max-width: 1000px) {
-    padding: 6px 0 6px 10px;
+    padding: 13px 0 6px 10px;
   }
   @media only screen and (max-width: 600px) {
-    padding: 6px 0 6px 10px;
+    /* padding: 6px 0 6px 10px; */
   }
   @media only screen and (max-width: 420px) {
   }
