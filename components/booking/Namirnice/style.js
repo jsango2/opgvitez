@@ -1070,6 +1070,8 @@ export const WrapInBasket = styled.div`
 
 export const MinusWrap = styled.div`
   position: relative;
+  z-index: 40;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1088,6 +1090,7 @@ export const MinusWrap = styled.div`
 `;
 export const PlusWrap = styled.div`
   position: relative;
+  z-index: 40;
   display: flex;
   align-items: center;
   justify-content: center;

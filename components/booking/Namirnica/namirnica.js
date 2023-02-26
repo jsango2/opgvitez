@@ -91,7 +91,7 @@ const Namirnica = ({
     setKolicina((Number(kolicina) + 1).toFixed(1));
   };
   const handleKolicinaMinus = () => {
-    if (kolicina >= 1) {
+    if (kolicina > 1) {
       setKolicina((Number(kolicina) - 1).toFixed(1));
     }
   };
