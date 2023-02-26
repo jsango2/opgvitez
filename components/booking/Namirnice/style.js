@@ -1031,6 +1031,79 @@ export const Line = styled.div`
   }
 `;
 
+export const WrapInBasket = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+
+  right: 140px;
+  bottom: 18px;
+  font-size: 36px;
+  font-weight: 700;
+  width: auto;
+  height: 34px;
+  border-radius: 20px;
+  background-color: #239d56;
+  cursor: pointer;
+  /* width: 400px !important; */
+  /* flex-direction: column;
+  align-items: center; */
+  /* margin-left: 80px; */
+  color: white;
+  svg {
+    font-size: 20px;
+    margin-left: 0px;
+  }
+  @media only screen and (max-width: 600px) {
+    bottom: 10px;
+    font-size: 11px;
+    width: auto;
+    height: 33px;
+  }
+  @media only screen and (max-width: 410px) {
+    width: 77px;
+    right: 120px;
+  }
+`;
+
+export const MinusWrap = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 100%;
+  background-color: #26b061;
+  /* background-color: #26b061; */
+  margin-left: 1px;
+  svg {
+    color: white;
+  }
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const PlusWrap = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 100%;
+  background-color: #26b061;
+  margin-right: 1px;
+  /* background-color: #26b061; */
+  svg {
+    color: white;
+  }
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
 export const Napomena = styled.div`
   position: absolute;
   top: 43px;

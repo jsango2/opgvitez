@@ -21,6 +21,9 @@ import {
   WrapPlusMinus,
   Amount,
   WrapData,
+  WrapInBasket,
+  PlusWrap,
+  MinusWrap,
 } from "./style.js";
 import Image from "next/image";
 
@@ -224,7 +227,7 @@ function Kosarica({
                       )}
                     </CijenaIikone>
                   </div>
-                  <WrapPlusMinus
+                  {/* <WrapPlusMinus
                     marginTop={marginTop}
                     marginTopMobile={marginTopMobile}
                   >
@@ -247,7 +250,27 @@ function Kosarica({
                         }
                       />
                     </div>
-                  </WrapPlusMinus>{" "}
+                  </WrapPlusMinus>{" "} */}
+
+                  <WrapInBasket>
+                    <PlusWrap
+                      onClick={() =>
+                        handleAddItemAMount(item.id, item.cartStanje)
+                      }
+                    >
+                      <IoIosAddCircleOutline />
+                    </PlusWrap>
+
+                    <MinusWrap
+                      onClick={() =>
+                        handleRemoveItemAMount(item.id, item.cartStanje)
+                      }
+                    >
+                      <IoIosRemoveCircleOutline />
+                    </MinusWrap>
+                    {/* <CiShoppingBasket onClick={() => handleAddToBasket()} /> */}
+                  </WrapInBasket>
+
                   <Trash>
                     <TfiTrash onClick={() => handleRemoveAllItems(item.id)} />
                   </Trash>

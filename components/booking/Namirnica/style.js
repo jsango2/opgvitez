@@ -130,10 +130,11 @@ export const WrapPricesInNamirnica = styled.div`
 
 export const WrapPlusMinus = styled.div`
   /* margin-left: auto; */
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 155px;
+  width: 105px;
   height: ${(props) => (props.height ? props.height : "55px")};
 
   margin-top: ${(props) => props.marginTop};
@@ -165,6 +166,7 @@ export const WrapPlusMinus = styled.div`
 
     color: #093b69;
     padding-left: 10px;
+    margin-bottom: 5px;
   }
   /* Chrome, Safari, Edge, Opera */
   input::-webkit-outer-spin-button,
@@ -304,6 +306,58 @@ export const WrapImage = styled.div`
   @media only screen and (max-width: 420px) {
   }
 `;
+export const MinusWrap = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 100%;
+  background-color: ${(props) => (props.warning ? "#dc3545" : "#26b061")};
+  /* background-color: #26b061; */
+
+  svg {
+    color: white;
+  }
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const PlusWrap = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 100%;
+  background-color: ${(props) => (props.warning ? "#dc3545" : "#26b061")};
+  /* background-color: #26b061; */
+  svg {
+    color: white;
+  }
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const WrapMiddle = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 73px;
+  height: 100%;
+  background-color: ${(props) => (props.warning ? "#dc3545" : "#2bc36b")};
+  /* background-color: #26b061; */
+  svg {
+    color: white;
+  }
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
 export const WrapData = styled.div`
   position: relative;
   display: -webkit-box;
@@ -321,7 +375,7 @@ export const WrapData = styled.div`
   height: 100%;
   background-color: white;
   padding: 8px 0 8px 30px;
-  justify-content: space-around;
+  justify-content: space-between;
   div > * {
     color: ${(props) => (props.textColor === "dark" ? "#093b69" : "#093b69")};
   }
@@ -337,15 +391,17 @@ export const WrapData = styled.div`
 export const WrapInBasket = styled.div`
   position: absolute;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+
   right: 4%;
   bottom: 15px;
   font-size: ${(props) => (props.iconSize === "small" ? "14px" : "36px")};
   font-weight: 700;
   width: 144px;
-  height: 42px;
-  border-radius: 10px;
+  height: 34px;
+  border-radius: 20px;
   background-color: ${(props) => (props.warning ? "#dc3545" : "#2ecc71")};
   cursor: pointer;
   /* width: 400px !important; */
@@ -355,16 +411,15 @@ export const WrapInBasket = styled.div`
   color: ${(props) => (props.textColor === "dark" ? "#093b69" : "white")};
   svg {
     font-size: 20px;
-    margin-left: 4px;
+    margin-left: 0px;
   }
   @media only screen and (max-width: 600px) {
     bottom: 10px;
     font-size: 11px;
-    width: 114px;
+    width: 134px;
     height: 33px;
   }
   @media only screen and (max-width: 410px) {
-    width: 77px;
   }
 `;
 export const Alert = styled.div`

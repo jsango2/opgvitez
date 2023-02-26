@@ -19,6 +19,9 @@ import {
   Kategorija,
   Napomena,
   WrapPricesInNamirnica,
+  MinusWrap,
+  PlusWrap,
+  WrapMiddle,
 } from "./style.js";
 import Diskont from "./diskont";
 // import HeroVideo from "../../video/kraciVideo.mp4";
@@ -214,11 +217,6 @@ const Namirnica = ({
           ) : (
             <Amount>{Number(kolicina).toFixed(0)}</Amount>
           )}
-
-          <div style={{ width: "90px", marginBottom: "2px" }}>
-            <IoIosAddCircleOutline onClick={() => handleKolicinaPlus()} />
-            <IoIosRemoveCircleOutline onClick={() => handleKolicinaMinus()} />
-          </div>
         </WrapPlusMinus>
       </WrapData>
 
@@ -227,21 +225,37 @@ const Namirnica = ({
       <WrapInBasket
         textColor={textColor}
         iconSize={iconSize}
-        onClick={() => validateAndAddToBasket()}
         warning={alertWrongInput}
       >
-        {alertWrongInput ? "Krivi unos" : "Kupi"}
-        {/* {!alertWrongInput && !uspjesnoUneseno ? "U košaricu" : "Krivi unos"} */}
-        {/* {!uspjesnoUneseno ? "U košaricu" : "Dodano"} */}
-        {uspjesnoUneseno ? (
-          <MdDoneOutline />
-        ) : (
-          <TbTruckDelivery
-            // className={`truck ${uspjesnoUneseno ? "truckRight" : "truckLeft"}`}
-            className="truckLeft"
-          />
-        )}
+        <PlusWrap
+          warning={alertWrongInput}
+          onClick={() => handleKolicinaPlus()}
+        >
+          <IoIosAddCircleOutline />
+        </PlusWrap>
+        <WrapMiddle
+          onClick={() => validateAndAddToBasket()}
+          warning={alertWrongInput}
+        >
+          {alertWrongInput ? "Krivo" : "Kupi"}
+          {/* {!alertWrongInput && !uspjesnoUneseno ? "U košaricu" : "Krivi unos"} */}
+          {/* {!uspjesnoUneseno ? "U košaricu" : "Dodano"} */}
+          {uspjesnoUneseno ? (
+            <MdDoneOutline />
+          ) : (
+            <TbTruckDelivery
+              // className={`truck ${uspjesnoUneseno ? "truckRight" : "truckLeft"}`}
+              className="truckLeft"
+            />
+          )}
+        </WrapMiddle>
 
+        <MinusWrap
+          warning={alertWrongInput}
+          onClick={() => handleKolicinaMinus()}
+        >
+          <IoIosRemoveCircleOutline />
+        </MinusWrap>
         {/* <CiShoppingBasket onClick={() => handleAddToBasket()} /> */}
       </WrapInBasket>
 
