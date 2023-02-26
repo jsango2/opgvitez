@@ -1096,7 +1096,7 @@ export const MinusWrap = styled.div`
   height: 100%;
   background-color: #26b061;
   /* background-color: #26b061; */
-  margin-left: 1px;
+  margin-right: 1px;
   svg {
     color: white;
   }
@@ -1114,7 +1114,7 @@ export const PlusWrap = styled.div`
   width: 44px;
   height: 100%;
   background-color: #26b061;
-  margin-right: 1px;
+  margin-left: 1px;
   /* background-color: #26b061; */
   svg {
     color: white;

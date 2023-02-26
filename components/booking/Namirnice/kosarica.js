@@ -283,14 +283,6 @@ function Kosarica({
                   </WrapPlusMinus>{" "} */}
                   <Amount>{item.cartStanje} </Amount>
                   <WrapInBasket>
-                    <PlusWrap
-                      onClick={() =>
-                        handleAddItemAMount(item.id, item.cartStanje)
-                      }
-                    >
-                      <IoIosAddCircleOutline />
-                    </PlusWrap>
-
                     <MinusWrap
                       onClick={() =>
                         handleRemoveItemAMount(item.id, item.cartStanje)
@@ -298,6 +290,13 @@ function Kosarica({
                     >
                       <IoIosRemoveCircleOutline />
                     </MinusWrap>
+                    <PlusWrap
+                      onClick={() =>
+                        handleAddItemAMount(item.id, item.cartStanje)
+                      }
+                    >
+                      <IoIosAddCircleOutline />
+                    </PlusWrap>
                     {/* <CiShoppingBasket onClick={() => handleAddToBasket()} /> */}
                   </WrapInBasket>
 

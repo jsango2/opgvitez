@@ -225,12 +225,13 @@ const Namirnica = ({
         iconSize={iconSize}
         warning={alertWrongInput}
       >
-        <PlusWrap
+        <MinusWrap
           warning={alertWrongInput}
-          onClick={() => handleKolicinaPlus()}
+          onClick={() => handleKolicinaMinus()}
         >
-          <IoIosAddCircleOutline />
-        </PlusWrap>
+          <IoIosRemoveCircleOutline />
+        </MinusWrap>
+
         <WrapMiddle
           onClick={() => validateAndAddToBasket()}
           warning={alertWrongInput}
@@ -247,13 +248,13 @@ const Namirnica = ({
             />
           )}
         </WrapMiddle>
-
-        <MinusWrap
+        <PlusWrap
           warning={alertWrongInput}
-          onClick={() => handleKolicinaMinus()}
+          onClick={() => handleKolicinaPlus()}
         >
-          <IoIosRemoveCircleOutline />
-        </MinusWrap>
+          <IoIosAddCircleOutline />
+        </PlusWrap>
+
         {/* <CiShoppingBasket onClick={() => handleAddToBasket()} /> */}
       </WrapInBasket>
 
