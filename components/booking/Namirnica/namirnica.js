@@ -24,6 +24,7 @@ import {
   WrapMiddle,
   MouseOverPartner,
   MouseOverNas,
+  ItemAddedOverlay,
 } from "./style.js";
 import Diskont from "./diskont";
 // import HeroVideo from "../../video/kraciVideo.mp4";
@@ -85,6 +86,7 @@ const Namirnica = ({
   const [uspjesnoUneseno, setUspjesnoUneseno] = useState(false);
   const [mouseOverPartner, setMouseOverPartner] = useState(false);
   const [mouseOverNas, setMouseOverNas] = useState(false);
+  const [itemAdded, setItemAdded] = useState(false);
   useEffect(() => {
     let num = cijena.toString();
     function insert(str, index, value) {
@@ -113,6 +115,7 @@ const Namirnica = ({
   };
   const handleAddToBasket = () => {
     // if(kolicina !typeof n)
+    setItemAdded(true);
     if (kolicina === 0) {
       setAlert(true);
     } else {
@@ -125,6 +128,9 @@ const Namirnica = ({
         setNapomena("");
       }, 3000);
     }
+    setTimeout(() => {
+      setItemAdded(false);
+    }, 1000);
     setTimeout(() => {
       setAlert(false);
     }, 3000);
@@ -165,6 +171,13 @@ const Namirnica = ({
           layout="fill"
           objectFit="cover"
         />
+        <ItemAddedOverlay
+          className={`  ${
+            itemAdded ? "itemAddedOverlayOn" : "itemAddedOverlayOff"
+          }`}
+        >
+          DODANO U KOŠARICU
+        </ItemAddedOverlay>
       </WrapImage>
       <WrapData textColor={textColor}>
         {" "}

@@ -614,3 +614,23 @@ export const MouseOverNas = styled.div`
   @media only screen and (max-width: 420px) {
   }
 `;
+
+export const ItemAddedOverlay = styled.div`
+  position: absolute;
+  z-index: 50;
+  height: 100%;
+  width: 100%;
+  color: #00425a !important;
+  text-align: center;
+  background: #edce4a;
+  font-size: 9px !important ;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
