@@ -216,7 +216,7 @@ const Namirnica = ({
                 //   )
                 // }
               />
-              <div>kg</div>
+              <div style={{ marginBottom: "8px" }}>kg</div>
             </>
           ) : (
             <Amount>{Number(kolicina).toFixed(0)}</Amount>

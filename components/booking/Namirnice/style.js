@@ -615,7 +615,6 @@ export const ProizvodTotal = styled.div`
   @media only screen and (max-width: 1100px) {
   }
   @media only screen and (max-width: 380px) {
-    right: 10px;
   }
 `;
 export const WrapIcons = styled.div`
@@ -975,7 +974,7 @@ export const WrapData = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
+  width: 73%;
 
   background-color: white;
   padding: 8px 0 8px 30px;
@@ -1039,7 +1038,7 @@ export const WrapInBasket = styled.div`
   align-items: center;
   overflow: hidden;
 
-  left: 140px;
+  right: 140px;
   bottom: 10px;
   font-size: 36px;
   font-weight: 700;
@@ -1072,21 +1071,14 @@ export const WrapInBasket = styled.div`
   }
   @media only screen and (max-width: 500px) {
     width: 77px;
-    left: 130px;
+    right: 130px;
   }
   @media only screen and (max-width: 450px) {
-    left: 90px;
-
     /* right: 120px; */
   }
   @media only screen and (max-width: 400px) {
-    left: unset;
-
-    right: 100px;
   }
   @media only screen and (max-width: 370px) {
-    left: 65px;
-
     /* right: 120px; */
   }
 `;
@@ -1209,15 +1201,15 @@ export const Napomena = styled.div`
 `;
 export const WrapImage = styled.div`
   position: relative;
-
-  width: 200px;
-  /* height: 100%; */
-
+  width: 80px;
+  height: 80px;
+  color: white;
+  margin-left: 10px;
+  border-radius: 50%;
+  overflow: hidden;
   @media only screen and (max-width: 1000px) {
-    width: 130px;
   }
   @media only screen and (max-width: 870px) {
-    height: 100%;
   }
 `;
 
@@ -1441,16 +1433,14 @@ export const Amount = styled.h2`
   font-weight: 700;
   color: #093b69;
   bottom: 3px;
-  left: 40px;
-  @media only screen and (max-width: 400px) {
-    left: 20px;
+  right: 390px;
+  @media only screen and (max-width: 500px) {
+    right: 290px;
   }
   @media only screen and (max-width: 450px) {
-    left: 20px;
+    right: 270px;
   }
   @media only screen and (max-width: 390px) {
-    left: 10px;
-    font-size: 30px;
-    bottom: 7px;
+    right: 250px;
   }
 `;

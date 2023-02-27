@@ -7,7 +7,7 @@ export const WeekWrap = styled.div`
 
   min-width: 470px;
   background: ${(props) => props.backgroundColor};
-  background-color: #3275a1;
+  background-color: white;
 
   display: flex;
   flex-direction: row;
@@ -136,7 +136,7 @@ export const WrapPlusMinus = styled.div`
   align-items: flex-end;
   width: 105px;
   height: ${(props) => (props.height ? props.height : "55px")};
-
+  right: 20px;
   margin-top: ${(props) => props.marginTop};
 
   svg {
@@ -288,6 +288,7 @@ export const Amount = styled.div`
   width: 40px;
   font-weight: bold;
   font-size: 42px;
+
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
@@ -296,9 +297,14 @@ export const Amount = styled.div`
 
 export const WrapImage = styled.div`
   position: relative;
-  width: 30%;
-  height: 100%;
+  top: -33px;
+  width: 80px;
+  height: 80px;
   color: white;
+  margin-left: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+
   svg {
     color: white;
   }
@@ -372,7 +378,7 @@ export const WrapData = styled.div`
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  width: 100%;
+  width: 73%;
   height: 100%;
   background-color: white;
   padding: 8px 0 8px 30px;
