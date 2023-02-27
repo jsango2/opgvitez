@@ -22,6 +22,8 @@ import {
   MinusWrap,
   PlusWrap,
   WrapMiddle,
+  MouseOverPartner,
+  MouseOverNas,
 } from "./style.js";
 import Diskont from "./diskont";
 // import HeroVideo from "../../video/kraciVideo.mp4";
@@ -81,6 +83,8 @@ const Namirnica = ({
   const [alert, setAlert] = useState(false);
   const [alertWrongInput, setAlertWrongInput] = useState(false);
   const [uspjesnoUneseno, setUspjesnoUneseno] = useState(false);
+  const [mouseOverPartner, setMouseOverPartner] = useState(false);
+  const [mouseOverNas, setMouseOverNas] = useState(false);
   useEffect(() => {
     let num = cijena.toString();
     function insert(str, index, value) {
@@ -125,6 +129,14 @@ const Namirnica = ({
       setAlert(false);
     }, 3000);
   };
+  const handleMouseOver = () => {
+    setMouseOverPartner(true);
+    setMouseOverNas(true);
+    setTimeout(() => {
+      setMouseOverPartner(false);
+      setMouseOverNas(false);
+    }, 2000);
+  };
 
   return (
     <WeekWrap
@@ -157,12 +169,19 @@ const Namirnica = ({
       <WrapData textColor={textColor}>
         {" "}
         {partner ? (
-          <Partner isSlider={isSlider}>
+          <Partner isSlider={isSlider} onMouseOver={() => handleMouseOver()}>
             <FaHandsHelping />
+            {mouseOverPartner && (
+              <MouseOverPartner>Naš partner</MouseOverPartner>
+            )}
           </Partner>
         ) : (
-          <NasProizvod isSlider={isSlider}>
+          <NasProizvod
+            isSlider={isSlider}
+            onMouseOver={() => handleMouseOver()}
+          >
             <GiFarmer />
+            {mouseOverNas && <MouseOverNas>Naš proizvod</MouseOverNas>}
           </NasProizvod>
         )}
         {kategorija && (

@@ -17,7 +17,7 @@ export const WeekWrap = styled.div`
 
   /* padding-top: 3px; */
   z-index: 0;
-  margin: 7px auto 7px auto;
+  margin: 1px auto 1px auto;
   /* cursor: pointer; */
 
   /* pointer-events: ${(props) => (props.length < 5 ? "auto " : "none")}; */
@@ -570,6 +570,41 @@ export const Overlay = styled.div`
     rgba(0, 0, 0, 0.36740633753501406) 0%,
     rgba(2, 11, 13, 0) 78%
   );
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+
+export const MouseOverPartner = styled.div`
+  position: absolute;
+  z-index: 2;
+  top: 38px;
+  right: 0px;
+  padding: 6px 10px;
+  width: 140px;
+  color: white !important;
+  text-align: center;
+  background: #bfdb38;
+  border-radius: 5px;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+
+export const MouseOverNas = styled.div`
+  position: absolute;
+  z-index: 2;
+  top: 38px;
+  right: 0px;
+  padding: 6px 10px;
+  width: 140px;
+  color: white !important;
+  text-align: center;
+  background: #edce4a;
+  border-radius: 5px;
+  font-size: 14px !important ;
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
