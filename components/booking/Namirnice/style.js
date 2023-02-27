@@ -614,7 +614,8 @@ export const ProizvodTotal = styled.div`
   text-align: right;
   @media only screen and (max-width: 1100px) {
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 380px) {
+    right: 10px;
   }
 `;
 export const WrapIcons = styled.div`
@@ -1038,8 +1039,8 @@ export const WrapInBasket = styled.div`
   align-items: center;
   overflow: hidden;
 
-  right: 140px;
-  bottom: 18px;
+  left: 140px;
+  bottom: 10px;
   font-size: 36px;
   font-weight: 700;
   width: auto;
@@ -1071,15 +1072,20 @@ export const WrapInBasket = styled.div`
   }
   @media only screen and (max-width: 500px) {
     width: 77px;
-    left: 80px;
+    left: 130px;
   }
-  @media only screen and (max-width: 400px) {
-    left: 60px;
+  @media only screen and (max-width: 450px) {
+    left: 90px;
 
     /* right: 120px; */
   }
+  @media only screen and (max-width: 400px) {
+    left: unset;
+
+    right: 100px;
+  }
   @media only screen and (max-width: 370px) {
-    left: 45px;
+    left: 65px;
 
     /* right: 120px; */
   }
@@ -1439,6 +1445,12 @@ export const Amount = styled.h2`
   @media only screen and (max-width: 400px) {
     left: 20px;
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 450px) {
+    left: 20px;
+  }
+  @media only screen and (max-width: 390px) {
+    left: 10px;
+    font-size: 30px;
+    bottom: 7px;
   }
 `;
