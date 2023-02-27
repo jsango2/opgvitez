@@ -723,7 +723,8 @@ function Namirnice() {
         napomenaCart={napomenaCart}
         handleNapomenaCartUpdateCart={handleNapomenaCartUpdateCart}
       ></Kosarica>
-      <Title>Posebna ponuda</Title> 
+      {!isLoading && <Title>Posebna ponuda</Title>}
+
       <Slider {...settings}>
         {dataFeatured.slice(0, 6).map((product) => (
           <Namirnica
@@ -760,7 +761,8 @@ function Namirnice() {
         ))}
       </Slider>
       <Legend />
-      <Title2>Odaberi namirnice</Title2> 
+      {!isLoading && <Title2>Odaberi namirnice</Title2>}
+
       {/* <SubTitle>Choose your dates and make reservation</SubTitle> */}
       {/* {size.width < 600 ? <Legend /> : ""} */}
       {isLoading ? (
