@@ -583,12 +583,14 @@ export const MouseOverPartner = styled.div`
   z-index: 2;
   top: 38px;
   right: 0px;
-  padding: 3px 10px;
-  width: 140px;
+  padding: 3px 6px;
+  width: 130px;
   color: white !important;
   text-align: center;
   background: #bfdb38;
   border-radius: 5px;
+  font-size: 11px !important ;
+
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
@@ -600,13 +602,13 @@ export const MouseOverNas = styled.div`
   z-index: 2;
   top: 38px;
   right: 0px;
-  padding: 3px 10px;
-  width: 140px;
+  padding: 3px 6px;
+  width: 110px;
   color: white !important;
   text-align: center;
   background: #edce4a;
   border-radius: 5px;
-  font-size: 14px !important ;
+  font-size: 11px !important ;
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {

@@ -172,7 +172,7 @@ const Namirnica = ({
           <Partner isSlider={isSlider} onMouseOver={() => handleMouseOver()}>
             <FaHandsHelping />
             {mouseOverPartner && (
-              <MouseOverPartner>Naš partner</MouseOverPartner>
+              <MouseOverPartner>Proizvod partnera</MouseOverPartner>
             )}
           </Partner>
         ) : (
