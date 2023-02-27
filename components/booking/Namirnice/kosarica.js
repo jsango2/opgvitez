@@ -74,7 +74,10 @@ function Kosarica({
   const [ordered, setOrdered] = useState(false);
   const [checkoutWindow, setCheckoutWindow] = useState(false);
   const [OPG, setOPG] = useState(false);
-  const [partnerHover, setPartnerHover] = useState(false);
+  const [productDeleted, setProductDeleted] = useState({
+    isDeleted: false,
+    id: null,
+  });
   const [napomenaCart, setNapomenaCart] = useState("");
   const size = useWindowSize();
 
@@ -158,7 +161,21 @@ function Kosarica({
   //       setPartnerHover(false);
   //     }, 1000);
   // };
-  console.log("cartData u kosarici", cartData);
+  const handleRemoveLastItem = (id, cartStanje) => {
+    if (cartStanje === 1) {
+      handleDeleteAnimation(id);
+    } else {
+      handleRemoveItemAMount(id, cartStanje);
+    }
+  };
+  const handleDeleteAnimation = (id) => {
+    setProductDeleted({ isDeleted: true, id: id });
+    setTimeout(() => {
+      handleRemoveAllItems(id);
+      setProductDeleted({ isDeleted: false, id: null });
+    }, 600);
+  };
+  console.log(productDeleted);
   return (
     <>
       {checkoutWindow && (
@@ -198,7 +215,12 @@ function Kosarica({
             heightMobile={`${cartData.length * 238}px`}
           >
             {cartData.map((item) => (
-              <ProductInCart key={item.id}>
+              <ProductInCart
+                key={item.id}
+                className={`  ${
+                  productDeleted.id === item.id ? "productDeleted" : "product"
+                }`}
+              >
                 <WrapImage>
                   <Image
                     priority
@@ -284,9 +306,10 @@ function Kosarica({
                   <Amount>{item.cartStanje} </Amount>
                   <WrapInBasket>
                     <MinusWrap
-                      onClick={() =>
-                        handleRemoveItemAMount(item.id, item.cartStanje)
-                      }
+                      onClick={() => {
+                        // handleRemoveItemAMount(item.id, item.cartStanje);
+                        handleRemoveLastItem(item.id, item.cartStanje);
+                      }}
                     >
                       <IoIosRemoveCircleOutline />
                     </MinusWrap>
@@ -301,7 +324,12 @@ function Kosarica({
                   </WrapInBasket>
 
                   <Trash>
-                    <TfiTrash onClick={() => handleRemoveAllItems(item.id)} />
+                    <TfiTrash
+                      onClick={() => {
+                        // handleRemoveAllItems(item.id)
+                        handleDeleteAnimation(item.id);
+                      }}
+                    />
                   </Trash>
                   <ProizvodTotal>
                     Ukupno:
