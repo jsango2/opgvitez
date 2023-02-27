@@ -398,7 +398,7 @@ export const WrapInBasket = styled.div`
 
   right: 4%;
   bottom: 15px;
-  font-size: ${(props) => (props.iconSize === "small" ? "14px" : "36px")};
+  font-size: ${(props) => (props.iconSize === "small" ? "17px" : "36px")};
   font-weight: 700;
   width: 144px;
   height: 34px;
@@ -423,7 +423,7 @@ export const WrapInBasket = styled.div`
   }
   @media only screen and (max-width: 600px) {
     bottom: 10px;
-    font-size: 11px;
+    font-size: 14px;
     width: 117px;
     height: 33px;
   }

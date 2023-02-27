@@ -247,7 +247,7 @@ const Namirnica = ({
           ) : alertWrongInput ? (
             "Krivo"
           ) : (
-            "Kupi"
+            "KUPI"
           )}
         </WrapMiddle>
         <PlusWrap
