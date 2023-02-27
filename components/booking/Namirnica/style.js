@@ -12,7 +12,7 @@ export const WeekWrap = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-
+  justify-content: flex-end;
   box-shadow: 0px 14px 23px rgba(28, 37, 44, 0.08);
 
   /* padding-top: 3px; */
@@ -39,7 +39,7 @@ export const WeekWrap = styled.div`
     width: 100%;
     min-width: unset;
 
-    height: ${(props) => (props.heightMobile ? props.heightMobile : "170px")};
+    height: ${(props) => (props.heightMobile ? props.heightMobile : "150px")};
   }
   @media only screen and (max-width: 450px) {
     width: 95vw !important;
@@ -297,9 +297,9 @@ export const Amount = styled.div`
 
 export const WrapImage = styled.div`
   position: relative;
-  top: -33px;
-  width: 80px;
-  height: 80px;
+  top: -25px;
+  width: 100px;
+  height: 100px;
   color: white;
   margin-left: 10px;
   border-radius: 50%;
@@ -309,6 +309,8 @@ export const WrapImage = styled.div`
     color: white;
   }
   @media only screen and (max-width: 600px) {
+    width: 85px;
+    height: 85px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -581,7 +583,7 @@ export const MouseOverPartner = styled.div`
   z-index: 2;
   top: 38px;
   right: 0px;
-  padding: 6px 10px;
+  padding: 3px 10px;
   width: 140px;
   color: white !important;
   text-align: center;
@@ -598,7 +600,7 @@ export const MouseOverNas = styled.div`
   z-index: 2;
   top: 38px;
   right: 0px;
-  padding: 6px 10px;
+  padding: 3px 10px;
   width: 140px;
   color: white !important;
   text-align: center;
