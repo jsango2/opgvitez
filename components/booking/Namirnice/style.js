@@ -1201,18 +1201,24 @@ export const Napomena = styled.div`
 `;
 export const WrapImage = styled.div`
   position: relative;
-  width: 80px;
-  height: 80px;
+  top: 18px;
+  width: 100px;
+  height: 100px;
   color: white;
   margin-left: 10px;
   border-radius: 50%;
   overflow: hidden;
-  @media only screen and (max-width: 1000px) {
+
+  svg {
+    color: white;
   }
-  @media only screen and (max-width: 870px) {
+  @media only screen and (max-width: 600px) {
+    width: 85px;
+    height: 85px;
+  }
+  @media only screen and (max-width: 420px) {
   }
 `;
-
 export const CijenaIikone = styled.div`
   position: relative;
   width: auto;
@@ -1442,5 +1448,46 @@ export const Amount = styled.h2`
   }
   @media only screen and (max-width: 390px) {
     right: 250px;
+  }
+`;
+
+export const WrapLoader = styled.div`
+  position: absolute;
+  top: 40%;
+  z-index: 50;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @media only screen and (max-width: 500px) {
+  }
+  @media only screen and (max-width: 450px) {
+  }
+  @media only screen and (max-width: 390px) {
+  }
+`;
+
+export const LoaderText = styled.div`
+  position: absolute;
+  top: calc (40% - 50px);
+  z-index: 50;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #093b69;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  @media only screen and (max-width: 500px) {
+  }
+  @media only screen and (max-width: 450px) {
+  }
+  @media only screen and (max-width: 390px) {
   }
 `;

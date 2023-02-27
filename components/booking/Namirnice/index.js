@@ -18,13 +18,14 @@ import {
   WrapSection,
   Title,
   Loading,
+  LoaderText,
   Kategorije,
   WrapInputSelector,
   WrapHeader,
   WrapHeaderMobile,
   SearchIcon,
   BlurOverlay,
-  OrderButton,
+  WrapLoader,
   Title2,
   WrapBottomBar,
   TotalPriceBottomBar,
@@ -763,18 +764,16 @@ function Namirnice() {
       {/* <SubTitle>Choose your dates and make reservation</SubTitle> */}
       {/* {size.width < 600 ? <Legend /> : ""} */}
       {isLoading ? (
-        <>
-          {/* <Loading>UČITAVAM NAMIRNICE</Loading>
-          <div className="animatedLine"></div> */}
+        <WrapLoader>
           <ClipLoader
             color={color}
             loading={isLoading}
-            // cssOverride={override}
-            size={150}
+            size={250}
             aria-label="Loading Spinner"
             data-testid="loader"
           />
-        </>
+          <LoaderText>Učitavam namirnice</LoaderText>
+        </WrapLoader>
       ) : (
         <Wrap>
           {kategorija === "Sve"
