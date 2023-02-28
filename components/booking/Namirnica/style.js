@@ -136,7 +136,7 @@ export const WrapPlusMinus = styled.div`
   align-items: flex-end;
   width: 105px;
   height: ${(props) => (props.height ? props.height : "55px")};
-  right: 20px;
+  right: 35px;
   margin-top: ${(props) => props.marginTop};
 
   svg {
@@ -320,7 +320,7 @@ export const MinusWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
+  width: 44px;
   height: 100%;
   background-color: ${(props) => (props.warning ? "#dc3545" : "#26b061")};
   /* background-color: #26b061; */
@@ -338,7 +338,7 @@ export const PlusWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
+  width: 44px;
   height: 100%;
   background-color: ${(props) => (props.warning ? "#dc3545" : "#26b061")};
   /* background-color: #26b061; */
@@ -355,7 +355,7 @@ export const WrapMiddle = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 73px;
+  width: 84px;
   height: 100%;
   background-color: ${(props) => (props.warning ? "#dc3545" : "#2bc36b")};
   /* background-color: #26b061; */
@@ -408,7 +408,7 @@ export const WrapInBasket = styled.div`
   bottom: 15px;
   font-size: ${(props) => (props.iconSize === "small" ? "17px" : "36px")};
   font-weight: 700;
-  width: 144px;
+  width: 174px;
   height: 34px;
   border-radius: 20px;
   background-color: ${(props) => (props.warning ? "#dc3545" : "#2ecc71")};
@@ -432,7 +432,7 @@ export const WrapInBasket = styled.div`
   @media only screen and (max-width: 600px) {
     bottom: 10px;
     font-size: 14px;
-    width: 117px;
+    width: 137px;
     height: 33px;
   }
   @media only screen and (max-width: 410px) {

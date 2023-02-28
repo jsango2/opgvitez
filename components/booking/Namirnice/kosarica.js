@@ -29,6 +29,8 @@ import Image from "next/image";
 
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
+import { MdOutlineAddCircle } from "react-icons/md";
+import { MdOutlineRemoveCircle } from "react-icons/md";
 import { TfiTrash } from "react-icons/tfi";
 import { MdClose } from "react-icons/md";
 import { GiFarmer } from "react-icons/gi";
@@ -311,14 +313,14 @@ function Kosarica({
                         handleRemoveLastItem(item.id, item.cartStanje);
                       }}
                     >
-                      <IoIosRemoveCircleOutline />
+                      <MdOutlineRemoveCircle />
                     </MinusWrap>
                     <PlusWrap
                       onClick={() =>
                         handleAddItemAMount(item.id, item.cartStanje)
                       }
                     >
-                      <IoIosAddCircleOutline />
+                      <MdOutlineAddCircle />
                     </PlusWrap>
                     {/* <CiShoppingBasket onClick={() => handleAddToBasket()} /> */}
                   </WrapInBasket>

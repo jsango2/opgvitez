@@ -31,6 +31,9 @@ import Diskont from "./diskont";
 import Image from "next/image";
 import moment from "moment";
 import { IoIosAddCircleOutline } from "react-icons/io";
+import { MdOutlineAddCircle } from "react-icons/md";
+import { MdOutlineRemoveCircle } from "react-icons/md";
+
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 import { CiShoppingBasket } from "react-icons/ci";
 import { MdDoneOutline } from "react-icons/md";
@@ -267,7 +270,7 @@ const Namirnica = ({
           warning={alertWrongInput}
           onClick={() => handleKolicinaMinus()}
         >
-          <IoIosRemoveCircleOutline />
+          <MdOutlineRemoveCircle />
         </MinusWrap>
 
         <WrapMiddle
@@ -286,7 +289,7 @@ const Namirnica = ({
           warning={alertWrongInput}
           onClick={() => handleKolicinaPlus()}
         >
-          <IoIosAddCircleOutline />
+          <MdOutlineAddCircle />
         </PlusWrap>
 
         {/* <CiShoppingBasket onClick={() => handleAddToBasket()} /> */}
