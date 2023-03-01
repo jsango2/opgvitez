@@ -10,6 +10,7 @@ import {
   OverlayBlur,
   OrdersIndex,
   WrapBottomBar,
+  HeaderOverlay,
 } from "./style.js";
 import useWindowSize from "../../useWindowSize";
 import { BsCart2 } from "react-icons/bs";
@@ -31,6 +32,7 @@ function PriceComponent({
   // console.log("isOpen?", isModalOpen);
 
   const duration = 1000;
+  console.log("kosarica is open", kosaricaIsOpen);
 
   const handleClick = () => {
     if (dates.length >= 5) {
@@ -82,6 +84,13 @@ function PriceComponent({
   return (
     <>
       {isModalOpen && <OverlayBlur />}
+
+      <HeaderOverlay
+        className={`${kosaricaIsOpen ? "cartOpen" : "cartClosed"}`}
+      >
+        Košarica:
+      </HeaderOverlay>
+
       {isModalOpen && dates.length < 5 ? (
         <ReservationModal
           handleClick={handleClick}

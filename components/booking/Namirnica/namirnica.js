@@ -33,6 +33,7 @@ import moment from "moment";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { MdOutlineAddCircle } from "react-icons/md";
 import { MdOutlineRemoveCircle } from "react-icons/md";
+import { BsFillBasket2Fill } from "react-icons/bs";
 
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 import { CiShoppingBasket } from "react-icons/ci";
@@ -245,11 +246,6 @@ const Namirnica = ({
                 onChange={(e) => {
                   setKolicina(e.target.value);
                 }}
-                // onChange={(e) =>
-                //   setKolicina((v) =>
-                //     e.target.validity.valid ? e.target.value : v
-                //   )
-                // }
               />
               <div style={{ marginBottom: "8px" }}>kg</div>
             </>
@@ -282,7 +278,7 @@ const Namirnica = ({
           ) : alertWrongInput ? (
             "Krivo"
           ) : (
-            "KUPI"
+            <BsFillBasket2Fill />
           )}
         </WrapMiddle>
         <PlusWrap

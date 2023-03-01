@@ -269,6 +269,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   right: 0px !important;
   transition: all 0.8s cubic-bezier(0.42, 0, 0.21, 0.97);
 }
+/* .greenCartOverlay {
+  left: 0 !important;
+  transition: all 0.8s cubic-bezier(0.42, 0, 0.21, 0.97);
+}
+.greenCartOverlayOff {
+  left: 100% !important;
+  transition: all 0.8s cubic-bezier(0.42, 0, 0.21, 0.97);
+} */
 
 .productDeleted {
   opacity: 0;

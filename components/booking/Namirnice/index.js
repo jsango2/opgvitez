@@ -317,8 +317,17 @@ function Namirnice() {
     console.log("kolicine:", kol);
   };
   const handleOpenKosarica = () => {
-    setKosaricaIsOpen(!kosaricaIsOpen);
+    if (cartData.length === 0) {
+      setKosaricaIsOpen(false);
+    } else {
+      setKosaricaIsOpen(!kosaricaIsOpen);
+    }
   };
+  useEffect(() => {
+    if (cartData.length === 0) {
+      setKosaricaIsOpen(false);
+    }
+  }, [cartData]);
 
   const handleUpdateCart = (id, kolicina, cartStanje, napomena) => {
     var now = new Date().getTime();
@@ -697,7 +706,11 @@ function Namirnice() {
 
             <VievCart onClick={() => setKosaricaIsOpen((prev) => !prev)}>
               <div>
-                {kosaricaIsOpen ? "Zatvori košaricu" : "Pogledaj košaricu"}{" "}
+                {kosaricaIsOpen ? (
+                  <div>Zatvori košaricu</div>
+                ) : (
+                  <div> Pogledaj košaricu</div>
+                )}{" "}
               </div>{" "}
               <MdNavigateNext />
             </VievCart>

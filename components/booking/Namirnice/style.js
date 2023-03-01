@@ -40,7 +40,7 @@ export const BlurOverlay = styled.div`
 export const WrapPrice = styled.div`
   cursor: pointer;
   position: relative;
-  z-index: 5;
+  z-index: 46;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
@@ -67,6 +67,7 @@ export const WrapSection = styled.div`
   position: relative;
   height: auto;
   width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -77,6 +78,10 @@ export const WrapSection = styled.div`
   background-position: center;
   background-size: cover; */
   padding-bottom: 80px;
+  background: linear-gradient(
+    rgba(247, 247, 247, 0) 0%,
+    rgb(247, 247, 247) 100%
+  );
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
@@ -1485,6 +1490,31 @@ export const LoaderText = styled.div`
   font-size: 24px;
   text-align: center;
   @media only screen and (max-width: 500px) {
+  }
+  @media only screen and (max-width: 450px) {
+  }
+  @media only screen and (max-width: 390px) {
+  }
+`;
+export const HeaderOverlay = styled.div`
+  position: absolute;
+  top: 0;
+
+  z-index: 45;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  padding-left: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: left;
+  background-color: #2ecc71;
+  @media only screen and (max-width: 1000px) {
+    height: 59px;
   }
   @media only screen and (max-width: 450px) {
   }
