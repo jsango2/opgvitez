@@ -177,7 +177,6 @@ function Kosarica({
       setProductDeleted({ isDeleted: false, id: null });
     }, 600);
   };
-  console.log(productDeleted);
   return (
     <>
       {checkoutWindow && (

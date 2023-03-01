@@ -32,7 +32,6 @@ function PriceComponent({
   // console.log("isOpen?", isModalOpen);
 
   const duration = 1000;
-  console.log("kosarica is open", kosaricaIsOpen);
 
   const handleClick = () => {
     if (dates.length >= 5) {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+import HeroContent from "../../../components/HeroContent/index";
 import Namirnica from "../Namirnica/namirnica";
 import { collection, addDoc, getDocs, doc, getDoc } from "firebase/firestore";
 import { auth, database } from "../../firebase/firebase";
@@ -736,6 +736,7 @@ function Namirnice() {
         napomenaCart={napomenaCart}
         handleNapomenaCartUpdateCart={handleNapomenaCartUpdateCart}
       ></Kosarica>
+      <HeroContent />
       {!isLoading && <Title>Posebna ponuda</Title>}
 
       <Slider {...settings}>

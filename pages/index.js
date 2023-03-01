@@ -3,7 +3,7 @@ import useSWR from "swr";
 import Layout from "../components/layout";
 import { useRouter } from "next/router";
 
-import AllWeeks from "../components/booking/Namirnice";
+import WebShop from "../components/booking/Namirnice";
 
 import Head from "next/head";
 // function Profile() {
@@ -18,37 +18,27 @@ function Index() {
   return (
     <Layout>
       <Head>
-        <title>Meet Summer Breeze</title>
-        <meta property="og:title" content="Meet Summer Breeze" key="title" />
-        <link
-          rel="canonical"
-          href="https://www.44adriatic.com"
-          key="canonical"
-        />
+        <title>OPG Vitez</title>
+        <meta property="og:title" content="OPG Vitez" key="title" />
+        <link rel="canonical" href="https://www.opg-vitez.hr" key="canonical" />
 
         <meta name="twitter:card" content="summary_large_image" />
 
-        <meta property="og:url" content="https://www.44adriatic.com" />
+        <meta property="og:url" content="https://www.opg-vitez.hr" />
 
-        <meta property="og:image" content="/ogimage.png" />
+        <meta property="og:image" content="/salad.jpeg" />
         <meta
           name="description"
-          content="An incredible Catamaran dedicated for charters. Built in 2018, the
-          fully equipped Lagoon 450 F will take you to the most beautiful
-          anchorages on the Croatian coastline. Online Catamaran boat charter booking in Croatia."
+          content="Dostavljamo svježe voće i povrće vlastite proizvodnje i proizvodnje provjerenih proizvođača do vašeg doma u Zagrebu i okolici."
           key="desc"
         />
         <meta
           property="og:description"
-          content="An incredible Catamaran dedicated for charters. Built in 2018, the
-          fully equipped Lagoon 450 F will take you to the most beautiful
-          anchorages on the Croatian coastline. Online Catamaran boat charter booking in Croatia."
+          content="Dostavljamo svježe voće i povrće vlastite proizvodnje i proizvodnje provjerenih proizvođača do vašeg doma u Zagrebu i okolici."
         />
         <meta
           property="twitter:description"
-          content="An incredible Catamaran dedicated for charters. Built in 2018, the
-          fully equipped Lagoon 450 F will take you to the most beautiful
-          anchorages on the Croatian coastline. Online Catamaran boat charter booking in Croatia."
+          content="Dostavljamo svježe voće i povrće vlastite proizvodnje i proizvodnje provjerenih proizvođača do vašeg doma u Zagrebu i okolici."
         />
       </Head>
       <form name="contact" method="POST" data-netlify="true" hidden>
@@ -60,7 +50,7 @@ function Index() {
       </form>
       {/* <Grid /> */}
 
-      <AllWeeks />
+      <WebShop />
 
       {/* <Footer /> */}
     </Layout>

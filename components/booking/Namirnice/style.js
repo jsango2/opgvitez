@@ -113,8 +113,7 @@ export const Title = styled.h1`
   font-weight: 700;
   font-size: 35px;
   line-height: 120%;
-  margin-top: 63px;
-  margin-bottom: 0;
+  margin-bottom: 30px;
   /* identical to box height, or 66px */
 
   text-align: center;
@@ -122,13 +121,13 @@ export const Title = styled.h1`
   /* TAMNO PLAVA */
   z-index: 4;
   color: #093b69;
-  margin-top: 130px;
+  margin-top: 60px;
   @media only screen and (max-width: 600px) {
     font-size: 26px;
     margin-top: 80px;
   }
   @media only screen and (max-width: 450px) {
-    margin-top: 90px;
+    margin-top: 50px;
   }
 `;
 export const Title2 = styled(Title)`
