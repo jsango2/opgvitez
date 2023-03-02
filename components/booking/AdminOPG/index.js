@@ -184,7 +184,7 @@ function Proizvodi({ handleLogOut, userEmail }) {
       discount: discount,
       discountAmount: discountAmount,
       partner: partner,
-      foto: fileBase64String,
+      foto: fileBase64String ? fileBase64String : null,
     }).then(
       setDataSent((oldData) => !oldData),
       setIsOpen(false)
@@ -209,7 +209,7 @@ function Proizvodi({ handleLogOut, userEmail }) {
       discount: discount,
       discountAmount: discountAmount,
       partner: newPartner,
-      foto: fileBase64String,
+      foto: fileBase64String ? fileBase64String : null,
     }).then(
       setisNewProductOpen(false),
       setNewNaziv(""),

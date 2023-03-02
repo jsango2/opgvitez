@@ -515,6 +515,10 @@ function Namirnice() {
   const handleOnChange = (opcija) => {
     setKategorija(opcija.value);
   };
+  function scrollToTestDiv() {
+    const divElement = document.getElementById("namirnice");
+    divElement.scrollIntoView({ behavior: "smooth" });
+  }
   return (
     <WrapSection id="booking" ref={ref}>
       {isQueryOpen && state.list.length > 0 && <BlurOverlay />}
@@ -666,11 +670,12 @@ function Namirnice() {
           </WrapInputSelector>
           <WrapHeaderMobile>
             <Kategorije style={{ width: "180px" }}>
-              <AnchorLink
+              {/* <AnchorLink
                 href="#namirnice"
                 offset="60"
                 style={{ textDecoration: "none" }}
-              >
+              > */}
+              <div onClick={scrollToTestDiv}>
                 <Select
                   options={opcijeKategorija}
                   onChange={handleOnChange}
@@ -678,7 +683,8 @@ function Namirnice() {
                   placeholder="Sve kategorije"
                   classNamePrefix="react-select"
                 />
-              </AnchorLink>
+              </div>
+              {/* </AnchorLink> */}
               {/* <select
                 name="Kategorija"
                 type="select"
