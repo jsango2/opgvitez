@@ -602,8 +602,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .react-select__input-container,
 .react-select__single-value {
   font-weight: 300;
+  text-decoration: none !important;
+  color: #191b26;
 }
-
+.react-select__single-value:active {
+  text-decoration: none !important;
+}
 @media only screen and (max-width: 1000px) {
   .searchBarClosed {
     position: fixed !important;

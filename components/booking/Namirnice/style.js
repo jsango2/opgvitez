@@ -395,7 +395,7 @@ export const Kategorije = styled.h4`
   background-size: cover; */
   @media only screen and (max-width: 1000px) {
     select {
-      width: 175px;
+      width: 185px;
     }
     margin-right: 10px;
     margin-top: 18px;

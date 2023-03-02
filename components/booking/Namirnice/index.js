@@ -11,6 +11,7 @@ import Slider from "react-slick";
 import ClipLoader from "react-spinners/ClipLoader";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import {
   Wrap,
   Lista,
@@ -664,14 +665,16 @@ function Namirnice() {
             )}
           </WrapInputSelector>
           <WrapHeaderMobile>
-            <Kategorije style={{ width: "150px" }}>
-              <Select
-                options={opcijeKategorija}
-                onChange={handleOnChange}
-                defaultValue={kategorija}
-                placeholder="Kategorija"
-                classNamePrefix="react-select"
-              />
+            <Kategorije style={{ width: "180px" }}>
+              <AnchorLink href="#namirnice" style={{ textDecoration: "none" }}>
+                <Select
+                  options={opcijeKategorija}
+                  onChange={handleOnChange}
+                  defaultValue={kategorija}
+                  placeholder="Sve kategorije"
+                  classNamePrefix="react-select"
+                />
+              </AnchorLink>
               {/* <select
                 name="Kategorija"
                 type="select"
@@ -861,7 +864,7 @@ function Namirnice() {
           <LoaderText>Učitavam namirnice</LoaderText>
         </WrapLoader>
       ) : (
-        <Wrap>
+        <Wrap id="namirnice">
           {kategorija === "Sve"
             ? dataRaspolozivo.map((week) => (
                 <Namirnica
