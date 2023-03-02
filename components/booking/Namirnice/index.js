@@ -515,14 +515,23 @@ function Namirnice() {
   const handleOnChange = (opcija) => {
     setKategorija(opcija.value);
   };
-  function scrollToTestDiv() {
-    const divElement = document.getElementById("namirnice");
-    divElement.scrollIntoView({
+  // function scrollToTestDiv() {
+  //   const divElement = document.getElementById("namirnice");
+  //   divElement.scrollIntoView({
+  //     behavior: "smooth",
+  //     block: "nearest",
+  //     inline: "start",
+  //   });
+  // }
+  const targetElement = useRef();
+  const scrollingTop = (event) => {
+    const elmnt = targetElement;
+    elmnt.current.scrollIntoView({
       behavior: "smooth",
-      block: "nearest",
+      block: "center",
       inline: "start",
     });
-  }
+  };
   return (
     <WrapSection id="booking" ref={ref}>
       {isQueryOpen && state.list.length > 0 && <BlurOverlay />}
@@ -679,7 +688,7 @@ function Namirnice() {
                 offset="60"
                 style={{ textDecoration: "none" }}
               > */}
-              <div onClick={scrollToTestDiv}>
+              <div onClick={scrollingTop}>
                 <Select
                   options={opcijeKategorija}
                   onChange={handleOnChange}
@@ -878,7 +887,7 @@ function Namirnice() {
           <LoaderText>Učitavam namirnice</LoaderText>
         </WrapLoader>
       ) : (
-        <Wrap id="namirnice">
+        <Wrap ref={targetElement}>
           {kategorija === "Sve"
             ? dataRaspolozivo.map((week) => (
                 <Namirnica
