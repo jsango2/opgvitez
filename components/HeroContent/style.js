@@ -19,7 +19,7 @@ export const WrapHeroContent = styled.div`
     flex-direction: column;
     padding: 50px 25px;
 
-    margin: 100px 0 0 0;
+    margin: 110px 0 0 0;
   }
   @media only screen and (max-width: 450px) {
   }

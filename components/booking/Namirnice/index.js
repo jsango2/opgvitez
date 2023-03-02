@@ -38,15 +38,15 @@ import Legend from "./legend/index";
 import useWindowSize from "../../useWindowSize";
 import { useScrollPercentage } from "react-scroll-percentage";
 import Kosarica from "./kosarica";
-
+import Select from "react-select";
 import { FiSearch } from "react-icons/fi";
 import { MdNavigateNext } from "react-icons/md";
 
 const opcijeKategorija = [
-  { key: "Sve", value: "Sve", text: "Sve" },
-  { key: "Voće", value: "Voće", text: "Voće" },
-  { key: "Povrće", vSalateue: "Povrće", text: "Povrće" },
-  { key: "Agrumi", value: "Agrumi", text: "Agrumi" },
+  { value: "Sve", label: "Sve" },
+  { value: "Voće", label: "Voće" },
+  { value: "Povrće", label: "Povrće" },
+  { value: "Agrumi", label: "Agrumi" },
 ];
 
 const settings = {
@@ -511,9 +511,8 @@ function Namirnice() {
     setKosaricaLength(0);
     setSuma(0);
   };
-  const handleOnChange = (e, data) => {
-    console.log("ui", data);
-    setKategorija(data.value);
+  const handleOnChange = (opcija) => {
+    setKategorija(opcija.value);
   };
   return (
     <WrapSection id="booking" ref={ref}>
@@ -666,7 +665,13 @@ function Namirnice() {
           </WrapInputSelector>
           <WrapHeaderMobile>
             <Kategorije style={{ width: "150px" }}>
-              <select
+              <Select
+                options={opcijeKategorija}
+                onChange={handleOnChange}
+                defaultValue={kategorija}
+                placeholder="Kategorija"
+              />
+              {/* <select
                 name="Kategorija"
                 type="select"
                 value={kategorija}
@@ -696,7 +701,7 @@ function Namirnice() {
                 <option value="Začinsko bilje i klice">
                   Začinsko bilje i klice
                 </option>
-              </select>
+              </select> */}
             </Kategorije>
             <SearchIcon onClick={() => setIsSearchBarOpen((prev) => !prev)}>
               <FiSearch />

@@ -392,6 +392,7 @@ export const Kategorije = styled.h4`
       width: 155px;
     }
     margin-right: 10px;
+    margin-top: 18px;
   }
   @media only screen and (max-width: 420px) {
   }

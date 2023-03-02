@@ -1,8 +1,8 @@
 module.exports = {
-  i18n: {
-    locales: ["en", "hr", "it", "de"],
-    defaultLocale: "en",
-  },
+  // i18n: {
+  //   locales: ["en", "hr", "it", "de"],
+  //   defaultLocale: "en",
+  // },
   env: {
     FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
   },
