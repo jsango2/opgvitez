@@ -68,6 +68,7 @@ export const Title = styled.h1`
   position: relative;
   font-size: 75px;
   margin: 0;
+  color: white !important;
 
   @media only screen and (max-width: 750px) {
     width: 100%;
@@ -84,6 +85,7 @@ export const Title = styled.h1`
 export const SubTitle = styled.h4`
   position: relative;
   width: 90%;
+  color: white !important;
 
   z-index: 10;
   @media only screen and (max-width: 750px) {

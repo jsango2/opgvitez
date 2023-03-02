@@ -42,6 +42,13 @@ import Kosarica from "./kosarica";
 import { FiSearch } from "react-icons/fi";
 import { MdNavigateNext } from "react-icons/md";
 
+const opcijeKategorija = [
+  { key: "Sve", value: "Sve", text: "Sve" },
+  { key: "Voće", value: "Voće", text: "Voće" },
+  { key: "Povrće", vSalateue: "Povrće", text: "Povrće" },
+  { key: "Agrumi", value: "Agrumi", text: "Agrumi" },
+];
+
 const settings = {
   // dots: false,
   // infinite: true,
@@ -100,6 +107,7 @@ function Namirnice() {
   const [isQueryOpen, setIsQueryOpen] = useState(false);
   const [kosaricaLength, setKosaricaLength] = useState(0);
   const [checkoutScreen, setCheckoutScreen] = useState(false);
+  const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
   let [color, setColor] = useState("#093b69");
 
   // const dbInstance = collection(database, "Charter2");
@@ -503,6 +511,10 @@ function Namirnice() {
     setKosaricaLength(0);
     setSuma(0);
   };
+  const handleOnChange = (e, data) => {
+    console.log("ui", data);
+    setKategorija(data.value);
+  };
   return (
     <WrapSection id="booking" ref={ref}>
       {isQueryOpen && state.list.length > 0 && <BlurOverlay />}
@@ -559,7 +571,7 @@ function Namirnice() {
                 setKategorija(event.target.value);
               }}
             >
-              <option value="Sve">Sve</option>
+              <option value="Sve">Sve kategorije</option>
               <option value="Voće">Voće</option>
               <option value="Salate">Salate</option>
               <option value="Povrće">Povrće</option>
@@ -604,11 +616,96 @@ function Namirnice() {
         </WrapHeader>
       ) : (
         <>
+          <WrapInputSelector
+            className={`${
+              isSearchBarOpen ? "searchBarOpen" : "searchBarClosed"
+            }`}
+          >
+            <input
+              type="search"
+              value={state.query}
+              onChange={handleChange}
+              placeholder="Brzi odabir namirnice"
+            />
+
+            {isQueryOpen && state.list.length > 0 && (
+              <WrapLista>
+                <Lista style={{ color: "black" }} ref={refs}>
+                  {state.query === ""
+                    ? ""
+                    : state.list.map((week) => (
+                        <Namirnica
+                          key={week.id}
+                          id={week.id}
+                          cijena={week.cijena}
+                          kategorija={week.kategorija}
+                          selected={selected}
+                          free={week.free}
+                          naziv={week.naziv}
+                          mjernaJedinica={week.mjernaJedinica}
+                          marked={week.selected}
+                          handleClick={() => handleClick(week.id)}
+                          handleMarker={() => handleMarker(week.id)}
+                          handleUpdateCart={handleUpdateCart}
+                          odabraneKolicine={odabraneKolicine}
+                          length={length}
+                          discount={week.discount}
+                          discountAmount={week.discountAmount}
+                          width="400px"
+                          cartStanje={week.cartStanje}
+                          height="170px"
+                          textColor="light"
+                          iconSize="small"
+                          partner={week.partner}
+                          foto={week.foto ? week.foto : null}
+                        />
+                      ))}
+                </Lista>
+              </WrapLista>
+            )}
+          </WrapInputSelector>
           <WrapHeaderMobile>
-            <WrapInputSelector>
-              <SearchIcon>
-                <FiSearch />
-              </SearchIcon>
+            <Kategorije style={{ width: "150px" }}>
+              <select
+                name="Kategorija"
+                type="select"
+                value={kategorija}
+                onChange={(event) => {
+                  setKategorija(event.target.value);
+                }}
+              >
+                <option value="Sve">Sve kategorije</option>
+                <option value="Voće">Voće</option>
+                <option value="Salate">Salate</option>
+                <option value="Povrće">Povrće</option>
+                <option value="Agrumi">Agrumi</option>
+                <option value="Suho voće">Suho voće</option>
+                <option value="Egzotično voće">Egzotično voće</option>
+                <option value="Gljive">Gljive</option>
+                <option value="Prerađevine">Prerađevine</option>
+                <option value="Žitarice, sjemenke, arašidi">Prerađevine</option>
+                <option value="Med i pčelinji proizvodi">
+                  Med i pčelinji proizvodi
+                </option>
+                <option value="Veronika (mini mljekara)">
+                  Veronika (mini mljekara)
+                </option>
+                <option value="Domaća tjestenina (Nada)">
+                  Domaća tjestenina (Nada)
+                </option>
+                <option value="Začinsko bilje i klice">
+                  Začinsko bilje i klice
+                </option>
+              </select>
+            </Kategorije>
+            <SearchIcon onClick={() => setIsSearchBarOpen((prev) => !prev)}>
+              <FiSearch />
+            </SearchIcon>
+            {/* <WrapInputSelector
+              className={`${
+                isSearchBarOpen ? "searchBarOpen" : "searchBarClosed"
+              }`}
+            >
               <input
                 type="search"
                 value={state.query}
@@ -650,40 +747,7 @@ function Namirnice() {
                   </Lista>
                 </WrapLista>
               )}
-            </WrapInputSelector>
-            <Kategorije>
-              <select
-                name="Kategorija"
-                type="select"
-                value={kategorija}
-                onChange={(event) => {
-                  setKategorija(event.target.value);
-                }}
-              >
-                <option value="Sve">Sve</option>
-                <option value="Voće">Voće</option>
-                <option value="Salate">Salate</option>
-                <option value="Povrće">Povrće</option>
-                <option value="Agrumi">Agrumi</option>
-                <option value="Suho voće">Suho voće</option>
-                <option value="Egzotično voće">Egzotično voće</option>
-                <option value="Gljive">Gljive</option>
-                <option value="Prerađevine">Prerađevine</option>
-                <option value="Žitarice, sjemenke, arašidi">Prerađevine</option>
-                <option value="Med i pčelinji proizvodi">
-                  Med i pčelinji proizvodi
-                </option>
-                <option value="Veronika (mini mljekara)">
-                  Veronika (mini mljekara)
-                </option>
-                <option value="Domaća tjestenina (Nada)">
-                  Domaća tjestenina (Nada)
-                </option>
-                <option value="Začinsko bilje i klice">
-                  Začinsko bilje i klice
-                </option>
-              </select>
-            </Kategorije>
+            </WrapInputSelector> */}
             <PriceComponent
               price={suma}
               countOrders={kosaricaLength}

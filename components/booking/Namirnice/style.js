@@ -359,9 +359,10 @@ export const Kategorije = styled.h4`
   z-index: 10;
   color: black;
   height: 40px;
+  margin-top: 33px;
   input,
   select {
-    height: 40px;
+    height: 30px;
     /* width: 450px; */
 
     background: #ffffff;
@@ -381,15 +382,15 @@ export const Kategorije = styled.h4`
     color: #4f4f4f;
     padding-left: 10px;
   }
-  margin-left: 30px;
+  margin-left: 0px;
   /* background-image: url(${bg});
   background-position: center;
   background-size: cover; */
   @media only screen and (max-width: 1000px) {
     select {
-      width: 130px;
+      width: 155px;
     }
-    margin-left: 10px;
+    margin-right: 10px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -654,19 +655,19 @@ export const WrapLista = styled.div`
   position: absolute;
   z-index: 1;
   overflow-y: scroll;
-  top: 50px;
-  left: -15px;
-  border: 0.5px solid grey;
+  top: 45px;
+  left: 0px;
+  border-bottom: 0.5px solid grey;
   border-radius: 5px;
   background-color: white;
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 1000px) {
     width: 100vw;
   }
   @media only screen and (max-width: 420px) {
   }
 `;
 export const Lista = styled.div`
-  color: black;
+  color: #00425a;
   position: relative;
   /* top: 50px;
   left: 0; */
@@ -695,11 +696,15 @@ export const WrapInputSelector = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  width: 210px;
+  height: 45px;
+  /* top: 62px;
+  left: 0; */
   input,
   select {
-    height: 40px;
-    /* width: 450px; */
+    height: 35px;
 
     background: #ffffff;
     /* Gray04 */
@@ -714,14 +719,19 @@ export const WrapInputSelector = styled.div`
     /* or 19px */
 
     /* Gray 2 */
-
+    opacity: 0.8;
     color: #4f4f4f;
     padding-left: 10px;
   }
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 1000px) {
+    background-color: #e5e5e5;
+    width: 100%;
+
     input {
-      width: 130px;
+      width: 75%;
     }
+  }
+  @media only screen and (max-width: 700px) {
   }
   @media only screen and (max-width: 420px) {
   }
@@ -875,13 +885,16 @@ export const WrapOrderWindow = styled.div`
 `;
 export const SearchIcon = styled.div`
   position: absolute;
-  right: 25px;
-  top: 10px;
-
-  z-index: 15;
-  color: black;
+  right: 0;
+  top: 12px;
+  width: 30px;
+  height: 30px;
+  z-index: 105;
+  color: #00425a;
   font-size: 20px;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1000px) {
+    left: 195px;
+    top: 22px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -1457,7 +1470,7 @@ export const Amount = styled.h2`
 
 export const WrapLoader = styled.div`
   position: absolute;
-  top: 40%;
+  top: 140%;
   z-index: 50;
   width: 250px;
   height: 250px;
