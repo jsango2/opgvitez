@@ -59,6 +59,7 @@ export const WrapPrice = styled.div`
   margin-left: auto;
   @media only screen and (max-width: 750px) {
     margin-top: 0px;
+    width: 49px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -886,15 +887,18 @@ export const WrapOrderWindow = styled.div`
 export const SearchIcon = styled.div`
   position: absolute;
   right: 0;
-  top: 12px;
-  width: 30px;
-  height: 30px;
+  top: 6px;
+  width: 35px;
+  height: 35px;
   z-index: 105;
   color: #00425a;
   font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media only screen and (max-width: 1000px) {
     left: 195px;
-    top: 22px;
+    top: 16px;
   }
   @media only screen and (max-width: 420px) {
   }
