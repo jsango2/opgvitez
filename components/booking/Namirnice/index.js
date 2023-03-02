@@ -666,7 +666,11 @@ function Namirnice() {
           </WrapInputSelector>
           <WrapHeaderMobile>
             <Kategorije style={{ width: "180px" }}>
-              <AnchorLink href="#namirnice" style={{ textDecoration: "none" }}>
+              <AnchorLink
+                href="#namirnice"
+                offset="60"
+                style={{ textDecoration: "none" }}
+              >
                 <Select
                   options={opcijeKategorija}
                   onChange={handleOnChange}
