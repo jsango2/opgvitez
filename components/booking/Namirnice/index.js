@@ -517,7 +517,7 @@ function Namirnice() {
   };
   function scrollToTestDiv() {
     const divElement = document.getElementById("namirnice");
-    divElement.scrollIntoView;
+    divElement.scrollIntoView();
   }
   return (
     <WrapSection id="booking" ref={ref}>
