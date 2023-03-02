@@ -517,7 +517,11 @@ function Namirnice() {
   };
   function scrollToTestDiv() {
     const divElement = document.getElementById("namirnice");
-    divElement.scrollIntoView();
+    divElement.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "start",
+    });
   }
   return (
     <WrapSection id="booking" ref={ref}>
