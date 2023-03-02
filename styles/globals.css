@@ -597,6 +597,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   left: 50%;
   transform: translate(-50%, -25px);
 }
+.react-select__placeholder,
+.react-select__menu,
+.react-select__input-container,
+.react-select__single-value {
+  font-weight: 300;
+}
+
 @media only screen and (max-width: 1000px) {
   .searchBarClosed {
     position: fixed !important;

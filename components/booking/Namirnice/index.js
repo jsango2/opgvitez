@@ -43,7 +43,7 @@ import { FiSearch } from "react-icons/fi";
 import { MdNavigateNext } from "react-icons/md";
 
 const opcijeKategorija = [
-  { value: "Sve", label: "Sve" },
+  { value: "Sve", label: "Sve kategorije" },
   { value: "Voće", label: "Voće" },
   { value: "Povrće", label: "Povrće" },
   { value: "Agrumi", label: "Agrumi" },
@@ -670,6 +670,7 @@ function Namirnice() {
                 onChange={handleOnChange}
                 defaultValue={kategorija}
                 placeholder="Kategorija"
+                classNamePrefix="react-select"
               />
               {/* <select
                 name="Kategorija"

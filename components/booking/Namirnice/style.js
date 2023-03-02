@@ -52,7 +52,13 @@ export const WrapPrice = styled.div`
   /* identical to box height, or 36px */
   align-items: center;
   /* Gray 6 */
-
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   color: #093b69;
   width: 459px;
   height: auto;
@@ -373,8 +379,8 @@ export const Kategorije = styled.h4`
     border-radius: 8px;
     font-family: "Montserrat";
     font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 300;
+    font-size: 12px;
     line-height: 120%;
     /* or 19px */
 
@@ -389,7 +395,7 @@ export const Kategorije = styled.h4`
   background-size: cover; */
   @media only screen and (max-width: 1000px) {
     select {
-      width: 155px;
+      width: 175px;
     }
     margin-right: 10px;
     margin-top: 18px;
@@ -664,6 +670,7 @@ export const WrapLista = styled.div`
   background-color: white;
   @media only screen and (max-width: 1000px) {
     width: 100vw;
+    height: 100vh;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -713,7 +720,7 @@ export const WrapInputSelector = styled.div`
 
     border: 2px solid #eaeaea;
     border-radius: 8px;
-    font-family: "Montserrat";
+    /* font-family: "Montserrat"; */
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -891,9 +898,9 @@ export const SearchIcon = styled.div`
   top: 6px;
   width: 35px;
   height: 35px;
-  z-index: 105;
+  z-index: 45;
   color: #00425a;
-  font-size: 20px;
+  font-size: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
