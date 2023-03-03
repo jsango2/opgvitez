@@ -700,10 +700,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding-left: 10px;
   }
   .testimonialSlider {
-    position: absolute;
+    position: absolute !important;
     height: 260px;
     width: 100vw;
-    top: 503px;
+    top: 533px;
     padding-top: 20px;
     height: 22 0px;
     margin: 20px auto 0 auto;
