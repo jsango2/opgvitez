@@ -132,10 +132,10 @@ export const Title = styled.h1`
   @media only screen and (max-width: 600px) {
     font-size: 26px;
     margin-top: 80px;
-    margin-bottom: 256px;
+    margin-bottom: 26px;
   }
   @media only screen and (max-width: 450px) {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 `;
 export const Title2 = styled(Title)`

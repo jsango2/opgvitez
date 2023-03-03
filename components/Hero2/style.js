@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const WrapHeroContent = styled.div`
   position: relative;
   display: flex;
+  flex-direction: row-reverse;
   z-index: 40;
 
   width: 90%;
@@ -10,13 +11,13 @@ export const WrapHeroContent = styled.div`
   min-height: 300px;
   height: auto;
   border-radius: 10px;
-  margin: 130px 0 0 0;
-  background: rgb(86, 171, 47);
+  margin: 80px 0 20px 0;
+  /* background: rgb(86, 171, 47);
   background: linear-gradient(
     147deg,
     rgba(86, 171, 47, 1) 0%,
     rgba(168, 224, 99, 1) 100%
-  );
+  ); */
   @media only screen and (max-width: 750px) {
     width: 95%;
     height: auto;
@@ -24,7 +25,7 @@ export const WrapHeroContent = styled.div`
     flex-direction: column;
     padding: 50px 25px;
 
-    margin: 110px 0 0 0;
+    margin: 20px 0 0px 0;
   }
   @media only screen and (max-width: 450px) {
   }
@@ -35,7 +36,7 @@ export const Left = styled.div`
   flex-direction: column;
   z-index: 100;
 
-  width: 65%;
+  width: 55%;
   max-width: 600px;
   min-height: 400px;
   height: auto;
@@ -55,10 +56,11 @@ export const WrapImage = styled.div`
   position: absolute;
   display: flex;
   z-index: 40;
-  right: 0px;
+  left: 0px;
+  top: -80px;
   width: 60%;
   min-height: 300px;
-  height: auto;
+  height: 100%;
   border-radius: 10px;
   margin: 130px 0 0 0;
 
@@ -73,7 +75,7 @@ export const Title = styled.h1`
   position: relative;
   font-size: 75px;
   margin: 0;
-  color: white !important;
+  color: #00425a !important;
 
   @media only screen and (max-width: 750px) {
     width: 100%;
@@ -90,7 +92,7 @@ export const Title = styled.h1`
 export const SubTitle = styled.h4`
   position: relative;
   width: 90%;
-  color: white !important;
+  color: #00425a !important;
 
   z-index: 10;
   @media only screen and (max-width: 750px) {

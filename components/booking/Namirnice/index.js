@@ -42,6 +42,7 @@ import Kosarica from "./kosarica";
 import Select from "react-select";
 import { FiSearch } from "react-icons/fi";
 import { MdNavigateNext } from "react-icons/md";
+import Hero2 from "../../Hero2";
 
 const opcijeKategorija = [
   { value: "Sve", label: "Sve kategorije" },
@@ -833,6 +834,7 @@ function Namirnice() {
         handleNapomenaCartUpdateCart={handleNapomenaCartUpdateCart}
       ></Kosarica>
       <HeroContent />
+      <Hero2 />
       {!isLoading && <Title>Posebna ponuda</Title>}
 
       <Slider {...settings}>
