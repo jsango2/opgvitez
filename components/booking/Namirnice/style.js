@@ -132,6 +132,7 @@ export const Title = styled.h1`
   @media only screen and (max-width: 600px) {
     font-size: 26px;
     margin-top: 80px;
+    margin-bottom: 256px;
   }
   @media only screen and (max-width: 450px) {
     margin-top: 50px;
