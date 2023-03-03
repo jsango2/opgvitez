@@ -218,6 +218,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 26px !important;
 } */
 .testimonialSlider {
+  position: absolute !important;
   width: 90vw;
   padding-top: 8px;
   height: 235px;
@@ -700,7 +701,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding-left: 10px;
   }
   .testimonialSlider {
-    position: relative !important;
+    position: absolute !important;
     height: 260px;
     width: 100vw;
     /* top: 533px; */

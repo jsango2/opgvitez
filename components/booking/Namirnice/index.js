@@ -32,6 +32,7 @@ import {
   TotalPriceBottomBar,
   TotalPriceBottomBarKn,
   VievCart,
+  WrapSlider,
 } from "./style.js";
 import PriceComponent from "./priceComponent";
 
@@ -836,42 +837,43 @@ function Namirnice() {
       <HeroContent />
       <Hero2 />
       {!isLoading && <Title>Posebna ponuda</Title>}
-
-      <Slider {...settings}>
-        {dataFeatured.slice(0, 6).map((product) => (
-          <Namirnica
-            key={product.id}
-            id={product.id}
-            cijena={product.cijena}
-            // kategorija={product.kategorija}
-            selected={selected}
-            free={product.free}
-            naziv={product.naziv}
-            mjernaJedinica={product.mjernaJedinica}
-            marked={product.selected}
-            handleClick={() => handleClick(product.id)}
-            handleMarker={() => handleMarker(product.id)}
-            handleUpdateCart={handleUpdateCart}
-            odabraneKolicine={odabraneKolicine}
-            length={length}
-            discount={product.discount}
-            discountAmount={product.discountAmount}
-            width="510px"
-            widthMobile="305px"
-            backgroundColor="white"
-            textColor="light"
-            cartStanje={product.cartStanje}
-            height="170px"
-            heightMobile="150px"
-            iconSize="small"
-            partner={product.partner}
-            marginTop="0px"
-            foto={product.foto ? product.foto : null}
-            prikazNapomene={false}
-            isSlider={true}
-          />
-        ))}
-      </Slider>
+      <WrapSlider>
+        <Slider {...settings}>
+          {dataFeatured.slice(0, 6).map((product) => (
+            <Namirnica
+              key={product.id}
+              id={product.id}
+              cijena={product.cijena}
+              // kategorija={product.kategorija}
+              selected={selected}
+              free={product.free}
+              naziv={product.naziv}
+              mjernaJedinica={product.mjernaJedinica}
+              marked={product.selected}
+              handleClick={() => handleClick(product.id)}
+              handleMarker={() => handleMarker(product.id)}
+              handleUpdateCart={handleUpdateCart}
+              odabraneKolicine={odabraneKolicine}
+              length={length}
+              discount={product.discount}
+              discountAmount={product.discountAmount}
+              width="510px"
+              widthMobile="305px"
+              backgroundColor="white"
+              textColor="light"
+              cartStanje={product.cartStanje}
+              height="170px"
+              heightMobile="150px"
+              iconSize="small"
+              partner={product.partner}
+              marginTop="0px"
+              foto={product.foto ? product.foto : null}
+              prikazNapomene={false}
+              isSlider={true}
+            />
+          ))}
+        </Slider>
+      </WrapSlider>
       <Legend />
       {!isLoading && <Title2>Odaberi namirnice</Title2>}
 

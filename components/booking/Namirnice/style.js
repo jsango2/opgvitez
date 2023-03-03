@@ -70,6 +70,26 @@ export const WrapPrice = styled.div`
   @media only screen and (max-width: 420px) {
   }
 `;
+export const WrapSlider = styled.div`
+  position: relative;
+  height: auto;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* padding-top: 163px; */
+  overflow: hidden;
+  /* background-image: url(${bg});
+  background-position: center;
+  background-size: cover; */
+
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
 export const WrapSection = styled.div`
   position: relative;
   height: auto;
@@ -128,7 +148,7 @@ export const Title = styled.h1`
   /* TAMNO PLAVA */
   z-index: 4;
   color: #093b69;
-  margin-top: 60px;
+  margin-top: 114px;
   @media only screen and (max-width: 600px) {
     font-size: 26px;
     margin-top: 80px;
