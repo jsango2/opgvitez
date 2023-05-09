@@ -705,13 +705,47 @@ function Namirnice() {
                 style={{ textDecoration: "none" }}
               > */}
               <div onClick={scrollingTop}>
-                <Select
+                {/* <Select
                   options={opcijeKategorija}
                   onChange={handleOnChange}
                   defaultValue={kategorija}
                   placeholder="Sve kategorije"
                   classNamePrefix="react-select"
-                />
+                /> */}
+
+                <select
+                  name="Kategorija"
+                  type="select"
+                  value={kategorija}
+                  onChange={(event) => {
+                    setKategorija(event.target.value);
+                  }}
+                >
+                  <option value="Sve">Sve kategorije</option>
+                  <option value="Voće">Voće</option>
+                  <option value="Salate">Salate</option>
+                  <option value="Povrće">Povrće</option>
+                  <option value="Agrumi">Agrumi</option>
+                  <option value="Suho voće">Suho voće</option>
+                  <option value="Egzotično voće">Egzotično voće</option>
+                  <option value="Gljive">Gljive</option>
+                  <option value="Prerađevine">Prerađevine</option>
+                  <option value="Žitarice, sjemenke, arašidi">
+                    Prerađevine
+                  </option>
+                  <option value="Med i pčelinji proizvodi">
+                    Med i pčelinji proizvodi
+                  </option>
+                  <option value="Veronika (mini mljekara)">
+                    Veronika (mini mljekara)
+                  </option>
+                  <option value="Domaća tjestenina (Nada)">
+                    Domaća tjestenina (Nada)
+                  </option>
+                  <option value="Začinsko bilje i klice">
+                    Začinsko bilje i klice
+                  </option>
+                </select>
               </div>
               {/* </AnchorLink> */}
               {/* <select

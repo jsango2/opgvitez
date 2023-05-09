@@ -853,7 +853,7 @@ function Proizvodi({ handleLogOut, userEmail }) {
               <br />
               <div>
                 <WrapTwo>
-                  <div>
+                  <SingleInputSelect>
                     <label htmlFor="discount" style={{ color: "darkblue" }}>
                       Tjedna ponuda
                     </label>
@@ -864,9 +864,9 @@ function Proizvodi({ handleLogOut, userEmail }) {
                       checked={discount}
                       onChange={() => setDiscount(!discount)}
                     ></input>
-                  </div>
+                  </SingleInputSelect>
 
-                  <div>
+                  <SingleInputSelect>
                     <label htmlFor="partner" style={{ color: "darkblue" }}>
                       Partner OPG
                     </label>
@@ -878,7 +878,7 @@ function Proizvodi({ handleLogOut, userEmail }) {
                       checked={partner}
                       onChange={() => setPartner(!partner)}
                     ></input>
-                  </div>
+                  </SingleInputSelect>
                 </WrapTwo>
                 <SingleInputSelect>
                   <label htmlFor="Free" style={{ color: "darkblue" }}>
