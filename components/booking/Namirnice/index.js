@@ -62,7 +62,7 @@ const settings = {
   // autoplaySpeed: 2000,
   dots: true,
   infinite: true,
-  slidesToShow: 2,
+  slidesToShow: 3,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 3500,
@@ -70,6 +70,20 @@ const settings = {
   className: "testimonialSlider",
   speed: 1500,
   responsive: [
+    {
+      breakpoint: 1800,
+      settings: {
+        dots: true,
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3500,
+        cssEase: "cubic-bezier(.43,.39,.33,.94)",
+        className: "testimonialSlider",
+        speed: 1500,
+      },
+    },
     {
       breakpoint: 1100,
       settings: {

@@ -185,7 +185,7 @@ export const PopupForm = styled.div`
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
   padding-top: 50px;
-  padding-bottom: 80px;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -193,12 +193,15 @@ export const PopupForm = styled.div`
   form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     width: 70%;
+  }
+  label {
+    font-size: 14px;
   }
   input,
   select {
-    height: 40px;
+    height: 30px;
     /* width: 450px; */
 
     background: #ffffff;
@@ -261,6 +264,28 @@ export const Fixed = styled.div`
   font-size: 20px;
   font-weight: 700;
   color: #0d3151;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const WrapTwo = styled.div`
+  position: relative;
+  display: flex;
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const SingleInputSelect = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 3px 0;
+  input,
+  select {
+    margin-left: 10px;
+  }
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {

@@ -28,10 +28,10 @@ function NoviUnos({
       <CloseX onClick={handleClose}>X</CloseX>
       <Fixed>{naslov}</Fixed>
       <form onSubmit={handleSubmit}>
-        <div style={{ display: "flex", width: "100%", marginBottom: "20px" }}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
+        <div>
+          <div>
             <label htmlFor="cijena" style={{ color: "darkblue" }}>
-              Naziv namirnice
+              Naziv namirnicea
             </label>
             <input
               name="naziv"
@@ -40,9 +40,9 @@ function NoviUnos({
               onChange={(event) => setNaziv(event.target.value)}
             />{" "}
           </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div>
             <label htmlFor="Free" style={{ color: "darkblue" }}>
-              Kategorija proizvoda
+              Kategorija proizvodas
             </label>
             <select
               name="Kategorija"

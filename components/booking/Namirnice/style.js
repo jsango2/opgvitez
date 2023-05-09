@@ -915,7 +915,7 @@ export const WrapOrderWindow = styled.div`
 `;
 export const SearchIcon = styled.div`
   position: absolute;
-  right: 0;
+  right: 10px;
   top: 6px;
   width: 35px;
   height: 35px;
@@ -926,10 +926,11 @@ export const SearchIcon = styled.div`
   align-items: center;
   justify-content: center;
   @media only screen and (max-width: 1000px) {
-    left: 195px;
+    left: 225px;
     top: 16px;
   }
   @media only screen and (max-width: 420px) {
+    left: 205px;
   }
 `;
 export const OrdersIndex = styled.div`

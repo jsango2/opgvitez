@@ -266,7 +266,7 @@ export const DiskontWrap = styled.div`
   justify-content: center;
   align-items: center;
   @media only screen and (max-width: 600px) {
-    top: -13px;
+    top: -5px;
     right: -6px;
     height: 17px;
   }

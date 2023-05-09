@@ -31,6 +31,8 @@ import {
   HomeLink,
   Icon,
   WrapImageInEditor,
+  WrapTwo,
+  SingleInputSelect,
 } from "./style.js";
 import PriceComponent from "./priceComponent";
 import { CloseX } from "../Namirnice/reservationModal/style";
@@ -556,7 +558,7 @@ function Proizvodi({ handleLogOut, userEmail }) {
             <CloseX onClick={handleNewProductClose}>X</CloseX>
             <Fixed>Dodaj novi proizvod:</Fixed>
             <form onSubmit={handleSubmitNewProduct}>
-              <div>
+              <SingleInputSelect>
                 <label htmlFor="cijena" style={{ color: "darkblue" }}>
                   Naziv namirnice
                 </label>
@@ -566,54 +568,49 @@ function Proizvodi({ handleLogOut, userEmail }) {
                   value={newNaziv}
                   onChange={(event) => setNewNaziv(event.target.value)}
                 />{" "}
-                <div>
-                  <label htmlFor="Free" style={{ color: "darkblue" }}>
-                    Kategorija proizvoda
-                  </label>
-                  <select
-                    name="Kategorija"
-                    type="select"
-                    value={newKategorija}
-                    onChange={(event) => {
-                      setNewKategorija(event.target.value);
-                    }}
-                  >
-                    <option value=""></option>
-                    <option value="Voće">Voće</option>
-                    <option value="Salate">Salate</option>
-                    <option value="Povrće">Povrće</option>
-                    <option value="Agrumi">Agrumi</option>
-                    <option value="Suho voće">Suho voće</option>
-                    <option value="Egzotično voće">Egzotično voće</option>
-                    <option value="Gljive">Gljive</option>
-                    <option value="Prerađevine">Prerađevine</option>
-                    <option value="Žitarice, sjemenke, arašidi">
-                      Žitarice, sjemenke, arašidi
-                    </option>
-                    <option value="Med i pčelinji proizvodi">
-                      Med i pčelinji proizvodi
-                    </option>
-                    <option value="Veronika (mini mljekara)">
-                      Veronika (mini mljekara)
-                    </option>
-                    <option value="Domaća tjestenina (Nada)">
-                      Domaća tjestenina (Nada)
-                    </option>
-                    <option value="Začinsko bilje i klice">
-                      Začinsko bilje i klice
-                    </option>
-                  </select>
-                </div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  marginBottom: "20px",
-                  width: "100%",
-                  justifyContent: "space-around",
-                }}
-              >
-                <div style={{ color: "darkblue" }}>Mjerna jedinica</div>
+              </SingleInputSelect>
+              <SingleInputSelect>
+                <label htmlFor="Free" style={{ color: "darkblue" }}>
+                  Kategorija proizvoda
+                </label>
+                <select
+                  name="Kategorija"
+                  type="select"
+                  value={newKategorija}
+                  onChange={(event) => {
+                    setNewKategorija(event.target.value);
+                  }}
+                >
+                  <option value=""></option>
+                  <option value="Voće">Voće</option>
+                  <option value="Salate">Salate</option>
+                  <option value="Povrće">Povrće</option>
+                  <option value="Agrumi">Agrumi</option>
+                  <option value="Suho voće">Suho voće</option>
+                  <option value="Egzotično voće">Egzotično voće</option>
+                  <option value="Gljive">Gljive</option>
+                  <option value="Prerađevine">Prerađevine</option>
+                  <option value="Žitarice, sjemenke, arašidi">
+                    Žitarice, sjemenke, arašidi
+                  </option>
+                  <option value="Med i pčelinji proizvodi">
+                    Med i pčelinji proizvodi
+                  </option>
+                  <option value="Veronika (mini mljekara)">
+                    Veronika (mini mljekara)
+                  </option>
+                  <option value="Domaća tjestenina (Nada)">
+                    Domaća tjestenina (Nada)
+                  </option>
+                  <option value="Začinsko bilje i klice">
+                    Začinsko bilje i klice
+                  </option>
+                </select>
+              </SingleInputSelect>
+              <SingleInputSelect>
+                <label htmlFor="cijena" style={{ color: "darkblue" }}>
+                  Mjerna jedinica
+                </label>
                 <select
                   name="MjernaJedinica"
                   type="select"
@@ -635,7 +632,11 @@ function Proizvodi({ handleLogOut, userEmail }) {
                   <option value="teglica 450g">teglica 450g</option>
                   <option value="teglica 900g">teglica 900g</option>
                 </select>
-                <div style={{ color: "darkblue" }}>Cijena</div>
+              </SingleInputSelect>
+              <SingleInputSelect>
+                <label htmlFor="cijena" style={{ color: "darkblue" }}>
+                  Cijena
+                </label>
                 <input
                   name="cijena"
                   type="number"
@@ -645,21 +646,24 @@ function Proizvodi({ handleLogOut, userEmail }) {
                   value={newCijena}
                   onChange={(event) => setNewCijena(event.target.value)}
                 />{" "}
-              </div>
-              <div>
-                <label htmlFor="discount" style={{ color: "darkblue" }}>
-                  Tjedna ponuda
-                </label>
+              </SingleInputSelect>
 
-                <input
-                  style={{ width: "20px", marginRight: "20px" }}
-                  type="checkbox"
-                  name="discount"
-                  checked={discount}
-                  onChange={() => setDiscount(!discount)}
-                ></input>
+              <WrapTwo>
+                <SingleInputSelect>
+                  <label htmlFor="discount" style={{ color: "darkblue" }}>
+                    Tjedna ponuda
+                  </label>
 
-                <div>
+                  <input
+                    style={{ width: "20px", marginRight: "20px" }}
+                    type="checkbox"
+                    name="discount"
+                    checked={discount}
+                    onChange={() => setDiscount(!discount)}
+                  ></input>
+                </SingleInputSelect>
+
+                <SingleInputSelect>
                   <label htmlFor="partner" style={{ color: "darkblue" }}>
                     Partner OPG
                   </label>
@@ -671,15 +675,16 @@ function Proizvodi({ handleLogOut, userEmail }) {
                     checked={newPartner}
                     onChange={() => setNewPartner(!newPartner)}
                   ></input>
-                </div>
-
-                <div
+                </SingleInputSelect>
+              </WrapTwo>
+              <SingleInputSelect>
+                <label
                   htmlFor="Free"
                   style={{ color: "darkblue", display: "flex" }}
                 >
                   Status
-                </div>
-                <br />
+                </label>
+
                 <select
                   name="Free"
                   type="select"
@@ -691,7 +696,8 @@ function Proizvodi({ handleLogOut, userEmail }) {
                   <option value={true}>Raspoloživo</option>
                   <option value={false}>Nije raspoloživo</option>
                 </select>
-              </div>
+              </SingleInputSelect>
+
               <div>
                 <label>Foto namirnice (ne veći od 500kb)</label>
                 <input
@@ -758,7 +764,7 @@ function Proizvodi({ handleLogOut, userEmail }) {
             <Fixed>Edit namirnice:</Fixed>
             <form onSubmit={handleSubmit}>
               <div>
-                <div>
+                <SingleInputSelect>
                   <label htmlFor="naziv" style={{ color: "darkblue" }}>
                     Naziv namirnice
                   </label>
@@ -768,8 +774,8 @@ function Proizvodi({ handleLogOut, userEmail }) {
                     value={naziv}
                     onChange={(event) => setNaziv(event.target.value)}
                   />{" "}
-                </div>
-                <div>
+                </SingleInputSelect>
+                <SingleInputSelect>
                   <label htmlFor="Free" style={{ color: "darkblue" }}>
                     Kategorija proizvoda
                   </label>
@@ -806,11 +812,11 @@ function Proizvodi({ handleLogOut, userEmail }) {
                       Začinsko bilje i klice
                     </option>
                   </select>
-                </div>
+                </SingleInputSelect>
               </div>
-              <br />
+
               <div>
-                <div>
+                <SingleInputSelect>
                   <div style={{ color: "darkblue" }}>Mjerna jedinica</div>
                   <select
                     name="MjernaJedinica"
@@ -833,8 +839,8 @@ function Proizvodi({ handleLogOut, userEmail }) {
                     <option value="teglica 450g">teglica 450g</option>
                     <option value="teglica 900g">teglica 900g</option>
                   </select>
-                </div>
-                <div>
+                </SingleInputSelect>
+                <SingleInputSelect>
                   <div style={{ color: "darkblue" }}>Cijena</div>
                   <input
                     name="cijena"
@@ -842,51 +848,55 @@ function Proizvodi({ handleLogOut, userEmail }) {
                     value={cijena}
                     onChange={(event) => setCijena(event.target.value)}
                   />{" "}
-                </div>
+                </SingleInputSelect>
               </div>
               <br />
               <div>
-                <div>
-                  <label htmlFor="discount" style={{ color: "darkblue" }}>
-                    Tjedna ponuda
+                <WrapTwo>
+                  <div>
+                    <label htmlFor="discount" style={{ color: "darkblue" }}>
+                      Tjedna ponuda
+                    </label>
+                    <input
+                      style={{ width: "20px", marginRight: "20px" }}
+                      type="checkbox"
+                      name="discount"
+                      checked={discount}
+                      onChange={() => setDiscount(!discount)}
+                    ></input>
+                  </div>
+
+                  <div>
+                    <label htmlFor="partner" style={{ color: "darkblue" }}>
+                      Partner OPG
+                    </label>
+
+                    <input
+                      style={{ width: "20px", marginRight: "20px" }}
+                      type="checkbox"
+                      name="partner"
+                      checked={partner}
+                      onChange={() => setPartner(!partner)}
+                    ></input>
+                  </div>
+                </WrapTwo>
+                <SingleInputSelect>
+                  <label htmlFor="Free" style={{ color: "darkblue" }}>
+                    Status
                   </label>
-                  <input
-                    type="checkbox"
-                    name="discount"
-                    checked={discount}
-                    onChange={() => setDiscount(!discount)}
-                  ></input>
-                </div>
-
-                <div>
-                  <label htmlFor="partner" style={{ color: "darkblue" }}>
-                    Partner OPG
-                  </label>
-
-                  <input
-                    style={{ width: "20px", marginRight: "20px" }}
-                    type="checkbox"
-                    name="partner"
-                    checked={partner}
-                    onChange={() => setPartner(!partner)}
-                  ></input>
-                </div>
-
-                <label htmlFor="Free" style={{ color: "darkblue" }}>
-                  Status
-                </label>
-                <br />
-                <select
-                  name="Free"
-                  type="select"
-                  value={free}
-                  onChange={(event) => {
-                    setFree(event.target.value === "true" ? true : false);
-                  }}
-                >
-                  <option value={true}>Raspoloživo</option>
-                  <option value={false}>Nije raspoloživo</option>
-                </select>
+                  <br />
+                  <select
+                    name="Free"
+                    type="select"
+                    value={free}
+                    onChange={(event) => {
+                      setFree(event.target.value === "true" ? true : false);
+                    }}
+                  >
+                    <option value={true}>Raspoloživo</option>
+                    <option value={false}>Nije raspoloživo</option>
+                  </select>
+                </SingleInputSelect>
               </div>
               <div>
                 <label>Foto namirnice (ne veći od 500kb)</label>
@@ -923,10 +933,10 @@ function Proizvodi({ handleLogOut, userEmail }) {
                   />
                 </WrapImageInEditor>
               </div>
-              <div>
+              <SingleInputSelect>
                 <Button type="submit" text="Submit" />
                 <Button handleOnClick={handleDelete} text="Delete" />
-              </div>
+              </SingleInputSelect>
             </form>
           </PopupForm>
         )}
