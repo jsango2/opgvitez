@@ -86,6 +86,7 @@ export const WrapSlider = styled.div`
   background-size: cover; */
 
   @media only screen and (max-width: 600px) {
+    height: 250px;
   }
   @media only screen and (max-width: 420px) {
   }
