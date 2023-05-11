@@ -17,7 +17,7 @@ export const WeekWrap = styled.div`
 
   /* padding-top: 3px; */
   z-index: 0;
-  margin: 1px auto 1px auto;
+  margin: 1px auto 5px auto;
   /* cursor: pointer; */
 
   /* pointer-events: ${(props) => (props.length < 5 ? "auto " : "none")}; */

@@ -134,7 +134,7 @@ const Namirnica = ({
     }
     setTimeout(() => {
       setItemAdded(false);
-    }, 1000);
+    }, 2000);
     setTimeout(() => {
       setAlert(false);
     }, 3000);

@@ -256,7 +256,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 1;
   /* visibility: visible; */
   right: 0px !important;
-  transition: all 0.8s cubic-bezier(0.42, 0, 0.21, 0.97);
+  transition: all 1.5s cubic-bezier(0.42, 0, 0.21, 0.97);
 }
 .legendClosed {
   opacity: 0;
@@ -306,9 +306,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .itemAddedOverlayOn {
-  -webkit-animation: fade-in 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) reverse
+  -webkit-animation: fade-in 5s cubic-bezier(0.68, -0.55, 0.265, 1.55) reverse
     both;
-  animation: fade-in 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) reverse both;
+  animation: fade-in 5s cubic-bezier(0.68, -0.55, 0.265, 1.55) reverse both;
 }
 .itemAddedOverlayOff {
   opacity: 0;

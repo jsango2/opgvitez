@@ -255,6 +255,9 @@ export const WrapUp = styled.div`
   background-position: center;
   background-size: cover; */
   margin-left: auto;
+
+  /* background-color: ${(props) => (props.hasOrders ? "beige" : "none")}; */
+  padding: 10px 20px;
   @media only screen and (max-width: 750px) {
     flex-direction: column;
   }
@@ -571,7 +574,7 @@ export const KosaricaWrap = styled.div`
   max-height: 91%;
   min-height: 250px;
   padding: 40px 20px 80px 20px;
-  background-color: white;
+  background-color: #d2e8d6;
   box-shadow: 0px 14px 23px rgba(28, 37, 44, 0.08);
   position: fixed;
   top: 80px;
@@ -885,7 +888,7 @@ export const WrapAllProducts = styled.div`
   /* height: auto; */
   /* max-height: 700px; */
   margin-bottom: 30px;
-  background-color: white;
+  background-color: #8dcdb1;
   /* box-shadow: 0px 14px 23px rgba(28, 37, 44, 0.08); */
   height: ${(props) => props.height};
 
@@ -904,7 +907,7 @@ export const WrapAllProducts = styled.div`
 `;
 export const WrapOrderWindow = styled.div`
   position: relative;
-  background-color: #e9eaeb;
+  background-color: #8dcdb1;
   padding: 30px 50px;
   border-radius: 10px;
   max-height: 240px;
@@ -1001,11 +1004,22 @@ export const ProductInCart = styled.div`
   border-bottom: 0.3px solid rgba(23, 56, 97, 0.3);
   border-radius: 8px;
   overflow: hidden;
+  background-color: white;
   @media only screen and (max-width: 900px) {
     height: 200px;
   }
   @media only screen and (max-width: 600px) {
     height: 189px;
+  }
+`;
+export const Pogledaj = styled.div`
+  color: #093b69;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+  @media only screen and (max-width: 900px) {
+  }
+  @media only screen and (max-width: 600px) {
   }
 `;
 export const Trash = styled.div`

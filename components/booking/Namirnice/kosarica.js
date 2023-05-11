@@ -24,6 +24,7 @@ import {
   WrapInBasket,
   PlusWrap,
   MinusWrap,
+  Pogledaj,
 } from "./style.js";
 import Image from "next/image";
 
@@ -211,6 +212,7 @@ function Kosarica({
             </span>
             <MdClose />
           </CloseIcon>
+          <Pogledaj>Pregledaj Košaricu</Pogledaj>
           <WrapAllProducts
             height={`${cartData.length * 158}px`}
             heightMobile={`${cartData.length * 238}px`}
