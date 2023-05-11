@@ -5,6 +5,7 @@ import {
   Amount,
   FormaSubmitedNote,
   OrderTitle,
+  Naslov,
   WrapEachOrderItem,
   NoteTitle,
   NoteAmount,
@@ -91,6 +92,7 @@ function checkoutForm({
           </span>
           <MdClose />
         </CloseIcon>
+        <Naslov>Ispunite vaše podatke za dostavu</Naslov>
         <form onSubmit={handleSubmit}>
           <div
             style={{

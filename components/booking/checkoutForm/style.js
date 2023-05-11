@@ -47,7 +47,7 @@ export const CheckoutWrap = styled.div`
     text-align: center;
   }
   @media only screen and (max-width: 600px) {
-    top: 60px;
+    top: 0;
     width: 100vw;
     height: 100vh;
     justify-content: flex-start;
@@ -67,6 +67,22 @@ export const Amount = styled.h2`
   font-size: 18px;
   font-weight: 700;
   margin-top: 20px;
+  color: #093b69;
+  @media only screen and (max-width: 850px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const Naslov = styled.h2`
+  position: relative;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 40px 0;
   color: #093b69;
   @media only screen and (max-width: 850px) {
   }
@@ -144,18 +160,19 @@ export const WrapEachOrderItem = styled.h2`
 
 export const FormaSubmitedNote = styled.div`
   position: fixed;
+  top: 0;
   z-index: 65;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 450px;
-  height: auto;
+  width: 92vw;
+  height: 80vh;
   background-color: #093b69;
   color: white;
-  top: 30%;
+  top: 10%;
   border-radius: 10px;
-  padding: 60px 0;
+  padding: 0px 0;
   @media only screen and (max-width: 850px) {
   }
   @media only screen and (max-width: 420px) {
