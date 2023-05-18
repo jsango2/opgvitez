@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const WeekWrap = styled.div`
+export const NamirnicaWrap = styled.div`
   position: relative;
   height: 64px;
   width: 30%;

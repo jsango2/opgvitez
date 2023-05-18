@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { WeekWrap, Price, Namirnica } from "./style.js";
+import { WeekWrap, Price, Namirnica } from "./style.js.js";
 // import HeroVideo from "../../video/kraciVideo.mp4";
 import Image from "next/image";
 import Diskont from "../../Namirnica/diskont.js";
@@ -52,14 +52,11 @@ const Week = ({
       selected={selected}
       kategorija={kategorija}
     >
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <Namirnica>{naziv} </Namirnica>
-        <Price> {cijena} €</Price>
-        <Namirnica>/{mjernaJedinica} </Namirnica>
-      </div>
-      <div>
-        <Namirnica>{kategorija}</Namirnica>
-      </div>
+      <Namirnica>{naziv} </Namirnica>
+      <Price> {cijena} €</Price>
+      <Namirnica>/{mjernaJedinica} </Namirnica>
+
+      <Namirnica>{kategorija}</Namirnica>
       {discount && <Diskont discountAmount={discountAmount} />}
     </WeekWrap>
   );

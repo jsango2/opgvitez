@@ -1,10 +1,21 @@
 import Image from "next/image.js";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { WrapHeroContent, Left, WrapImage, Title, SubTitle } from "./style.js";
+import {
+  WrapHeroContent,
+  Left,
+  WrapImage,
+  Title,
+  SubTitle,
+  Trgovina,
+} from "./style.js";
 
 function Hero({}) {
   return (
     <>
+      <Link href="/trgovina">
+        <Trgovina>Trgovina</Trgovina>
+      </Link>
       <WrapHeroContent>
         <Left>
           <Title>Dostava svježeg voća i povrća!</Title>

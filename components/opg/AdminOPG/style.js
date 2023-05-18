@@ -544,3 +544,15 @@ export const WrapImageInEditor = styled.div`
   @media only screen and (max-width: 420px) {
   }
 `;
+export const ButtonsWrap = styled.div`
+  display: flex;
+  position: relative;
+  width: 300px;
+
+  margin: 30px auto 0 auto;
+
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;

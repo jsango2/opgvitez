@@ -33,6 +33,7 @@ import {
   WrapImageInEditor,
   WrapTwo,
   SingleInputSelect,
+  ButtonsWrap,
 } from "./style.js";
 import PriceComponent from "./priceComponent";
 import { CloseX } from "../Namirnice/reservationModal/style";
@@ -899,7 +900,9 @@ function Proizvodi({ handleLogOut, userEmail }) {
                 </SingleInputSelect>
               </div>
               <div>
-                <label>Foto namirnice (ne veći od 500kb)</label>
+                <label style={{ color: "black" }}>
+                  Foto namirnice (ne veći od 500kb)
+                </label>
                 <input
                   type="file"
                   id="input"
@@ -933,10 +936,10 @@ function Proizvodi({ handleLogOut, userEmail }) {
                   />
                 </WrapImageInEditor>
               </div>
-              <SingleInputSelect>
+              <ButtonsWrap>
                 <Button type="submit" text="Submit" />
                 <Button handleOnClick={handleDelete} text="Delete" />
-              </SingleInputSelect>
+              </ButtonsWrap>
             </form>
           </PopupForm>
         )}

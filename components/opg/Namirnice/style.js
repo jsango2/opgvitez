@@ -76,8 +76,8 @@ export const WrapSlider = styled.div`
   width: 100%;
   height: 350px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  /* flex-direction: column; */
+  justify-content: center;
   align-items: center;
   /* padding-top: 163px; */
   overflow: hidden;
@@ -87,6 +87,40 @@ export const WrapSlider = styled.div`
 
   @media only screen and (max-width: 600px) {
     height: 250px;
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const WrapKategorije = styled.div`
+  position: relative;
+  height: auto;
+  width: 90%;
+  height: auto;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  /* padding-top: 163px; */
+  color: black;
+  font-weight: 500;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  margin-top: 0;
+  @media only screen and (max-width: 600px) {
+    height: auto;
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
+export const Kat = styled.div`
+  position: relative;
+  background-color: #ffca00;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  @media only screen and (max-width: 600px) {
+    margin: 5px 10px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -149,7 +183,7 @@ export const Title = styled.h1`
   /* TAMNO PLAVA */
   z-index: 4;
   color: #093b69;
-  margin-top: 114px;
+  margin-top: 54px;
   @media only screen and (max-width: 600px) {
     font-size: 26px;
     margin-top: 80px;
@@ -423,7 +457,7 @@ export const Kategorije = styled.h4`
       width: 185px;
     }
     margin-right: 10px;
-    margin-top: 18px;
+    margin-top: 33px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -568,7 +602,9 @@ export const KosaricaWrap = styled.div`
   z-index: 50;
   /* border: 2px solid black; */
   width: 100%;
-  margin-left: ${(props) => (props.isInBasket ? "3px" : "0px")};
+  max-width: 1440px;
+  /* margin-left: ${(props) => (props.isInBasket ? "3px" : "0px")}; */
+  margin: 0 auto;
   overflow-y: scroll;
   height: ${(props) => props.height};
   /* height: 100%; */
@@ -578,7 +614,7 @@ export const KosaricaWrap = styled.div`
   background-color: #d2e8d6;
   box-shadow: 0px 14px 23px rgba(28, 37, 44, 0.08);
   position: fixed;
-  top: 80px;
+  top: 100px;
   border-radius: 5px;
   padding-bottom: 30px;
   @media only screen and (max-width: 1000px) {
@@ -779,9 +815,12 @@ export const WrapHeader = styled.div`
   flex-direction: row;
   align-items: center;
   background-color: white;
+  overflow: hidden;
   width: 100%;
   padding: 0 10%;
-  box-shadow: 0px 4px 23px rgba(28, 37, 44, 0.08);
+
+  box-shadow: 0px 5px 9px rgba(28, 37, 44, 0.18);
+
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
@@ -872,10 +911,34 @@ export const WrapHeaderMobile = styled.div`
   background-color: white;
   width: 100%;
   padding: 0 5% 0 3%;
-  box-shadow: 0px 4px 23px rgba(28, 37, 44, 0.08);
+  box-shadow: 0px 5px 9px rgba(28, 37, 44, 0.38);
+
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {
+  }
+`;
+export const HomePage = styled.h1`
+  position: relative;
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+  background-color: rgb(86, 171, 47);
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-top: 120px;
+  cursor: pointer;
+  @media only screen and (max-width: 750px) {
+    width: 80%;
+    height: auto;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 35px;
+  }
+  @media only screen and (max-width: 450px) {
+    font-size: 25px;
   }
 `;
 export const WrapAllProducts = styled.div`
@@ -891,11 +954,11 @@ export const WrapAllProducts = styled.div`
   margin-bottom: 30px;
   background-color: #8dcdb1;
   /* box-shadow: 0px 14px 23px rgba(28, 37, 44, 0.08); */
-  height: ${(props) => props.height};
-
+  /* height: ${(props) => props.height}; */
+  height: auto;
   top: 0px;
   border-radius: 5px;
-  padding-bottom: 30px;
+  padding: 10px;
 
   @media only screen and (max-width: 870px) {
     height: ${(props) => props.heightMobile};
@@ -1563,7 +1626,7 @@ export const HeaderOverlay = styled.div`
 
   z-index: 45;
   width: 100%;
-  height: 80px;
+  height: 100px;
   display: flex;
   padding-left: 20px;
   align-items: flex-start;

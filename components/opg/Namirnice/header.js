@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import HeroContent from "../../../components/HeroContent/index";
+import HeroContent from "../../HeroContent/index";
 import Namirnica from "../Namirnica/namirnica";
 import { collection, addDoc, getDocs, doc, getDoc } from "firebase/firestore";
 import { auth, database } from "../../firebase/firebase";
@@ -29,10 +29,12 @@ import {
   WrapLoader,
   Title2,
   WrapBottomBar,
+  Kat,
   TotalPriceBottomBar,
   TotalPriceBottomBarKn,
   VievCart,
   WrapSlider,
+  WrapKategorije,
 } from "./style.js";
 import PriceComponent from "./priceComponent";
 
@@ -44,12 +46,18 @@ import Select from "react-select";
 import { FiSearch } from "react-icons/fi";
 import { MdNavigateNext } from "react-icons/md";
 import Hero2 from "../../Hero2";
+import { existingCategories } from "../../helper/existingCategories";
 
-const opcijeKategorija = [
-  { value: "Sve", label: "Sve kategorije" },
-  { value: "Voće", label: "Voće" },
-  { value: "Povrće", label: "Povrće" },
-  { value: "Agrumi", label: "Agrumi" },
+const kategorije = [
+  "Voće",
+  "Povrće",
+  "Agrumi",
+  "Egzotično voće",
+  "Gljive",
+  "Prerađevine",
+  "Med i pčelinji proizvodi",
+  "Veronika (mini mljekara)",
+  "Domaća tjestenina (Nada)",
 ];
 
 const settings = {
@@ -101,39 +109,26 @@ const settings = {
   ],
 };
 
-function Namirnice() {
+function Header() {
   const size = useWindowSize();
   const [data, setData] = useState([]);
   const [cartData, setCartData] = useState([]);
-  const [selectedWeeks, setSelectedWeeks] = useState([]);
   const [suma, setSuma] = useState(0);
   const [length, setLength] = useState(0);
-  const [datum, setDatum] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [cijena, setCijena] = useState(0);
-  const [free, setFree] = useState("Free");
-  const [selected, setSelected] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
   const [logedIn, setlogedIn] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [uniqueKategorija, setUniqueKategorija] = useState([]);
+
+  const [selected, setSelected] = useState(false);
   const [kategorija, setKategorija] = useState("Sve");
   const [napomenaCart, setNapomenaCart] = useState("");
   const [odabraneKolicine, setOdabraneKolicine] = useState(0);
-  const [kosarica, setKosarica] = useState([]);
-  const [kosaricaLS, setKosaricaLS] = useState([]);
   const [kosaricaIsOpen, setKosaricaIsOpen] = useState(false);
   const [isQueryOpen, setIsQueryOpen] = useState(false);
   const [kosaricaLength, setKosaricaLength] = useState(0);
   const [checkoutScreen, setCheckoutScreen] = useState(false);
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
-  let [color, setColor] = useState("#093b69");
-
-  // const dbInstance = collection(database, "Charter2");
-  // const dbInstance2 = collection(database, "Charter2");
-  // const dbInstance3 = collection(database, "Charter2");
   const dbInstance4 = collection(database, "Charter3");
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(null);
-  const [query, setquery] = useState("");
   const [state, setstate] = useState({
     query: "",
     list: [],
@@ -193,8 +188,10 @@ function Namirnice() {
           return { ...item.data(), id: item.id, cartStanje: 0 };
         });
         setData(podaci);
+        setUniqueKategorija(existingCategories(podaci));
       });
     };
+
     // if (localStorageState.length != 0 && timePassedStorageAndNow < 60) {
     //   setCartData(localStorageData);
     //   // getNotes();
@@ -205,6 +202,7 @@ function Namirnice() {
     // }
     getNotes();
   }, []);
+
   // ________
 
   // (function () {
@@ -326,21 +324,6 @@ function Namirnice() {
     // );
   };
 
-  //zbroji eure svih tjedana
-
-  // useEffect(() => {
-  //   let sum = 0;
-  //   data.map((object) => {
-  //     if (object.selected === true) {
-  //       sum = sum + object.cijena;
-  //     }
-  //   });
-  //   setSuma(sum);
-  // }, [data]);
-  //idi kroz array nakon svakog klika tjedna i promjeni state selected u true
-  const handleKolicine = (kol) => {
-    console.log("kolicine:", kol);
-  };
   const handleOpenKosarica = () => {
     if (cartData.length === 0) {
       setKosaricaIsOpen(false);
@@ -549,7 +532,7 @@ function Namirnice() {
     });
   };
   return (
-    <WrapSection id="booking" ref={ref}>
+    <>
       {isQueryOpen && state.list.length > 0 && <BlurOverlay />}
       {size.width > 1000 ? (
         <WrapHeader>
@@ -634,18 +617,7 @@ function Namirnice() {
             data={cartData}
             handleOpenKosarica={handleOpenKosarica}
             kosaricaIsOpen={kosaricaIsOpen}
-          />{" "}
-          {/* {cartData.length > 0 && (
-          <OrderButton
-            onClick={() => {
-              // checkout();
-              handleOrder(data);
-            }}
-            style={{ marginLeft: "20px" }}
-          >
-            Dovrši kupovinu
-          </OrderButton>
-        )} */}
+          />
         </WrapHeader>
       ) : (
         <>
@@ -699,20 +671,7 @@ function Namirnice() {
           </WrapInputSelector>
           <WrapHeaderMobile>
             <Kategorije style={{ width: "180px" }}>
-              {/* <AnchorLink
-                href="#namirnice"
-                offset="60"
-                style={{ textDecoration: "none" }}
-              > */}
               <div onClick={scrollingTop}>
-                {/* <Select
-                  options={opcijeKategorija}
-                  onChange={handleOnChange}
-                  defaultValue={kategorija}
-                  placeholder="Sve kategorije"
-                  classNamePrefix="react-select"
-                /> */}
-
                 <select
                   name="Kategorija"
                   type="select"
@@ -747,89 +706,10 @@ function Namirnice() {
                   </option>
                 </select>
               </div>
-              {/* </AnchorLink> */}
-              {/* <select
-                name="Kategorija"
-                type="select"
-                value={kategorija}
-                onChange={(event) => {
-                  setKategorija(event.target.value);
-                }}
-              >
-                <option value="Sve">Sve kategorije</option>
-                <option value="Voće">Voće</option>
-                <option value="Salate">Salate</option>
-                <option value="Povrće">Povrće</option>
-                <option value="Agrumi">Agrumi</option>
-                <option value="Suho voće">Suho voće</option>
-                <option value="Egzotično voće">Egzotično voće</option>
-                <option value="Gljive">Gljive</option>
-                <option value="Prerađevine">Prerađevine</option>
-                <option value="Žitarice, sjemenke, arašidi">Prerađevine</option>
-                <option value="Med i pčelinji proizvodi">
-                  Med i pčelinji proizvodi
-                </option>
-                <option value="Veronika (mini mljekara)">
-                  Veronika (mini mljekara)
-                </option>
-                <option value="Domaća tjestenina (Nada)">
-                  Domaća tjestenina (Nada)
-                </option>
-                <option value="Začinsko bilje i klice">
-                  Začinsko bilje i klice
-                </option>
-              </select> */}
             </Kategorije>
             <SearchIcon onClick={() => setIsSearchBarOpen((prev) => !prev)}>
               <FiSearch />
             </SearchIcon>
-            {/* <WrapInputSelector
-              className={`${
-                isSearchBarOpen ? "searchBarOpen" : "searchBarClosed"
-              }`}
-            >
-              <input
-                type="search"
-                value={state.query}
-                onChange={handleChange}
-              />
-
-              {isQueryOpen && state.list.length > 0 && (
-                <WrapLista>
-                  <Lista style={{ color: "black" }} ref={refs}>
-                    {state.query === ""
-                      ? ""
-                      : state.list.map((week) => (
-                          <Namirnica
-                            key={week.id}
-                            id={week.id}
-                            cijena={week.cijena}
-                            kategorija={week.kategorija}
-                            selected={selected}
-                            free={week.free}
-                            naziv={week.naziv}
-                            mjernaJedinica={week.mjernaJedinica}
-                            marked={week.selected}
-                            handleClick={() => handleClick(week.id)}
-                            handleMarker={() => handleMarker(week.id)}
-                            handleUpdateCart={handleUpdateCart}
-                            odabraneKolicine={odabraneKolicine}
-                            length={length}
-                            discount={week.discount}
-                            discountAmount={week.discountAmount}
-                            width="400px"
-                            cartStanje={week.cartStanje}
-                            height="170px"
-                            textColor="light"
-                            iconSize="small"
-                            partner={week.partner}
-                            foto={week.foto ? week.foto : null}
-                          />
-                        ))}
-                  </Lista>
-                </WrapLista>
-              )}
-            </WrapInputSelector> */}
             <PriceComponent
               price={suma}
               countOrders={kosaricaLength}
@@ -882,129 +762,8 @@ function Namirnice() {
         napomenaCart={napomenaCart}
         handleNapomenaCartUpdateCart={handleNapomenaCartUpdateCart}
       ></Kosarica>
-      <HeroContent />
-      <Hero2 />
-      {!isLoading && <Title>Posebna ponuda</Title>}
-      <WrapSlider>
-        <Slider {...settings}>
-          {dataFeatured.slice(0, 6).map((product) => (
-            <Namirnica
-              key={product.id}
-              id={product.id}
-              cijena={product.cijena}
-              // kategorija={product.kategorija}
-              selected={selected}
-              free={product.free}
-              naziv={product.naziv}
-              mjernaJedinica={product.mjernaJedinica}
-              marked={product.selected}
-              handleClick={() => handleClick(product.id)}
-              handleMarker={() => handleMarker(product.id)}
-              handleUpdateCart={handleUpdateCart}
-              odabraneKolicine={odabraneKolicine}
-              length={length}
-              discount={product.discount}
-              discountAmount={product.discountAmount}
-              width="510px"
-              widthMobile="305px"
-              backgroundColor="white"
-              textColor="light"
-              cartStanje={product.cartStanje}
-              height="170px"
-              heightMobile="150px"
-              iconSize="small"
-              partner={product.partner}
-              marginTop="0px"
-              foto={product.foto ? product.foto : null}
-              prikazNapomene={false}
-              isSlider={true}
-            />
-          ))}
-        </Slider>
-      </WrapSlider>
-      <Legend />
-      {!isLoading && <Title2>Odaberi namirnice</Title2>}
-
-      {/* <SubTitle>Choose your dates and make reservation</SubTitle> */}
-      {/* {size.width < 600 ? <Legend /> : ""} */}
-      {isLoading ? (
-        <WrapLoader>
-          <ClipLoader
-            color={color}
-            loading={isLoading}
-            size={250}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
-          <LoaderText>Učitavam namirnice</LoaderText>
-        </WrapLoader>
-      ) : (
-        <Wrap ref={targetElement}>
-          {kategorija === "Sve"
-            ? dataRaspolozivo.map((week) => (
-                <Namirnica
-                  key={week.id}
-                  id={week.id}
-                  cijena={week.cijena}
-                  kategorija={week.kategorija}
-                  setKategorija={setKategorija}
-                  selected={selected}
-                  free={week.free}
-                  naziv={week.naziv}
-                  mjernaJedinica={week.mjernaJedinica}
-                  marked={week.selected}
-                  handleClick={() => handleClick(week.id)}
-                  handleMarker={() => handleMarker(week.id)}
-                  handleUpdateCart={handleUpdateCart}
-                  odabraneKolicine={odabraneKolicine}
-                  length={length}
-                  discount={week.discount}
-                  discountAmount={week.discountAmount}
-                  width="40%"
-                  widthMobile="90%"
-                  cartStanje={week.cartStanje}
-                  height="170px"
-                  iconSize="small"
-                  partner={week.partner}
-                  marginTop="0"
-                  foto={week.foto ? week.foto : null}
-                  prikazNapomene={true}
-                />
-              ))
-            : filteredData.map((week) => (
-                <Namirnica
-                  key={week.id}
-                  id={week.id}
-                  cijena={week.cijena}
-                  kategorija={week.kategorija}
-                  setKategorija={setKategorija}
-                  selected={selected}
-                  free={week.free}
-                  naziv={week.naziv}
-                  mjernaJedinica={week.mjernaJedinica}
-                  marked={week.selected}
-                  handleClick={() => handleClick(week.id)}
-                  handleMarker={() => handleMarker(week.id)}
-                  odabraneKolicine={odabraneKolicine}
-                  handleUpdateCart={handleUpdateCart}
-                  length={length}
-                  discount={week.discount}
-                  discountAmount={week.discountAmount}
-                  width="40%"
-                  widthMobile="90%"
-                  cartStanje={week.cartStanje}
-                  height="170px"
-                  iconSize="small"
-                  partner={week.partner}
-                  marginTop="0"
-                  foto={week.foto ? week.foto : null}
-                  prikazNapomene={true}
-                />
-              ))}
-        </Wrap>
-      )}
-    </WrapSection>
+    </>
   );
 }
 
-export default Namirnice;
+export default Header;

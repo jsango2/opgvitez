@@ -1,11 +1,11 @@
 import { collection, addDoc, getDocs, doc, getDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
-import Proizvodi from "../components/booking/AdminOPG";
+import Proizvodi from "../components/opg/AdminOPG";
 import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 // import firebase from "../components/firebase/firebase";
 import { auth, database } from "../components/firebase/firebase";
-import { Data } from "../components/booking/data";
+import { Data } from "../components/opg/data";
 import Layout from "../components/layout";
 
 function Index() {

@@ -3,9 +3,8 @@ import useSWR from "swr";
 import Layout from "../components/layout";
 import { useRouter } from "next/router";
 
-import WebShop from "../components/opg/Namirnice";
-
 import Head from "next/head";
+import Trgovina from "../components/opg/Namirnice/trgovina";
 // function Profile() {
 //   if (error) return <div>failed to load</div>;
 //   if (!data) return <div>loading...</div>;
@@ -50,7 +49,7 @@ function Index() {
       </form>
       {/* <Grid /> */}
 
-      <WebShop />
+      <Trgovina />
 
       {/* <Footer /> */}
     </Layout>

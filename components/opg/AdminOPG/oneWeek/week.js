@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { WeekWrap, Price, Namirnica } from "./style.js";
+import { NamirnicaWrap, Price, Namirnica } from "./style.js";
 // import HeroVideo from "../../video/kraciVideo.mp4";
 import Image from "next/image";
 import Diskont from "../../Namirnica/diskont.js";
@@ -41,7 +41,7 @@ const Week = ({
   //   setEndD(newEndDay + "/" + newEndMonth);
   // }, []);
   return (
-    <WeekWrap
+    <NamirnicaWrap
       isFree={free}
       marked={marked}
       onClick={() => {
@@ -52,13 +52,16 @@ const Week = ({
       selected={selected}
       kategorija={kategorija}
     >
-      <Namirnica>{naziv} </Namirnica>
-      <Price> {cijena} €</Price>
-      <Namirnica>/{mjernaJedinica} </Namirnica>
-
-      <Namirnica>{kategorija}</Namirnica>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <Namirnica>{naziv} </Namirnica>
+        <Price> {cijena} €</Price>
+        <Namirnica>/{mjernaJedinica} </Namirnica>
+      </div>
+      <div>
+        <Namirnica>{kategorija}</Namirnica>
+      </div>
       {discount && <Diskont discountAmount={discountAmount} />}
-    </WeekWrap>
+    </NamirnicaWrap>
   );
 };
 
