@@ -124,7 +124,7 @@ function Trgovina() {
   const [selected, setSelected] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [katClicked, setKatClicked] = useState(false);
-  const [current, setCurrent] = useState(null);
+  const [current, setCurrent] = useState(10);
   const [logedIn, setlogedIn] = useState(null);
   const [kategorija, setKategorija] = useState("Sve");
   const [uniqueKategorija, setUniqueKategorija] = useState([]);
@@ -206,6 +206,10 @@ function Trgovina() {
         });
         setData(podaci);
         setUniqueKategorija(existingCategories(podaci));
+        setstate({
+          query: "",
+          list: podaci,
+        });
       });
     };
 
@@ -504,6 +508,13 @@ function Trgovina() {
       });
     }
   }, [kategorija]);
+
+  // useEffect(() => {
+  //   setstate({
+  //     query: "",
+  //     list: data,
+  //   });
+  // }, []);
 
   const handleChange = (e) => {
     if (kategorija === "Sve") {
@@ -1018,6 +1029,7 @@ function Trgovina() {
                   prikazNapomene={true}
                 />
               ))} */}
+
           {state.list.map((week) => (
             <Namirnica
               key={week.id}
