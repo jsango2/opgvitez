@@ -4,8 +4,8 @@ export const WeekWrap = styled.div`
 
   height: ${(props) => props.height};
   width: ${(props) => props.width};
+  min-width: ${(props) => props.minwidth};
 
-  min-width: 470px;
   background: ${(props) => props.backgroundColor};
   background-color: white;
 

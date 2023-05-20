@@ -11,7 +11,7 @@ export const Wrap = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  z-index: 4;
+  z-index: 0;
 
   @media only screen and (max-width: 850px) {
     width: 97%;
@@ -22,14 +22,10 @@ export const Wrap = styled.div`
 `;
 export const BlurOverlay = styled.div`
   position: absolute;
-  z-index: 10;
+  z-index: 1;
   height: 100%;
   width: 100%;
-  /* background: linear-gradient(
-    0.93deg,
-    rgba(21, 31, 43, 0.245) 0.67%,
-    rgba(197, 223, 255, 0.325) 99.08%
-  ); */
+  background-color: #00000029;
   backdrop-filter: blur(6px);
   top: 0;
   @media only screen and (max-width: 600px) {
@@ -719,19 +715,22 @@ export const Icon = styled.div`
   }
 `;
 export const WrapLista = styled.div`
-  width: 510px;
+  width: 550px;
   height: 600px;
   position: absolute;
   z-index: 1;
   overflow-y: scroll;
   top: 45px;
-  left: 0px;
+  left: -90px;
+  padding-top: 20px;
   border-bottom: 0.5px solid grey;
   border-radius: 5px;
   background-color: white;
+
   @media only screen and (max-width: 1000px) {
     width: 100vw;
     height: 100vh;
+    left: 0px;
   }
   @media only screen and (max-width: 420px) {
   }
@@ -768,13 +767,13 @@ export const WrapInputSelector = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 210px;
   height: 45px;
   /* top: 62px;
   left: 0; */
   input,
   select {
     height: 35px;
+    width: 310px;
 
     background: #ffffff;
     /* Gray04 */
@@ -794,7 +793,6 @@ export const WrapInputSelector = styled.div`
     padding-left: 10px;
   }
   @media only screen and (max-width: 1000px) {
-    background-color: #e5e5e5;
     width: 100%;
 
     input {
@@ -982,11 +980,11 @@ export const WrapOrderWindow = styled.div`
 `;
 export const SearchIcon = styled.div`
   position: absolute;
-  right: 10px;
+  right: 23px;
   top: 6px;
   width: 35px;
   height: 35px;
-  z-index: 45;
+  z-index: 0;
   color: #00425a;
   font-size: 26px;
   display: flex;
@@ -994,10 +992,10 @@ export const SearchIcon = styled.div`
   justify-content: center;
   @media only screen and (max-width: 1000px) {
     left: 225px;
-    top: 16px;
   }
   @media only screen and (max-width: 420px) {
-    left: 205px;
+    left: unset;
+    right: 70px;
   }
 `;
 export const OrdersIndex = styled.div`

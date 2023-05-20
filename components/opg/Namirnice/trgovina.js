@@ -84,7 +84,7 @@ const settings = {
       settings: {
         dots: true,
         infinite: true,
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 0,
@@ -101,10 +101,10 @@ const settings = {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3500,
-        cssEase: "cubic-bezier(.43,.39,.33,.94)",
+        autoplaySpeed: 0,
+        cssEase: "linear",
         className: "testimonialSlider",
-        speed: 1500,
+        speed: 3500,
       },
     },
   ],
@@ -123,6 +123,8 @@ function Trgovina() {
   const [free, setFree] = useState("Free");
   const [selected, setSelected] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [katClicked, setKatClicked] = useState(false);
+  const [current, setCurrent] = useState(null);
   const [logedIn, setlogedIn] = useState(null);
   const [kategorija, setKategorija] = useState("Sve");
   const [uniqueKategorija, setUniqueKategorija] = useState([]);
@@ -475,17 +477,61 @@ function Trgovina() {
   //   const retriveProducts = JSON.parse(localStorage.getItem("kosarica3"));
   //   if (retriveProducts.length != 0) setKosarica(retriveProducts);
   // }, []);
+  useEffect(() => {
+    // if (kategorija === "Sve") {
+    //   const filteredData = dataRaspolozivo;
+    // } else {
+    //   const filteredData = data.filter(
+    //     (dat) => dat.kategorija === kategorija && dat.free
+    //   );
+    // }
+    // setstate({
+    //   query: "",
+    //   list: filteredData,
+    // });
+    if (kategorija === "Sve") {
+      setstate({
+        query: "",
+        list: data,
+      });
+    } else {
+      const filteredData = data.filter(
+        (dat) => dat.kategorija === kategorija && dat.free
+      );
+      setstate({
+        query: "",
+        list: filteredData,
+      });
+    }
+  }, [kategorija]);
 
   const handleChange = (e) => {
-    const results = dataRaspolozivo.filter((post) => {
-      if (e.target.value === "") return data;
+    if (kategorija === "Sve") {
+      const results = dataRaspolozivo.filter((post) => {
+        if (e.target.value === "") return data;
 
-      return post.naziv.toLowerCase().includes(e.target.value.toLowerCase());
-    });
-    setstate({
-      query: e.target.value,
-      list: results,
-    });
+        return post.naziv.toLowerCase().includes(e.target.value.toLowerCase());
+      });
+      setstate({
+        query: e.target.value,
+        list: results,
+      });
+    } else {
+      const results = filteredData.filter((post) => {
+        if (e.target.value === "") return data;
+
+        return post.naziv.toLowerCase().includes(e.target.value.toLowerCase());
+      });
+      setstate({
+        query: e.target.value,
+        list: results,
+      });
+    }
+  };
+  const handleClickKat = (e, id) => {
+    setKatClicked(false);
+
+    current === id ? setCurrent(null) : setCurrent(id);
   };
 
   useEffect(() => {
@@ -493,9 +539,9 @@ function Trgovina() {
   }, [state.query]);
 
   const filteredData = data.filter(
-    (week) => week.kategorija === kategorija && week.free
+    (dat) => dat.kategorija === kategorija && dat.free
   );
-  const dataRaspolozivo = data.filter((week) => week.free);
+  const dataRaspolozivo = data.filter((dat) => dat.free);
   const dataFeatured = data.filter((product) => product.discount);
   useEffect(() => {
     setCartData(data.filter((item) => item.cartStanje > 0));
@@ -518,13 +564,13 @@ function Trgovina() {
     // console.log("Naruceno:", cartOrdered);
     setCheckoutScreen(true);
   };
-  useEffect(() => {
-    isQueryOpen &&
-      state.list.length > 0 &&
-      ((document.body.style.overflow = "overlay"),
-      (document.body.style.width = "100%"));
-    !isQueryOpen && (document.body.style.overflow = "unset");
-  }, [isQueryOpen]);
+  // useEffect(() => {
+  //   isQueryOpen &&
+  //     state.list.length > 0 &&
+  //     ((document.body.style.overflow = "overlay"),
+  //     (document.body.style.width = "100%"));
+  //   !isQueryOpen && (document.body.style.overflow = "unset");
+  // }, [isQueryOpen]);
 
   const handleResetNotification = () => {
     const newState = data.map((obj) => {
@@ -544,14 +590,7 @@ function Trgovina() {
   const handleOnChange = (opcija) => {
     setKategorija(opcija.value);
   };
-  // function scrollToTestDiv() {
-  //   const divElement = document.getElementById("namirnice");
-  //   divElement.scrollIntoView({
-  //     behavior: "smooth",
-  //     block: "nearest",
-  //     inline: "start",
-  //   });
-  // }
+
   const targetElement = useRef();
   const scrollingTop = (event) => {
     const elmnt = targetElement;
@@ -563,10 +602,10 @@ function Trgovina() {
   };
   return (
     <WrapSection id="booking" ref={ref}>
-      {isQueryOpen && state.list.length > 0 && <BlurOverlay />}
+      {/* {isQueryOpen && state.list.length > 0 && <BlurOverlay />} */}
       {size.width > 1000 ? (
         <WrapHeader>
-          <WrapInputSelector>
+          {/* <WrapInputSelector>
             <SearchIcon>
               <FiSearch />
             </SearchIcon>
@@ -607,8 +646,8 @@ function Trgovina() {
                 </Lista>
               </WrapLista>
             )}
-          </WrapInputSelector>
-          <Kategorije>
+          </WrapInputSelector> */}
+          {/* <Kategorije>
             <select
               name="Kategorija"
               type="select"
@@ -640,7 +679,7 @@ function Trgovina() {
                 Začinsko bilje i klice
               </option>
             </select>
-          </Kategorije>
+          </Kategorije> */}
           <PriceComponent
             price={suma}
             countOrders={kosaricaLength}
@@ -663,7 +702,7 @@ function Trgovina() {
               placeholder="Brzi odabir namirnice"
             />
 
-            {isQueryOpen && state.list.length > 0 && (
+            {/* {isQueryOpen && state.list.length > 0 && (
               <WrapLista>
                 <Lista style={{ color: "black" }} ref={refs}>
                   {state.query === ""
@@ -697,7 +736,7 @@ function Trgovina() {
                       ))}
                 </Lista>
               </WrapLista>
-            )}
+            )} */}
           </WrapInputSelector>
           <WrapHeaderMobile>
             <Kategorije style={{ width: "180px" }}>
@@ -818,7 +857,8 @@ function Trgovina() {
               length={length}
               discount={product.discount}
               discountAmount={product.discountAmount}
-              width="420px"
+              width="330px"
+              minwidth="430px"
               widthMobile="305px"
               backgroundColor="white"
               textColor="light"
@@ -838,17 +878,70 @@ function Trgovina() {
       <Legend />
       <Title>Kategorije</Title>
       <WrapKategorije>
-        {uniqueKategorija.map((kat) => (
+        <Kat
+          onClick={() => {
+            setKategorija("Sve");
+            setCurrent(10);
+          }}
+          className={current === 10 ? "activeKat" : ""}
+        >
+          Sve
+        </Kat>
+        {uniqueKategorija.map((kat, index) => (
           <Kat
-            onClick={() => {
+            onClick={(e) => {
+              handleClickKat(e, index);
               setKategorija(kat);
             }}
+            className={current === index ? "activeKat" : ""}
           >
             {kat}
           </Kat>
         ))}
       </WrapKategorije>
       {!isLoading && <Title2>Odaberi namirnice</Title2>}
+      <WrapInputSelector>
+        <SearchIcon>
+          <FiSearch />
+        </SearchIcon>
+        <input type="search" value={state.query} onChange={handleChange} />
+
+        {/* {isQueryOpen && state.list.length > 0 && (
+          <WrapLista>
+            <Lista style={{ color: "black" }} ref={refs}>
+              {state.query === ""
+                ? ""
+                : state.list.map((week) => (
+                    <Namirnica
+                      key={week.id}
+                      id={week.id}
+                      cijena={week.cijena}
+                      kategorija={week.kategorija}
+                      selected={selected}
+                      free={week.free}
+                      naziv={week.naziv}
+                      mjernaJedinica={week.mjernaJedinica}
+                      marked={week.selected}
+                      handleClick={() => handleClick(week.id)}
+                      handleMarker={() => handleMarker(week.id)}
+                      handleUpdateCart={handleUpdateCart}
+                      odabraneKolicine={odabraneKolicine}
+                      length={length}
+                      discount={week.discount}
+                      discountAmount={week.discountAmount}
+                      width="470px"
+                      cartStanje={week.cartStanje}
+                      height="170px"
+                      textColor="light"
+                      iconSize="small"
+                      partner={week.partner}
+                      foto={week.foto ? week.foto : null}
+                    />
+                  ))}
+            </Lista>
+          </WrapLista>
+        )} */}
+      </WrapInputSelector>
       {/* <SubTitle>Choose your dates and make reservation</SubTitle> */}
       {/* {size.width < 600 ? <Legend /> : ""} */}
       {isLoading ? (
@@ -864,8 +957,8 @@ function Trgovina() {
         </WrapLoader>
       ) : (
         <Wrap ref={targetElement}>
-          {kategorija === "Sve"
-            ? dataRaspolozivo.map((week) => (
+          {/* {kategorija === "Sve"
+            ? state.list.map((week) => (
                 <Namirnica
                   key={week.id}
                   id={week.id}
@@ -895,7 +988,7 @@ function Trgovina() {
                   prikazNapomene={true}
                 />
               ))
-            : filteredData.map((week) => (
+            : state.list.map((week) => (
                 <Namirnica
                   key={week.id}
                   id={week.id}
@@ -924,7 +1017,37 @@ function Trgovina() {
                   foto={week.foto ? week.foto : null}
                   prikazNapomene={true}
                 />
-              ))}
+              ))} */}
+          {state.list.map((week) => (
+            <Namirnica
+              key={week.id}
+              id={week.id}
+              cijena={week.cijena}
+              kategorija={week.kategorija}
+              setKategorija={setKategorija}
+              selected={selected}
+              free={week.free}
+              naziv={week.naziv}
+              mjernaJedinica={week.mjernaJedinica}
+              marked={week.selected}
+              handleClick={() => handleClick(week.id)}
+              handleMarker={() => handleMarker(week.id)}
+              odabraneKolicine={odabraneKolicine}
+              handleUpdateCart={handleUpdateCart}
+              length={length}
+              discount={week.discount}
+              discountAmount={week.discountAmount}
+              width="40%"
+              widthMobile="90%"
+              cartStanje={week.cartStanje}
+              height="170px"
+              iconSize="small"
+              partner={week.partner}
+              marginTop="0"
+              foto={week.foto ? week.foto : null}
+              prikazNapomene={true}
+            />
+          ))}
         </Wrap>
       )}
     </WrapSection>

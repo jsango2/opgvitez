@@ -34,6 +34,9 @@ html {
   font-size: 72px;
   line-height: 120%;
 }
+.activeKat {
+  background-color: #057426;
+}
 
 .H2 {
   font-style: normal;

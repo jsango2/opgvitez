@@ -415,6 +415,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   box-shadow: 0px 2.7141px 5.42821px rgba(28, 37, 44, 0.08);
   border-radius: 16.2846px;
 }
+.activeKat {
+  background-color: #0b8a31 !important;
+}
 .submitButton {
   background: #f9ff00 !important;
   /* Medium Drop */

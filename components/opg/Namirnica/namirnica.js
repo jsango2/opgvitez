@@ -61,6 +61,7 @@ const Namirnica = ({
   discountAmount,
   naziv,
   width,
+  minwidth,
   widthMobile,
   backgroundColor,
   textColor,
@@ -151,6 +152,7 @@ const Namirnica = ({
   return (
     <WeekWrap
       width={width}
+      minwidth={minwidth}
       isFree={free}
       marked={marked}
       onClick={() => {

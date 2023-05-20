@@ -488,13 +488,13 @@ function Header() {
     // console.log("Naruceno:", cartOrdered);
     setCheckoutScreen(true);
   };
-  useEffect(() => {
-    isQueryOpen &&
-      state.list.length > 0 &&
-      ((document.body.style.overflow = "overlay"),
-      (document.body.style.width = "100%"));
-    !isQueryOpen && (document.body.style.overflow = "unset");
-  }, [isQueryOpen]);
+  // useEffect(() => {
+  //   isQueryOpen &&
+  //     state.list.length > 0 &&
+  //     ((document.body.style.overflow = "overlay"),
+  //     (document.body.style.width = "100%"));
+  //   !isQueryOpen && (document.body.style.overflow = "unset");
+  // }, [isQueryOpen]);
 
   const handleResetNotification = () => {
     const newState = data.map((obj) => {
