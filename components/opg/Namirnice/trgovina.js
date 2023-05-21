@@ -848,44 +848,57 @@ function Trgovina() {
         <HomePage>Početna stranica</HomePage>
       </Link>
       {!isLoading && <Title>Posebna ponuda</Title>}
-      <WrapSlider>
-        <Slider {...settings}>
-          {dataFeatured.slice(0, 6).map((product) => (
-            <Namirnica
-              key={product.id}
-              id={product.id}
-              cijena={product.cijena}
-              // kategorija={product.kategorija}
-              selected={selected}
-              free={product.free}
-              naziv={product.naziv}
-              mjernaJedinica={product.mjernaJedinica}
-              marked={product.selected}
-              handleClick={() => handleClick(product.id)}
-              handleMarker={() => handleMarker(product.id)}
-              handleUpdateCart={handleUpdateCart}
-              odabraneKolicine={odabraneKolicine}
-              length={length}
-              discount={product.discount}
-              discountAmount={product.discountAmount}
-              width="330px"
-              minwidth="430px"
-              widthMobile="305px"
-              backgroundColor="white"
-              textColor="light"
-              cartStanje={product.cartStanje}
-              height="220px"
-              heightMobile="150px"
-              iconSize="small"
-              partner={product.partner}
-              marginTop="0px"
-              foto={product.foto ? product.foto : null}
-              prikazNapomene={false}
-              isSlider={true}
-            />
-          ))}
-        </Slider>
-      </WrapSlider>{" "}
+      {isLoading ? (
+        <WrapLoader>
+          <ClipLoader
+            color={color}
+            loading={isLoading}
+            size={150}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+          <LoaderText>Učitavam namirnice</LoaderText>
+        </WrapLoader>
+      ) : (
+        <WrapSlider>
+          <Slider {...settings}>
+            {dataFeatured.slice(0, 6).map((product) => (
+              <Namirnica
+                key={product.id}
+                id={product.id}
+                cijena={product.cijena}
+                // kategorija={product.kategorija}
+                selected={selected}
+                free={product.free}
+                naziv={product.naziv}
+                mjernaJedinica={product.mjernaJedinica}
+                marked={product.selected}
+                handleClick={() => handleClick(product.id)}
+                handleMarker={() => handleMarker(product.id)}
+                handleUpdateCart={handleUpdateCart}
+                odabraneKolicine={odabraneKolicine}
+                length={length}
+                discount={product.discount}
+                discountAmount={product.discountAmount}
+                width="330px"
+                minwidth="430px"
+                widthMobile="305px"
+                backgroundColor="white"
+                textColor="light"
+                cartStanje={product.cartStanje}
+                height="220px"
+                heightMobile="150px"
+                iconSize="small"
+                partner={product.partner}
+                marginTop="0px"
+                foto={product.foto ? product.foto : null}
+                prikazNapomene={false}
+                isSlider={true}
+              />
+            ))}
+          </Slider>
+        </WrapSlider>
+      )}
       <Legend />
       <Title>Kategorije</Title>
       <WrapKategorije>

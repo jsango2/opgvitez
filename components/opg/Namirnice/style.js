@@ -116,9 +116,11 @@ export const Kat = styled.div`
   border-radius: 5px;
   cursor: pointer;
   @media only screen and (max-width: 600px) {
-    margin: 5px 10px;
+    margin: 7px 10px;
   }
   @media only screen and (max-width: 420px) {
+    padding: 2px 8px;
+    font-size: 12px;
   }
 `;
 export const WrapSection = styled.div`
@@ -1579,11 +1581,11 @@ export const Amount = styled.h2`
 `;
 
 export const WrapLoader = styled.div`
-  position: absolute;
+  position: relative;
   top: 140%;
   z-index: 50;
   width: 250px;
-  height: 250px;
+  height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1601,15 +1603,15 @@ export const LoaderText = styled.div`
   position: absolute;
   top: calc (40% - 50px);
   z-index: 50;
-  width: 250px;
-  height: 250px;
+  width: 100px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   color: #093b69;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 14px;
   text-align: center;
   @media only screen and (max-width: 500px) {
   }
