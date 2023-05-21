@@ -18,6 +18,26 @@ export const Wrap = styled.div`
   @media only screen and (max-width: 420px) {
   }
 `;
+export const WrapHeader = styled.div`
+  padding-top: 20px;
+  left: 0;
+  position: fixed;
+  z-index: 70;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  overflow: hidden;
+  width: 100%;
+  padding: 0 10%;
+
+  box-shadow: 0px 5px 9px rgba(28, 37, 44, 0.18);
+
+  @media only screen and (max-width: 600px) {
+  }
+  @media only screen and (max-width: 420px) {
+  }
+`;
 export const WrapPrice = styled.div`
   position: relative;
   z-index: 5;
@@ -548,7 +568,7 @@ export const ButtonsWrap = styled.div`
   display: flex;
   position: relative;
   width: 300px;
-
+  justify-content: center;
   margin: 30px auto 0 auto;
 
   @media only screen and (max-width: 600px) {

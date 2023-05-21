@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { NamirnicaWrap, Price, Namirnica } from "./style.js";
+import { NamirnicaWrap, Price, Namirnica, Namirnica2 } from "./style.js";
 // import HeroVideo from "../../video/kraciVideo.mp4";
 import Image from "next/image";
 import Diskont from "../../Namirnica/diskont.js";
@@ -12,7 +12,6 @@ const Week = ({
   free,
   handleClick,
   id,
-  //   handleSelect,
   checkHandler,
   mjernaJedinica,
   handleMarker,
@@ -58,7 +57,7 @@ const Week = ({
         <Namirnica>/{mjernaJedinica} </Namirnica>
       </div>
       <div>
-        <Namirnica>{kategorija}</Namirnica>
+        <Namirnica2>{kategorija}</Namirnica2>
       </div>
       {discount && <Diskont discountAmount={discountAmount} />}
     </NamirnicaWrap>

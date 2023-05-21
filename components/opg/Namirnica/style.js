@@ -54,14 +54,17 @@ export const Naziv = styled.h3`
   line-height: 100%;
   /* or 19px */
   margin-bottom: 5px;
-  text-align: center;
+  text-align: left;
+  max-width: 180px;
 
   /* Gray 6 */
 
   color: #f2f2f2;
   @media only screen and (max-width: 600px) {
   }
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 430px) {
+    text-align: left;
+    max-width: 150px;
     font-size: 17px;
   }
 `;
@@ -251,12 +254,12 @@ export const DiskontWrap = styled.div`
 
   z-index: 3;
 
-  top: ${(props) => (props.isInBasket ? "0px" : "8px")};
+  top: ${(props) => (props.isInBasket ? "0px" : "3px")};
   right: ${(props) => (props.isInBasket ? "0px" : "8px")};
   font-size: ${(props) => (props.isInBasket ? "16px" : "28px")};
 
-  width: ${(props) => (props.isInBasket ? "25px" : "35px")};
-  height: ${(props) => (props.isInBasket ? "25px" : "35px")};
+  width: ${(props) => (props.isInBasket ? "25px" : "25px")};
+  height: ${(props) => (props.isInBasket ? "25px" : "25px")};
   margin-left: ${(props) => (props.isInBasket ? "3px" : "0px")};
   border-radius: 4px;
   /* border: 1px solid white; */
@@ -469,7 +472,7 @@ export const NasProizvod = styled.div`
   margin-left: ${(props) => (props.isInBasket ? "3px" : "0px")};
 
   right: 20px;
-  top: ${(props) => (props.isSlider ? "10px" : "40px")};
+  top: ${(props) => (props.isSlider ? "10px" : "46px")};
 
   font-weight: 700;
   cursor: pointer;
@@ -520,6 +523,7 @@ export const Kategorija = styled.div`
   z-index: 3;
   margin-left: 0px;
   right: 20px;
+  max-width: 77px;
   top: 13px;
   font-weight: 700;
   color: white;

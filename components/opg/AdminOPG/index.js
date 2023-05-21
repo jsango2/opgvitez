@@ -34,6 +34,7 @@ import {
   WrapTwo,
   SingleInputSelect,
   ButtonsWrap,
+  WrapHeader,
 } from "./style.js";
 import PriceComponent from "./priceComponent";
 import { CloseX } from "../Namirnice/reservationModal/style";
@@ -53,7 +54,6 @@ import {
   Kategorije,
   Lista,
   SearchIcon,
-  WrapHeader,
   WrapInputSelector,
   WrapLista,
 } from "../Namirnice/style";
@@ -606,6 +606,9 @@ function Proizvodi({ handleLogOut, userEmail }) {
                   <option value="Začinsko bilje i klice">
                     Začinsko bilje i klice
                   </option>
+                  <option value="Grahovice i mahunarke">
+                    Grahovice i mahunarke
+                  </option>
                 </select>
               </SingleInputSelect>
               <SingleInputSelect>
@@ -733,9 +736,12 @@ function Proizvodi({ handleLogOut, userEmail }) {
                   objectFit="cover"
                 />
               </WrapImageInEditor>
-              <div className="wrapButtonsForm">
-                <button type="submit">Save</button>
-              </div>
+              <ButtonsWrap>
+                <Button type="submit" text="Spremi"></Button>
+              </ButtonsWrap>
+              {/* <div className="wrapButtonsForm">
+                <button >Save</button>
+              </div> */}
             </form>
           </PopupForm>
         )}
@@ -811,6 +817,9 @@ function Proizvodi({ handleLogOut, userEmail }) {
                     </option>
                     <option value="Začinsko bilje i klice">
                       Začinsko bilje i klice
+                    </option>
+                    <option value="Grahovice i mahunarke">
+                      Grahovice i mahunarke
                     </option>
                   </select>
                 </SingleInputSelect>
