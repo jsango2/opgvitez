@@ -55,7 +55,7 @@ export const Naziv = styled.h3`
   /* or 19px */
   margin-bottom: 5px;
   text-align: left;
-  max-width: 180px;
+  max-width: 155px;
 
   /* Gray 6 */
 
@@ -523,16 +523,18 @@ export const Kategorija = styled.div`
   z-index: 3;
   margin-left: 0px;
   right: 20px;
-  max-width: 77px;
+  max-width: 100px;
+  /* min-width: 70px; */
+  /* width: 89px; */
   top: 13px;
   font-weight: 700;
   color: white;
   background-color: #fe9920;
   border-radius: 5px;
-  padding: 3px 8px;
-  font-size: 10px;
-
+  padding: 3px 9px;
+  font-size: 9px;
   cursor: pointer;
+  text-align: center;
   @media only screen and (max-width: 600px) {
   }
   @media only screen and (max-width: 420px) {

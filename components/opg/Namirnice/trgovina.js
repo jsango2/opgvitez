@@ -126,7 +126,7 @@ function Trgovina() {
   const [katClicked, setKatClicked] = useState(false);
   const [current, setCurrent] = useState(10);
   const [logedIn, setlogedIn] = useState(null);
-  const [kategorija, setKategorija] = useState("Sve");
+  const [kategorija, setKategorija] = useState("Povrće");
   const [uniqueKategorija, setUniqueKategorija] = useState([]);
   const [napomenaCart, setNapomenaCart] = useState("");
   const [odabraneKolicine, setOdabraneKolicine] = useState(0);
@@ -186,16 +186,6 @@ function Trgovina() {
   // od 60 min onda je novi refresh svega----
 
   useEffect(() => {
-    // var now = new Date().getTime();
-    // if (localStorage.getItem("Cart Data OPG Vitez")) {
-    //   var localStorageState = JSON.parse(
-    //     localStorage.getItem("Cart Data OPG Vitez")
-    //   );
-    //   var localStorageDate = localStorageState.time;
-    //   var localStorageData = localStorageState.cart;
-    //   var timePassedStorageAndNow = (now - localStorageDate) / (1000 * 60);
-    // }
-
     let podaci = [];
     const getNotes = () => {
       getDocs(dbInstance4).then((data) => {
@@ -206,53 +196,72 @@ function Trgovina() {
         });
         setData(podaci);
         setUniqueKategorija(existingCategories(podaci));
+        const filteredData = podaci.filter(
+          (dat) => dat.kategorija === "Povrće" && dat.free
+        );
         setstate({
           query: "",
-          list: podaci,
+          list: filteredData,
         });
       });
     };
 
-    // if (localStorageState.length != 0 && timePassedStorageAndNow < 60) {
-    //   setCartData(localStorageData);
-    //   // getNotes();
-    //   // setIsLoading(false);
-    //   console.log("LSD", localStorageData);
-    // } else {
-    //   getNotes();
-    // }
     getNotes();
   }, []);
 
-  // ________
+  useEffect(() => {
+    let sum = 0;
+    cartData.map((object) => {
+      if (object.cartStanje > 0) {
+        sum = sum + object.cartStanje * object.cijena;
+      }
+    });
+    setSuma(sum);
 
-  // (function () {
-  //   const generateId = () => Math.random().toString(36).substr(2, 18);
-  //   const setUserClientId = async () => {
-  //     return localStorage.setItem("clientId", generateId());
-  //   };
-  //   const getUserClientId = () => {
-  //     return localStorage.getItem("clientId");
-  //   };
-  //   const cleanUserClientId = () => {
-  //     localStorage.removeItem("clientId");
-  //   };
-  // })();
+    setKosaricaLength(cartData.length);
+    if (cartData.length === 0) {
+      setKosaricaIsOpen(false);
+    }
+  }, [cartData]);
 
-  // useEffect(() => {
-  //   const generateId = () => Math.random().toString(36).substr(2, 18);
-  //   localStorage.setItem("clientId", generateId());
-  //   console.log("storage ID", localStorage.getItem("clientId"));
-  // }, []);
+  useEffect(() => {
+    // if (kategorija === "Sve") {
+    //   const filteredData = dataRaspolozivo;
+    // } else {
+    //   const filteredData = data.filter(
+    //     (dat) => dat.kategorija === kategorija && dat.free
+    //   );
+    // }
+    // setstate({
+    //   query: "",
+    //   list: filteredData,
+    // });
+    // if (kategorija === "Sve") {
+    //   setstate({
+    //     query: "",
+    //     list: data,
+    //   });
+    // } else {
+    const filteredData = data.filter(
+      (dat) => dat.kategorija === kategorija && dat.free
+    );
+    setstate({
+      query: "",
+      list: filteredData,
+    });
+    // }
+  }, [kategorija]);
 
-  // ----
+  useEffect(() => {
+    state.query.length > 0 ? setIsQueryOpen(true) : setIsQueryOpen(false);
+  }, [state.query]);
+
+  useEffect(() => {
+    setCartData(data.filter((item) => item.cartStanje > 0));
+  }, [data]);
 
   const handleClick = (id) => {
     setIsOpen(true);
-    const docRef = doc(dbInstance4, id);
-    getDoc(docRef).then((doc) => {
-      setCijena(doc.data().cijena);
-    });
   };
   const handleAddItemAMount = (id, cartStanje) => {
     var now = new Date().getTime();
@@ -278,11 +287,6 @@ function Trgovina() {
     const newState2 = newState.filter((obj) => obj.cartStanje > 0);
     setData(newState);
     setCartData(newState2);
-
-    // localStorage.setItem(
-    //   "Cart Data OPG Vitez",
-    //   JSON.stringify({ cart: newState, time: now })
-    // );
   };
   const handleIsOpenKosarica = (query) => {
     if (query === false) {
@@ -345,18 +349,6 @@ function Trgovina() {
     // );
   };
 
-  //zbroji eure svih tjedana
-
-  // useEffect(() => {
-  //   let sum = 0;
-  //   data.map((object) => {
-  //     if (object.selected === true) {
-  //       sum = sum + object.cijena;
-  //     }
-  //   });
-  //   setSuma(sum);
-  // }, [data]);
-  //idi kroz array nakon svakog klika tjedna i promjeni state selected u true
   const handleKolicine = (kol) => {
     console.log("kolicine:", kol);
   };
@@ -367,11 +359,6 @@ function Trgovina() {
       setKosaricaIsOpen(!kosaricaIsOpen);
     }
   };
-  useEffect(() => {
-    if (cartData.length === 0) {
-      setKosaricaIsOpen(false);
-    }
-  }, [cartData]);
 
   const handleUpdateCart = (id, kolicina, cartStanje, napomena) => {
     var now = new Date().getTime();
@@ -395,10 +382,8 @@ function Trgovina() {
       // 👇️ otherwise return object as is
       return obj;
     });
-    // console.log("new state", newState);
     let cartDataFilter = newState.filter((item) => item.cartStanje > 0);
-    // setCartData(cartDataFilter);
-    // console.log("updated on ad to basket", cartDataFilter);
+
     setData(newState);
     // localStorage.setItem(
     //   "Cart Data OPG Vitez",
@@ -406,17 +391,6 @@ function Trgovina() {
     // );
     setCartData(cartDataFilter);
   };
-  useEffect(() => {
-    let sum = 0;
-    cartData.map((object) => {
-      if (object.cartStanje > 0) {
-        sum = sum + object.cartStanje * object.cijena;
-      }
-    });
-    setSuma(sum);
-
-    setKosaricaLength(cartData.length);
-  }, [cartData]);
 
   const handleNapomenaCartUpdateCart = (id, napomena) => {
     var now = new Date().getTime();
@@ -450,71 +424,6 @@ function Trgovina() {
     setCartData(cartDataFilter);
     console.log("Data nakon dodane napomene", data);
   };
-  useEffect(() => {
-    let sum = 0;
-    cartData.map((object) => {
-      if (object.cartStanje > 0) {
-        sum = sum + object.cartStanje * object.cijena;
-      }
-    });
-    setSuma(sum);
-
-    setKosaricaLength(cartData.length);
-  }, [cartData]);
-
-  // useEffect(() => {
-  //   const purchasedItems = data.filter((item) => item.kolicina > 0);
-  //   setKosarica(purchasedItems);
-  //   if (purchasedItems.length != 0) {
-  //     localStorage.setItem("kosarica3", JSON.stringify(purchasedItems));
-  //   }
-  // }, [data]);
-  // useEffect(() => {
-  //   const purchasedItems = kosarica.filter((item) => item.kolicina > 0);
-  //   setKosarica(purchasedItems);
-  //   if (purchasedItems.length != 0) {
-  //     localStorage.setItem("kosarica3", JSON.stringify(purchasedItems));
-  //   }
-  // }, [kosarica]);
-
-  // useEffect(() => {
-  //   const retriveProducts = JSON.parse(localStorage.getItem("kosarica3"));
-  //   if (retriveProducts.length != 0) setKosarica(retriveProducts);
-  // }, []);
-  useEffect(() => {
-    // if (kategorija === "Sve") {
-    //   const filteredData = dataRaspolozivo;
-    // } else {
-    //   const filteredData = data.filter(
-    //     (dat) => dat.kategorija === kategorija && dat.free
-    //   );
-    // }
-    // setstate({
-    //   query: "",
-    //   list: filteredData,
-    // });
-    if (kategorija === "Sve") {
-      setstate({
-        query: "",
-        list: data,
-      });
-    } else {
-      const filteredData = data.filter(
-        (dat) => dat.kategorija === kategorija && dat.free
-      );
-      setstate({
-        query: "",
-        list: filteredData,
-      });
-    }
-  }, [kategorija]);
-
-  // useEffect(() => {
-  //   setstate({
-  //     query: "",
-  //     list: data,
-  //   });
-  // }, []);
 
   const handleChange = (e) => {
     if (kategorija === "Sve") {
@@ -545,18 +454,11 @@ function Trgovina() {
     current === id ? setCurrent(null) : setCurrent(id);
   };
 
-  useEffect(() => {
-    state.query.length > 0 ? setIsQueryOpen(true) : setIsQueryOpen(false);
-  }, [state.query]);
-
-  const filteredData = data.filter(
-    (dat) => dat.kategorija === kategorija && dat.free
-  );
+  // const filteredData = data.filter(
+  //   (dat) => dat.kategorija === kategorija && dat.free
+  // );
   const dataRaspolozivo = data.filter((dat) => dat.free);
   const dataFeatured = data.filter((product) => product.discount);
-  useEffect(() => {
-    setCartData(data.filter((item) => item.cartStanje > 0));
-  }, [data]);
 
   const handleOrder = () => {
     // const newState = data.map((obj) => {
@@ -575,13 +477,6 @@ function Trgovina() {
     // console.log("Naruceno:", cartOrdered);
     setCheckoutScreen(true);
   };
-  // useEffect(() => {
-  //   isQueryOpen &&
-  //     state.list.length > 0 &&
-  //     ((document.body.style.overflow = "overlay"),
-  //     (document.body.style.width = "100%"));
-  //   !isQueryOpen && (document.body.style.overflow = "unset");
-  // }, [isQueryOpen]);
 
   const handleResetNotification = () => {
     const newState = data.map((obj) => {
@@ -902,7 +797,7 @@ function Trgovina() {
       <Legend />
       <Title>Kategorije</Title>
       <WrapKategorije>
-        <Kat
+        {/* <Kat
           onClick={() => {
             setKategorija("Sve");
             setCurrent(10);
@@ -910,7 +805,7 @@ function Trgovina() {
           className={current === 10 ? "activeKat" : ""}
         >
           Sve
-        </Kat>
+        </Kat> */}
         {uniqueKategorija.map((kat, index) => (
           <Kat
             onClick={(e) => {
