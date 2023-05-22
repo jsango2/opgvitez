@@ -12,6 +12,9 @@ import ClipLoader from "react-spinners/ClipLoader";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+
+// import Paginate from "./paginate";
+import ReactPaginate from "react-paginate";
 import {
   Wrap,
   Lista,
@@ -135,6 +138,14 @@ function Trgovina() {
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
   let [color, setColor] = useState("#093b69");
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
+
+  // ...
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+
   const dbInstance4 = collection(database, "Charter3");
   const [state, setstate] = useState({
     query: "",
@@ -198,6 +209,15 @@ function Trgovina() {
 
     getNotes();
   }, []);
+
+  const currentListPaginated = state.list.slice(
+    indexOfFirstPost,
+    indexOfLastPost
+  );
+  console.log(currentListPaginated);
+  const paginate = ({ selected }) => {
+    setCurrentPage(selected + 1);
+  };
 
   useEffect(() => {
     let sum = 0;
@@ -821,6 +841,24 @@ function Trgovina() {
       </WrapInputSelector>
       {/* <SubTitle>Choose your dates and make reservation</SubTitle> */}
       {/* {size.width < 600 ? <Legend /> : ""} */}
+      <ReactPaginate
+        activeClassName={"item active "}
+        breakClassName={"item break-me "}
+        breakLabel={"..."}
+        containerClassName={"pagination"}
+        disabledClassName={"disabled-page"}
+        onPageChange={paginate}
+        pageCount={Math.ceil(state.list.length / postsPerPage)}
+        previousLabel={"Prethodna"}
+        nextLabel={"Sljedeća"}
+        nextClassName={"item next "}
+        pageClassName={"item pagination-page "}
+        pageLinkClassName={"page-number"}
+        previousLinkClassName={"page-number"}
+        nextLinkClassName={"page-number"}
+        activeLinkClassName={"active"}
+        previousClassName={"item previous"}
+      />
       {isLoading ? (
         <WrapLoader>
           <ClipLoader
@@ -896,7 +934,7 @@ function Trgovina() {
                 />
               ))} */}
 
-          {state.list.map((week) => (
+          {currentListPaginated.map((week) => (
             <Namirnica
               key={week.id}
               id={week.id}
@@ -928,6 +966,36 @@ function Trgovina() {
           ))}
         </Wrap>
       )}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: 20,
+          boxSizing: "border-box",
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <ReactPaginate
+          activeClassName={"item active "}
+          breakClassName={"item break-me "}
+          breakLabel={"..."}
+          containerClassName={"pagination"}
+          disabledClassName={"disabled-page"}
+          onPageChange={paginate}
+          pageCount={Math.ceil(state.list.length / postsPerPage)}
+          previousLabel={"Prethodna"}
+          nextLabel={"Sljedeća"}
+          nextClassName={"item next "}
+          pageClassName={"item pagination-page "}
+          pageLinkClassName={"page-number"}
+          previousLinkClassName={"page-number"}
+          nextLinkClassName={"page-number"}
+          activeLinkClassName={"active"}
+          previousClassName={"item previous"}
+        />
+      </div>
     </WrapSection>
   );
 }

@@ -16,6 +16,7 @@ export const Wrap = styled.div`
   @media only screen and (max-width: 850px) {
     width: 97%;
     overflow: hidden;
+    margin: 10px auto 0 auto;
   }
   @media only screen and (max-width: 420px) {
   }

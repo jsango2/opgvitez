@@ -30,6 +30,7 @@
     "react-image-lightbox": "^5.1.4",
     "react-image-lightbox-next": "^4.3.0",
     "react-intersection-observer": "^8.33.1",
+    "react-paginate": "^8.2.0",
     "react-responsive-carousel": "^3.2.23",
     "react-scroll-percentage": "^4.2.0",
     "react-select": "^5.7.0",
