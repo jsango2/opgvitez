@@ -114,13 +114,10 @@ function Trgovina() {
   const size = useWindowSize();
   const [data, setData] = useState([]);
   const [cartData, setCartData] = useState([]);
-  const [selectedWeeks, setSelectedWeeks] = useState([]);
   const [suma, setSuma] = useState(0);
   const [length, setLength] = useState(0);
-  const [datum, setDatum] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [cijena, setCijena] = useState(0);
-  const [free, setFree] = useState("Free");
+
   const [selected, setSelected] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [katClicked, setKatClicked] = useState(false);
@@ -130,8 +127,7 @@ function Trgovina() {
   const [uniqueKategorija, setUniqueKategorija] = useState([]);
   const [napomenaCart, setNapomenaCart] = useState("");
   const [odabraneKolicine, setOdabraneKolicine] = useState(0);
-  const [kosarica, setKosarica] = useState([]);
-  const [kosaricaLS, setKosaricaLS] = useState([]);
+
   const [kosaricaIsOpen, setKosaricaIsOpen] = useState(false);
   const [isQueryOpen, setIsQueryOpen] = useState(false);
   const [kosaricaLength, setKosaricaLength] = useState(0);
@@ -139,13 +135,7 @@ function Trgovina() {
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
   let [color, setColor] = useState("#093b69");
 
-  // const dbInstance = collection(database, "Charter2");
-  // const dbInstance2 = collection(database, "Charter2");
-  // const dbInstance3 = collection(database, "Charter2");
   const dbInstance4 = collection(database, "Charter3");
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(null);
-  const [query, setquery] = useState("");
   const [state, setstate] = useState({
     query: "",
     list: [],
@@ -256,9 +246,9 @@ function Trgovina() {
     state.query.length > 0 ? setIsQueryOpen(true) : setIsQueryOpen(false);
   }, [state.query]);
 
-  useEffect(() => {
-    setCartData(data.filter((item) => item.cartStanje > 0));
-  }, [data]);
+  // useEffect(() => {
+  //   setCartData(data.filter((item) => item.cartStanje > 0));
+  // }, [data]);
 
   const handleClick = (id) => {
     setIsOpen(true);
@@ -312,13 +302,9 @@ function Trgovina() {
     });
 
     const newState2 = newState.filter((obj) => obj.cartStanje > 0);
-    // setCartData(newState2);
+
     setData(newState);
     setCartData(newState2);
-    // localStorage.setItem(
-    //   "Cart Data OPG Vitez",
-    //   JSON.stringify({ cart: newState2, time: now })
-    // );
   };
 
   const handleRemoveAllItems = (id) => {
@@ -337,16 +323,9 @@ function Trgovina() {
       return obj;
     });
 
-    // const newState2 = newState.filter((obj) => obj.kolicina > 0);
-
     const newState2 = newState.filter((obj) => obj.cartStanje > 0);
     setData(newState);
     setCartData(newState2);
-    // setCartData(newState2);
-    // localStorage.setItem(
-    //   "Cart Data OPG Vitez",
-    //   JSON.stringify({ cart: newState2, time: now })
-    // );
   };
 
   const handleKolicine = (kol) => {
@@ -362,13 +341,7 @@ function Trgovina() {
 
   const handleUpdateCart = (id, kolicina, cartStanje, napomena) => {
     var now = new Date().getTime();
-    // if (localStorage.getItem("Cart Data OPG Vitez") != undefined) {
-    //   var localStorageState = JSON.parse(
-    //     localStorage.getItem("Cart Data OPG Vitez")
-    //   );
-    //   var localStorageDate = localStorageState.time;
-    //   var localStorageData = localStorageState.newState;
-    // }
+
     const newState = data.map((obj) => {
       // 👇️ if id equals 2, update country property
       if (obj.id === id) {
@@ -385,22 +358,13 @@ function Trgovina() {
     let cartDataFilter = newState.filter((item) => item.cartStanje > 0);
 
     setData(newState);
-    // localStorage.setItem(
-    //   "Cart Data OPG Vitez",
-    //   JSON.stringify({ cart: cartDataFilter, time: now })
-    // );
+
     setCartData(cartDataFilter);
   };
 
   const handleNapomenaCartUpdateCart = (id, napomena) => {
     var now = new Date().getTime();
-    // if (localStorage.getItem("Cart Data OPG Vitez") != undefined) {
-    //   var localStorageState = JSON.parse(
-    //     localStorage.getItem("Cart Data OPG Vitez")
-    //   );
-    //   var localStorageDate = localStorageState.time;
-    //   var localStorageData = localStorageState.newState;
-    // }
+
     const newState = data.map((obj) => {
       // 👇️ if id equals 2, update country property
       if (obj.id === id) {
@@ -412,15 +376,9 @@ function Trgovina() {
       // 👇️ otherwise return object as is
       return obj;
     });
-    // console.log("new state", newState);
     let cartDataFilter = newState.filter((item) => item.cartStanje > 0);
-    // setCartData(cartDataFilter);
-    // console.log("updated on ad to basket", cartDataFilter);
     setData(newState);
-    // localStorage.setItem(
-    //   "Cart Data OPG Vitez",
-    //   JSON.stringify({ cart: cartDataFilter, time: now })
-    // );
+
     setCartData(cartDataFilter);
     console.log("Data nakon dodane napomene", data);
   };
