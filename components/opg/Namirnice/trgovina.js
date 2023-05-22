@@ -384,27 +384,27 @@ function Trgovina() {
   };
 
   const handleChange = (e) => {
-    if (kategorija === "Sve") {
-      const results = dataRaspolozivo.filter((post) => {
-        if (e.target.value === "") return data;
+    // if (kategorija === "Sve") {
+    //   const results = dataRaspolozivo.filter((post) => {
+    //     if (e.target.value === "") return data;
 
-        return post.naziv.toLowerCase().includes(e.target.value.toLowerCase());
-      });
-      setstate({
-        query: e.target.value,
-        list: results,
-      });
-    } else {
-      const results = filteredData.filter((post) => {
-        if (e.target.value === "") return data;
+    //     return post.naziv.toLowerCase().includes(e.target.value.toLowerCase());
+    //   });
+    //   setstate({
+    //     query: e.target.value,
+    //     list: results,
+    //   });
+    // } else {
+    const results = dataRaspolozivo.filter((post) => {
+      if (e.target.value === "") return data;
 
-        return post.naziv.toLowerCase().includes(e.target.value.toLowerCase());
-      });
-      setstate({
-        query: e.target.value,
-        list: results,
-      });
-    }
+      return post.naziv.toLowerCase().includes(e.target.value.toLowerCase());
+    });
+    setstate({
+      query: e.target.value,
+      list: results,
+    });
+    // }
   };
   const handleClickKat = (e, id) => {
     setKatClicked(false);
