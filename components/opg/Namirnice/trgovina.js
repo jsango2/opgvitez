@@ -214,7 +214,6 @@ function Trgovina() {
     indexOfFirstPost,
     indexOfLastPost
   );
-  console.log(currentListPaginated);
   const paginate = ({ selected }) => {
     setCurrentPage(selected + 1);
   };
@@ -841,24 +840,7 @@ function Trgovina() {
       </WrapInputSelector>
       {/* <SubTitle>Choose your dates and make reservation</SubTitle> */}
       {/* {size.width < 600 ? <Legend /> : ""} */}
-      <ReactPaginate
-        activeClassName={"item active "}
-        breakClassName={"item break-me "}
-        breakLabel={"..."}
-        containerClassName={"pagination"}
-        disabledClassName={"disabled-page"}
-        onPageChange={paginate}
-        pageCount={Math.ceil(state.list.length / postsPerPage)}
-        previousLabel={"Prethodna"}
-        nextLabel={"Sljedeća"}
-        nextClassName={"item next "}
-        pageClassName={"item pagination-page "}
-        pageLinkClassName={"page-number"}
-        previousLinkClassName={"page-number"}
-        nextLinkClassName={"page-number"}
-        activeLinkClassName={"active"}
-        previousClassName={"item previous"}
-      />
+
       {isLoading ? (
         <WrapLoader>
           <ClipLoader
@@ -966,7 +948,7 @@ function Trgovina() {
           ))}
         </Wrap>
       )}
-      >
+
       <ReactPaginate
         activeClassName={"item active "}
         breakClassName={"item break-me "}
