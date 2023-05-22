@@ -966,36 +966,25 @@ function Trgovina() {
           ))}
         </Wrap>
       )}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          padding: 20,
-          boxSizing: "border-box",
-          width: "100%",
-          height: "100%",
-        }}
       >
-        <ReactPaginate
-          activeClassName={"item active "}
-          breakClassName={"item break-me "}
-          breakLabel={"..."}
-          containerClassName={"pagination"}
-          disabledClassName={"disabled-page"}
-          onPageChange={paginate}
-          pageCount={Math.ceil(state.list.length / postsPerPage)}
-          previousLabel={"Prethodna"}
-          nextLabel={"Sljedeća"}
-          nextClassName={"item next "}
-          pageClassName={"item pagination-page "}
-          pageLinkClassName={"page-number"}
-          previousLinkClassName={"page-number"}
-          nextLinkClassName={"page-number"}
-          activeLinkClassName={"active"}
-          previousClassName={"item previous"}
-        />
-      </div>
+      <ReactPaginate
+        activeClassName={"item active "}
+        breakClassName={"item break-me "}
+        breakLabel={"..."}
+        containerClassName={"pagination"}
+        disabledClassName={"disabled-page"}
+        onPageChange={paginate}
+        pageCount={Math.ceil(state.list.length / postsPerPage)}
+        previousLabel={"Prethodna"}
+        nextLabel={"Sljedeća"}
+        nextClassName={"item next "}
+        pageClassName={"item pagination-page "}
+        pageLinkClassName={"page-number"}
+        previousLinkClassName={"page-number"}
+        nextLinkClassName={"page-number"}
+        activeLinkClassName={"active"}
+        previousClassName={"item previous"}
+      />
     </WrapSection>
   );
 }
