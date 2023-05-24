@@ -124,7 +124,7 @@ function Trgovina() {
   const [selected, setSelected] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [katClicked, setKatClicked] = useState(false);
-  const [current, setCurrent] = useState(10);
+  const [current, setCurrent] = useState(null);
   const [logedIn, setlogedIn] = useState(null);
   const [kategorija, setKategorija] = useState("Povrće");
   const [uniqueKategorija, setUniqueKategorija] = useState([]);
@@ -197,17 +197,15 @@ function Trgovina() {
         });
         setData(podaci);
         setUniqueKategorija(existingCategories(podaci));
-        const filteredData = podaci.filter(
-          (dat) => dat.kategorija === "Povrće" && dat.free
-        );
         setstate({
           query: "",
-          list: filteredData,
+          list: podaci.filter((dat) => dat.kategorija === "Povrće" && dat.free),
         });
       });
     };
 
     getNotes();
+    setCurrent(0);
   }, []);
 
   const currentListPaginated = state.list.slice(
@@ -233,33 +231,33 @@ function Trgovina() {
     }
   }, [cartData]);
 
-  useEffect(() => {
-    // if (kategorija === "Sve") {
-    //   const filteredData = dataRaspolozivo;
-    // } else {
-    //   const filteredData = data.filter(
-    //     (dat) => dat.kategorija === kategorija && dat.free
-    //   );
-    // }
-    // setstate({
-    //   query: "",
-    //   list: filteredData,
-    // });
-    // if (kategorija === "Sve") {
-    //   setstate({
-    //     query: "",
-    //     list: data,
-    //   });
-    // } else {
-    const filteredData = data.filter(
-      (dat) => dat.kategorija === kategorija && dat.free
-    );
-    setstate({
-      query: "",
-      list: filteredData,
-    });
-    // }
-  }, [kategorija]);
+  // useEffect(() => {
+  //   // if (kategorija === "Sve") {
+  //   //   const filteredData = dataRaspolozivo;
+  //   // } else {
+  //   //   const filteredData = data.filter(
+  //   //     (dat) => dat.kategorija === kategorija && dat.free
+  //   //   );
+  //   // }
+  //   // setstate({
+  //   //   query: "",
+  //   //   list: filteredData,
+  //   // });
+  //   // if (kategorija === "Sve") {
+  //   //   setstate({
+  //   //     query: "",
+  //   //     list: data,
+  //   //   });
+  //   // } else {
+  //   const filteredData = data.filter(
+  //     (dat) => dat.kategorija === kategorija && dat.free
+  //   );
+  //   setstate({
+  //     query: "",
+  //     list: filteredData,
+  //   });
+  //   // }
+  // }, [kategorija]);
 
   useEffect(() => {
     state.query.length > 0 ? setIsQueryOpen(true) : setIsQueryOpen(false);
@@ -425,8 +423,16 @@ function Trgovina() {
     });
     // }
   };
-  const handleClickKat = (e, id) => {
+  const handleClickKat = (e, kat, id) => {
     setKatClicked(false);
+
+    const filteredData = data.filter(
+      (dat) => dat.kategorija === kat && dat.free
+    );
+    setstate({
+      query: "",
+      list: filteredData,
+    });
 
     current === id ? setCurrent(null) : setCurrent(id);
   };
@@ -622,7 +628,7 @@ function Trgovina() {
             )} */}
           </WrapInputSelector>
           <WrapHeaderMobile>
-            <Kategorije style={{ width: "180px" }}>
+            {/* <Kategorije style={{ width: "180px" }}>
               <div onClick={scrollingTop}>
                 <select
                   name="Kategorija"
@@ -658,7 +664,7 @@ function Trgovina() {
                   </option>
                 </select>
               </div>
-            </Kategorije>
+            </Kategorije> */}
             <SearchIcon onClick={() => setIsSearchBarOpen((prev) => !prev)}>
               <FiSearch />
             </SearchIcon>
@@ -786,8 +792,8 @@ function Trgovina() {
         {uniqueKategorija.map((kat, index) => (
           <Kat
             onClick={(e) => {
-              handleClickKat(e, index);
-              setKategorija(kat);
+              handleClickKat(e, kat, index);
+              // setKategorija(kat);
             }}
             className={current === index ? "activeKat" : ""}
           >
